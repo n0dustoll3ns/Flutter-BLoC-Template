@@ -1,7 +1,5 @@
 @import url(fonts.css);
 
-/* zeroing */
-
 ul,
 body,
 hr,
@@ -11,16 +9,56 @@ h3,
 a {
   margin: 0;
   padding: 0;
-  font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+  font-family: "Gilroy-Light", sans-serif;
   border: none;
+  text-align: center;
+  color: #141C3A;
 }
 
-/* divider */
 hr {
   background-color: #E5EBF2;
   height: 1px;
 }
 
-div.inline {
-  display: inline-block;
+header {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  height: 115px;
+}
+
+nav li {
+  font-size: 17px;
+  flex-grow: 1;
+  margin: auto;
+}
+
+nav li a {
+  text-decoration: none;
+}
+
+nav li a.accent {
+  color: #8428F8;
+  font: 16px "Gilroy-ExtraBold", sans-serif;
+}
+
+nav li.main {
+  font: 26px "Gilroy-ExtraBold", sans-serif;
+  text-align: left;
+  flex-grow: 4;
+}
+
+section.banner {
+  height: 771px;
+  margin: 120px auto;
+}
+
+.banner h2 {
+  font: 48px "Gilroy-ExtraBold", sans-serif;
+  line-height: 58.8px;
 }
