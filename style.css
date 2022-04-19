@@ -10,6 +10,7 @@ a {
   margin: 0;
   padding: 0;
   font-family: "Gilroy-Light", sans-serif;
+  font-size: 17px;
   border: none;
   text-align: center;
   color: #141C3A;
@@ -60,5 +61,10 @@ section.banner {
 
 .banner h2 {
   font: 48px "Gilroy-ExtraBold", sans-serif;
-  line-height: 58.8px;
+  padding: 21px 0;
 }
+
+object.illustration {
+  padding: 30px;
+}
+
