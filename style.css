@@ -1,0 +1,26 @@
+@import url(fonts.css);
+
+/* zeroing */
+
+ul,
+body,
+hr,
+h1,
+h2,
+h3,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy-Light", Arial, Helvetica, sans-serif;
+  border: none;
+}
+
+/* divider */
+hr {
+  background-color: #E5EBF2;
+  height: 1px;
+}
+
+div.inline {
+  display: inline-block;
+}
