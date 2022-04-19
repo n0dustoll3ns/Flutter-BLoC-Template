@@ -4,8 +4,7 @@ ul,
 body,
 hr,
 h1,
-h2,
-h3,
+h2
 a {
   margin: 0;
   padding: 0;
@@ -14,6 +13,10 @@ a {
   border: none;
   text-align: center;
   color: #141C3A;
+}
+
+h1 {
+  font: 26px "Gilroy-ExtraBold", sans-serif;
 }
 
 hr {
@@ -43,8 +46,11 @@ nav li a {
   text-decoration: none;
 }
 
-nav li a.accent {
+.accent {
   color: #8428F8;
+}
+
+nav li a.accent {
   font: 16px "Gilroy-ExtraBold", sans-serif;
 }
 
@@ -56,15 +62,65 @@ nav li.main {
 
 section.banner {
   height: 771px;
-  margin: 120px auto;
+  margin: 0 auto;
+
 }
 
-.banner h2 {
+.banner h1 {
   font: 48px "Gilroy-ExtraBold", sans-serif;
-  padding: 21px 0;
+  padding: 121px 0 21px 0;
 }
 
 object.illustration {
   padding: 30px;
 }
 
+.banner .contacts span {
+  display: inline-block;
+}
+
+.banner .vertical-divider {
+  width: 1px;
+  height: 27px;
+  background-color: #DCDCDE;
+
+}
+
+.banner .contacts .title {
+  font-size: 20px;
+  padding: 5px 0;
+}
+
+.phone {
+  text-align: right;
+  padding-right: 8px;
+}
+
+.email {
+  text-align: left;
+  padding-left: 8px;
+}
+
+main {
+  background-color: #F9FBFD;
+}
+
+main article {
+  padding: 140px 0;
+}
+
+main h1 {
+  font: 26px "Gilroy-ExtraBold", sans-serif;
+
+}
+
+main div {
+  padding-top: 38px;
+  width: 630px;
+  margin: 0 auto;
+}
+
+.experience h1{
+  padding: 45px 0;
+  text-transform:uppercase
+}
