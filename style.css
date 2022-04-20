@@ -4,8 +4,7 @@ ul,
 body,
 hr,
 h1,
-h2
-a {
+h2 a {
   margin: 0;
   padding: 0;
   font-family: "Gilroy-Light", sans-serif;
@@ -17,6 +16,11 @@ a {
 
 h1 {
   font: 26px "Gilroy-ExtraBold", sans-serif;
+}
+
+section h1 {
+  padding: 45px 0;
+  text-transform: uppercase
 }
 
 hr {
@@ -79,10 +83,14 @@ object.illustration {
   display: inline-block;
 }
 
-.banner .vertical-divider {
-  width: 1px;
-  height: 27px;
+.vertical-divider {
+  min-width: 1px;
   background-color: #DCDCDE;
+
+}
+
+.banner .vertical-divider {
+  height: 32px;
 
 }
 
@@ -120,7 +128,95 @@ main div {
   margin: 0 auto;
 }
 
-.experience h1{
-  padding: 45px 0;
-  text-transform:uppercase
+.experience .stages {
+  padding: 125px 0;
+}
+
+
+.experience article {
+  display: flex;
+  justify-content: center;
+}
+
+.experience .speciality {
+  text-align: right;
+  line-height: 30px;
+}
+
+.experience .company {
+  text-align: left;
+  line-height: 30px;
+
+}
+
+.experience div {
+  display: inline-block;
+  flex-basis: 380px;
+  margin: 0 0;
+
+}
+
+div.divider {
+  flex-basis: 180px;
+}
+
+.dot {
+  background-color: #8428F8;
+  display: inline-block;
+  margin: 32.165px 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 4.5px;
+}
+
+.experience .vertical-divider {
+  height: 224px;
+  background-color: #DCDCDE;
+  margin: 0;
+  display: inline-block;
+}
+
+.skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+div.skills {
+  padding: 120px 0;
+}
+
+.skills li {
+  text-align: left;
+  text-transform: uppercase;
+  display: inline-block;
+  flex-basis: 520px;
+  padding: 0 0;
+  position: relative;
+}
+
+.skills li span {
+  height: 6px;
+  border-radius: 3px;
+  display: inline-block;
+
+}
+
+.skills li span.rate {
+  background-color: #8428F8;
+  width: 55%;
+  z-index: 1;
+  position: absolute;
+}
+
+.skills li span.max {
+  width: 75%;
+  background-color: #DFE5EB;
+
+}
+
+.education {
+  background-color: #F9FBFD;
 }
