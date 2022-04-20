@@ -185,6 +185,8 @@ div.divider {
 }
 
 div.skills {
+  max-width: 1340px;
+  margin: 0 auto;
   padding: 120px 0;
 }
 
@@ -227,7 +229,7 @@ span.percent {
 .education div.stages {
   display: flex;
   text-align: left;
-  flex-basis: 1340px;
+  max-width: 1340px;
   margin: 0 auto;
 }
 
@@ -269,18 +271,27 @@ span.percent {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .projects li {
-  flex-basis: 356px;
+  max-width: 356px;
   height: 241px;
   margin: 22.5px;
   flex: 1 0 31%;
   align-content: space-around;
+  border-radius: 11px;
+  position: relative;
 }
 
-.projects li img{
+.projects li img {
+  border-radius: 11px;
+}
 
+
+div.projects {
+  max-width: 1256px;
+  margin: 0 auto;
 }
 
 .download {
@@ -291,4 +302,27 @@ span.percent {
   line-height: 32px;
   text-decoration: underline;
   padding: 200px;
+}
+
+.hover-text {
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 11px;
+  position: absolute;
+  background-color: transparent;
+  text-align: left;
+  color: transparent;
+  line-height: 30px;
+  vertical-align: bottom;
+}
+
+.hover-text p, .hover-text h2{
+  max-width: 250px;
+  padding-left: 18px;
+}
+
+.hover-text:hover {
+  background-color: #8428F8;
+  color: #FFF;
 }
