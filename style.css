@@ -128,7 +128,7 @@ main div {
   margin: 0 auto;
 }
 
-.experience .stages {
+.stages {
   padding: 125px 0;
 }
 
@@ -193,7 +193,7 @@ div.skills {
   text-transform: uppercase;
   display: inline-block;
   flex-basis: 520px;
-  padding: 0 0;
+  padding: 25px 25px;
   position: relative;
 }
 
@@ -214,9 +214,81 @@ div.skills {
 .skills li span.max {
   width: 75%;
   background-color: #DFE5EB;
+}
 
+span.percent {
+  padding: 0 15px;
 }
 
 .education {
   background-color: #F9FBFD;
+}
+
+.education div.stages {
+  display: flex;
+  text-align: left;
+  flex-basis: 1340px;
+  margin: 0 auto;
+}
+
+.education article {
+  padding: 31px 15px;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 30px;
+}
+
+.education .divider {
+  margin: 15px 0;
+}
+
+.education .dot {
+  margin: 0;
+  margin-right: 15px;
+}
+
+.education .vertical-divider {
+  margin: 4px 0;
+  width: 90%;
+  flex-grow: 1;
+  height: 1px;
+  display: inline-block;
+}
+
+.education h2 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.projects ul {
+  padding: 200px 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projects li {
+  flex-basis: 356px;
+  height: 241px;
+  margin: 22.5px;
+  flex: 1 0 31%;
+  align-content: space-around;
+}
+
+.projects li img{
+
+}
+
+.download {
+  background-color: #F9FBFD;
+  text-transform: uppercase;
+  font-weight: 800;
+  font: 26px "Gilroy-ExtraBold", sans-serif;
+  line-height: 32px;
+  text-decoration: underline;
+  padding: 200px;
 }
