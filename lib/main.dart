@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/utils/bloc/auth.dart';
 
 import 'app/routes/routes.dart';
 import 'app/theme/theme.dart';
@@ -19,7 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: theme,
       routes: Routes.routes,
-      home: const SignInScreen(),
+      home: BlocProvider(
+        create: (context) => AuthBloc(),
+        child: const SignInScreen()),
     );
   }
 }
