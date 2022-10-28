@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import '../../app/routes/routes.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -8,14 +8,21 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextFormField(),
-            TextFormField(),
-            ElevatedButton(onPressed: () {}, child: Text('Sign in'))
-          ],
+      body: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              TextFormField(),
+              TextFormField(),
+              ElevatedButton(
+                  onPressed: () => Navigator.of(context).pushReplacementNamed(Routes.main),
+                  child: const Text('Sign in'))
+            ],
+          ),
         ),
       ),
     );
