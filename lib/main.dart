@@ -1,29 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/utils/bloc/auth.dart';
+import 'package:flutter_bloc_template/features/authentication/authentication.dart';
 
 import 'app/routes/routes.dart';
 import 'app/theme/theme.dart';
-import 'ui/screens/sign_in_screen.dart';
+import 'features/authentication/auth_bloc.dart';
+import 'features/authentication/user_repository.dart';
+import 'features/login/login_bloc.dart';
+import 'ui/screens/login_screen/login_screen.dart';
+import 'ui/screens/main_screen.dart';
+import 'ui/screens/splash_screen.dart';
+import 'ui/widgets/loading_indicator.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App(userRepository: UserRepository()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatefulWidget {
+  final UserRepository userRepository;
 
-  // This widget is the root of your application.
+  App({Key? key, required this.userRepository}) : super(key: key);
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  late AuthenticationBloc authenticationBloc;
+  UserRepository get userRepository => widget.userRepository;
+
+  @override
+  void initState() {
+    authenticationBloc = AuthenticationBloc(userRepository: userRepository);
+    authenticationBloc.add(AppStarted());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: theme,
-      routes: Routes.routes,
-      home: BlocProvider(
-        create: (context) => AuthBloc(),
-        child: const SignInScreen()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthenticationBloc>(create: ((context) => authenticationBloc)),
+        BlocProvider<LoginBloc>(
+            create: ((context) => LoginBloc(
+                  userRepository: userRepository,
+                  authenticationBloc: authenticationBloc,
+                )))
+      ],
+      child: MaterialApp(
+        home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
+          bloc: authenticationBloc,
+          builder: (BuildContext context, AuthenticationState state) {
+            if (state is AuthenticationUninitialized) {
+              return SplashPage();
+            }
+            if (state is AuthenticationAuthenticated) {
+              return HomePage();
+            }
+            if (state is AuthenticationUnauthenticated) {
+              return LoginPage(userRepository: userRepository);
+            }
+            if (state is AuthenticationLoading) {
+              return LoadingIndicator();
+            }
+            return const Center(child: Text('Login_Simple'));
+          },
+        ),
+      ),
     );
   }
 }
