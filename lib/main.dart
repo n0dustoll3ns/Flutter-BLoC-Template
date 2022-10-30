@@ -9,18 +9,16 @@ import 'features/authentication/auth_bloc.dart';
 import 'features/authentication/user_repository.dart';
 import 'features/login/login_bloc.dart';
 import 'ui/screens/login_screen/login_screen.dart';
-import 'ui/screens/main_screen.dart';
+import 'ui/screens/home_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/widgets/loading_indicator.dart';
 
 void main() {
-  runApp(App(userRepository: UserRepository()));
+  runApp(const App());
 }
 
 class App extends StatefulWidget {
-  final UserRepository userRepository;
-
-  App({Key? key, required this.userRepository}) : super(key: key);
+  const App({super.key});
 
   @override
   State<App> createState() => _AppState();
@@ -28,11 +26,10 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   late AuthenticationBloc authenticationBloc;
-  UserRepository get userRepository => widget.userRepository;
-
+  bool dialogIsShown = false;
   @override
   void initState() {
-    authenticationBloc = AuthenticationBloc(userRepository: userRepository);
+    authenticationBloc = AuthenticationBloc(userRepository: UserRepository());
     authenticationBloc.add(AppStarted());
     super.initState();
   }
@@ -43,33 +40,21 @@ class _AppState extends State<App> {
       providers: [
         BlocProvider<AuthenticationBloc>(create: ((context) => authenticationBloc)),
         BlocProvider<LoginBloc>(
-          create: ((context) => LoginBloc(
-                userRepository: userRepository,
-                authenticationBloc: authenticationBloc,
-              )),
-        ),
+            create: ((context) => LoginBloc(
+                  userRepository: authenticationBloc.userRepository,
+                  authenticationBloc: authenticationBloc,
+                ))),
       ],
       child: MaterialApp(
-        home: BlocConsumer<AuthenticationBloc, AuthenticationState>(
+        theme: theme,
+        routes: Routes.routes,
+        home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           bloc: authenticationBloc,
-          listener: (context, state) {
-            if (state is AuthenticationAuthenticated) {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
-            }
-            if (state is AuthenticationLoading) {
-              showCupertinoModalPopup<void>(
-                context: context,
-                builder: (BuildContext context) => const CupertinoAlertDialog(
-                  content: LoadingIndicator(),
-                ),
-              );
-            }
-          },
           builder: (BuildContext context, AuthenticationState state) {
             if (state is AuthenticationUninitialized) {
-              return SplashPage();
+              return const SplashPage();
             }
-            return LoginPage(key: UniqueKey(), userRepository: userRepository);
+            return const LoginPage();
           },
         ),
       ),

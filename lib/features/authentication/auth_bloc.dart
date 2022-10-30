@@ -24,16 +24,16 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     }
   }
 
-  Future<void> _tryLogin(
+  void _tryLogin(
     LoggedIn event,
     Emitter<AuthenticationState> emitter,
-  ) async {
+  ) {
     emitter(AuthenticationLoading());
-    await userRepository.persistToken(event.token);
+    userRepository.persistToken(event.token);
     emitter(AuthenticationAuthenticated());
   }
 
-  Future<void> _logOut(
+  void _logOut(
     LoggedOut event,
     Emitter<AuthenticationState> emitter,
   ) async {

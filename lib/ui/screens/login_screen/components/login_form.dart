@@ -1,19 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../features/authentication/auth_bloc.dart';
 import '../../../../features/login/login.dart';
 import '../../../../features/login/login_bloc.dart';
+import '../../../widgets/loading_indicator.dart';
 
 class LoginForm extends StatefulWidget {
-  final LoginBloc loginBloc;
-  final AuthenticationBloc authenticationBloc;
-
-  const LoginForm({
-    Key? key,
-    required this.loginBloc,
-    required this.authenticationBloc,
-  }) : super(key: key);
+  const LoginForm({super.key});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -22,12 +17,33 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  late LoginBloc _loginBloc;
+  bool dialogIsShown = false;
 
-  LoginBloc get _loginBloc => widget.loginBloc;
+  @override
+  void initState() {
+    _loginBloc = context.read<LoginBloc>();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginBloc, LoginState>(
+    return BlocConsumer<LoginBloc, LoginState>(
+      listener: (context, state) {
+        if (dialogIsShown) {
+          dialogIsShown = false;
+          Navigator.of(context).pop();
+        }
+        if (state is LoginLoading) {
+          dialogIsShown = true;
+          showCupertinoModalPopup<void>(
+            context: context,
+            builder: (BuildContext context) => const CupertinoAlertDialog(
+              content: LoadingIndicator(),
+            ),
+          );
+        }
+      },
       bloc: _loginBloc,
       builder: (
         BuildContext context,
@@ -37,7 +53,7 @@ class _LoginFormState extends State<LoginForm> {
           _onWidgetDidBuild(() {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('${state.error}'),
+                content: Text(state.error),
                 backgroundColor: Colors.red,
               ),
             );
@@ -46,6 +62,7 @@ class _LoginFormState extends State<LoginForm> {
 
         return Form(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               TextFormField(
                 decoration: const InputDecoration(label: Text('username')),
