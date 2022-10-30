@@ -60,9 +60,6 @@ class _LoginFormState extends State<LoginForm> {
                 onPressed: state is! LoginLoading ? _onLoginButtonPressed : null,
                 child: const Text('Login'),
               ),
-              Container(
-                child: state is LoginLoading ? const CircularProgressIndicator() : null,
-              ),
             ],
           ),
         );

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/authentication.dart';
@@ -42,28 +43,33 @@ class _AppState extends State<App> {
       providers: [
         BlocProvider<AuthenticationBloc>(create: ((context) => authenticationBloc)),
         BlocProvider<LoginBloc>(
-            create: ((context) => LoginBloc(
-                  userRepository: userRepository,
-                  authenticationBloc: authenticationBloc,
-                )))
+          create: ((context) => LoginBloc(
+                userRepository: userRepository,
+                authenticationBloc: authenticationBloc,
+              )),
+        ),
       ],
       child: MaterialApp(
-        home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
+        home: BlocConsumer<AuthenticationBloc, AuthenticationState>(
           bloc: authenticationBloc,
+          listener: (context, state) {
+            if (state is AuthenticationAuthenticated) {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+            }
+            if (state is AuthenticationLoading) {
+              showCupertinoModalPopup<void>(
+                context: context,
+                builder: (BuildContext context) => const CupertinoAlertDialog(
+                  content: LoadingIndicator(),
+                ),
+              );
+            }
+          },
           builder: (BuildContext context, AuthenticationState state) {
             if (state is AuthenticationUninitialized) {
               return SplashPage();
             }
-            if (state is AuthenticationAuthenticated) {
-              return HomePage();
-            }
-            if (state is AuthenticationUnauthenticated) {
-              return LoginPage(userRepository: userRepository);
-            }
-            if (state is AuthenticationLoading) {
-              return LoadingIndicator();
-            }
-            return const Center(child: Text('Login_Simple'));
+            return LoginPage(key: UniqueKey(), userRepository: userRepository);
           },
         ),
       ),
