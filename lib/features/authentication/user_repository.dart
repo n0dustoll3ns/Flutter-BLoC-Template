@@ -1,4 +1,5 @@
 class UserRepository {
+  String token;
   Future<String> authenticate({
     required String username,
     required String password,
