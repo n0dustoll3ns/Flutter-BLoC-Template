@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/authentication.dart';
+import 'package:flutter_bloc_template/features/products/products_bloc.dart';
+import 'package:flutter_bloc_template/features/products/products_repository.dart';
 
 import 'app/routes/routes.dart';
 import 'app/theme/theme.dart';
@@ -9,7 +11,7 @@ import 'features/authentication/auth_bloc.dart';
 import 'features/authentication/user_repository.dart';
 import 'features/login/login_bloc.dart';
 import 'ui/screens/login_screen/login_screen.dart';
-import 'ui/screens/home_screen.dart';
+import 'ui/screens/home_screen/home_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/widgets/loading_indicator.dart';
 
@@ -39,6 +41,10 @@ class _AppState extends State<App> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthenticationBloc>(create: ((context) => authenticationBloc)),
+        BlocProvider<ProductsBloc>(
+            create: ((context) => ProductsBloc(
+                userRepository: authenticationBloc.userRepository,
+                productsRepository: ProductsRepository()))),
         BlocProvider<LoginBloc>(
             create: ((context) => LoginBloc(
                   userRepository: authenticationBloc.userRepository,

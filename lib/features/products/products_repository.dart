@@ -5,6 +5,11 @@ import 'model/product.dart';
 class ProductsRepository {
   List<Cloth> _clothes = [];
   List<Perfumery> _perfumery = [];
+  void clear() {
+    _clothes.clear();
+    _perfumery.clear();
+  }
+
   List<Product> get products {
     List<Product> list = [];
     list.addAll(_clothes);

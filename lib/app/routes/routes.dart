@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/authentication/user_repository.dart';
-import '../../ui/screens/home_screen.dart';
+import '../../ui/screens/home_screen/home_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
 
 class Routes {

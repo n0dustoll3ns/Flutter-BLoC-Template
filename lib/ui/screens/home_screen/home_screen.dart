@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../app/routes/routes.dart';
-import '../../features/authentication/authentication.dart';
-import '../../features/authentication/auth_bloc.dart';
+import '../../../app/routes/routes.dart';
+import '../../../features/authentication/authentication.dart';
+import '../../../features/authentication/auth_bloc.dart';
+import 'catalog/catalog.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -48,7 +49,7 @@ class HomePage extends StatelessWidget {
               }),
             ],
           ),
-          body: const Center(child: Text('content')),
+          body: const CatalogView(),
         );
       },
     );

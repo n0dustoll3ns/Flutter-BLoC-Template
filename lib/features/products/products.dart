@@ -17,6 +17,9 @@ class ProductsFailure extends ProductsState {
   String toString() => 'LoginFailure { error: $error }';
 }
 
+class ProductsUpdated extends ProductsState {}
+
+
 /* ---  Events   --- */
 
 abstract class ProductsEvent {

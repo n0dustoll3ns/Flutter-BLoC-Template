@@ -1,10 +1,12 @@
 class UserRepository {
-  String token;
+  String token = '';
+
   Future<String> authenticate({
     required String username,
     required String password,
   }) async {
     await Future.delayed(Duration(seconds: 1));
+    token = 'token';
     return 'token';
   }
 
