@@ -19,7 +19,6 @@ class ProductsFailure extends ProductsState {
 
 class ProductsUpdated extends ProductsState {}
 
-
 /* ---  Events   --- */
 
 abstract class ProductsEvent {
@@ -27,15 +26,12 @@ abstract class ProductsEvent {
 }
 
 class ProductsRequest extends ProductsEvent {
-  final int skipCount;
+  // final int skipCount;
 
-  const ProductsRequest({
-    required this.skipCount,
-  });
+  const ProductsRequest();
 
   @override
-  String toString() => 'Products requested. Already has $skipCount products.';
+  String toString() => 'Products requested.';
 }
 
-class ProductsPageEnter extends ProductsEvent {
-}
+class ProductsPageEnter extends ProductsEvent {}

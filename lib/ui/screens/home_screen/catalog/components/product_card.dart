@@ -3,7 +3,8 @@ import 'package:flutter_bloc_template/features/products/model/product.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
-  const ProductCard({super.key, required this.product});
+  final int index;
+  const ProductCard({super.key, required this.product, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +14,11 @@ class ProductCard extends StatelessWidget {
         child: Column(
           children: [
             AspectRatio(
-              aspectRatio: 1.2,
+              aspectRatio: 1.5,
               child: FittedBox(child: Icon(product.img)),
             ),
             const Spacer(),
-            Text(product.name),
+            Text('$index ${product.name}'),
           ],
         ),
       ),

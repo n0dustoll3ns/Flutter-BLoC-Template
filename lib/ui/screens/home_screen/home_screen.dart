@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,16 +8,24 @@ import '../../../features/authentication/authentication.dart';
 import '../../../features/authentication/auth_bloc.dart';
 import 'catalog/catalog.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final AuthenticationBloc authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
-    void logout() {
-      authenticationBloc.add(LoggedOut());
-    }
+  State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
+  late final AuthenticationBloc authenticationBloc;
+
+  @override
+  void initState() {
+    authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(
       bloc: authenticationBloc,
       listener: (context, state) {
@@ -49,9 +58,44 @@ class HomePage extends StatelessWidget {
               }),
             ],
           ),
-          body: const CatalogView(),
+          body: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 17),
+            child: CatalogView(),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            elevation: 2,
+            currentIndex: 1,
+            selectedItemColor: Theme.of(context).primaryColor,
+            unselectedItemColor: Theme.of(context).iconTheme.color,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                label: 'Home',
+                icon: Icon(Icons.home),
+              ),
+              BottomNavigationBarItem(
+                label: 'Catalog',
+                icon: Icon(Icons.menu),
+              ),
+              BottomNavigationBarItem(
+                label: 'Cart',
+                icon: Icon(Icons.shopping_cart_outlined),
+              ),
+              BottomNavigationBarItem(
+                label: 'Like',
+                icon: Icon(CupertinoIcons.heart),
+              ),
+              BottomNavigationBarItem(
+                label: 'Profile',
+                icon: Icon(Icons.person_outline_rounded),
+              ),
+            ],
+          ),
         );
       },
     );
+  }
+
+  void logout() {
+    authenticationBloc.add(LoggedOut());
   }
 }

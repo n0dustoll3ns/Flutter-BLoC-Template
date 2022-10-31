@@ -20,9 +20,9 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     ProductsPageEnter event,
     Emitter<ProductsState> emitter,
   ) async {
+    emitter(ProductsLoading());
     bool noError = true;
     await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
-    List<Product> products = productsRepository.products;
     if (noError) {
       emitter(ProductsUpdated());
     } else {
@@ -34,10 +34,10 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     ProductsRequest event,
     Emitter<ProductsState> emitter,
   ) async {
+    emitter(ProductsLoading());
     bool noError = true;
     await productsRepository.getProductList(
         token: userRepository.token, skipCount: productsRepository.products.length);
-    List<Product> products = productsRepository.products;
     if (noError) {
       emitter(ProductsUpdated());
     } else {
