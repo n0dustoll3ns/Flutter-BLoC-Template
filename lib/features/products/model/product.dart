@@ -6,7 +6,7 @@ abstract class Product {
   final String name;
   final IconData img;
 
-  Product({required this.name}) : img = icons[Random().nextInt(9)];
+  Product({required this.name}) : img = icons[Random().nextInt(icons.length - 1)];
 }
 
 class Perfumery extends Product {
@@ -27,5 +27,10 @@ const List<IconData> icons = [
   Icons.workspaces_sharp,
   Icons.work_outline_outlined,
   Icons.wine_bar_rounded,
-  Icons.whatshot
+  Icons.whatshot,
+  Icons.airlines_sharp,
+  Icons.bolt_sharp,
+  Icons.icecream,
+  Icons.ice_skating_rounded,
+  Icons.image,
 ];
