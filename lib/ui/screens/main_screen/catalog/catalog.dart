@@ -6,7 +6,6 @@ import 'package:flutter_bloc_template/features/authentication/authentication.dar
 import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/categories/catagories.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/components/quick_filters.dart';
 
-import '../../../../app/routes/constants.dart';
 import '../../../../features/catalog/categories/categories.dart';
 import '../../../../features/catalog/categories/categories_bloc.dart';
 import '../../../widgets/loading_indicator.dart';
@@ -65,7 +64,7 @@ class _CategoryState extends State<Category> {
                 ]
               : [
                   IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       CupertinoIcons.search,
                     ),
                     onPressed: () {},

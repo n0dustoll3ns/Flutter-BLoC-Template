@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/theme/theme.dart';
+import 'package:flutter_bloc_template/ui/components/persistent_bottom_Bar_scaffold.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/cart/cart.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/favourite/favourites.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/home.dart';
@@ -24,11 +25,28 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
   late final AuthenticationBloc authenticationBloc;
-  late final TabController _tabController;
-
+  int _selectedTab = 0;
+  late final List<PersistentTabItem> _items;
+  final _itemsKeys = List.generate(5, (index) => GlobalKey<NavigatorState>());
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 5);
+    _items = <PersistentTabItem>[
+      PersistentTabItem(tab: const Home(), icon: Icons.home, title: 'Home', navigatorkey: _itemsKeys[0]),
+      PersistentTabItem(
+          tab: const Category(), icon: Icons.menu, title: 'Category', navigatorkey: _itemsKeys[1]),
+      PersistentTabItem(
+          tab: const Cart(), icon: Icons.shopping_cart_outlined, title: 'Cart', navigatorkey: _itemsKeys[2]),
+      PersistentTabItem(
+          tab: const Favourites(),
+          icon: CupertinoIcons.heart,
+          title: 'Favourites',
+          navigatorkey: _itemsKeys[3]),
+      PersistentTabItem(
+          tab: const UserProfile(),
+          icon: Icons.person_outline_rounded,
+          title: 'UserProfile',
+          navigatorkey: _itemsKeys[4]),
+    ];
     authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
     super.initState();
   }
@@ -43,52 +61,28 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
         }
       },
       builder: (context, state) {
-        return Scaffold(
-          body: TabBarView(
-            physics: NeverScrollableScrollPhysics(),
-            controller: _tabController,
-            children: [
-              Home(),
-              Category(),
-              Cart(),
-              Favourites(),
-              UserProfile(),
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.shifting,
-            onTap: (value) {
-              setState(() {
-                _tabController.animateTo(value);
-              });
-            },
-            elevation: 2,
-            currentIndex: _tabController.index,
-            selectedItemColor: Theme.of(context).primaryColor,
-            unselectedItemColor: Theme.of(context).iconTheme.color,
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                label: mainPageSections[0],
-                icon: const Icon(Icons.home),
-              ),
-              BottomNavigationBarItem(
-                label: mainPageSections[1],
-                icon: const Icon(Icons.menu),
-              ),
-              BottomNavigationBarItem(
-                label: mainPageSections[2],
-                icon: const Icon(Icons.shopping_cart_outlined),
-              ),
-              BottomNavigationBarItem(
-                label: mainPageSections[3],
-                icon: const Icon(CupertinoIcons.heart),
-              ),
-              BottomNavigationBarItem(
-                label: mainPageSections[4],
-                icon: const Icon(Icons.person_outline_rounded),
-              ),
-            ],
-          ),
+        return PersistentBottomBarScaffold(
+          items: <PersistentTabItem>[
+            PersistentTabItem(
+                tab: const Home(), icon: Icons.home, title: 'Home', navigatorkey: _itemsKeys[0]),
+            PersistentTabItem(
+                tab: const Category(), icon: Icons.menu, title: 'Category', navigatorkey: _itemsKeys[1]),
+            PersistentTabItem(
+                tab: const Cart(),
+                icon: Icons.shopping_cart_outlined,
+                title: 'Cart',
+                navigatorkey: _itemsKeys[2]),
+            PersistentTabItem(
+                tab: const Favourites(),
+                icon: CupertinoIcons.heart,
+                title: 'Favourites',
+                navigatorkey: _itemsKeys[3]),
+            PersistentTabItem(
+                tab: const UserProfile(),
+                icon: Icons.person_outline_rounded,
+                title: 'UserProfile',
+                navigatorkey: _itemsKeys[4]),
+          ],
         );
       },
     );
