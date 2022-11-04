@@ -44,38 +44,8 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
       },
       builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(
-            title: SizedBox(
-              height: 55,
-              child: TabBarView(
-                  controller: _tabController,
-                  children: List.generate(
-                      mainPageSections.length,
-                      (index) =>
-                          Align(alignment: Alignment.centerLeft, child: Text(mainPageSections[index])))),
-            ),
-            actions: [
-              PopupMenuButton<Function>(itemBuilder: (context) {
-                return [
-                  PopupMenuItem<Function>(
-                    value: () {},
-                    child: const Text("My Account"),
-                  ),
-                  PopupMenuItem<Function>(
-                    value: () {},
-                    child: const Text("Settings"),
-                  ),
-                  PopupMenuItem<Function>(
-                    value: logout,
-                    child: const Text("Logout"),
-                  ),
-                ];
-              }, onSelected: (value) {
-                value();
-              }),
-            ],
-          ),
           body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             controller: _tabController,
             children: [
               Home(),
@@ -124,7 +94,4 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
     );
   }
 
-  void logout() {
-    authenticationBloc.add(LoggedOut());
-  }
 }
