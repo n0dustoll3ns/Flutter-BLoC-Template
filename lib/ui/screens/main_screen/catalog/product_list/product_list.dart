@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/products/products.dart';
 import 'package:flutter_bloc_template/features/products/products_bloc.dart';
-import 'package:flutter_bloc_template/ui/screens/home_screen/catalog/product_list/components/product_card.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/product_list/components/product_card.dart';
 import 'package:flutter_bloc_template/ui/styles/constants.dart';
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 

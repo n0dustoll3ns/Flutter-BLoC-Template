@@ -10,7 +10,7 @@ import 'features/authentication/auth_bloc.dart';
 import 'features/authentication/user_repository.dart';
 import 'features/login/login_bloc.dart';
 import 'ui/screens/login_screen/login_screen.dart';
-import 'ui/screens/home_screen/home_screen.dart';
+import 'ui/screens/main_screen/main_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/widgets/loading_indicator.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/ui/screens/home_screen/catalog/components/quick_filters.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/components/quick_filters.dart';
 
 class CatalogRoot extends StatelessWidget {
   const CatalogRoot({super.key});

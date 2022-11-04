@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/theme/theme.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/cart/cart.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/favourite/favourites.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/home/home.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/user_profile/user_profile.dart';
 
 import '../../../app/routes/constants.dart';
 import '../../../app/routes/routes.dart';
@@ -11,14 +15,14 @@ import '../../../features/authentication/auth_bloc.dart';
 import 'catalog/catalog.dart';
 import 'catalog/product_list/product_list.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
   late final AuthenticationBloc authenticationBloc;
   late final TabController _tabController;
 
@@ -71,10 +75,25 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               }),
             ],
           ),
-          body: CatalogRoot(),
+          body: TabBarView(
+            controller: _tabController,
+            children: [
+              Home(),
+              CatalogRoot(),
+              Cart(),
+              Favourites(),
+              UserProfile(),
+            ],
+          ),
           bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.shifting,
+            onTap: (value) {
+              setState(() {
+                _tabController.animateTo(value);
+              });
+            },
             elevation: 2,
-            currentIndex: 1,
+            currentIndex: _tabController.index,
             selectedItemColor: Theme.of(context).primaryColor,
             unselectedItemColor: Theme.of(context).iconTheme.color,
             items: <BottomNavigationBarItem>[
