@@ -1,4 +1,4 @@
-import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/catalog.dart';
+import 'package:flutter_bloc_template/ui/screens/catalog/catalog.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 import 'model/model.dart';

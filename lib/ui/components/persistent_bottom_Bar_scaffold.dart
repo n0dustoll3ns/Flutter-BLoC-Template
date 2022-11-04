@@ -11,7 +11,7 @@ class PersistentBottomBarScaffold extends StatefulWidget {
 }
 
 class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final TabController _tabController;
 
   @override
@@ -22,6 +22,7 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return WillPopScope(
       onWillPop: () async {
         if (widget.items[_tabController.index].navigatorkey?.currentState?.canPop() ?? false) {
@@ -32,8 +33,8 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
         }
       },
       child: Scaffold(
-        body: TabBarView(
-          controller: _tabController,
+        body: IndexedStack(
+          index: _tabController.index,
           children: widget.items
               .map((item) => Navigator(
                     key: item.navigatorkey,
@@ -50,7 +51,7 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
               widget.items[index].navigatorkey?.currentState?.popUntil((route) => route.isFirst);
             } else {
               setState(() {
-                _tabController.animateTo(index);
+                _tabController.index = (index);
               });
             }
           },
@@ -65,6 +66,9 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 /// Model class that holds the tab info for the [PersistentBottomBarScaffold]

@@ -11,7 +11,6 @@ class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
     required this.categoriesRepository,
   }) : super(CategoriesInitial(categories: [])) {
     on<ApplicationEntered>(_categoriesLoad);
-    on<CategoryChange>(_setCategory);
   }
 
   Future<void> _categoriesLoad(
@@ -27,14 +26,4 @@ class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
     }
   }
 
-  Future<void> _setCategory(
-    CategoryChange event,
-    Emitter<CategoriesState> emitter,
-  ) async {
-    var cur = state.categories;
-    emitter(CategoriesLoading(categories: state.categories));
-    await Future.delayed(const Duration(milliseconds: 1311));
-    var state2 = CategoriesLoaded(categories: cur)..selectedCategory = event.category;
-    emitter(state2);
-  }
 }
