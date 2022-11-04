@@ -49,7 +49,7 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
             controller: _tabController,
             children: [
               Home(),
-              CatalogRoot(),
+              Category(),
               Cart(),
               Favourites(),
               UserProfile(),
@@ -93,5 +93,4 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
       },
     );
   }
-
 }

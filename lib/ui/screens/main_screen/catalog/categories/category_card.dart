@@ -19,7 +19,7 @@ class CategoryCard extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
       ),
       subtitle: Text(category.description),
-      trailing: Icon(Icons.arrow_forward_ios_outlined),
+      trailing: const Icon(Icons.arrow_forward_ios_outlined),
     );
   }
 }

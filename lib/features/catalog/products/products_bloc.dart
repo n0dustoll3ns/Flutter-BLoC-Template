@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
-import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
 import 'products.dart';
@@ -12,11 +11,11 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     required this.userRepository,
     required this.productsRepository,
   }) : super(ProductsInitial()) {
-    on<ProductsPageEnter>(_productsPageEnter);
+    on<ProductsPageEnter>(_productsLoad);
     on<ProductsRequest>(_requstProducts);
   }
 
-  Future<void> _productsPageEnter(
+  Future<void> _productsLoad(
     ProductsPageEnter event,
     Emitter<ProductsState> emitter,
   ) async {
