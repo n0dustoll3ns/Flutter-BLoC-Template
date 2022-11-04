@@ -2,11 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/app/theme/theme.dart';
 
+import '../../../app/routes/constants.dart';
 import '../../../app/routes/routes.dart';
 import '../../../features/authentication/authentication.dart';
 import '../../../features/authentication/auth_bloc.dart';
 import 'catalog/catalog.dart';
+import 'catalog/product_list/product_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,11 +18,13 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   late final AuthenticationBloc authenticationBloc;
+  late final TabController _tabController;
 
   @override
   void initState() {
+    _tabController = TabController(vsync: this, length: 5);
     authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
     super.initState();
   }
@@ -36,7 +41,15 @@ class _HomePageState extends State<HomePage> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Home'),
+            title: SizedBox(
+              height: 55,
+              child: TabBarView(
+                  controller: _tabController,
+                  children: List.generate(
+                      mainPageSections.length,
+                      (index) =>
+                          Align(alignment: Alignment.centerLeft, child: Text(mainPageSections[index])))),
+            ),
             actions: [
               PopupMenuButton<Function>(itemBuilder: (context) {
                 return [
@@ -58,35 +71,32 @@ class _HomePageState extends State<HomePage> {
               }),
             ],
           ),
-          body: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 17),
-            child: CatalogView(),
-          ),
+          body: CatalogRoot(),
           bottomNavigationBar: BottomNavigationBar(
             elevation: 2,
             currentIndex: 1,
             selectedItemColor: Theme.of(context).primaryColor,
             unselectedItemColor: Theme.of(context).iconTheme.color,
-            items: const <BottomNavigationBarItem>[
+            items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                label: 'Home',
-                icon: Icon(Icons.home),
+                label: mainPageSections[0],
+                icon: const Icon(Icons.home),
               ),
               BottomNavigationBarItem(
-                label: 'Catalog',
-                icon: Icon(Icons.menu),
+                label: mainPageSections[1],
+                icon: const Icon(Icons.menu),
               ),
               BottomNavigationBarItem(
-                label: 'Cart',
-                icon: Icon(Icons.shopping_cart_outlined),
+                label: mainPageSections[2],
+                icon: const Icon(Icons.shopping_cart_outlined),
               ),
               BottomNavigationBarItem(
-                label: 'Like',
-                icon: Icon(CupertinoIcons.heart),
+                label: mainPageSections[3],
+                icon: const Icon(CupertinoIcons.heart),
               ),
               BottomNavigationBarItem(
-                label: 'Profile',
-                icon: Icon(Icons.person_outline_rounded),
+                label: mainPageSections[4],
+                icon: const Icon(Icons.person_outline_rounded),
               ),
             ],
           ),
