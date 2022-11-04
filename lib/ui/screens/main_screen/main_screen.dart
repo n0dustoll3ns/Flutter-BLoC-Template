@@ -23,7 +23,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
+class _MainScreenState extends State<MainScreen> {
   late final AuthenticationBloc authenticationBloc;
   int _selectedTab = 0;
   late final List<PersistentTabItem> _items;

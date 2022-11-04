@@ -10,23 +10,30 @@ class PersistentBottomBarScaffold extends StatefulWidget {
   PersistentBottomBarScaffoldState createState() => PersistentBottomBarScaffoldState();
 }
 
-class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold> {
-  int _selectedTab = 0;
+class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: widget.items.length, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        if (widget.items[_selectedTab].navigatorkey?.currentState?.canPop() ?? false) {
-          widget.items[_selectedTab].navigatorkey?.currentState?.pop();
+        if (widget.items[_tabController.index].navigatorkey?.currentState?.canPop() ?? false) {
+          widget.items[_tabController.index].navigatorkey?.currentState?.pop();
           return false;
         } else {
           return true;
         }
       },
       child: Scaffold(
-        body: IndexedStack(
-          index: _selectedTab,
+        body: TabBarView(
+          controller: _tabController,
           children: widget.items
               .map((item) => Navigator(
                     key: item.navigatorkey,
@@ -39,16 +46,16 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.shifting,
           onTap: (index) {
-            if (index == _selectedTab) {
+            if (index == _tabController.index) {
               widget.items[index].navigatorkey?.currentState?.popUntil((route) => route.isFirst);
             } else {
               setState(() {
-                _selectedTab = index;
+                _tabController.animateTo(index);
               });
             }
           },
           elevation: 2,
-          currentIndex: _selectedTab,
+          currentIndex: _tabController.index,
           selectedItemColor: Theme.of(context).primaryColor,
           unselectedItemColor: Theme.of(context).iconTheme.color,
           items: widget.items
