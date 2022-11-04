@@ -24,57 +24,66 @@ class _CategoryState extends State<Category> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const CupertinoTextField(
-          prefix: Padding(
-            padding: EdgeInsets.all(6.0),
-            child: Icon(
-              CupertinoIcons.search,
-              color: Colors.black45,
-            ),
-          ),
-          decoration:
-              BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
+    return BlocBuilder<CategoriesBloc, CategoriesState>(builder: (context, state) {
+      return Scaffold(
+        appBar: AppBar(
+          title: state.selectedCategory == null
+              ? const CupertinoTextField(
+                  prefix: Padding(
+                    padding: EdgeInsets.all(6.0),
+                    child: Icon(
+                      CupertinoIcons.search,
+                      color: Colors.black45,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
+                )
+              : IconButton(
+                  onPressed: () => context.read<CategoriesBloc>().add(CategoryChange(null)),
+                  icon: const Icon(Icons.arrow_back_ios_rounded)),
+          actions: state.selectedCategory == null
+              ? [
+                  PopupMenuButton<Function>(itemBuilder: (context) {
+                    return [
+                      PopupMenuItem<Function>(
+                        value: () {},
+                        child: const Text("My Account"),
+                      ),
+                      PopupMenuItem<Function>(
+                        value: () {},
+                        child: const Text("Settings"),
+                      ),
+                      PopupMenuItem<Function>(
+                        value: () => context.read<AuthenticationBloc>().add(LoggedOut()),
+                        child: const Text("Logout"),
+                      ),
+                    ];
+                  }, onSelected: (value) {
+                    value();
+                  }),
+                ]
+              : [
+                  IconButton(
+                    icon: Icon(
+                      CupertinoIcons.search,
+                    ),
+                    onPressed: () {},
+                  )
+                ],
         ),
-        actions: [
-          PopupMenuButton<Function>(itemBuilder: (context) {
-            return [
-              PopupMenuItem<Function>(
-                value: () {},
-                child: const Text("My Account"),
-              ),
-              PopupMenuItem<Function>(
-                value: () {},
-                child: const Text("Settings"),
-              ),
-              PopupMenuItem<Function>(
-                value: () => context.read<AuthenticationBloc>().add(LoggedOut()),
-                child: const Text("Logout"),
-              ),
-            ];
-          }, onSelected: (value) {
-            value();
-          }),
-        ],
-      ),
-      body: BlocBuilder<CategoriesBloc, CategoriesState>(buildWhen: (context, state) {
-        return state == state;
-      }, builder: (context, state) {
-        if (state is CategoriesLoaded) {
-          return ListView.custom(
-            childrenDelegate: SliverChildListDelegate(
-              [
-                if (state.selectedCategory == null) QuickFilters(onFilterChange: (quickFilter) {}),
-                if (isRoot && state.selectedCategory == null) const ChaptersHorizontalView(),
-                const Categories(),
-              ],
-            ),
-          );
-        }
-
-        return const LoadingIndicator();
-      }),
-    );
+        body: (state is CategoriesLoaded)
+            ? ListView.custom(
+                childrenDelegate: SliverChildListDelegate(
+                  [
+                    if (state.selectedCategory == null) QuickFilters(onFilterChange: (quickFilter) {}),
+                    if (isRoot && state.selectedCategory == null) const ChaptersHorizontalView(),
+                    const Categories(),
+                  ],
+                ),
+              )
+            : const LoadingIndicator(),
+      );
+    });
   }
 }

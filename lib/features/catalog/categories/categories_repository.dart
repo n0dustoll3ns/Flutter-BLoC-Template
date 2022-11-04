@@ -16,7 +16,13 @@ class CategoriesRepository {
           (index) => CatalogCategory(
             name: 'Secondary Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
             description: lorem(paragraphs: 1, words: 9),
-          ),
+          )..inheritedCategories = List.generate(
+              3,
+              (index) => CatalogCategory(
+                name: 'Third level category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
+                description: lorem(paragraphs: 1, words: 9),
+              ),
+            ),
         ),
     );
     return list;

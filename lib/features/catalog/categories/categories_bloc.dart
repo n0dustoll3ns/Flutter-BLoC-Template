@@ -9,7 +9,7 @@ class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
   CategoriesBloc({
     required this.userRepository,
     required this.categoriesRepository,
-  }) : super(CategoriesInitial()) {
+  }) : super(CategoriesInitial(categories: [])) {
     on<ApplicationEntered>(_categoriesLoad);
     on<CategoryChange>(_setCategory);
   }
@@ -18,21 +18,23 @@ class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
     ApplicationEntered event,
     Emitter<CategoriesState> emitter,
   ) async {
-    emitter(CategoriesLoading());
+    emitter(CategoriesLoading(categories: state.categories));
     var res = await categoriesRepository.getCategories(token: userRepository.token);
     if (res != null) {
       emitter(CategoriesLoaded(categories: res));
     } else {
-      emitter(const CategoriesLoadFailure(error: 'error categories'));
+      emitter(CategoriesLoadFailure(error: 'error categories', categories: state.categories));
     }
   }
 
-  void _setCategory(
+  Future<void> _setCategory(
     CategoryChange event,
     Emitter<CategoriesState> emitter,
-  ) {
-    if (state is CategoriesLoaded) {
-      emitter((state as CategoriesLoaded).setCategory(event.category));
-    }
+  ) async {
+    var cur = state.categories;
+    emitter(CategoriesLoading(categories: state.categories));
+    await Future.delayed(const Duration(milliseconds: 1311));
+    var state2 = CategoriesLoaded(categories: cur)..selectedCategory = event.category;
+    emitter(state2);
   }
 }
