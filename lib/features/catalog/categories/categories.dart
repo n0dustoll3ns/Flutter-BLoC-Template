@@ -23,6 +23,18 @@ class CategoriesLoaded extends CategoriesState {
   final List<CatalogCategory> categories;
 
   CategoriesLoaded({required this.categories});
+  CatalogCategory? _selectedCategory;
+
+  CatalogCategory? get selectedCategory => _selectedCategory;
+
+  set selectedCategory(CatalogCategory? selectedCategory) {
+    _selectedCategory = selectedCategory;
+  }
+
+  CategoriesLoaded setCategory(CatalogCategory category) {
+    var categoriesLoaded = CategoriesLoaded(categories: categories)..selectedCategory = category;
+    return categoriesLoaded;
+  }
 }
 
 /* ---  Events   --- */
@@ -31,13 +43,16 @@ abstract class CategoryEvent {
   const CategoryEvent();
 }
 
-class CategoryRequest extends CategoryEvent {
+class ApplicationEntered extends CategoryEvent {
   // final int skipCount;
 
-  const CategoryRequest();
+  const ApplicationEntered();
 
   @override
   String toString() => 'Products requested.';
 }
 
-class ApplicationEnter extends CategoryEvent {}
+class CategoryChange extends CategoryEvent {
+  CategoryChange(this.category);
+  final CatalogCategory category;
+}

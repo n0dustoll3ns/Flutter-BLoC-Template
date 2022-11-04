@@ -23,19 +23,16 @@ class _CategoriesState extends State<Categories> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesBloc, CategoriesState>(builder: (context, state) {
-      if (state is CategoriesLoaded) {
-        return Column(
-          children: List.generate(
-              state.categories.length * 2,
-              (index) => index.isOdd
-                  ? const Divider(height: 1)
-                  : CategoryCard(
-                      category: state.categories[index ~/ 2],
-                    )),
-        );
-      }
-      return LoadingIndicator();
-    });
+    var state = context.read<CategoriesBloc>().state as CategoriesLoaded;
+    List<CatalogCategory> categories = state.selectedCategory?.inheritedCategories ?? state.categories;
+    return Column(
+      children: List.generate(
+          categories.length * 2,
+          (index) => index.isOdd
+              ? const Divider(height: 1)
+              : CategoryCard(
+                  category: categories[index ~/ 2],
+                )),
+    );
   }
 }

@@ -7,6 +7,9 @@ import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/categories/
 import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/components/quick_filters.dart';
 
 import '../../../../app/routes/constants.dart';
+import '../../../../features/catalog/categories/categories.dart';
+import '../../../../features/catalog/categories/categories_bloc.dart';
+import '../../../widgets/loading_indicator.dart';
 import 'chapters/chapters_horizontal_view.dart';
 
 class Category extends StatefulWidget {
@@ -55,15 +58,23 @@ class _CategoryState extends State<Category> {
           }),
         ],
       ),
-      body: ListView.custom(
-        childrenDelegate: SliverChildListDelegate(
-          [
-            QuickFilters(onFilterChange: (quickFilter) {}),
-            if (isRoot) const ChaptersHorizontalView(),
-            const Categories(),
-          ],
-        ),
-      ),
+      body: BlocBuilder<CategoriesBloc, CategoriesState>(buildWhen: (context, state) {
+        return state == state;
+      }, builder: (context, state) {
+        if (state is CategoriesLoaded) {
+          return ListView.custom(
+            childrenDelegate: SliverChildListDelegate(
+              [
+                if (state.selectedCategory == null) QuickFilters(onFilterChange: (quickFilter) {}),
+                if (isRoot && state.selectedCategory == null) const ChaptersHorizontalView(),
+                const Categories(),
+              ],
+            ),
+          );
+        }
+
+        return const LoadingIndicator();
+      }),
     );
   }
 }

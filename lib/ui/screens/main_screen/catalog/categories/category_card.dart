@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
-import 'package:flutter_bloc_template/ui/styles/constants.dart';
+
+import '../../../../../features/catalog/categories/categories.dart';
+import '../../../../../features/catalog/categories/categories_bloc.dart';
 
 class CategoryCard extends StatelessWidget {
   final CatalogCategory category;
@@ -11,6 +12,9 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+        context.read<CategoriesBloc>().add(CategoryChange(category));
+      },
       isThreeLine: true,
       leading: category.img.isEmpty ? const Icon(Icons.question_mark_rounded) : Image.network(category.img),
       title: Text(

@@ -13,9 +13,7 @@ import 'features/authentication/user_repository.dart';
 import 'features/catalog/categories/categories.dart';
 import 'features/login/login_bloc.dart';
 import 'ui/screens/login_screen/login_screen.dart';
-import 'ui/screens/main_screen/main_screen.dart';
 import 'ui/screens/splash_screen.dart';
-import 'ui/widgets/loading_indicator.dart';
 
 void main() {
   runApp(const App());
@@ -38,7 +36,7 @@ class _AppState extends State<App> {
     authenticationBloc.add(AppStarted());
     categoriesBloc = CategoriesBloc(
         userRepository: authenticationBloc.userRepository, categoriesRepository: CategoriesRepository())
-      ..add(ApplicationEnter());
+      ..add(const ApplicationEntered());
     super.initState();
   }
 

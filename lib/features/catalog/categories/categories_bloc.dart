@@ -2,8 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/categories_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/categories.dart';
-import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
-import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
 class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
   final CategoriesRepository categoriesRepository;
@@ -12,12 +10,12 @@ class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
     required this.userRepository,
     required this.categoriesRepository,
   }) : super(CategoriesInitial()) {
-    on<ApplicationEnter>(_categoriesLoad);
-    // on<CategoryRequest>(_categoriesLoad);
+    on<ApplicationEntered>(_categoriesLoad);
+    on<CategoryChange>(_setCategory);
   }
 
   Future<void> _categoriesLoad(
-    ApplicationEnter event,
+    ApplicationEntered event,
     Emitter<CategoriesState> emitter,
   ) async {
     emitter(CategoriesLoading());
@@ -29,12 +27,12 @@ class CategoriesBloc extends Bloc<CategoryEvent, CategoriesState> {
     }
   }
 
-  // void _logOut(
-  //   LoggedOut event,
-  //   Emitter<AuthenticationState> emitter,
-  // ) async {
-  //   emitter(AuthenticationLoading());
-  //   await userRepository.deleteToken();
-  //   emitter(AuthenticationUnauthenticated());
-  // }
+  void _setCategory(
+    CategoryChange event,
+    Emitter<CategoriesState> emitter,
+  ) {
+    if (state is CategoriesLoaded) {
+      emitter((state as CategoriesLoaded).setCategory(event.category));
+    }
+  }
 }

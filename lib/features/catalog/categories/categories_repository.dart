@@ -5,7 +5,7 @@ import 'model/model.dart';
 
 class CategoriesRepository {
   Future<List<CatalogCategory>>? getCategories({required String token}) async {
-    await Future.delayed(const Duration(milliseconds: 1500));
+    await Future.delayed(const Duration(milliseconds: 11111));
     var list = List.generate(
       9,
       (index) => CatalogCategory(
@@ -23,7 +23,7 @@ class CategoriesRepository {
   }
 
   Future<List<CatalogCategory>> getInheritedCategories({required CatalogCategory category}) async {
-    await Future.delayed(const Duration(milliseconds: 1500));
+    await Future.delayed(const Duration(milliseconds: 1111));
     return category.inheritedCategories;
   }
 }
