@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/authentication.dart';
-import 'package:flutter_bloc_template/features/products/products_bloc.dart';
-import 'package:flutter_bloc_template/features/products/products_repository.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
 import 'app/routes/routes.dart';
 import 'app/theme/theme.dart';

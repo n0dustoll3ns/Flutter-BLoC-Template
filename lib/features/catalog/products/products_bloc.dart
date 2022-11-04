@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
-import 'package:flutter_bloc_template/features/products/model/product.dart';
-import 'package:flutter_bloc_template/features/products/products_repository.dart';
+import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
 import 'products.dart';
 

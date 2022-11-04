@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/authentication.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/categories/catagories.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/catalog/components/quick_filters.dart';
 
 import '../../../../app/routes/constants.dart';
@@ -36,12 +37,12 @@ class CatalogRoot extends StatelessWidget {
           }),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
+      body: ListView.custom(
+        childrenDelegate: SliverChildListDelegate(
+          [
             QuickFilters(onFilterChange: (quickFilter) {}),
-            ChaptersHorizontalView(),
+            const ChaptersHorizontalView(),
+            const Categories(),
           ],
         ),
       ),
