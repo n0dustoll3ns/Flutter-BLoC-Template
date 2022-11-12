@@ -4,17 +4,17 @@ import 'package:flutter_bloc_template/features/catalog/categories/model/model.da
 
 import '../../../../features/catalog/categories/categories.dart';
 import '../../../../features/catalog/categories/categories_bloc.dart';
-import '../catalog.dart';
+import '../catalog_page.dart';
 
 class CategoryCard extends StatelessWidget {
-  final CatalogCategory category;
+  final Category category;
   const CategoryCard({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Category(category: category)));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CatalogPage()));
       },
       isThreeLine: true,
       leading: category.img.isEmpty ? const Icon(Icons.question_mark_rounded) : Image.network(category.img),

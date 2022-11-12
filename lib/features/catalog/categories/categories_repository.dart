@@ -1,35 +1,44 @@
-import 'package:flutter_bloc_template/ui/screens/catalog/catalog.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 import 'model/model.dart';
 
 class CategoriesRepository {
-  Future<List<CatalogCategory>>? getCategories({required String token}) async {
+  Future<Category>? getRootCategory({required String token}) async {
+    await Future.delayed(const Duration(milliseconds: 1111));
+    var res = Category(
+      name: 'Root Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
+      description: lorem(paragraphs: 1, words: 9),
+    );
+    res.inheritedCategories = await getInheritedCategories(token: token, category: res);
+
+    return res;
+  }
+
+  Future<List<Category>>? getCategories({required String token}) async {
     await Future.delayed(const Duration(milliseconds: 11111));
     var list = List.generate(
       9,
-      (index) => CatalogCategory(
-        name: 'Root Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
-        description: lorem(paragraphs: 1, words: 9),
-      )..inheritedCategories = List.generate(
-          6,
-          (index) => CatalogCategory(
-            name: 'Secondary Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
-            description: lorem(paragraphs: 1, words: 9),
-          )..inheritedCategories = List.generate(
-              3,
-              (index) => CatalogCategory(
-                name: 'Third level category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
-                description: lorem(paragraphs: 1, words: 9),
-              ),
-            ),
-        ),
+      (index) {
+        return Category(
+          name: 'Root Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
+          description: lorem(paragraphs: 1, words: 9),
+        );
+      },
     );
     return list;
   }
 
-  Future<List<CatalogCategory>> getInheritedCategories({required CatalogCategory category}) async {
+  Future<List<Category>> getInheritedCategories({required String token, required Category category}) async {
     await Future.delayed(const Duration(milliseconds: 1111));
-    return category.inheritedCategories;
+    var list = List.generate(
+      9,
+      (index) {
+        return Category(
+          name: 'Root Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
+          description: lorem(paragraphs: 1, words: 9),
+        );
+      },
+    );
+    return list;
   }
 }

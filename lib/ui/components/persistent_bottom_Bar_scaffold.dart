@@ -51,7 +51,7 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
               widget.items[index].navigatorkey?.currentState?.popUntil((route) => route.isFirst);
             } else {
               setState(() {
-                _tabController.index = (index);
+                _tabController.index =(index);
               });
             }
           },

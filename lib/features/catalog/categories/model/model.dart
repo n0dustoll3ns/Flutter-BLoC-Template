@@ -1,12 +1,13 @@
-import 'package:flutter_lorem/flutter_lorem.dart';
+import '../../products/model/product.dart';
 
-class CatalogCategory {
-  List<CatalogCategory> inheritedCategories = [];
+class Category {
+  List<Category> inheritedCategories = [];
   final String name;
   final String description;
   final String? _img;
+  final List<Product> productList = [];
 
-  CatalogCategory({
+  Category({
     String? img,
     required this.name,
     required this.description,

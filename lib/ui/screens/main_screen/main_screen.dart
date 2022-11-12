@@ -8,7 +8,7 @@ import '../../../features/authentication/authentication.dart';
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/catalog/categories/categories_bloc.dart';
 import '../../components/persistent_bottom_Bar_scaffold.dart';
-import '../catalog/catalog.dart';
+import '../catalog/catalog_page.dart';
 import 'cart/cart.dart';
 import 'favourite/favourites.dart';
 import 'home/home.dart';
@@ -35,13 +35,7 @@ class MainScreen extends StatelessWidget {
             PersistentTabItem(
                 tab: const Home(), icon: Icons.home, title: 'Home', navigatorkey: _itemsKeys[0]),
             PersistentTabItem(
-                tab: Category(
-                  category: null,
-                  key: ValueKey('awef'),
-                ),
-                icon: Icons.menu,
-                title: 'Category',
-                navigatorkey: _itemsKeys[1]),
+                tab: CatalogPage(), icon: Icons.menu, title: 'Category', navigatorkey: _itemsKeys[1]),
             PersistentTabItem(
                 tab: const Cart(),
                 icon: Icons.shopping_cart_outlined,

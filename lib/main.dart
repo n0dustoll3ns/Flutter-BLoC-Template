@@ -36,7 +36,7 @@ class _AppState extends State<App> {
     authenticationBloc.add(AppStarted());
     categoriesBloc = CategoriesBloc(
         userRepository: authenticationBloc.userRepository, categoriesRepository: CategoriesRepository())
-      ..add(const ApplicationEntered());
+      ..add(const ApplicationStarted());
     super.initState();
   }
 

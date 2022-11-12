@@ -2,19 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-abstract class Product {
+class Product {
   final String name;
   final IconData img;
 
   Product({required this.name}) : img = icons[Random().nextInt(icons.length - 1)];
-}
-
-class Perfumery extends Product {
-  Perfumery({required super.name});
-}
-
-class Cloth extends Product {
-  Cloth({required super.name});
 }
 
 const List<IconData> icons = [

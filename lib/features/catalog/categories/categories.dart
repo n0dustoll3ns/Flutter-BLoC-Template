@@ -2,44 +2,57 @@
 
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
-abstract class CategoriesState {
-  final List<CatalogCategory> categories;
-
-  CategoriesState({required this.categories});
+abstract class CatalogState {
+  CatalogState();
 }
 
-class CategoriesInitial extends CategoriesState {
-  CategoriesInitial({required super.categories});
+class CategoryInitial extends CatalogState {
+  CategoryInitial();
 }
 
-class CategoriesLoading extends CategoriesState {
-  CategoriesLoading({required super.categories});
+class CategoryLoading extends CatalogState {
+  CategoryLoading();
 }
 
-class CategoriesLoadFailure extends CategoriesState {
+class CategoryLoadFailure extends CatalogState {
   final String error;
 
-  CategoriesLoadFailure({required this.error, required super.categories});
+  CategoryLoadFailure({required this.error});
 
   @override
   String toString() => 'CategoryFailure { error: $error }';
 }
 
-class CategoriesLoaded extends CategoriesState {
-  CategoriesLoaded({required super.categories});
+class CategoryLoaded extends CatalogState {
+  final Category category;
+  CategoryLoaded({required this.category});
 }
 
 /* ---  Events   --- */
 
-abstract class CategoryEvent {
-  const CategoryEvent();
+abstract class CatalogEvent {
+  const CatalogEvent();
 }
 
-class ApplicationEntered extends CategoryEvent {
+class ApplicationStarted extends CatalogEvent {
   // final int skipCount;
 
-  const ApplicationEntered();
+  const ApplicationStarted();
 
   @override
   String toString() => 'Products requested.';
+}
+
+class ProductsRequest extends CatalogEvent {
+  // final int skipCount;
+
+  const ProductsRequest();
+
+  @override
+  String toString() => 'Products requested.';
+}
+
+class CategoryPageEnter extends CatalogEvent {
+  Category category;
+  CategoryPageEnter({required this.category});
 }

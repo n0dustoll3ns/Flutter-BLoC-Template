@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/catalog/products/products.dart';
-import 'package:flutter_bloc_template/features/catalog/products/products_bloc.dart';
-import 'package:flutter_bloc_template/ui/screens/catalog/product_list/components/product_card.dart';
-import 'package:flutter_bloc_template/ui/styles/constants.dart';
-import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
+import '../../../../features/catalog/categories/model/model.dart';
+import '../../../../features/catalog/products/products.dart';
+import '../../../../features/catalog/products/products_bloc.dart';
+import '../../../styles/constants.dart';
+import '../../../widgets/loading_indicator.dart';
+import 'components/product_card.dart';
 
 class ProductList extends StatefulWidget {
-  const ProductList({super.key});
+  final Category? category;
+  const ProductList({super.key, this.category});
 
   @override
   State<ProductList> createState() => _ProductListState();
@@ -15,66 +17,37 @@ class ProductList extends StatefulWidget {
 
 class _ProductListState extends State<ProductList> {
   late ProductsBloc productsBloc;
-  final ScrollController _scrollController = ScrollController();
   bool loadingDialogOpened = false;
+
   @override
   void initState() {
     productsBloc = context.read<ProductsBloc>();
-    _scrollController.addListener(_scrollListener);
-    productsBloc.add(ProductsPageEnter());
     super.initState();
   }
 
   @override
-  Widget build(BuildContext context) {
-    return BlocConsumer<ProductsBloc, ProductsState>(
-        bloc: context.read<ProductsBloc>(),
-        listener: (context, state) {
-          if (loadingDialogOpened) {
-            loadingDialogOpened = false;
-            Navigator.of(context).pop();
-          }
-          if (state is ProductsLoading) {
-            loadingDialogOpened = true;
-            showCupertinoModalPopup<void>(
-              context: context,
-              builder: (BuildContext context) => const CupertinoAlertDialog(
-                content: LoadingIndicator(),
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          var productsList = productsBloc.productsRepository.products;
-          return Column(
-            children: [
-              Expanded(
-                child: GridView.count(
-                  padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                  controller: _scrollController,
-                  physics: const AlwaysScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  mainAxisSpacing: kDefaultPadding,
-                  crossAxisSpacing: kDefaultPadding,
-                  children: List.generate(productsList.length,
-                      (index) => ProductCard(index: index, product: productsList[index])),
-                ),
-              ),
-            ],
-          );
-        });
-  }
-
-  void _scrollListener() {
-    if (_scrollController.offset >= _scrollController.position.maxScrollExtent &&
-        !_scrollController.position.outOfRange) {
-      productsBloc.add(const ProductsRequest());
-    }
+  void didUpdateWidget(covariant ProductList oldWidget) {
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
+  Widget build(BuildContext context) {
+    return BlocBuilder<ProductsBloc, ProductsState>(
+        bloc: context.read<ProductsBloc>(),
+        builder: (context, state) {
+          if (state is ProductsUpdated) {
+            var productsList = state.products;
+            return GridView.count(
+                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: kDefaultPadding,
+                crossAxisSpacing: kDefaultPadding,
+                children: List<Widget>.generate(
+                    productsList.length, (index) => ProductCard(index: index, product: productsList[index])));
+          }
+          return (const Center(child: Padding(padding: EdgeInsets.all(8.0), child: LoadingIndicator())));
+        });
   }
 }
