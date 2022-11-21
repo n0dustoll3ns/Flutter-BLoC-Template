@@ -15,12 +15,11 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var categoriesBloc = context.read<CategoriesBloc>();
-    categoriesBloc.add(CategoryPageEnter(category: category));
     return BlocBuilder<CategoriesBloc, CatalogState>(builder: (context, state) {
       if (state is CategoryLoading) {
         return const LoadingIndicator();
       } else if (state is CategoryLoadFailure) {
-        return ErrorBlock(
+        return ErrorBox(
           message: state.error,
         );
       } else if (state is CategoryLoaded) {
@@ -34,7 +33,7 @@ class Categories extends StatelessWidget {
           ),
         );
       }
-      return const ErrorBlock();
+      return const ErrorBox();
     });
   }
 }

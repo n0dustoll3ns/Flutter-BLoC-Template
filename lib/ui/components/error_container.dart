@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ErrorBlock extends StatelessWidget {
+class ErrorBox extends StatelessWidget {
   final String message;
-  const ErrorBlock({super.key, String? message}) : message = message ?? 'Unknown error';
+  const ErrorBox({super.key, String? message}) : message = message ?? 'Unknown error';
 
   @override
   Widget build(BuildContext context) {

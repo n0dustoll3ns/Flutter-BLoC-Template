@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import '../../../../features/catalog/categories/model/model.dart';
 import '../../../../features/catalog/products/products.dart';
 import '../../../../features/catalog/products/products_bloc.dart';
@@ -20,34 +21,29 @@ class _ProductListState extends State<ProductList> {
   bool loadingDialogOpened = false;
 
   @override
-  void initState() {
-    productsBloc = context.read<ProductsBloc>();
-    super.initState();
-  }
-
-  @override
-  void didUpdateWidget(covariant ProductList oldWidget) {
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsBloc, ProductsState>(
         bloc: context.read<ProductsBloc>(),
         builder: (context, state) {
-          if (state is ProductsUpdated) {
-            var productsList = state.products;
-            return GridView.count(
-                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                mainAxisSpacing: kDefaultPadding,
-                crossAxisSpacing: kDefaultPadding,
-                children: List<Widget>.generate(
-                    productsList.length, (index) => ProductCard(index: index, product: productsList[index])));
+          if (state is ProductsFailure) {
+            return ErrorBox(message: state.error);
           }
-          return (const Center(child: Padding(padding: EdgeInsets.all(8.0), child: LoadingIndicator())));
+          var productsList = state.products;
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GridView.count(
+                  padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  mainAxisSpacing: kDefaultPadding,
+                  crossAxisSpacing: kDefaultPadding,
+                  children: List<Widget>.generate(productsList.length,
+                      (index) => ProductCard(index: index, product: productsList[index]))),
+              if (state is ProductsLoading) const LoadingIndicator(),
+            ],
+          );
         });
   }
 }

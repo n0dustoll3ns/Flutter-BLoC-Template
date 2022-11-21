@@ -21,7 +21,7 @@ class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
     CategoryPageEnter event,
     Emitter<ProductsState> emitter,
   ) async {
-    emitter(ProductsLoading());
+    emitter(ProductsLoading(products: []));
     bool noError = true;
     var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
     if (noError) {
@@ -35,15 +35,15 @@ class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
     ProductsRequest event,
     Emitter<ProductsState> emitter,
   ) async {
-    emitter(ProductsLoading());
+    List<Product> delta = [];
+    if (state is ProductsUpdated) {
+      delta.addAll((state as ProductsUpdated).products);
+    }
+    emitter(ProductsLoading(products: delta));
     bool noError = true;
     if (noError) {
-      List<Product> delta = [];
-      if (state is ProductsUpdated) {
-        delta.addAll((state as ProductsUpdated).products);
-      }
       var res = await productsRepository.getProductList(token: userRepository.token, skipCount: delta.length);
-      emitter(ProductsUpdated(products: res + delta));
+      emitter(ProductsUpdated(products: delta + res));
     } else {
       emitter(ProductsFailure(error: 'error loading products'));
     }

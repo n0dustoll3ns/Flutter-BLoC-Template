@@ -1,28 +1,31 @@
 /* ---  States   --- */
 
-import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 
 abstract class ProductsState {
-  const ProductsState();
+  List<Product> products;
+  ProductsState({required this.products});
 }
 
-class ProductsInitial extends ProductsState {}
+class ProductsInitial extends ProductsState {
+  ProductsInitial() : super(products: []);
+}
 
-class ProductsLoading extends ProductsState {}
+class ProductsLoading extends ProductsState {
+  ProductsLoading({required super.products});
+}
 
 class ProductsFailure extends ProductsState {
   final String error;
 
-  const ProductsFailure({required this.error});
+  ProductsFailure({required this.error}) : super(products: []);
 
   @override
   String toString() => 'LoginFailure { error: $error }';
 }
 
 class ProductsUpdated extends ProductsState {
-  List<Product> products;
-  ProductsUpdated({required this.products});
+  ProductsUpdated({required super.products});
 }
 
 /* ---  Events   --- */

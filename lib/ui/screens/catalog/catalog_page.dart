@@ -74,16 +74,16 @@ class _CatalogPageState extends State<CatalogPage> {
           ],
         ),
         body: (state is CategoryLoaded)
-            ? ListView.custom(
+            ? ListView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
                 controller: _scrollController,
-                childrenDelegate: SliverChildListDelegate(
-                  [
-                    QuickFilters(onFilterChange: (quickFilter) {}),
-                    const ChaptersHorizontalView(),
-                    Categories(category: state.category),
-                    ProductList(category: state.category),
-                  ],
-                ),
+                children: [
+                  QuickFilters(onFilterChange: (quickFilter) {}),
+                  const ChaptersHorizontalView(),
+                  Categories(category: state.category),
+                  ProductList(category: state.category),
+                ],
               )
             : const LoadingIndicator(),
       );
@@ -97,9 +97,9 @@ class _CatalogPageState extends State<CatalogPage> {
     }
   }
 
-  // @override
-  // void dispose() {
-  //   _scrollController.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 }
