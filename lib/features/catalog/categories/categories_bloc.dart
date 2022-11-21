@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/categories_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/categories.dart';
-import 'package:flutter_bloc_template/features/catalog/products/products.dart';
 
 class CategoriesBloc extends Bloc<CatalogEvent, CatalogState> {
   final CategoriesRepository categoriesRepository;

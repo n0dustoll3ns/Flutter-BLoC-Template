@@ -75,7 +75,7 @@ class _CatalogPageState extends State<CatalogPage> {
         ),
         body: (state is CategoryLoaded)
             ? ListView(
-                physics: const AlwaysScrollableScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 controller: _scrollController,
                 children: [
