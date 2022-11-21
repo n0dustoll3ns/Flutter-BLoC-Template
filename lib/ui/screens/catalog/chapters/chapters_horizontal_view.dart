@@ -1,6 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/chapters/chapter_card.dart';
 import 'package:flutter_bloc_template/ui/styles/constants.dart';
 

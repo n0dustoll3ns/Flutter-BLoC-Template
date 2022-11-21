@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc_template/features/chapter/model.dart';
 import 'package:flutter_bloc_template/ui/styles/constants.dart';
 
@@ -26,7 +23,7 @@ class ChapterCard extends StatelessWidget {
               children: [
                 //TODO Replace icon with standart 404 notFoundImage
                 if (chapter.img.isEmpty)
-                  Opacity(opacity: 0.33, child: FittedBox(child: Icon(Icons.question_mark_rounded))),
+                  const Opacity(opacity: 0.33, child: FittedBox(child: Icon(Icons.question_mark_rounded))),
                 if (chapter.img.isNotEmpty) Image.network(chapter.img),
                 Align(alignment: Alignment.bottomLeft, child: Text(chapter.name)),
               ],

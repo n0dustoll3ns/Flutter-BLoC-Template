@@ -13,5 +13,7 @@ class Category {
     required this.description,
   }) : _img = img;
 
+  Category.defaulta():_img='', name = 'default_category', description = '';
+
   String get img => _img ?? '';
 }

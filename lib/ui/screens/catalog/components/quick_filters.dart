@@ -19,8 +19,8 @@ class _QuickFiltersState extends State<QuickFilters> {
     return SizedBox(
       height: 55,
       child: ListView.separated(
-        separatorBuilder: (context, index) => SizedBox(width: kDefaultPadding),
-        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),
+        separatorBuilder: (context, index) => const SizedBox(width: kDefaultPadding),
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),
         scrollDirection: Axis.horizontal,
         itemCount: quickFilters.length,
         itemBuilder: (context, index) => QuickFilter(

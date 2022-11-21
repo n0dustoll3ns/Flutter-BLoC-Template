@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../features/authentication/auth_bloc.dart';
 import '../features/authentication/authentication.dart';
 import '../features/authentication/user_repository.dart';
-import '../features/catalog/categories/categories.dart';
 import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
@@ -22,13 +21,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     AuthenticationBloc authenticationBloc;
     CategoriesBloc categoriesBloc;
-    bool dialogIsShown = false;
 
     authenticationBloc = AuthenticationBloc(userRepository: UserRepository());
     authenticationBloc.add(AppStarted());
     categoriesBloc = CategoriesBloc(
-        userRepository: authenticationBloc.userRepository, categoriesRepository: CategoriesRepository())
-      ..add(const ApplicationStarted());
+        userRepository: authenticationBloc.userRepository, categoriesRepository: CategoriesRepository());
 
     return MultiBlocProvider(
       providers: [

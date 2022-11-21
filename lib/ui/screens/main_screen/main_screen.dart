@@ -19,7 +19,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _itemsKeys = List.generate(5, (index) => GlobalKey<NavigatorState>());
+    final itemsKeys = List.generate(5, (index) => GlobalKey<NavigatorState>());
     final categoriesState = context.read<CategoriesBloc>().state;
 
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(
@@ -33,24 +33,27 @@ class MainScreen extends StatelessWidget {
         return PersistentBottomBarScaffold(
           items: <PersistentTabItem>[
             PersistentTabItem(
-                tab: const Home(), icon: Icons.home, title: 'Home', navigatorkey: _itemsKeys[0]),
+                tab: const Home(), icon: Icons.home, title: 'Home', navigatorkey: itemsKeys[0]),
             PersistentTabItem(
-                tab: CatalogPage(), icon: Icons.menu, title: 'Category', navigatorkey: _itemsKeys[1]),
+                tab: CatalogPage(category: categoriesState.category),
+                icon: Icons.menu,
+                title: 'Category',
+                navigatorkey: itemsKeys[1]),
             PersistentTabItem(
                 tab: const Cart(),
                 icon: Icons.shopping_cart_outlined,
                 title: 'Cart',
-                navigatorkey: _itemsKeys[2]),
+                navigatorkey: itemsKeys[2]),
             PersistentTabItem(
                 tab: const Favourites(),
                 icon: CupertinoIcons.heart,
                 title: 'Favourites',
-                navigatorkey: _itemsKeys[3]),
+                navigatorkey: itemsKeys[3]),
             PersistentTabItem(
                 tab: const UserProfile(),
                 icon: Icons.person_outline_rounded,
                 title: 'UserProfile',
-                navigatorkey: _itemsKeys[4]),
+                navigatorkey: itemsKeys[4]),
           ],
         );
       },
