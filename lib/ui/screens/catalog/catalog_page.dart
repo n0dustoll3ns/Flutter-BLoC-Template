@@ -29,9 +29,8 @@ class _CatalogPageState extends State<CatalogPage> {
 
   @override
   void initState() {
-    productsBloc = context.read<ProductsBloc>();
-    categoriesBloc = context.read<CategoriesBloc>();
-    categoriesBloc.add(CategoryPageEnter(category: widget.category));
+    productsBloc = context.read<ProductsBloc>()..add(CategoryPageEnter(category: widget.category));
+    categoriesBloc = context.read<CategoriesBloc>()..add(CategoryPageEnter(category: widget.category));
     category = widget.category;
     _scrollController.addListener(_scrollListener);
     super.initState();

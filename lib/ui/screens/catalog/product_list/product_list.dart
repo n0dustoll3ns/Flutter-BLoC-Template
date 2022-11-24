@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import '../../../../features/catalog/categories/model/model.dart';
 import '../../../../features/catalog/products/products.dart';
@@ -18,6 +19,7 @@ class ProductList extends StatefulWidget {
 
 class _ProductListState extends State<ProductList> {
   late ProductsBloc productsBloc;
+  List<Product> products = [];
   bool loadingDialogOpened = false;
 
   @override
@@ -28,7 +30,7 @@ class _ProductListState extends State<ProductList> {
           if (state is ProductsFailure) {
             return ErrorBox(message: state.error);
           }
-          var productsList = state.products;
+          products = state.products;
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -39,8 +41,8 @@ class _ProductListState extends State<ProductList> {
                   crossAxisCount: 2,
                   mainAxisSpacing: kDefaultPadding,
                   crossAxisSpacing: kDefaultPadding,
-                  children: List<Widget>.generate(productsList.length,
-                      (index) => ProductCard(index: index, product: productsList[index]))),
+                  children: List<Widget>.generate(
+                      products.length, (index) => ProductCard(index: index, product: products[index]))),
               if (state is ProductsLoading) const LoadingIndicator(),
             ],
           );
