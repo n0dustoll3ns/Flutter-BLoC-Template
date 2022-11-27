@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
 import '../features/authentication/states.dart';
-import '../features/authentication/user_repository.dart';
 import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
-import '../features/catalog/products/products_repository.dart';
 import '../features/login/login_bloc.dart';
 import '../ui/screens/login_screen/login_screen.dart';
 import '../ui/screens/splash_screen.dart';
@@ -19,27 +18,26 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AuthenticationBloc authenticationBloc;
-    CategoriesBloc categoriesBloc;
-
-    authenticationBloc = AuthenticationBloc(userRepository: UserRepository());
+    var authenticationBloc = AuthenticationBloc();
     authenticationBloc.add(AppStarted());
-    categoriesBloc = CategoriesBloc(
+    var categoriesBloc = CategoriesBloc(
         userRepository: authenticationBloc.userRepository, categoriesRepository: CategoriesRepository());
-
+    var userBloc = UserBloc();
     return MultiBlocProvider(
       providers: [
-        BlocProvider<AuthenticationBloc>(create: ((context) => authenticationBloc)),
+        BlocProvider<AuthenticationBloc>(create: (context) => authenticationBloc),
         BlocProvider<ProductsBloc>(
-            create: ((context) => ProductsBloc(
-                userRepository: authenticationBloc.userRepository,
-                productsRepository: ProductsRepository()))),
+            create: (context) => ProductsBloc(
+                  userRepository: authenticationBloc.userRepository,
+                )),
         BlocProvider<CategoriesBloc>(create: ((context) => categoriesBloc)),
         BlocProvider<LoginBloc>(
-            create: ((context) => LoginBloc(
+            create: (context) => LoginBloc(
                   userRepository: authenticationBloc.userRepository,
                   authenticationBloc: authenticationBloc,
-                ))),
+                  userBloc: userBloc,
+                )),
+        BlocProvider(create: (_) => userBloc),
       ],
       child: MaterialApp(
         theme: theme,

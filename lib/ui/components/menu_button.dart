@@ -13,7 +13,7 @@ class MenuButton extends StatelessWidget {
       return [
         PopupMenuItem<Function>(
           value: () {},
-          child: const Text("My Account"),
+          child: const Text("Notifications"),
         ),
         PopupMenuItem<Function>(
           value: () {},

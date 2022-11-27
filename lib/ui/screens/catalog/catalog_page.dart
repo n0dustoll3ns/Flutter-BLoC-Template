@@ -60,7 +60,7 @@ class _CatalogPageState extends State<CatalogPage> {
           children: [
             QuickFilters(onFilterChange: (quickFilter) {}),
             const ChaptersHorizontalView(),
-            Categories(),
+            const Categories(),
             ProductList(category: category),
           ],
         ));

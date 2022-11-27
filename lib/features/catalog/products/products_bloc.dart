@@ -7,11 +7,10 @@ import 'model/product.dart';
 import 'states.dart';
 
 class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
-  final ProductsRepository productsRepository;
+  final ProductsRepository productsRepository = ProductsRepository();
   final UserRepository userRepository;
   ProductsBloc({
     required this.userRepository,
-    required this.productsRepository,
   }) : super(ProductsInitial()) {
     on<CategoryPageEnter>(_refreshProductsList);
     on<ProductsRequest>(_loadMoreProducts);

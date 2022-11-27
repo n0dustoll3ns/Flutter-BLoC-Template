@@ -1,3 +1,5 @@
+import 'package:flutter_bloc_template/features/user/states.dart';
+
 class UserRepository {
   String token = '';
 
@@ -25,5 +27,18 @@ class UserRepository {
     /// read from keystore/keychain
     await Future.delayed(const Duration(seconds: 1));
     return false;
+  }
+
+  Future<UserData> personalDataRequest(String token) async {
+    /// read user data
+    await Future.delayed(const Duration(seconds: 3));
+    return UserData(
+        userLogin: 'Max12345',
+        firstName: 'Maxim',
+        lastName: 'Krivosheun',
+        email: 'Krivoshein_max12@gmail.com',
+        mobile: 89252554321,
+        bDay: DateTime(1987, 12, 1),
+        customerStatus: Status.silver);
   }
 }
