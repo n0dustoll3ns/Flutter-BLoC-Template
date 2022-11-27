@@ -1,9 +1,10 @@
+import 'dart:math';
+
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/banner_slider.dart';
 
 import '../../../../app/routes/constants.dart';
-import '../../../../features/authentication/auth_bloc.dart';
-import '../../../../features/authentication/states.dart';
 import '../../../components/menu_button.dart';
 
 class Home extends StatefulWidget {
@@ -14,13 +15,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late final AuthenticationBloc authBloc;
-  @override
-  void initState() {
-    authBloc = context.read<AuthenticationBloc>();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +22,9 @@ class _HomeState extends State<Home> {
         title: Text(mainPageSections[0]),
         actions: const [MenuButton()],
       ),
-      body: const Center(child: Text("home")),
+      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        const BannerSlider(),
+      ]),
     );
-  }
-
-  void logout() {
-    authBloc.add(LoggedOut());
   }
 }
