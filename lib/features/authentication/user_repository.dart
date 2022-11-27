@@ -41,4 +41,17 @@ class UserRepository {
         bDay: DateTime(1987, 12, 1),
         customerStatus: Status.silver);
   }
+
+  Future<UserData> personalDataEdit(String token, UserData newUserData) async {
+    var res = UserData(
+        userLogin: newUserData.userLogin,
+        firstName: newUserData.firstName,
+        lastName: newUserData.lastName,
+        email: newUserData.email,
+        mobile: newUserData.mobile,
+        bDay: newUserData.bDay,
+        customerStatus: newUserData.customerStatus);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    return res;
+  }
 }

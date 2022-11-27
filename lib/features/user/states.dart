@@ -39,6 +39,12 @@ class Authorized extends UserEvent {
   String toString() => 'UserButtonPressed {}';
 }
 
+class EditUserDataButtonPressed extends UserEvent {
+  final String token;
+  final UserData newUserData;
+  EditUserDataButtonPressed({required this.token, required this.newUserData});
+}
+
 class UserData {
   final String userLogin;
   String firstName;

@@ -4,7 +4,10 @@ abstract class AuthenticationState {}
 
 class AuthenticationUninitialized extends AuthenticationState {}
 
-class AuthenticationAuthenticated extends AuthenticationState {}
+class AuthenticationAuthenticated extends AuthenticationState {
+  String token;
+  AuthenticationAuthenticated({required this.token});
+}
 
 class AuthenticationUnauthenticated extends AuthenticationState {}
 
@@ -35,5 +38,3 @@ class LoggedOut extends AuthenticationEvent {
   @override
   String toString() => 'LoggedOut';
 }
-
-

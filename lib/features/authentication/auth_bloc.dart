@@ -18,7 +18,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   ) async {
     final bool hasToken = await userRepository.hasToken();
     if (hasToken) {
-      emitter(AuthenticationAuthenticated());
+      emitter(AuthenticationAuthenticated(token: ''));
     } else {
       emitter(AuthenticationUnauthenticated());
     }
@@ -30,7 +30,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   ) {
     emitter(AuthenticationLoading());
     userRepository.persistToken(event.token);
-    emitter(AuthenticationAuthenticated());
+    emitter(AuthenticationAuthenticated(token: event.token));
   }
 
   void _logOut(
