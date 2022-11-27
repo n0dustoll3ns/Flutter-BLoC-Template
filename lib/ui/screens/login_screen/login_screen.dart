@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../app/routes/routes.dart';
 import '../../../features/authentication/auth_bloc.dart';
-import '../../../features/authentication/authentication.dart';
+import '../../../features/authentication/states.dart';
 import 'components/login_form.dart';
 
 class LoginPage extends StatefulWidget {

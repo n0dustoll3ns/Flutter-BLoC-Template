@@ -2,9 +2,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
-import '../categories/categories.dart';
+import '../categories/states.dart';
 import 'model/product.dart';
-import 'products.dart';
+import 'states.dart';
 
 class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
   final ProductsRepository productsRepository;

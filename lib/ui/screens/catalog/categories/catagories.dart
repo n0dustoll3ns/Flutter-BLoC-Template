@@ -5,7 +5,7 @@ import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/categories/category_card.dart';
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 
-import '../../../../features/catalog/categories/categories.dart';
+import '../../../../features/catalog/categories/states.dart';
 
 class Categories extends StatelessWidget {
   const Categories({super.key});

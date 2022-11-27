@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../authentication/auth_bloc.dart';
-import '../authentication/authentication.dart';
-import 'login.dart';
+import '../authentication/states.dart';
+import 'states.dart';
 import '../authentication/user_repository.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {

@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
-import '../../../features/authentication/authentication.dart';
-import '../../../features/catalog/categories/categories.dart';
+import '../../../features/authentication/states.dart';
+import '../../../features/catalog/categories/states.dart';
 import '../../../features/catalog/categories/categories_bloc.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import 'categories/catagories.dart';

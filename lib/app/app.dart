@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
-import '../features/authentication/authentication.dart';
+import '../features/authentication/states.dart';
 import '../features/authentication/user_repository.dart';
 import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';

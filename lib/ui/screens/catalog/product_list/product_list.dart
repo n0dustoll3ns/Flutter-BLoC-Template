@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import '../../../../features/catalog/categories/model/model.dart';
-import '../../../../features/catalog/products/products.dart';
+import '../../../../features/catalog/products/states.dart';
 import '../../../../features/catalog/products/products_bloc.dart';
 import '../../../styles/constants.dart';
 import '../../../widgets/loading_indicator.dart';

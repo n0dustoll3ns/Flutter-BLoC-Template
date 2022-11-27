@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../app/routes/constants.dart';
 import '../../../../features/authentication/auth_bloc.dart';
-import '../../../../features/authentication/authentication.dart';
+import '../../../../features/authentication/states.dart';
 import '../../../components/menu_button.dart';
 
 class Favourites extends StatelessWidget {
