@@ -8,7 +8,9 @@ import 'package:flutter_bloc_template/ui/screens/main_screen/user_profile/compon
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 
 import '../../../../app/routes/constants.dart';
+import '../../personal_data_screen/personal_data_screen.dart';
 import 'components/avatar.dart';
+import 'components/bonuses_info.dart';
 import 'components/learn_more_button.dart';
 
 class UserProfile extends StatelessWidget {
@@ -36,10 +38,16 @@ class UserProfile extends StatelessWidget {
             const Avatar(),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             PersonalData(userData: state.userData),
+            SizedBox(height: MediaQuery.of(context).size.height / 32),
+            BonusesInfo(userData: state.userData),
             const LearnMore(),
             const ListTile(leading: Icon(Icons.chat), title: Text('Chat with shop')),
             const Divider(),
-            const ListTile(leading: Icon(Icons.person), title: Text('Personal data')),
+            ListTile(
+                leading: Icon(Icons.person),
+                title: Text('Personal data'),
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: ((context) => PersonalDataPage(userData: state.userData))))),
             const Divider(),
             const ListTile(leading: Icon(Icons.shopping_bag_outlined), title: Text('Orders')),
             const Divider(),
