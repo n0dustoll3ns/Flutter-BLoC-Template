@@ -11,9 +11,9 @@ class BannerSlider extends StatelessWidget {
       items: List.generate(
           3,
           (index) => Column(
-                mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
+                    height: MediaQuery.of(context).size.height / 4,
                     width: MediaQuery.of(context).size.width,
                     child: Image.asset(
                       'assets/images/${index + 1}.jpg',
@@ -24,6 +24,7 @@ class BannerSlider extends StatelessWidget {
                     height: MediaQuery.of(context).size.height / 4,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Banner Headline',
@@ -43,9 +44,9 @@ class BannerSlider extends StatelessWidget {
                 ],
               )),
       options: CarouselOptions(
-        height: MediaQuery.of(context).size.height / 1.5,
-        viewportFraction: 1.0,
-        enlargeCenterPage: true,
+        height: MediaQuery.of(context).size.height / 2,
+        viewportFraction: 1,
+        // enlargeCenterPage: true,
         // autoPlay: false,
       ),
     );

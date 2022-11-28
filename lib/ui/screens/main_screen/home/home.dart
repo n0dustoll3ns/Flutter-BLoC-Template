@@ -6,6 +6,8 @@ import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/ban
 
 import '../../../../app/routes/constants.dart';
 import '../../../components/menu_button.dart';
+import 'components/secondary_banners.dart';
+import 'components/tizers.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,8 +24,10 @@ class _HomeState extends State<Home> {
         title: Text(mainPageSections[0]),
         actions: const [MenuButton()],
       ),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      body: ListView(children: [
         const BannerSlider(),
+        const SecondaryBanners(),
+        const Tizers(),
       ]),
     );
   }
