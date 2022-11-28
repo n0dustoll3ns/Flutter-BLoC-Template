@@ -8,14 +8,21 @@ class Tizers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: [
-        Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.delivery_dining_outlined)),
-        Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.co_present_rounded)),
-        Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.card_giftcard_rounded)),
-        Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.list_outlined)),
-        Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.wallet_rounded)),
-      ],
+    return Theme(
+      data: ThemeData(
+          iconTheme: IconThemeData(
+              color: Theme.of(context).primaryColor, size: MediaQuery.of(context).size.width / 7)),
+      child: Wrap(
+        runSpacing: MediaQuery.of(context).size.height / 55,
+        alignment: WrapAlignment.center,
+        children: [
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.delivery_dining_outlined)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.co_present_rounded)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.card_giftcard_rounded)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.list_outlined)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.wallet_rounded)),
+        ],
+      ),
     );
   }
 }

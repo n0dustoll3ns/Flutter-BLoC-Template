@@ -6,6 +6,7 @@ import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/ban
 
 import '../../../../app/routes/constants.dart';
 import '../../../components/menu_button.dart';
+import 'components/popular_categories.dart';
 import 'components/secondary_banners.dart';
 import 'components/tizers.dart';
 
@@ -27,7 +28,11 @@ class _HomeState extends State<Home> {
       body: ListView(children: [
         const BannerSlider(),
         const SecondaryBanners(),
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 44,
+        ),
         const Tizers(),
+        PopularCategories(),
       ]),
     );
   }

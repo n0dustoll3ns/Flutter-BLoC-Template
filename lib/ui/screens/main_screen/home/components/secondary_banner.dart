@@ -22,7 +22,7 @@ class SecondaryBanner extends StatelessWidget {
                     begin: FractionalOffset.center,
                     end: FractionalOffset.bottomCenter,
                     colors: [Colors.transparent, Colors.black],
-                    stops: [0.0, 1.0])),
+                    stops: [0.2, 1.0])),
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,

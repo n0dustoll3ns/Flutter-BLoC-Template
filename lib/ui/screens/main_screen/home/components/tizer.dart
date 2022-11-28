@@ -13,8 +13,11 @@ class Tizer extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           icon,
-          Text('data', style: Theme.of(context).textTheme.headline5),
-          Text(text),
+          Text('Title', style: Theme.of(context).textTheme.headline5),
+          Text(
+            text,
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );
