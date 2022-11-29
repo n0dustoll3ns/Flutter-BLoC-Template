@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/banner_slider.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/offers.dart';
 
 import '../../../../app/routes/constants.dart';
 import '../../../components/menu_button.dart';
@@ -28,11 +29,13 @@ class _HomeState extends State<Home> {
       body: ListView(children: [
         const BannerSlider(),
         const SecondaryBanners(),
-        SizedBox(
-          height: MediaQuery.of(context).size.height / 44,
-        ),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
         const Tizers(),
-        PopularCategories(),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
+        const PopularCategories(),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
+        const BestOffers(),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
       ]),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/categories_bloc.dart';
-import 'package:flutter_bloc_template/ui/screens/catalog/categories/catagories.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/category_tile.dart';
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 
@@ -21,11 +20,14 @@ class PopularCategories extends StatelessWidget {
         children: [
           Text(
             'Popular Categories',
-            style: Theme.of(context).textTheme.headline3,
+            style: Theme.of(context).textTheme.headline4,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Wrap(
+            child: GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
               children: List.generate(5, (index) => CategoryTile(category: categories[index])),
             ),
           )

@@ -7,13 +7,22 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.grey.withOpacity(0.3)),
-      child: Padding(
-        padding: EdgeInsets.all(12),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [Icon(Icons.dark_mode), Text(category.name)],
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(width: 0.7, color: Colors.grey.withOpacity(0.3)),
+            color: Colors.grey.withOpacity(0.06)),
+        child: Padding(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Icon(Icons.dark_mode, size: MediaQuery.of(context).size.width / 3),
+              Text(category.name),
+            ],
+          ),
         ),
       ),
     );
