@@ -35,9 +35,12 @@ class ProductOfTheDay extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(
-                  product.img,
-                  size: MediaQuery.of(context).size.width * 0.8,
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Icon(
+                    product.img,
+                    size: MediaQuery.of(context).size.width * 0.8,
+                  ),
                 ),
                 Row(
                   children: [

@@ -35,6 +35,8 @@ class OfferTile extends StatelessWidget {
                   ),
                   Text(
                     product.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   ),
                   Text(
