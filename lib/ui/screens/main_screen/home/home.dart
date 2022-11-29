@@ -11,6 +11,7 @@ import '../../../../app/routes/constants.dart';
 import '../../../components/menu_button.dart';
 import 'components/popular_categories.dart';
 import 'components/product_of_the_day.dart';
+import 'components/promo_section.dart';
 import 'components/secondary_banners.dart';
 import 'components/tizers.dart';
 
@@ -39,7 +40,9 @@ class _HomeState extends State<Home> {
         SizedBox(height: MediaQuery.of(context).size.height / 44),
         const BestOffers(),
         SizedBox(height: MediaQuery.of(context).size.height / 44),
-        ProductOfTheDay(product: Product(name: lorem(paragraphs: 1, words: 4)),),
+        ProductOfTheDay(product: Product(name: lorem(paragraphs: 1, words: 4))),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
+        PromoSection(),
       ]),
     );
   }

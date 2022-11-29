@@ -11,10 +11,7 @@ class BestOffers extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          'Popular Categories',
-          style: Theme.of(context).textTheme.headline4,
-        ),
+        Text('Popular Categories', style: Theme.of(context).textTheme.headline4),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
