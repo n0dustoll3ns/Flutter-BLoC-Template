@@ -21,7 +21,7 @@ class OfferTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(child: Icon(Icons.dark_mode, size: MediaQuery.of(context).size.width / 3)),
+              Expanded(child: Icon(product.img, size: MediaQuery.of(context).size.width / 3)),
               Expanded(
                   child: Column(
                 mainAxisSize: MainAxisSize.min,
