@@ -47,7 +47,7 @@ class OfferTile extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '\$${99.99}',
+                    '\$${product.price.toStringAsFixed(2)}',
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Text(

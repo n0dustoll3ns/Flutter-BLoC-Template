@@ -44,15 +44,22 @@ class ItemCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.grey),
                   ),
-                  Text(
-                    item.name,
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.grey),
+                  Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(
+                      '\$ ${item.price.toStringAsFixed(2)}',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-          IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz_rounded)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz_rounded)),
         ],
       ),
     );

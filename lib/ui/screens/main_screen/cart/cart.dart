@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/cart/components/item_card.dart';
@@ -15,7 +16,11 @@ class Cart extends StatelessWidget {
         appBar: AppBar(
           title: Text(mainPageSections[2]),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.cleaning_services_rounded)),
+            IconButton(
+                onPressed: () {
+                  context.read<CartBloc>().add(ClearCart());
+                },
+                icon: Icon(Icons.cleaning_services_rounded)),
             MenuButton(),
           ],
         ),

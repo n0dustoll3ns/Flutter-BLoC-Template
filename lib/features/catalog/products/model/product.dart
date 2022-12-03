@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 class Product {
   final String name;
   final IconData img;
+  final double price;
 
-  Product({required this.name}) : img = icons[Random().nextInt(icons.length - 1)];
+  Product({required this.name})
+      : img = icons[Random().nextInt(icons.length - 1)],
+        price = Random().nextInt(55) + 55.99;
 }
 
 const List<IconData> icons = [
