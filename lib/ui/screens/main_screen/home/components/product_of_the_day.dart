@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../../features/catalog/products/model/product.dart';
@@ -46,7 +48,11 @@ class ProductOfTheDay extends StatelessWidget {
                   children: [
                     ElevatedButton(onPressed: () {}, child: const Icon(Icons.bar_chart_rounded)),
                     SizedBox(width: MediaQuery.of(context).size.width / 44),
-                    ElevatedButton(onPressed: () {}, child: const Icon(Icons.shopping_bag_rounded)),
+                    ElevatedButton(
+                        onPressed: () {
+                          context.read<CartBloc>().add(AddItem(item: product));
+                        },
+                        child: const Icon(Icons.shopping_bag_rounded)),
                   ],
                 ),
                 RatingBar.builder(

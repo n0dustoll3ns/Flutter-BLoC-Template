@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
@@ -38,6 +39,7 @@ class App extends StatelessWidget {
                   userBloc: userBloc,
                 )),
         BlocProvider(create: (_) => userBloc),
+        BlocProvider(create: (_) => CartBloc()),
       ],
       child: MaterialApp(
         theme: theme,

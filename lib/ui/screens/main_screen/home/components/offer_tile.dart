@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../features/cart/cart_bloc.dart';
 import '../../../../../features/catalog/products/model/product.dart';
 
 class OfferTile extends StatelessWidget {
@@ -53,7 +55,9 @@ class OfferTile extends StatelessWidget {
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<CartBloc>().add(AddItem(item: product));
+                    },
                     child: Text('Add to cart'),
                   ),
                 ],
