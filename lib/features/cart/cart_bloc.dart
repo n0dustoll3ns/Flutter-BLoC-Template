@@ -36,6 +36,9 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 /* ---  States   --- */
 abstract class CartState {
   final List<Product> items;
+
+  double get totalPrice => items.fold(0, (previousValue, element) => previousValue + element.price);
+
   CartState({required this.items});
 }
 
