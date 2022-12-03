@@ -3,7 +3,10 @@ import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/about.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/banner_slider.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/brand_tile.dart';
+import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/brands.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/offers.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
@@ -43,6 +46,11 @@ class _HomeState extends State<Home> {
         ProductOfTheDay(product: Product(name: lorem(paragraphs: 1, words: 4))),
         SizedBox(height: MediaQuery.of(context).size.height / 44),
         PromoSection(),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
+        SectionAbout(),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
+        SectionBrands(),
+        SizedBox(height: MediaQuery.of(context).size.height / 44),
       ]),
     );
   }

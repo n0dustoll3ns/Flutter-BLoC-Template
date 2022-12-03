@@ -17,7 +17,8 @@ class BannerSlider extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: Image.asset(
                       'assets/images/${index + 1}.jpg',
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fitWidth,
+                      width: MediaQuery.of(context).size.width,
                     ),
                   ),
                   SizedBox(
