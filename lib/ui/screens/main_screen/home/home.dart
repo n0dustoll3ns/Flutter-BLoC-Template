@@ -1,11 +1,7 @@
-import 'dart:math';
-
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/about.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/banner_slider.dart';
-import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/brand_tile.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/brands.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/offers.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';

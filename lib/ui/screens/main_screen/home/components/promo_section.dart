@@ -18,7 +18,7 @@ class PromoSection extends StatelessWidget {
         ...List.generate(2, (index) => PromoTile(promo: Promo())),
         ElevatedButton(
           onPressed: () {},
-          child: Text("Load more"),
+          child: const Text("Load more"),
         ),
       ],
     );

@@ -14,7 +14,7 @@ class CategoryTile extends StatelessWidget {
             border: Border.all(width: 0.7, color: Colors.grey.withOpacity(0.3)),
             color: Colors.grey.withOpacity(0.06)),
         child: Padding(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.end,

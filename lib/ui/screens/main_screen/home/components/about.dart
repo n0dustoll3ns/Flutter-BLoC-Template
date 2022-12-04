@@ -6,7 +6,7 @@ class SectionAbout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.75,
       child: Column(
         children: [

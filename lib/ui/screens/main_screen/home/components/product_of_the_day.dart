@@ -67,7 +67,7 @@ class ProductOfTheDay extends StatelessWidget {
                     color: Colors.amber,
                   ),
                   onRatingUpdate: (rating) {
-                    print(rating);
+                    // print(rating);
                   },
                 ),
                 Text(

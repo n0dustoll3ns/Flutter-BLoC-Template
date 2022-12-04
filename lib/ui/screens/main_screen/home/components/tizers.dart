@@ -16,11 +16,11 @@ class Tizers extends StatelessWidget {
         runSpacing: MediaQuery.of(context).size.height / 55,
         alignment: WrapAlignment.center,
         children: [
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.delivery_dining_outlined)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.co_present_rounded)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.card_giftcard_rounded)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.list_outlined)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: Icon(Icons.wallet_rounded)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.delivery_dining_outlined)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.co_present_rounded)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.card_giftcard_rounded)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.list_outlined)),
+          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.wallet_rounded)),
         ],
       ),
     );

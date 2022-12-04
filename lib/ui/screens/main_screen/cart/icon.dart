@@ -34,13 +34,13 @@ class _CartIconState extends State<CartIcon> with TickerProviderStateMixin {
           child: Container(
             height: 8,
             width: 8,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
             ),
             child: Text(widget.count.toString()),
           ),
         ),
-        Icon(Icons.shopping_cart_outlined),
+        const Icon(Icons.shopping_cart_outlined),
       ],
     );
   }

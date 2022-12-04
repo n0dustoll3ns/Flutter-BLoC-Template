@@ -45,7 +45,7 @@ class ProductCard extends StatelessWidget {
                     '• in stock 1000',
                     style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.green),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     '\$${product.price.toStringAsFixed(2)}',
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
@@ -58,7 +58,7 @@ class ProductCard extends StatelessWidget {
                     onPressed: () {
                       context.read<CartBloc>().add(AddItem(item: product));
                     },
-                    child: Text('Add to cart'),
+                    child: const Text('Add to cart'),
                   ),
                 ],
               )),
@@ -67,6 +67,5 @@ class ProductCard extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

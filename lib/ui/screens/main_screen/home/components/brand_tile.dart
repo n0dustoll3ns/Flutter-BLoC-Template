@@ -15,7 +15,7 @@ class BrandTile extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.brightness_auto_sharp),
+              const Icon(Icons.brightness_auto_sharp),
               Text(
                 'Brand Name',
                 style: Theme.of(context).textTheme.headline5,

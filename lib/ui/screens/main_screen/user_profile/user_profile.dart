@@ -44,8 +44,8 @@ class UserProfile extends StatelessWidget {
             const ListTile(leading: Icon(Icons.chat), title: Text('Chat with shop')),
             const Divider(),
             ListTile(
-                leading: Icon(Icons.person),
-                title: Text('Personal data'),
+                leading: const Icon(Icons.person),
+                title: const Text('Personal data'),
                 onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: ((context) => PersonalDataPage(userData: state.userData))))),
             const Divider(),

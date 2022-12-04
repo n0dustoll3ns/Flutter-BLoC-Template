@@ -13,7 +13,7 @@ class PopularCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CategoriesBloc, CatalogState>(builder: (context, state) {
       if (state is CategoryLoading) {
-        return LoadingIndicator();
+        return const LoadingIndicator();
       }
       var categories = state.category.inheritedCategories;
       return Column(
@@ -26,7 +26,7 @@ class PopularCategories extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: GridView.count(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               children: List.generate(5, (index) => CategoryTile(category: categories[index])),
             ),

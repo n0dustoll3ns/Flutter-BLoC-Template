@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
-import 'package:flutter_bloc_template/features/catalog/products/states.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';

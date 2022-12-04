@@ -8,7 +8,7 @@ class ExpiringTimer extends StatelessWidget {
   Widget build(BuildContext context) {
     var delta = expiringTimer.difference(DateTime.now()).abs();
     return Container(
-      padding: EdgeInsets.all(3),
+      padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(width: 0.8, color: Colors.grey.withOpacity(0.6))),
