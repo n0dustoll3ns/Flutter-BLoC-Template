@@ -21,7 +21,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     RemoveItem event,
     Emitter<CartState> emit,
   ) {
-    state.items.remove(event.item);
+    state.items.removeWhere(((element) => element == event.item));
     emit(CartUpdated(items: state.items));
   }
 
@@ -38,6 +38,12 @@ abstract class CartState {
   final List<Product> items;
 
   double get totalPrice => items.fold(0, (previousValue, element) => previousValue + element.price);
+
+  Map<Product, int> get itemsCounted {
+    Map<Product, int> res = {for (var item in items.toSet().toList()) item: 0};
+    res = res.map((key, value) => MapEntry(key, items.where((item) => item == key).length));
+    return res;
+  }
 
   CartState({required this.items});
 }

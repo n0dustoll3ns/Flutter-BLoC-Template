@@ -5,7 +5,8 @@ import '../../../../../features/catalog/products/model/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product item;
-  const ItemCard({super.key, required this.item});
+  final int count;
+  const ItemCard({super.key, required this.item, required this.count});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class ItemCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   Text(
-                    'count: 1',
+                    'count: $count',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.grey),

@@ -26,15 +26,19 @@ class Cart extends StatelessWidget {
         ),
         body: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
           return ListView(children: [
-            ...List.generate(
-                state.items.length,
-                (index) => Dismissible(
-                      background: Container(color: Colors.redAccent),
-                      onDismissed: (DismissDirection direction) =>
-                          context.read<CartBloc>().add(RemoveItem(item: state.items[index])),
-                      key: ValueKey(index),
-                      child: ItemCard(item: state.items[index]),
-                    )),
+            ...List.generate(state.itemsCounted.length, (index) {
+              var item = state.itemsCounted.keys.toList()[index];
+              return Dismissible(
+                background: Container(color: Colors.redAccent),
+                onDismissed: (DismissDirection direction) =>
+                    context.read<CartBloc>().add(RemoveItem(item: item)),
+                key: ValueKey(index),
+                child: ItemCard(
+                  item: item,
+                  count: state.itemsCounted[item]!,
+                ),
+              );
+            }),
             Padding(
               padding: EdgeInsets.all(MediaQuery.of(context).size.width / 8),
               child: Container(
