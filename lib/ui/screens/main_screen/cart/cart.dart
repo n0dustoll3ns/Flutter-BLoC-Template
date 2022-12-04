@@ -20,13 +20,21 @@ class Cart extends StatelessWidget {
                 onPressed: () {
                   context.read<CartBloc>().add(ClearCart());
                 },
-                icon: Icon(Icons.cleaning_services_rounded)),
-            MenuButton(),
+                icon: const Icon(Icons.cleaning_services_rounded)),
+            const MenuButton(),
           ],
         ),
         body: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
           return ListView(children: [
-            ...List.generate(state.items.length, (index) => ItemCard(item: state.items[index])),
+            ...List.generate(
+                state.items.length,
+                (index) => Dismissible(
+                      background: Container(color: Colors.redAccent),
+                      onDismissed: (DismissDirection direction) =>
+                          context.read<CartBloc>().add(RemoveItem(item: state.items[index])),
+                      key: ValueKey(index),
+                      child: ItemCard(item: state.items[index]),
+                    )),
             Padding(
               padding: EdgeInsets.all(MediaQuery.of(context).size.width / 8),
               child: Container(
@@ -44,7 +52,7 @@ class Cart extends StatelessWidget {
                           'Total',
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           '\$${state.totalPrice.toStringAsFixed(2)}',
                           style: Theme.of(context)
@@ -54,35 +62,35 @@ class Cart extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       children: [
                         Text(
                           '${state.items.length} items',
                           style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           '\$${state.totalPrice.toStringAsFixed(2)}',
                           style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       children: [
                         Text(
                           'Promo code',
                           style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           '- \$10',
                           style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     CupertinoTextField(
                       decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.3),
@@ -90,7 +98,7 @@ class Cart extends StatelessWidget {
                       ),
                       controller: TextEditingController(text: 'Spring 2023'),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'This promo code gives you discount \$10',
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.grey),
@@ -101,7 +109,7 @@ class Cart extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(child: Text('Checkout'), onPressed: () {}),
+              child: ElevatedButton(child: const Text('Checkout'), onPressed: () {}),
             )
           ]);
         }));

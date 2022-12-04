@@ -37,7 +37,7 @@ class MainScreen extends StatelessWidget {
             PersistentTabItem(
                 tab: CatalogPage(category: categoriesState.category),
                 icon: Icons.menu,
-                title: 'Category',
+                title: 'Catalog',
                 navigatorkey: itemsKeys[1]),
             PersistentTabItem(
                 tab: const Cart(),
