@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../features/cart/cart_bloc.dart';
-import '../../../../../features/catalog/products/model/product.dart';
+import '../../../../../../../features/cart/cart_bloc.dart';
+import '../../../../../../../features/catalog/products/model/product.dart';
 
-class OfferTile extends StatelessWidget {
+class ProductCard extends StatelessWidget {
   final Product product;
-  const OfferTile({super.key, required this.product});
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {

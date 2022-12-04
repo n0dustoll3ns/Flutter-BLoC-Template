@@ -2,16 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
+import 'package:flutter_bloc_template/features/catalog/products/states.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';
 import '../../../features/catalog/categories/states.dart';
 import '../../../features/catalog/categories/categories_bloc.dart';
+import '../../../features/catalog/products/model/product.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import 'categories/catagories.dart';
 import 'chapters/chapters_horizontal_view.dart';
 import 'components/quick_filters.dart';
-import 'product_list/product_list.dart';
+import '../../components/product_list/product_list.dart';
 
 class CatalogPage extends StatefulWidget {
   final Category category;
@@ -26,11 +28,12 @@ class _CatalogPageState extends State<CatalogPage> {
   late Category category;
   late final ProductsBloc productsBloc;
   late final CategoriesBloc categoriesBloc;
+  final List<Product> items = [];
 
   @override
   void initState() {
-    productsBloc = context.read<ProductsBloc>()..add(CategoryPageEnter(category: widget.category));
     categoriesBloc = context.read<CategoriesBloc>()..add(CategoryPageEnter(category: widget.category));
+    productsBloc = context.read<ProductsBloc>()..add(const ProductsRequest());
     category = widget.category;
     _scrollController.addListener(_scrollListener);
     super.initState();
@@ -61,7 +64,7 @@ class _CatalogPageState extends State<CatalogPage> {
             QuickFilters(onFilterChange: (quickFilter) {}),
             const ChaptersHorizontalView(),
             const Categories(),
-            ProductList(category: category),
+            ProductList(items: items),
           ],
         ));
   }

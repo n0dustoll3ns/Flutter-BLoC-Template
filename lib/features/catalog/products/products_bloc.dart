@@ -12,48 +12,29 @@ class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
   ProductsBloc({
     required this.userRepository,
   }) : super(ProductsInitial()) {
-    on<CategoryPageEnter>(_refreshProductsList);
     on<ProductsRequest>(_loadMoreProducts);
   }
 
-  Future<void> _refreshProductsList(
-    CategoryPageEnter event,
-    Emitter<ProductsState> emitter,
-  ) async {
-    emitter(ProductsLoading(products: []));
-    bool noError = true;
-    var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
-    if (noError) {
-      emitter(ProductsUpdated(products: res));
-    } else {
-      emitter(ProductsFailure(error: 'error loading products'));
-    }
-  }
-
-  Future<void> _loadMoreProducts(
+  Future<List<Product>> _loadMoreProducts(
     ProductsRequest event,
     Emitter<ProductsState> emitter,
   ) async {
-    List<Product> delta = [];
-    if (state is ProductsUpdated) {
-      delta.addAll((state as ProductsUpdated).products);
-    }
-    emitter(ProductsLoading(products: delta));
+    emitter(ProductsLoading());
     bool noError = true;
     if (noError) {
-      var res = await productsRepository.getProductList(token: userRepository.token, skipCount: delta.length);
-      emitter(ProductsUpdated(products: delta + res));
+      var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
+      emitter(ProductsUpdated(items: res));
+      return res;
     } else {
       emitter(ProductsFailure(error: 'error loading products'));
     }
   }
 
-  // void _logOut(
-  //   LoggedOut event,
-  //   Emitter<AuthenticationState> emitter,
-  // ) async {
-  //   emitter(AuthenticationLoading());
-  //   await userRepository.deleteToken();
-  //   emitter(AuthenticationUnauthenticated());
-  // }
+  Future<List<Product>> loadProductsNoListen() async {
+    bool noError = true;
+    if (noError) {
+      var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
+      return res;
+    } else {}
+  }
 }
