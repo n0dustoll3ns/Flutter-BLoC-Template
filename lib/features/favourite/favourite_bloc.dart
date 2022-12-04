@@ -4,21 +4,21 @@ import '../catalog/products/model/product.dart';
 
 class FavouriteBloc extends Bloc<FavouriteEvent, FavouriteState> {
   FavouriteBloc() : super(FavouriteInitial()) {
-    on<AddItem>(onItemAdded);
-    on<RemoveItem>(onItemRemoved);
-    on<ClearFavourite>(onClearFavourite);
+    on<LikeItem>(onItemAdded);
+    on<DislikeItem>(onItemRemoved);
+    on<DislikeAll>(onClearFavourite);
   }
 
   void onItemAdded(
-    AddItem event,
+    LikeItem event,
     Emitter<FavouriteState> emit,
   ) {
-    state.items.add(event.item);
-    emit(FavouriteUpdated(items: state.items));
+    var list = state.items..add(event.item);
+    emit(FavouriteUpdated(items: list));
   }
 
   void onItemRemoved(
-    RemoveItem event,
+    DislikeItem event,
     Emitter<FavouriteState> emit,
   ) {
     state.items.removeWhere(((element) => element == event.item));
@@ -26,7 +26,7 @@ class FavouriteBloc extends Bloc<FavouriteEvent, FavouriteState> {
   }
 
   void onClearFavourite(
-    ClearFavourite event,
+    DislikeAll event,
     Emitter<FavouriteState> emit,
   ) {
     emit(FavouriteInitial());
@@ -35,13 +35,13 @@ class FavouriteBloc extends Bloc<FavouriteEvent, FavouriteState> {
 
 /* ---  States   --- */
 abstract class FavouriteState {
-  final List<Product> items;
+  final Set<Product> items;
 
   FavouriteState({required this.items});
 }
 
 class FavouriteInitial extends FavouriteState {
-  FavouriteInitial() : super(items: []);
+  FavouriteInitial() : super(items: {});
 }
 
 class FavouriteUpdated extends FavouriteState {
@@ -54,16 +54,16 @@ abstract class FavouriteEvent {
   const FavouriteEvent();
 }
 
-class AddItem extends FavouriteEvent {
+class LikeItem extends FavouriteEvent {
   Product item;
-  AddItem({required this.item});
+  LikeItem({required this.item});
 }
 
-class RemoveItem extends FavouriteEvent {
+class DislikeItem extends FavouriteEvent {
   Product item;
-  RemoveItem({required this.item});
+  DislikeItem({required this.item});
 }
 
-class ClearFavourite extends FavouriteEvent {
-  ClearFavourite();
+class DislikeAll extends FavouriteEvent {
+  DislikeAll();
 }

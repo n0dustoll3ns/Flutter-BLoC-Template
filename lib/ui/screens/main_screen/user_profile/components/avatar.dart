@@ -8,13 +8,12 @@ class Avatar extends StatelessWidget {
     return CircleAvatar(
       radius: MediaQuery.of(context).size.width / 4,
       backgroundColor: Colors.black12,
-      child: Expanded(
-          child: FittedBox(
-              fit: BoxFit.fill,
-              child: Icon(
-                Icons.person,
-                size: MediaQuery.of(context).size.width / 4,
-              ))),
+      child: FittedBox(
+          fit: BoxFit.fill,
+          child: Icon(
+            Icons.person,
+            size: MediaQuery.of(context).size.width / 4,
+          )),
     );
   }
 }
