@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/user/states.dart';
@@ -47,7 +48,7 @@ class UserProfile extends StatelessWidget {
                 leading: const Icon(Icons.person),
                 title: const Text('Personal data'),
                 onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: ((context) => PersonalDataPage(userData: state.userData))))),
+                    CupertinoPageRoute(builder: ((context) => PersonalDataPage(userData: state.userData))))),
             const Divider(),
             const ListTile(leading: Icon(Icons.shopping_bag_outlined), title: Text('Orders')),
             const Divider(),
