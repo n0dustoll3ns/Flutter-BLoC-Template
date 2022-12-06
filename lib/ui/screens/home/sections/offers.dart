@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-import '../../../../../features/catalog/products/model/product.dart';
-import '../../../../components/product_list/components/product_card.dart';
-import '../../../../styles/constants.dart';
+import '../../../../features/catalog/products/model/product.dart';
+import '../../../components/product_list/components/product_card.dart';
+import '../../../styles/constants.dart';
 
 class BestOffers extends StatelessWidget {
   const BestOffers({super.key});

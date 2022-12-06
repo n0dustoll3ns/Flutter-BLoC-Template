@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../../../../features/catalog/products/model/product.dart';
+import '../../../../features/catalog/products/model/product.dart';
 
 class ProductOfTheDay extends StatelessWidget {
   final Product product;

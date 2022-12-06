@@ -4,10 +4,10 @@ import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
-import 'package:flutter_bloc_template/ui/screens/main_screen/user_profile/components/personal_data.dart';
+import 'package:flutter_bloc_template/ui/screens/user_profile/components/personal_data.dart';
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 
-import '../../../../app/routes/constants.dart';
+import '../../../app/routes/constants.dart';
 import 'personal_data_screen/personal_data_page.dart';
 import 'components/avatar.dart';
 import 'components/bonuses_info.dart';

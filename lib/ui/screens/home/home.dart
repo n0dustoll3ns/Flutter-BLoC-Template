@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-import '../../../../app/routes/constants.dart';
-import '../../../../features/catalog/products/model/product.dart';
-import '../../../components/menu_button.dart';
+import '../../../app/routes/constants.dart';
+import '../../../features/catalog/products/model/product.dart';
+import '../../components/menu_button.dart';
 import 'sections/about_shop/about.dart';
 import 'sections/banner_slider.dart';
 import 'sections/offers.dart';

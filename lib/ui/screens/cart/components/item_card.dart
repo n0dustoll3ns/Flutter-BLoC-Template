@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-import '../../../../../features/catalog/products/model/product.dart';
+import '../../../../features/catalog/products/model/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product item;

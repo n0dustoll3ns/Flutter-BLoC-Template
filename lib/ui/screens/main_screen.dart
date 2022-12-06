@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../app/routes/routes.dart';
-import '../../../features/authentication/states.dart';
-import '../../../features/authentication/auth_bloc.dart';
-import '../../../features/catalog/categories/categories_bloc.dart';
-import '../../components/persistent_bottom_Bar_scaffold.dart';
-import '../catalog/catalog_page.dart';
+import '../../app/routes/routes.dart';
+import '../../features/authentication/states.dart';
+import '../../features/authentication/auth_bloc.dart';
+import '../../features/catalog/categories/categories_bloc.dart';
+import '../components/persistent_bottom_Bar_scaffold.dart';
+import 'catalog/catalog_page.dart';
 import 'cart/cart.dart';
 import 'favourite/favourites.dart';
 import 'home/home.dart';

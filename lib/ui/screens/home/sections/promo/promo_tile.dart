@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/ui/components/expiring_timer.dart';
 
-import '../../../../../../features/promo/model.dart';
+import '../../../../../features/promo/model.dart';
 
 class PromoTile extends StatelessWidget {
   final Promo promo;

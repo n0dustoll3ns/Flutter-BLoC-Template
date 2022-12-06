@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_bloc.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-import '../../../../../features/catalog/products/model/product.dart';
+import '../../../../features/catalog/products/model/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product item;
