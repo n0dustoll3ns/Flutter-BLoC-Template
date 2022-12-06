@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
-import '../../components/error_container.dart';
-import '../../widgets/loading_indicator.dart';
-import '../main_screen/user_profile/components/avatar.dart';
-import '../main_screen/user_profile/components/personal_data.dart';
+import '../../../../components/error_container.dart';
+import '../../../../widgets/loading_indicator.dart';
+import '../components/avatar.dart';
+import '../components/personal_data.dart';
 import 'components/fields.dart';
 
 class PersonalDataPage extends StatelessWidget {

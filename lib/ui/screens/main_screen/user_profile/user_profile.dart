@@ -8,7 +8,7 @@ import 'package:flutter_bloc_template/ui/screens/main_screen/user_profile/compon
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 
 import '../../../../app/routes/constants.dart';
-import '../../personal_data_screen/personal_data_page.dart';
+import 'personal_data_screen/personal_data_page.dart';
 import 'components/avatar.dart';
 import 'components/bonuses_info.dart';
 import 'components/learn_more_button.dart';
