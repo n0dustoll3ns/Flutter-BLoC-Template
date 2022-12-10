@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(
         listener: (context, state) {
           if (state is AuthenticationAuthenticated) {
-            Navigator.of(context).pushReplacementNamed(Routes.home);
+            Navigator.of(context).push(Routes.home);
           }
         },
         bloc: authenticationBloc,

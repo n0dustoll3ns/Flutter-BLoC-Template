@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-class LoyaltyProgramScreen extends StatelessWidget {
-  const LoyaltyProgramScreen({super.key});
+class AboutShopScreen extends StatelessWidget {
+  const AboutShopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Loyalty Program'),
+        title: Text(
+          'About Shop',
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 22),
@@ -27,7 +29,6 @@ class LoyaltyProgramScreen extends StatelessWidget {
           ),
           Text(lorem(paragraphs: 1, words: 3), style: Theme.of(context).textTheme.headline4),
           Text(lorem(paragraphs: 3, words: 40), style: Theme.of(context).textTheme.bodyLarge),
-          
         ],
       ),
     );

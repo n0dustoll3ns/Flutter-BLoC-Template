@@ -14,15 +14,15 @@ import '../../../styles/constants.dart';
 import 'components/characteristics_lines.dart';
 import 'components/reviews.dart';
 
-class ProductScreen1 extends StatefulWidget {
+class ProductScreen extends StatefulWidget {
   final Product product;
-  const ProductScreen1({super.key, required this.product});
+  const ProductScreen({super.key, required this.product});
 
   @override
-  State<ProductScreen1> createState() => _ProductScreen1State();
+  State<ProductScreen> createState() => _ProductScreenState();
 }
 
-class _ProductScreen1State extends State<ProductScreen1> {
+class _ProductScreenState extends State<ProductScreen> {
   int selectedTabIndex = 0;
   @override
   Widget build(BuildContext context) {

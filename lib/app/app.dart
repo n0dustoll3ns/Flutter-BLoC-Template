@@ -47,7 +47,6 @@ class App extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: theme,
-        routes: Routes.routes,
         home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           bloc: authenticationBloc,
           builder: (BuildContext context, AuthenticationState state) {

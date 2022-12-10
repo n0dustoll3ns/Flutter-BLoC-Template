@@ -27,7 +27,7 @@ class MainScreen extends StatelessWidget {
       bloc: BlocProvider.of<AuthenticationBloc>(context),
       listener: (context, state) {
         if (state is AuthenticationUnauthenticated) {
-          Navigator.pushReplacementNamed(context, Routes.signIn);
+          Navigator.push(context, Routes.signIn);
         }
       },
       builder: (context, state) {
