@@ -7,6 +7,7 @@ import 'package:flutter_bloc_template/ui/components/product_list/components/prod
 import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
 
 import '../../../../../features/catalog/products/model/product.dart';
+import '../../../../components/carousel_dots.dart';
 
 class RecomendedItems extends StatefulWidget {
   final Product product;
@@ -17,7 +18,11 @@ class RecomendedItems extends StatefulWidget {
 }
 
 class _RecomendedItemsState extends State<RecomendedItems> {
-  List<Product> items = [];
+  var dotsCount = 0;
+  var activeDotIndex = 0;
+  var carouselController = CarouselController();
+  late final _itemsLoader = ProductsRepository()
+      .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,33 +30,47 @@ class _RecomendedItemsState extends State<RecomendedItems> {
       children: [
         Text('You also may like', style: Theme.of(context).textTheme.titleLarge),
         FutureBuilder<List<Product>>(
-          future: ProductsRepository()
-              .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0),
+          future: _itemsLoader,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
               return const LoadingIndicator();
             }
-            return CarouselSlider.builder(
-              options: CarouselOptions(
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: false,
-                  viewportFraction: 1,
-                  height: MediaQuery.of(context).size.height / 100 * 45),
-              itemCount: (snapshot.data!.length / 2).round(),
-              itemBuilder: (context, index, realIdx) {
-                final int first = index * 2;
-                final int second = first + 1;
-                return Row(
-                  children: [first, second].map((idx) {
-                    return Expanded(
-                      flex: 1,
-                      child: ProductCard(
-                        product: snapshot.data![index],
-                      ),
+            var dotsCount = (snapshot.data!.length / 2).round();
+            return Column(
+              children: [
+                CarouselSlider.builder(
+                  carouselController: carouselController,
+                  options: CarouselOptions(
+                      onPageChanged: ((index, reason) {
+                        setState(() {
+                          activeDotIndex = index;
+                        });
+                      }),
+                      aspectRatio: 2.0,
+                      enlargeCenterPage: false,
+                      viewportFraction: 1,
+                      height: MediaQuery.of(context).size.height / 100 * 45),
+                  itemCount: dotsCount,
+                  itemBuilder: (context, index, realIdx) {
+                    final int first = index * 2;
+                    final int second = first + 1;
+                    return Row(
+                      children: [first, second].map((idx) {
+                        return Expanded(
+                          flex: 1,
+                          child: ProductCard(
+                            product: snapshot.data![index],
+                          ),
+                        );
+                      }).toList(),
                     );
-                  }).toList(),
-                );
-              },
+                  },
+                ),
+                CarouselDots(
+                  dotsCount: dotsCount,
+                  activeDotIndex: activeDotIndex,
+                ),
+              ],
             );
           },
         ),
