@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
@@ -57,7 +58,7 @@ class ItemCard extends StatelessWidget {
           ),
           IconButton(
               onPressed: () => context.read<FavouriteBloc>().add(DislikeItem(item: item)),
-              icon: const Icon(Icons.heart_broken_rounded)),
+              icon: const Icon(CupertinoIcons.heart_slash)),
         ],
       ),
     );

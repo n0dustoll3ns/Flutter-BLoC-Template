@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
+import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
@@ -42,6 +43,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => FavouriteBloc()),
+        BlocProvider(create: (_) => FavouriteCategoriesBloc()),
       ],
       child: MaterialApp(
         theme: theme,

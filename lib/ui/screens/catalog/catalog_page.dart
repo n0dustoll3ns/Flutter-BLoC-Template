@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
+import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';
@@ -53,7 +55,17 @@ class _CatalogPageState extends State<CatalogPage> {
             decoration:
                 BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
           ),
-          actions: _actions,
+          actions: [
+            BlocBuilder<FavouriteCategoriesBloc, FavouriteCategoriesState>(builder: (context, state) {
+              return IconButton(
+                onPressed: () {
+                  context.read<FavouriteCategoriesBloc>().add(LikeCategory(item: category));
+                },
+                icon: Icon(state.items.contains(category) ? CupertinoIcons.heart_fill : CupertinoIcons.heart),
+              );
+            }),
+            ..._actions,
+          ],
         ),
         body: ListView(
           physics: const BouncingScrollPhysics(),

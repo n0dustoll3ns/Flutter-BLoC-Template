@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
@@ -11,10 +12,10 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CatalogPage(category: category)));
+        Navigator.of(context).push(CupertinoPageRoute(builder: (context) => CatalogPage(category: category)));
       },
       isThreeLine: true,
-      leading: category.img.isEmpty ? const Icon(Icons.question_mark_rounded) : Image.network(category.img),
+      leading: category.img.isEmpty ? Icon(Icons.question_mark_rounded) : Image.network(category.img),
       title: Text(
         category.name,
         maxLines: 1,

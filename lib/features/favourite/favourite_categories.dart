@@ -1,16 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
 import '../catalog/products/model/product.dart';
 
 class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCategoriesState> {
   FavouriteCategoriesBloc() : super(FavouriteCategoriesInitial()) {
-    on<LikeItem>(onItemAdded);
-    on<DislikeItem>(onItemRemoved);
-    on<DislikeAll>(onClearFavouriteCategories);
+    on<LikeCategory>(onItemAdded);
+    on<DislikeCategory>(onItemRemoved);
+    on<DislikeAllCategories>(onClearFavouriteCategories);
   }
 
   void onItemAdded(
-    LikeItem event,
+    LikeCategory event,
     Emitter<FavouriteCategoriesState> emit,
   ) {
     var list = state.items..add(event.item);
@@ -18,7 +19,7 @@ class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCa
   }
 
   void onItemRemoved(
-    DislikeItem event,
+    DislikeCategory event,
     Emitter<FavouriteCategoriesState> emit,
   ) {
     state.items.removeWhere(((element) => element == event.item));
@@ -26,7 +27,7 @@ class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCa
   }
 
   void onClearFavouriteCategories(
-    DislikeAll event,
+    DislikeAllCategories event,
     Emitter<FavouriteCategoriesState> emit,
   ) {
     emit(FavouriteCategoriesInitial());
@@ -35,7 +36,7 @@ class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCa
 
 /* ---  States   --- */
 abstract class FavouriteCategoriesState {
-  final Set<Product> items;
+  final Set<Category> items;
 
   FavouriteCategoriesState({required this.items});
 }
@@ -54,16 +55,16 @@ abstract class FavouriteCategoriesEvent {
   const FavouriteCategoriesEvent();
 }
 
-class LikeItem extends FavouriteCategoriesEvent {
-  Product item;
-  LikeItem({required this.item});
+class LikeCategory extends FavouriteCategoriesEvent {
+  Category item;
+  LikeCategory({required this.item});
 }
 
-class DislikeItem extends FavouriteCategoriesEvent {
-  Product item;
-  DislikeItem({required this.item});
+class DislikeCategory extends FavouriteCategoriesEvent {
+  Category item;
+  DislikeCategory({required this.item});
 }
 
-class DislikeAll extends FavouriteCategoriesEvent {
-  DislikeAll();
+class DislikeAllCategories extends FavouriteCategoriesEvent {
+  DislikeAllCategories();
 }
