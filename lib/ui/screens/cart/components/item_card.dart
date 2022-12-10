@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-import '../../../../../features/catalog/products/model/product.dart';
+import '../../../../features/catalog/products/model/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product item;
-  const ItemCard({super.key, required this.item});
+  final int count;
+  const ItemCard({super.key, required this.item, required this.count});
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +39,12 @@ class ItemCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
+                  Text(
+                    'count: $count',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(color: Colors.grey),
+                  ),
                   Container(
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
@@ -55,9 +60,7 @@ class ItemCard extends StatelessWidget {
               ),
             ),
           ),
-          IconButton(
-              onPressed: () => context.read<FavouriteBloc>().add(DislikeItem(item: item)),
-              icon: const Icon(Icons.heart_broken_rounded)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz_rounded)),
         ],
       ),
     );

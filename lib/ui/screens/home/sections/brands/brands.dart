@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/ui/screens/main_screen/home/components/brand_tile.dart';
+
+import 'brand_tile.dart';
 
 class SectionBrands extends StatelessWidget {
   const SectionBrands({super.key});

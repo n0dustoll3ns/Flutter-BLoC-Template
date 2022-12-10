@@ -52,7 +52,7 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
               widget.items[index].navigatorkey?.currentState?.popUntil((route) => route.isFirst);
             } else {
               setState(() {
-                _tabController.index =(index);
+                _tabController.index = (index);
               });
             }
           },
@@ -61,7 +61,7 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
           selectedItemColor: Theme.of(context).primaryColor,
           unselectedItemColor: Theme.of(context).iconTheme.color,
           items: widget.items
-              .map((item) => BottomNavigationBarItem(icon: Icon(item.icon), label: item.title))
+              .map((item) => BottomNavigationBarItem(icon: item.icon, label: item.title))
               .toList(),
         ),
       ),
@@ -77,7 +77,7 @@ class PersistentTabItem {
   final Widget tab;
   final GlobalKey<NavigatorState>? navigatorkey;
   final String title;
-  final IconData icon;
+  final Widget icon;
 
   PersistentTabItem({required this.tab, this.navigatorkey, required this.title, required this.icon});
 }
