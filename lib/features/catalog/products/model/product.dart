@@ -1,15 +1,17 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
 class Product {
   final String name;
   final IconData img;
   final double price;
+  final int? brandID;
+  final List<Characteristic> characteristics = [];
 
-  Product({required this.name})
-      : img = icons[Random().nextInt(icons.length - 1)],
-        price = Random().nextInt(55) + 55.99;
+  Product({required this.name, required this.price, this.brandID})
+      : img = icons[Random().nextInt(icons.length - 1)];
 }
 
 const List<IconData> icons = [

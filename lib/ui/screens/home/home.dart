@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
@@ -25,7 +27,11 @@ class Home extends StatelessWidget {
       const Tizers(),
       const PopularCategories(),
       const BestOffers(),
-      ProductOfTheDay(product: Product(name: lorem(paragraphs: 1, words: 4))),
+      ProductOfTheDay(
+          product: Product(
+        name: lorem(paragraphs: 1, words: 4),
+        price: Random().nextInt(55) + 55.99,
+      )),
       const PromoSection(),
       const SectionAbout(),
       const SectionBrands(),

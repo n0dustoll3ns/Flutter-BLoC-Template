@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
@@ -22,7 +24,10 @@ class BestOffers extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 0.5,
               children: List.generate(
-                  8, (index) => ProductCard(product: Product(name: lorem(paragraphs: 1, words: 3)))),
+                  8,
+                  (index) => ProductCard(
+                      product: Product(
+                          name: lorem(paragraphs: 1, words: 3), price: Random().nextInt(55) + 55.99))),
             ),
             ElevatedButton(
               onPressed: () {},

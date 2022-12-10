@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_template/features/brands/model.dart';
+import 'package:flutter_lorem/flutter_lorem.dart';
 
 import 'brand_tile.dart';
 
@@ -17,7 +19,7 @@ class SectionBrands extends StatelessWidget {
         crossAxisSpacing: MediaQuery.of(context).size.height / 66,
         childAspectRatio: 1.66,
         crossAxisCount: 2,
-        children: List.generate(12, (index) => const BrandTile()),
+        children: List.generate(12, (index) => BrandTile(brand: Brand(name: lorem(paragraphs: 1, words: 1)))),
       ),
     );
   }
