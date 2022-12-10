@@ -5,12 +5,13 @@ import 'package:flutter_bloc_template/features/catalog/products/model/crahacteri
 
 class Product {
   final String name;
+  final String description;
   final IconData img;
   final double price;
   final int? brandID;
   final List<Characteristic> characteristics = [];
 
-  Product({required this.name, required this.price, this.brandID})
+  Product({required this.name, required this.price, required this.description, this.brandID})
       : img = icons[Random().nextInt(icons.length - 1)];
 }
 

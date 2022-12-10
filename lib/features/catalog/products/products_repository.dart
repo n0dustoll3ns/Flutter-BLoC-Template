@@ -11,15 +11,19 @@ class ProductsRepository {
     List<Product> products = (List.generate(
         5,
         (index) => Product(
-              name: lorem(paragraphs: 1, words: 2),
-              brandID: Random().nextInt(9),
-              price: Random().nextInt(55) + 55.99,
-            )..characteristics.addAll(List.generate(
-                7,
-                (index) => Characteristic(
-                      name: lorem(paragraphs: 1, words: 1)..replaceAll('.', ''),
-                      value: lorem(paragraphs: 1, words: 1)..replaceAll('.', ''),
-                    )))));
+            name: lorem(paragraphs: 1, words: 2),
+            brandID: Random().nextInt(9),
+            price: Random().nextInt(55) + 55.99,
+            description: lorem(
+              paragraphs: 4,
+              words: 120,
+            ))
+          ..characteristics.addAll(List.generate(
+              17,
+              (index) => Characteristic(
+                    name: lorem(paragraphs: 1, words: 1)..replaceAll('.', ''),
+                    value: lorem(paragraphs: 1, words: 1)..replaceAll('.', ''),
+                  )))));
     return products;
   }
 }

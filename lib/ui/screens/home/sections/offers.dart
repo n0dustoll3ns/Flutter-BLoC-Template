@@ -24,10 +24,18 @@ class BestOffers extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 0.5,
               children: List.generate(
-                  8,
-                  (index) => ProductCard(
-                      product: Product(
-                          name: lorem(paragraphs: 1, words: 3), price: Random().nextInt(55) + 55.99))),
+                8,
+                (index) => ProductCard(
+                  product: Product(
+                    name: lorem(paragraphs: 1, words: 3),
+                    price: Random().nextInt(55) + 55.99,
+                    description: lorem(
+                      paragraphs: 4,
+                      words: 120,
+                    ),
+                  ),
+                ),
+              ),
             ),
             ElevatedButton(
               onPressed: () {},
