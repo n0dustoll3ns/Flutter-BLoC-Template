@@ -4,36 +4,39 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/brands/model.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
-import 'package:flutter_bloc_template/ui/screens/catalog/item_page/components/characteristics_line.dart';
+import 'package:flutter_bloc_template/ui/screens/catalog/item_page/components/recommended_items.dart';
 import 'package:flutter_bloc_template/ui/screens/home/sections/brands/brand_tile.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../features/catalog/products/model/product.dart';
+import '../../../styles/constants.dart';
+import 'components/characteristics_lines.dart';
+import 'components/reviews.dart';
 
-class ProductScreen1 extends StatelessWidget {
+class ProductScreen1 extends StatefulWidget {
   final Product product;
   const ProductScreen1({super.key, required this.product});
 
   @override
+  State<ProductScreen1> createState() => _ProductScreen1State();
+}
+
+class _ProductScreen1State extends State<ProductScreen1> {
+  int selectedTabIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          widget.product.name,
+        ),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.share))],
+      ),
       body: ListView(
         padding: EdgeInsets.all(MediaQuery.of(context).size.width / 22),
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  product.name,
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ),
-              const IconButton(onPressed: null, icon: Icon(Icons.share)),
-            ],
-          ),
-          FittedBox(fit: BoxFit.fitWidth, child: Icon(product.img)),
+          FittedBox(fit: BoxFit.fitWidth, child: Icon(widget.product.img)),
           Row(
             children: [
               Expanded(
@@ -43,16 +46,17 @@ class ProductScreen1 extends StatelessWidget {
                   var favouriteBloc = context.read<FavouriteBloc>();
                   return ElevatedButton(
                     onPressed: () {
-                      if (state.items.contains(product)) {
-                        favouriteBloc.add(DislikeItem(item: product));
+                      if (state.items.contains(widget.product)) {
+                        favouriteBloc.add(DislikeItem(item: widget.product));
                       } else {
-                        favouriteBloc.add(LikeItem(item: product));
+                        favouriteBloc.add(LikeItem(item: widget.product));
                       }
                     },
                     child: Row(
                       children: [
-                        Icon(
-                            state.items.contains(product) ? CupertinoIcons.heart_fill : CupertinoIcons.heart),
+                        Icon(state.items.contains(widget.product)
+                            ? CupertinoIcons.heart_fill
+                            : CupertinoIcons.heart),
                         SizedBox(width: MediaQuery.of(context).size.width / 44),
                         const Expanded(child: Text('To favourite')),
                       ],
@@ -108,16 +112,7 @@ class ProductScreen1 extends StatelessWidget {
             'Charatceristics',
             style: Theme.of(context).textTheme.headline6,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ...List.generate(
-                  product.characteristics.length,
-                  (index) => CharacteristicLine(
-                        characteristic: product.characteristics[index],
-                      ))
-            ],
-          ),
+          CharactericticsLines(product: widget.product, maxLines: 7),
           SizedBox(height: MediaQuery.of(context).size.height / 44),
           Container(
             padding: const EdgeInsets.all(23),
@@ -129,11 +124,11 @@ class ProductScreen1 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  '\$${product.price.toStringAsFixed(2)}',
+                  '\$${widget.product.price.toStringAsFixed(2)}',
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 Text(
-                  '+ ${(product.price / 10).toStringAsFixed(2)} bonuses',
+                  '+ ${(widget.product.price / 10).toStringAsFixed(2)} bonuses',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Text(
@@ -141,12 +136,58 @@ class ProductScreen1 extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.green),
                 ),
                 ElevatedButton(
-                    onPressed: () => context.read<CartBloc>().add(AddItem(item: product)),
+                    onPressed: () => context.read<CartBloc>().add(AddItem(item: widget.product)),
                     child: const Text('Buy now')),
-                    
               ],
             ),
           ),
+          SizedBox(
+            height: 55,
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),
+              scrollDirection: Axis.horizontal,
+              children: [
+                ElevatedButton(
+                  onPressed: () => setState(() => selectedTabIndex = 0),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: selectedTabIndex == 0 ? null : Colors.transparent,
+                      foregroundColor: selectedTabIndex == 0 ? null : Theme.of(context).primaryColor),
+                  child: const Text('Description'),
+                ),
+                ElevatedButton(
+                  onPressed: () => setState(() => selectedTabIndex = 1),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: selectedTabIndex == 1 ? null : Colors.transparent,
+                      foregroundColor: selectedTabIndex == 1 ? null : Theme.of(context).primaryColor),
+                  child: const Text('All Characteristics'),
+                ),
+                ElevatedButton(
+                  onPressed: () => setState(() => selectedTabIndex = 2),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: selectedTabIndex == 2 ? null : Colors.transparent,
+                      foregroundColor: selectedTabIndex == 2 ? null : Theme.of(context).primaryColor),
+                  child: const Text('Reviews'),
+                ),
+              ],
+            ),
+          ),
+          IndexedStack(
+            index: selectedTabIndex,
+            children: [
+              Text(
+                widget.product.description,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              CharactericticsLines(
+                product: widget.product,
+              ),
+              const ReviewsBox(),
+            ],
+          ),
+          RecomendedItems(product: widget.product)
         ],
       ),
     );
