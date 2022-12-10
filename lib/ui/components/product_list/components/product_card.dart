@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../../features/catalog/products/model/product.dart';
 import '../../../../features/cart/cart_bloc.dart';
-import '../../../../features/favourite/favourite_bloc.dart';
+import '../../../../features/favourite/favourite_products_bloc.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;

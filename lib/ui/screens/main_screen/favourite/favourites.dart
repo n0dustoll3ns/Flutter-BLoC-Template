@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/ui/screens/main_screen/favourite/components/item_card.dart';
 
 import '../../../../app/routes/constants.dart';
-import '../../../../features/favourite/favourite_bloc.dart';
+import '../../../../features/favourite/favourite_products_bloc.dart';
 import '../../../components/menu_button.dart';
 
 class Favourites extends StatelessWidget {
