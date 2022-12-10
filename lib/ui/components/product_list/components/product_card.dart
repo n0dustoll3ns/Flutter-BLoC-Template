@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 
 import '../../../../../../../features/catalog/products/model/product.dart';
 import '../../../../features/cart/cart_bloc.dart';
@@ -14,7 +15,10 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var favouriteBloc = context.read<FavouriteBloc>();
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context)
+            .push(CupertinoPageRoute(builder: (context) => ProductScreen1(product: product)));
+      },
       child: Container(
         decoration: BoxDecoration(
             border: Border.all(width: 0.7, color: Colors.grey.withOpacity(0.3)),

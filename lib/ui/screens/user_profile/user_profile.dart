@@ -42,8 +42,6 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             BonusesInfo(userData: state.userData),
             const LearnMore(),
-            const ListTile(leading: Icon(Icons.chat), title: Text('Chat with shop')),
-            const Divider(),
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Personal data'),
