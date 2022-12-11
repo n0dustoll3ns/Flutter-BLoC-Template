@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/reciever/revievers_bloc.dart';
+import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 
 import '../../../../features/reciever/model.dart';
 

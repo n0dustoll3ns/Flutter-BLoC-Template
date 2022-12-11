@@ -6,6 +6,7 @@ import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
+import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/components/personal_data.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/recievers.dart';
@@ -62,7 +63,12 @@ class UserProfile extends StatelessWidget {
                   .push(CupertinoPageRoute(builder: ((context) => const RecieversListScreen()))),
             ),
             const Divider(),
-            const ListTile(leading: Icon(Icons.gite_outlined), title: Text('My adresses')),
+            ListTile(
+              leading: const Icon(Icons.gite_outlined),
+              title: const Text('My adresses'),
+              onTap: () => Navigator.of(context)
+                  .push(CupertinoPageRoute(builder: ((context) => const AdressesListScreen()))),
+            ),
             const Divider(),
             const ListTile(leading: Icon(Icons.wallet_rounded), title: Text('My cards')),
             const Divider(),

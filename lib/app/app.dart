@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/adresses/adresses_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
-import 'package:flutter_bloc_template/features/reciever/revievers_bloc.dart';
+import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
@@ -45,6 +46,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
         BlocProvider(create: (_) => RecieversBloc(userRepository: authenticationBloc.userRepository)),
+        BlocProvider(create: (_) => AdressesBloc(userRepository: authenticationBloc.userRepository)),
       ],
       child: MaterialApp(
         theme: theme,
