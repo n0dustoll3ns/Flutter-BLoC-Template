@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
+import 'package:flutter_bloc_template/features/reciever/revievers_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
@@ -13,7 +14,6 @@ import '../features/catalog/products/products_bloc.dart';
 import '../features/login/login_bloc.dart';
 import '../ui/screens/login_screen/login_screen.dart';
 import '../ui/screens/splash_screen.dart';
-import 'routes/routes.dart';
 import 'theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -44,6 +44,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
+        BlocProvider(create: (_) => RecieversBloc()),
       ],
       child: MaterialApp(
         theme: theme,

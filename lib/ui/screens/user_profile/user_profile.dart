@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/app/routes/routes.dart';
 import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/components/personal_data.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
+import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/recievers.dart';
 
 import '../../../app/routes/constants.dart';
 import 'personal_data_screen/personal_data_page.dart';
@@ -53,7 +55,12 @@ class UserProfile extends StatelessWidget {
             const Divider(),
             const ListTile(leading: Icon(Icons.comment_rounded), title: Text('Reviews')),
             const Divider(),
-            const ListTile(leading: Icon(Icons.people_rounded), title: Text('My receivers')),
+            ListTile(
+              leading: const Icon(Icons.people_rounded),
+              title: const Text('My receivers'),
+              onTap: () => Navigator.of(context)
+                  .push(CupertinoPageRoute(builder: ((context) => const RecieversListScreen()))),
+            ),
             const Divider(),
             const ListTile(leading: Icon(Icons.gite_outlined), title: Text('My adresses')),
             const Divider(),
