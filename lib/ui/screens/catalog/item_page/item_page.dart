@@ -174,19 +174,16 @@ class _ProductScreenState extends State<ProductScreen> {
               ],
             ),
           ),
-          IndexedStack(
-            index: selectedTabIndex,
-            children: [
-              Text(
-                widget.product.description,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              CharactericticsLines(
-                product: widget.product,
-              ),
-              const ReviewsBox(),
-            ],
-          ),
+          [
+            Text(
+              widget.product.description,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            CharactericticsLines(
+              product: widget.product,
+            ),
+            const ReviewsBox(),
+          ][selectedTabIndex],
           RecomendedItems(product: widget.product)
         ],
       ),
