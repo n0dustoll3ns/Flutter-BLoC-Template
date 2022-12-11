@@ -9,7 +9,7 @@ import '../../../../features/reciever/model.dart';
 
 class RecieverEditPage extends StatelessWidget {
   final Reciever? reciever;
-  const RecieverEditPage({super.key, required this.reciever});
+  const RecieverEditPage({super.key, this.reciever});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +20,24 @@ class RecieverEditPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(MediaQuery.of(context).size.width / 22),
         children: [
-          TextFormField(controller: nameController),
-          TextFormField(
-            keyboardType: TextInputType.number,
-            inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
-            controller: phoneController,
-            onFieldSubmitted: (value) => completeEditing(context, nameController, phoneController),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(controller: nameController),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextFormField(
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
+              controller: phoneController,
+              onFieldSubmitted: (value) => completeEditing(context, nameController, phoneController),
+            ),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                completeEditing(context, nameController, phoneController);
+              },
+              child: const Text('Save'))
         ],
       ),
     );
@@ -39,7 +50,7 @@ class RecieverEditPage extends StatelessWidget {
           item: Reciever(
               name: nameController.text, phoneNumber: int.parse(phoneController.text), id: reciever!.id)));
     } else {
-      context.read<RecieversBloc>().add(UpdateReciever(
+      context.read<RecieversBloc>().add(AddReciever(
           item: Reciever(
               name: nameController.text,
               phoneNumber: int.parse(phoneController.text),

@@ -41,9 +41,11 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
     Emitter<RecieversState> emit,
   ) {
     emit(RecieversLoading(items: state.items));
+    var reciever = state.items.firstWhere((element) => element.id == event.item.id);
     try {
       _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
-      state.items.add(event.item);
+      reciever.name = event.item.name;
+      reciever.phoneNumber = event.item.phoneNumber;
       emit(RecieversUpdated(items: state.items));
     } on Exception catch (e) {
       // TODO

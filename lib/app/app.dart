@@ -44,7 +44,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
-        BlocProvider(create: (_) => RecieversBloc()),
+        BlocProvider(create: (_) => RecieversBloc(userRepository: authenticationBloc.userRepository)),
       ],
       child: MaterialApp(
         theme: theme,

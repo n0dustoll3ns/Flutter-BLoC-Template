@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/revievers_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
+import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/reciever_edit_page.dart';
 
 class RecieversListScreen extends StatelessWidget {
   const RecieversListScreen({super.key});
@@ -26,10 +28,17 @@ class RecieversListScreen extends StatelessWidget {
                 trailing: const Icon(Icons.edit),
                 title: Text(state.items[index].name),
                 subtitle: Text('+${state.items[index].phoneNumber}'),
+                onTap: () {
+                  Navigator.of(context).push(CupertinoPageRoute(
+                      builder: ((context) => RecieverEditPage(reciever: state.items[index]))));
+                },
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context)
+                    .push(CupertinoPageRoute(builder: ((context) => const RecieverEditPage())));
+              },
               child: const Text(
                 'Add reciever',
               ),
