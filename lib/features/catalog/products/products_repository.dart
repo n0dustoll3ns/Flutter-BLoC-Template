@@ -7,7 +7,7 @@ import 'model/product.dart';
 
 class ProductsRepository {
   Future<List<Product>> getProductList({required String token, required int skipCount}) async {
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future.delayed(const Duration(milliseconds: 600));
     List<Product> products = (List.generate(
         5,
         (index) => Product(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
+import '../../../../../app/routes/routes.dart';
+
 class SectionAbout extends StatelessWidget {
   const SectionAbout({super.key});
 
@@ -51,7 +53,9 @@ class SectionAbout extends StatelessWidget {
                     overflow: TextOverflow.fade,
                   ),
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text('Learn more')),
+                ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(Routes.aboutShopScreen),
+                    child: const Text('Learn more')),
               ],
             ),
           ))

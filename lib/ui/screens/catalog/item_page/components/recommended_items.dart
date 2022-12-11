@@ -17,7 +17,7 @@ class RecomendedItems extends StatefulWidget {
   State<RecomendedItems> createState() => _RecomendedItemsState();
 }
 
-class _RecomendedItemsState extends State<RecomendedItems> {
+class _RecomendedItemsState extends State<RecomendedItems> with AutomaticKeepAliveClientMixin {
   var dotsCount = 0;
   var activeDotIndex = 0;
   late final _itemsLoader = ProductsRepository()
@@ -75,4 +75,7 @@ class _RecomendedItemsState extends State<RecomendedItems> {
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

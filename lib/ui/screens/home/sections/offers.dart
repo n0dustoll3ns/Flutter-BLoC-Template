@@ -18,15 +18,16 @@ class BestOffers extends StatefulWidget {
   State<BestOffers> createState() => _BestOffersState();
 }
 
-class _BestOffersState extends State<BestOffers> {
+class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMixin {
   late Future<List<Product>> _itemsLoader = ProductsRepository()
       .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
   List<Product> items = [];
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Column(
       children: [
-        Text('Popular Categories', style: Theme.of(context).textTheme.headline4),
+        Text('Best Offers', style: Theme.of(context).textTheme.headline4),
         Column(
           children: [
             FutureBuilder(
@@ -52,8 +53,12 @@ class _BestOffersState extends State<BestOffers> {
               },
             ),
             ElevatedButton(
-              onPressed: () async => setState(() => _itemsLoader = ProductsRepository()
-                  .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0)),
+              onPressed: () async {
+                setState(() {
+                  _itemsLoader = ProductsRepository().getProductList(
+                      token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
+                });
+              },
               child: const Text("Load more"),
             ),
           ],
@@ -61,4 +66,7 @@ class _BestOffersState extends State<BestOffers> {
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
