@@ -16,10 +16,11 @@ class CartIcon extends StatelessWidget {
         BlocBuilder<CartBloc, CartState>(
           builder: ((context, state) => AnimatedContainer(
                 curve: Curves.bounceOut,
+                margin: EdgeInsets.all(state.items.isEmpty ? 5.5 : 0),
                 width: state.items.isEmpty ? 0 : 11,
                 height: state.items.isEmpty ? 0 : 11,
                 decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle),
-                duration: const Duration(milliseconds: 450),
+                duration: const Duration(milliseconds: 567),
               )),
         ),
       ],

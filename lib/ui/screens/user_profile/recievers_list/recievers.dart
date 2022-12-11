@@ -24,8 +24,12 @@ class RecieversListScreen extends StatelessWidget {
             ...List.generate(
               state.items.length,
               (index) => ListTile(
-                leading: const Icon(Icons.person),
-                trailing: const Icon(Icons.edit),
+                leading: const Icon(CupertinoIcons.person_alt),
+                trailing: IconButton(
+                    onPressed: () {
+                      context.read<RecieversBloc>().add(RemoveReciever(item: state.items[index]));
+                    },
+                    icon: const Icon(CupertinoIcons.trash)),
                 title: Text(state.items[index].name),
                 subtitle: Text('+${state.items[index].phoneNumber}'),
                 onTap: () {

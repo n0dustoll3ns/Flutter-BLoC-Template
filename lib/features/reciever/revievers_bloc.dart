@@ -56,8 +56,14 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
     RemoveReciever event,
     Emitter<RecieversState> emit,
   ) {
-    state.items.removeWhere(((element) => element == event.item));
-    emit(RecieversUpdated(items: state.items));
+    emit(RecieversLoading(items: state.items));
+    try {
+      _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
+      state.items.removeWhere((element) => element.id == event.item.id);
+      emit(RecieversUpdated(items: state.items));
+    } on Exception catch (e) {
+      // TODO
+    }
   }
 
   void onClearRecievers(
