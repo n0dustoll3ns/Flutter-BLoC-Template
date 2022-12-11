@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 import 'package:flutter_bloc_template/ui/components/product_list/components/product_card.dart';
-import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
+import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 
 import '../../../../../features/catalog/products/model/product.dart';
 import '../../../../components/carousel_dots.dart';
@@ -20,7 +20,6 @@ class RecomendedItems extends StatefulWidget {
 class _RecomendedItemsState extends State<RecomendedItems> {
   var dotsCount = 0;
   var activeDotIndex = 0;
-  var carouselController = CarouselController();
   late final _itemsLoader = ProductsRepository()
       .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
   @override
@@ -39,7 +38,6 @@ class _RecomendedItemsState extends State<RecomendedItems> {
             return Column(
               children: [
                 CarouselSlider.builder(
-                  carouselController: carouselController,
                   options: CarouselOptions(
                       onPageChanged: ((index, reason) {
                         setState(() {

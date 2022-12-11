@@ -6,7 +6,7 @@ import '../../../features/catalog/products/states.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import 'components/product_card.dart';
 import '../../styles/constants.dart';
-import '../../widgets/loading_indicator.dart';
+import '../loading_indicator.dart';
 
 class ProductList extends StatelessWidget {
   final List<Product> items;

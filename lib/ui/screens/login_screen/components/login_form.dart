@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../features/login/states.dart';
 import '../../../../features/login/login_bloc.dart';
-import '../../../widgets/loading_indicator.dart';
+import '../../../components/loading_indicator.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

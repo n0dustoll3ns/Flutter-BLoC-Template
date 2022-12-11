@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/ui/widgets/loading_indicator.dart';
+import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

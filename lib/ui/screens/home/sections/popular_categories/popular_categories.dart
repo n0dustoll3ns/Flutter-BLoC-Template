@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../features/catalog/categories/categories_bloc.dart';
 import '../../../../../features/catalog/categories/states.dart';
-import '../../../../widgets/loading_indicator.dart';
+import '../../../../components/loading_indicator.dart';
 import 'category_tile.dart';
 
 class PopularCategories extends StatelessWidget {

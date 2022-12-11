@@ -12,7 +12,7 @@ class CarouselDots extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: List.generate(
             dotsCount,
-            (index) => Container(
+            (index) => AnimatedContainer(
                   margin: const EdgeInsets.all(25),
                   width: index == activeDotIndex ? 10 : 5,
                   height: index == activeDotIndex ? 10 : 5,
@@ -20,6 +20,7 @@ class CarouselDots extends StatelessWidget {
                     color: index == activeDotIndex ? Theme.of(context).primaryColor : Colors.grey,
                     shape: BoxShape.circle,
                   ),
+                  duration: const Duration(milliseconds: 450),
                 )),
       ),
     );

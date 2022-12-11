@@ -4,7 +4,7 @@ import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../../../components/error_container.dart';
-import '../../../widgets/loading_indicator.dart';
+import '../../../components/loading_indicator.dart';
 import '../components/avatar.dart';
 import '../components/personal_data.dart';
 import 'components/fields.dart';
