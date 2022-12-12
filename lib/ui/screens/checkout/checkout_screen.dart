@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
@@ -81,6 +83,19 @@ class CheckoutScreen extends StatelessWidget {
               ),
             ),
             AdressSelector(),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Select payment method',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         );
       }),
