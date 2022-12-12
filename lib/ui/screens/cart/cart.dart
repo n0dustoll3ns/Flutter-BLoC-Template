@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/app/routes/routes.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/products/states.dart';
 import 'package:flutter_bloc_template/ui/screens/cart/components/item_card.dart';
 
 import '../../../app/routes/constants.dart';
 import '../../components/menu_button.dart';
+import '../catalog/item_page/components/recommended_items.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
@@ -113,8 +118,16 @@ class Cart extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(child: const Text('Checkout'), onPressed: () {}),
-            )
+              child: ElevatedButton(
+                  child: const Text('Checkout'),
+                  onPressed: () {
+                    Navigator.of(context).push(Routes.checkOut);
+                  }),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: RecomendedItems(product: Product(description: '', name: '', price: 1)),
+            ),
           ]);
         }));
   }
