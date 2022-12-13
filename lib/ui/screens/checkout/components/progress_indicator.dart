@@ -7,6 +7,7 @@ class CheckoutProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(currentIndex);
     return Column(
       children: [
         Padding(

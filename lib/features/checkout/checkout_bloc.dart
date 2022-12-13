@@ -57,8 +57,10 @@ abstract class CheckoutState {
       return 0;
     } else if (reciever != null && adress == null) {
       return 1;
-    } else if (reciever != null && adress != null) {
+    } else if (reciever != null && adress != null && paymentMethod == null) {
       return 2;
+    } else if (reciever != null && adress != null && paymentMethod != null) {
+      return 3;
     }
     return 0;
   }

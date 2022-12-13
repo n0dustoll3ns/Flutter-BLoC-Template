@@ -7,6 +7,7 @@ import 'package:flutter_bloc_template/ui/screens/checkout/components/order_detai
 import 'package:flutter_bloc_template/ui/screens/checkout/components/payment_method_selector.dart';
 import '../../../app/routes/routes.dart';
 import 'components/adress_selector.dart';
+import 'components/payment_safety_shield.dart';
 import 'components/progress_indicator.dart';
 import 'components/reciever_selector.dart';
 import 'components/total_section.dart';
@@ -103,10 +104,25 @@ class CheckoutScreen extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height / 44),
             OrderDetails(),
             SizedBox(height: MediaQuery.of(context).size.height / 44),
-            TotalSection()
+            TotalSection(),
+            SizedBox(height: MediaQuery.of(context).size.height / 44),
+            ElevatedButton(
+              onPressed: () {},
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Pay',
+                  style: TextStyle(fontSize: 22),
+                ),
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height / 44),
+            const PaymentSafetyShield(),
+            SizedBox(height: MediaQuery.of(context).size.height / 44),
           ],
         );
       }),
     );
   }
 }
+
