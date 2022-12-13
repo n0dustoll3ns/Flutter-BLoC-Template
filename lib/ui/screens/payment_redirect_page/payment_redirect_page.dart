@@ -17,7 +17,7 @@ class PaymentRedirectPage extends StatelessWidget {
             'In this page happens paying magic of your order. \nYou will automatocally be returned to in 5 sec',
             style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
-          )
+          ),
         ],
       ),
     );
