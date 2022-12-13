@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/payment/methods/model.dart';
+import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import '../../../app/routes/routes.dart';
 import '../../../features/adresses/adresses_bloc.dart';
@@ -25,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.of(context).push(Routes.home);
             context.read<RecieversBloc>().add(Authorized(token: state.token));
             context.read<AdressesBloc>().add(AuthComplete(token: state.token));
+            context.read<PaymentMethodsBloc>().add(AllowLoadPaymentMethods());
           }
         },
         bloc: authenticationBloc,

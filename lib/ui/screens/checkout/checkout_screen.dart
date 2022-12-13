@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
+import 'package:flutter_bloc_template/ui/screens/checkout/components/payment_method_selector.dart';
 import '../../../app/routes/routes.dart';
 import 'components/adress_selector.dart';
 import 'components/progress_indicator.dart';
@@ -98,6 +99,9 @@ class CheckoutScreen extends StatelessWidget {
                 ],
               ),
             ),
+            PaymentMethodSelecor(
+              isAvailable: state.stageIndex >= 2,
+            )
           ],
         );
       }),

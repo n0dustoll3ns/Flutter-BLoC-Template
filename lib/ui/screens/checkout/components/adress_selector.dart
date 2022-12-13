@@ -20,9 +20,7 @@ class AdressSelector extends StatelessWidget {
                   opacity: !isAvailable ? 0.5 : 1,
                   child: InkWell(
                     onTap: isAvailable
-                        ? () {
-                            context.read<CheckoutBloc>().add(SetAdress(adress: state.items[index]));
-                          }
+                        ? () => context.read<CheckoutBloc>().add(SetAdress(adress: state.items[index]))
                         : null,
                     child: Card(
                       elevation: 5,
