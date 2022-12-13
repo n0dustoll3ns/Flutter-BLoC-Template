@@ -82,7 +82,9 @@ class CheckoutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            AdressSelector(),
+            AdressSelector(
+              isAvailable: state.stageIndex >= 1,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
               child: Row(

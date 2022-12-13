@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc_template/ui/screens/about_shop/about_shop.dart';
 import 'package:flutter_bloc_template/ui/screens/loyalty_program/loyalty_program_screen.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adress_edit_page.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 
 import '../../ui/screens/checkout/checkout_screen.dart';
@@ -16,5 +15,5 @@ class Routes {
   static get aboutShopScreen => CupertinoPageRoute(builder: (context) => const AboutShopScreen());
   static get recieversList => CupertinoPageRoute(builder: ((context) => const RecieversListScreen()));
   static get adressesList => CupertinoPageRoute(builder: ((context) => const AdressesListScreen()));
-  static get checkOut => CupertinoPageRoute(builder: ((context) => const CheckoutScreen()));
+  static get checkOut => CupertinoPageRoute(builder: ((context) => CheckoutScreen(key: UniqueKey())));
 }

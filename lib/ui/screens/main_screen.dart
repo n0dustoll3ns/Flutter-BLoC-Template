@@ -22,7 +22,6 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final itemsKeys = List.generate(5, (index) => GlobalKey<NavigatorState>());
     final categoriesState = context.read<CategoriesBloc>().state;
-
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(
       bloc: BlocProvider.of<AuthenticationBloc>(context),
       listener: (context, state) {
