@@ -25,6 +25,7 @@ class AdressSelector extends StatelessWidget {
                     child: Card(
                       elevation: 5,
                       child: AnimatedContainer(
+                        constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width / 1.5),
                         duration: const Duration(milliseconds: 366),
                         curve: Curves.ease,
                         decoration: BoxDecoration(

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
+import 'package:flutter_bloc_template/ui/screens/checkout/components/order_details.dart';
 import 'package:flutter_bloc_template/ui/screens/checkout/components/payment_method_selector.dart';
 import '../../../app/routes/routes.dart';
 import 'components/adress_selector.dart';
@@ -83,9 +84,7 @@ class CheckoutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            AdressSelector(
-              isAvailable: state.stageIndex >= 1,
-            ),
+            AdressSelector(isAvailable: state.stageIndex >= 1),
             Padding(
               padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
               child: Row(
@@ -99,9 +98,10 @@ class CheckoutScreen extends StatelessWidget {
                 ],
               ),
             ),
-            PaymentMethodSelecor(
-              isAvailable: state.stageIndex >= 2,
-            )
+            PaymentMethodSelecor(isAvailable: state.stageIndex >= 2),
+            SizedBox(height: MediaQuery.of(context).size.height / 44),
+            OrderDetails(),
+            
           ],
         );
       }),

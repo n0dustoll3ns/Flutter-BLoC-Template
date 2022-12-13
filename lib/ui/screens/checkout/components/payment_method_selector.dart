@@ -52,6 +52,7 @@ class PaymentMethodSelecor extends StatelessWidget {
                             Expanded(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     state.items[index].name,

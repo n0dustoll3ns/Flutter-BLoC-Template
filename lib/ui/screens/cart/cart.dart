@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/routes/routes.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
-import 'package:flutter_bloc_template/features/catalog/products/products_bloc.dart';
-import 'package:flutter_bloc_template/features/catalog/products/states.dart';
 import 'package:flutter_bloc_template/ui/screens/cart/components/item_card.dart';
 
 import '../../../app/routes/constants.dart';
