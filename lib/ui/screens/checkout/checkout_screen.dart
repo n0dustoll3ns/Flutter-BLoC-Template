@@ -9,6 +9,7 @@ import '../../../app/routes/routes.dart';
 import 'components/adress_selector.dart';
 import 'components/progress_indicator.dart';
 import 'components/reciever_selector.dart';
+import 'components/total_section.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -101,7 +102,8 @@ class CheckoutScreen extends StatelessWidget {
             PaymentMethodSelecor(isAvailable: state.stageIndex >= 2),
             SizedBox(height: MediaQuery.of(context).size.height / 44),
             OrderDetails(),
-            
+            SizedBox(height: MediaQuery.of(context).size.height / 44),
+            TotalSection()
           ],
         );
       }),
