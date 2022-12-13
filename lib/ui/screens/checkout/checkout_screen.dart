@@ -107,7 +107,9 @@ class CheckoutScreen extends StatelessWidget {
             TotalSection(),
             SizedBox(height: MediaQuery.of(context).size.height / 44),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(Routes.paymentRedirect);
+              },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
@@ -125,4 +127,3 @@ class CheckoutScreen extends StatelessWidget {
     );
   }
 }
-

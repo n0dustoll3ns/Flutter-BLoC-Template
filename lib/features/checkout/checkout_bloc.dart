@@ -53,11 +53,11 @@ abstract class CheckoutState {
   Adress? adress;
   PaymentMethod? paymentMethod;
   int get stageIndex {
-    if (reciever == null && adress == null) {
+    if (reciever == null) {
       return 0;
-    } else if (reciever != null && adress == null) {
+    } else if (adress == null) {
       return 1;
-    } else if (reciever != null && adress != null && paymentMethod == null) {
+    } else if (paymentMethod == null) {
       return 2;
     } else if (reciever != null && adress != null && paymentMethod != null) {
       return 3;

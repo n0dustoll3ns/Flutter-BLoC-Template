@@ -16,6 +16,7 @@ dependencies:
   flutter_lorem: ^2.0.0
   carousel_slider: ^4.1.1
   flutter_rating_bar: ^4.0.1
+  lottie: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -25,6 +26,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/animations/
 
   uses-material-design: true
   # example:
