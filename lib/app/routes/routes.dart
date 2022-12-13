@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc_template/ui/screens/about_shop/about_shop.dart';
+import 'package:flutter_bloc_template/ui/screens/checkout/checkout_complete_page/checkout_complete_page.dart';
 import 'package:flutter_bloc_template/ui/screens/loyalty_program/loyalty_program_screen.dart';
-import 'package:flutter_bloc_template/ui/screens/payment_redirect_page/payment_redirect_page.dart';
+import 'package:flutter_bloc_template/ui/screens/checkout/payment_redirect_page/payment_redirect_page.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 
 import '../../ui/screens/checkout/checkout_screen.dart';
@@ -18,4 +19,5 @@ class Routes {
   static get adressesList => CupertinoPageRoute(builder: ((context) => const AdressesListScreen()));
   static get checkOut => CupertinoPageRoute(builder: ((context) => CheckoutScreen(key: UniqueKey())));
   static get paymentRedirect => CupertinoPageRoute(builder: ((context) => const PaymentRedirectPage()));
+  static get checkoutCompletePage => CupertinoPageRoute(builder: ((context) => const CheckoutCompletePage()));
 }

@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../../app/routes/routes.dart';
+
 class PaymentRedirectPage extends StatelessWidget {
   const PaymentRedirectPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 8)).then((_) => Navigator.of(context).pop());
+    Future.delayed(const Duration(seconds: 8))
+        .then((_) => Navigator.of(context).pushReplacement(Routes.checkoutCompletePage));
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           LottieBuilder.asset('assets/animations/payment.json'),
           Text(
