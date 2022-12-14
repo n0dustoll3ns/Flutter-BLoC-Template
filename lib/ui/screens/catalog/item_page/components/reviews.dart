@@ -1,8 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_template/ui/screens/write_review/write_review_screen.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../../../features/catalog/products/model/product.dart';
+
 class ReviewsBox extends StatelessWidget {
-  const ReviewsBox({super.key});
+  final Product product;
+  const ReviewsBox({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +46,12 @@ class ReviewsBox extends StatelessWidget {
           ],
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context)
+                .push(CupertinoPageRoute(builder: (_) => WriteReviewScreen(
+                  key: UniqueKey(),
+                  product: product)));
+          },
           child: const Text('Write review'),
         ),
         Container(

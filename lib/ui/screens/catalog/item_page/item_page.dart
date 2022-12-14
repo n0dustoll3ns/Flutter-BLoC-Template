@@ -182,7 +182,7 @@ class _ProductScreenState extends State<ProductScreen> {
             CharactericticsLines(
               product: widget.product,
             ),
-            const ReviewsBox(),
+            ReviewsBox(product: widget.product),
           ][selectedTabIndex],
           RecomendedItems(product: widget.product)
         ],
