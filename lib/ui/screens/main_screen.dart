@@ -52,7 +52,7 @@ class MainScreen extends StatelessWidget {
             PersistentTabItem(
                 tab: const UserProfile(),
                 icon: const Icon(Icons.person_outline_rounded),
-                title: 'UserProfile',
+                title: 'Profile',
                 navigatorkey: itemsKeys[4]),
           ],
         );

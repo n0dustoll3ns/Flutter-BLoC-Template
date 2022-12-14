@@ -40,7 +40,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
             padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
             child: Text(
               'Rate the product ${widget.product.name}',
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           TextFormField(
@@ -72,7 +72,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
             padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
             child: Text(
               'Rate your experience',
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           RatingBar.builder(
@@ -99,7 +99,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                   'Quality',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                Spacer(),
+                const Spacer(),
                 Slider(
                     min: 1,
                     max: 5,
@@ -122,7 +122,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                   'Delivery',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                Spacer(),
+                const Spacer(),
                 Slider(
                     min: 1,
                     max: 5,
@@ -134,6 +134,49 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
+            child: TextFormField(
+              minLines: 3,
+              maxLines: 5,
+              decoration: const InputDecoration(
+                label: Text('Your comment'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
+            child: Text(
+              'Add product photo (optional)',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.width / 2.5,
+            child: ListView.separated(
+              separatorBuilder: (context, index) => SizedBox(
+                width: MediaQuery.of(context).size.width / 44,
+              ),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: Colors.grey),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Icon(Icons.camera_alt_rounded),
+                ),
+              ),
+              itemCount: 5,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
+            child: const Text(
+              'Supported formats: JPG JPEG PNG',
             ),
           ),
         ],
