@@ -48,9 +48,10 @@ class ProductCard extends StatelessWidget {
                               color: state.items.contains(product) ? Colors.red : null,
                             ));
                       }),
-                      Align(
-                          alignment: Alignment.center,
-                          child: Icon(product.img, size: MediaQuery.of(context).size.width / 3)),
+                      Image.asset(
+                        product.img,
+                        fit: BoxFit.contain,
+                      ),
                     ],
                   )),
               Expanded(

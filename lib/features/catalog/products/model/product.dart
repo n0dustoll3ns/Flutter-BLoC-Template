@@ -7,14 +7,14 @@ class Product {
   final int id;
   final String name;
   final String description;
-  final IconData img;
+  final String img;
   final double price;
   final int? brandID;
   final List<Characteristic> characteristics = [];
 
   Product(
       {required this.id, required this.name, required this.price, required this.description, this.brandID})
-      : img = icons[Random().nextInt(icons.length - 1)];
+      : img = 'assets/images/1_main.jpg';
 }
 
 const List<IconData> icons = [

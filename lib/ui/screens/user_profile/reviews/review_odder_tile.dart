@@ -4,7 +4,6 @@ import 'package:flutter_bloc_template/features/catalog/products/model/product.da
 import 'package:flutter_bloc_template/ui/screens/write_review/write_review_screen.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-
 class ReviewOfferTile extends StatelessWidget {
   final Product product;
   const ReviewOfferTile({super.key, required this.product});
@@ -17,9 +16,9 @@ class ReviewOfferTile extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.all(MediaQuery.of(context).size.width / 38),
-            child: Icon(
+            child: Image.asset(
               product.img,
-              size: MediaQuery.of(context).size.width / 3.4,
+              fit: BoxFit.contain,
             ),
           ),
           Expanded(

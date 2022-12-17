@@ -47,9 +47,9 @@ class ProductOfTheDay extends StatelessWidget {
                         children: [
                           Align(
                             alignment: Alignment.topCenter,
-                            child: Icon(
+                            child: Image.asset(
                               asyncSnapshot.data!.img,
-                              size: MediaQuery.of(context).size.width * 0.8,
+                              fit: BoxFit.contain,
                             ),
                           ),
                           Row(

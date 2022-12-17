@@ -16,9 +16,9 @@ class ItemCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Icon(
+            child: Image.asset(
               item.img,
-              size: MediaQuery.of(context).size.height / 9,
+              fit: BoxFit.contain,
             ),
           ),
           Expanded(
