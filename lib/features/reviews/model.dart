@@ -1,12 +1,14 @@
 class Review {
   final String comment;
   final bool anonimously;
+  final int productId;
   final double orderRating;
   final double qualityRating;
   final double deliveryRating;
   List<String> images = [];
 
   Review({
+    required this.productId,
     required this.comment,
     required this.anonimously,
     required this.orderRating,

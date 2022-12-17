@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/model.dart';
@@ -190,6 +189,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
               onPressed: () {
                 context.read<ReviewsBloc>().add(AddReview(
                     item: Review(
+                        productId: widget.product.id,
                         comment: commentController.text,
                         anonimously: anonimously,
                         orderRating: orderRating,

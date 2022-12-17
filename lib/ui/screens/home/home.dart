@@ -28,13 +28,7 @@ class Home extends StatelessWidget {
       const PopularCategories(),
       const BestOffers(),
       ProductOfTheDay(
-        product: Product(
-            name: lorem(paragraphs: 1, words: 4),
-            price: Random().nextInt(55) + 55.99,
-            description: lorem(
-              paragraphs: 4,
-              words: 120,
-            )),
+        
       ),
       const PromoSection(),
       const SectionAbout(),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/adresses/model.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
@@ -41,6 +40,13 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
 
   void onSetPaymentMethod(
     SetPaymentMethod event,
+    Emitter<CheckoutState> emit,
+  ) {
+    emit(state.copyWith(newPaymentMethod: event.paymentMethod));
+  }
+
+  void onCheckoutFinished(
+    event,
     Emitter<CheckoutState> emit,
   ) {
     emit(state.copyWith(newPaymentMethod: event.paymentMethod));
@@ -112,4 +118,8 @@ class SetReciever extends CheckoutEvent {
 class SetPaymentMethod extends CheckoutEvent {
   final PaymentMethod paymentMethod;
   SetPaymentMethod({required this.paymentMethod});
+}
+
+class CheckoutFinished extends CheckoutEvent {
+  CheckoutFinished();
 }

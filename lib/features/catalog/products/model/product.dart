@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
 class Product {
+  final int id;
   final String name;
   final String description;
   final IconData img;
@@ -11,7 +12,8 @@ class Product {
   final int? brandID;
   final List<Characteristic> characteristics = [];
 
-  Product({required this.name, required this.price, required this.description, this.brandID})
+  Product(
+      {required this.id, required this.name, required this.price, required this.description, this.brandID})
       : img = icons[Random().nextInt(icons.length - 1)];
 }
 

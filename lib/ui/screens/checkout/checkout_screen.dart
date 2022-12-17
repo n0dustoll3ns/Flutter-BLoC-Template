@@ -2,7 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
+import 'package:flutter_bloc_template/features/order/model.dart';
+import 'package:flutter_bloc_template/features/order/orders_bloc.dart';
+import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/ui/screens/checkout/components/order_details.dart';
 import 'package:flutter_bloc_template/ui/screens/checkout/components/payment_method_selector.dart';
 import '../../../app/routes/routes.dart';
@@ -111,6 +115,12 @@ class CheckoutScreen extends StatelessWidget {
                   ? null
                   : () {
                       Navigator.of(context).push(Routes.paymentRedirect);
+                      context.read<OrdersBloc>().add(AddOrder(
+                          item: Order(
+                              reciever: state.reciever!,
+                              adress: state.adress!,
+                              items: context.read<CartBloc>().state.items)));
+                      context.read<CheckoutBloc>().add(CheckoutFinished());
                     },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

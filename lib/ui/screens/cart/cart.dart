@@ -124,7 +124,7 @@ class Cart extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: RecomendedItems(product: Product(description: '', name: '', price: 1)),
+              child: RecomendedItems(product: Product(description: '', name: '', price: 1, id: 123456)),
             ),
           ]);
         }));

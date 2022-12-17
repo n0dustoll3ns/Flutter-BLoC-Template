@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/adresses/model.dart';
 import 'package:flutter_bloc_template/features/order/model.dart';
 
+import '../catalog/products/model/product.dart';
 import '../reciever/model.dart';
 
 class OrdersBloc extends Bloc<OrderEvent, OrdersState> {
@@ -9,6 +10,14 @@ class OrdersBloc extends Bloc<OrderEvent, OrdersState> {
     on<AddOrder>(onOrderAdded);
     on<RemoveOrder>(onOrderRemoved);
     on<ClearOrders>(onClearOrders);
+  }
+
+  List<Product> get orderedItems {
+    List<Product> list = [];
+    for (var order in state.items) {
+      list.addAll(order.items);
+    }
+    return list;
   }
 
   void onOrderAdded(
