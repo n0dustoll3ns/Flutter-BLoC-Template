@@ -18,22 +18,24 @@ class ReviewsList extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Padding(
-            padding: EdgeInsets.all(MediaQuery.of(context).size.width / 44),
-            child: Text(
-              'You have rated these products',
-              style: Theme.of(context).textTheme.headlineSmall,
+          if (reviewedProducts.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 44),
+              child: Text(
+                'You have rated these products',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
             ),
-          ),
           ...List.generate(reviewedProducts.length, (index) => ReviewTile(review: reviewedProducts[index])),
-          Padding(
-            padding: EdgeInsets.all(MediaQuery.of(context).size.width / 44),
-            child: Text(
-              'You have bought these products, write a review about them',
-              maxLines: 2,
-              style: Theme.of(context).textTheme.headlineSmall,
+          if (unreviewedProducts.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 44),
+              child: Text(
+                'You have bought these products, write a review about them',
+                maxLines: 2,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
             ),
-          ),
           ...List.generate(
               unreviewedProducts.length, (index) => ReviewOfferTile(product: unreviewedProducts[index]))
         ],

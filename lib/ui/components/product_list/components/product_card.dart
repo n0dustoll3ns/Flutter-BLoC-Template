@@ -34,6 +34,10 @@ class ProductCard extends StatelessWidget {
                   child: Stack(
                     alignment: AlignmentDirectional.topEnd,
                     children: [
+                      Image.asset(
+                        product.img,
+                        fit: BoxFit.contain,
+                      ),
                       BlocBuilder<FavouriteBloc, FavouriteState>(builder: (context, state) {
                         return IconButton(
                             onPressed: () {
@@ -48,10 +52,6 @@ class ProductCard extends StatelessWidget {
                               color: state.items.contains(product) ? Colors.red : null,
                             ));
                       }),
-                      Image.asset(
-                        product.img,
-                        fit: BoxFit.contain,
-                      ),
                     ],
                   )),
               Expanded(

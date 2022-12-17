@@ -10,9 +10,15 @@ class ItemLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          item.img,
-          fit: BoxFit.contain,
+        SizedBox(
+          height: MediaQuery.of(context).size.width / 3,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              item.img,
+              fit: BoxFit.contain,
+            ),
+          ),
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width / 44,

@@ -14,6 +14,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     on<SetReciever>(onSetRecieverRemoved);
     on<SetAdress>(onSetAdressCheckout);
     on<SetPaymentMethod>(onSetPaymentMethod);
+    on<CheckoutFinished>(onCheckoutFinished);
   }
 
   void onCreateOrder(
@@ -46,10 +47,10 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
   }
 
   void onCheckoutFinished(
-    event,
+    CheckoutFinished event,
     Emitter<CheckoutState> emit,
   ) {
-    emit(state.copyWith(newPaymentMethod: event.paymentMethod));
+    emit(CheckoutInitial());
   }
 }
 

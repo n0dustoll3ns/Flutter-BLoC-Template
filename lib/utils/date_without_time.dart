@@ -1,3 +1,5 @@
 extension DateWithNoTime on DateTime {
-  String toStringDate() => '$year $month $day' ;
+  String get onlyDate => '$year $month $day';
+  String get dateAndTime => '$year.$month.$day, $hour:$minute';
 }
+

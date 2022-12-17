@@ -53,13 +53,17 @@ class UserProfile extends StatelessWidget {
                   CupertinoPageRoute(builder: ((context) => PersonalDataPage(userData: state.userData)))),
             ),
             const Divider(),
-            const ListTile(leading: Icon(Icons.shopping_bag_outlined), title: Text('Orders')),
+            ListTile(
+              leading: const Icon(Icons.shopping_bag_outlined),
+              title: const Text('Orders'),
+              onTap: () => Navigator.of(context).push(Routes.ordersList),
+            ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.comment_rounded),
               title: const Text('Reviews'),
-              onTap: () => Navigator.of(context)
-                  .push(CupertinoPageRoute(builder: ((context) => const ReviewsList()))),
+              onTap: () =>
+                  Navigator.of(context).push(CupertinoPageRoute(builder: ((context) => const ReviewsList()))),
             ),
             const Divider(),
             ListTile(

@@ -13,7 +13,7 @@ class UserDataFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dateController = TextEditingController(text: userData.bDay.toStringDate());
+    var dateController = TextEditingController(text: userData.bDay.onlyDate);
     Future<void> pickDate(BuildContext context) async {
       DateTime? pickedDate = await showDatePicker(
         context: context,
@@ -23,9 +23,10 @@ class UserDataFields extends StatelessWidget {
       );
       if (pickedDate != null) {
         userData.bDay = pickedDate;
-        dateController.text = pickedDate.toStringDate();
+        dateController.text = pickedDate.onlyDate;
       }
     }
+
     return ListView(
       padding: const EdgeInsets.all(8),
       shrinkWrap: true,

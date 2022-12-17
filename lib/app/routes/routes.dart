@@ -8,6 +8,7 @@ import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adre
 import '../../ui/screens/checkout/checkout_screen.dart';
 import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
+import '../../ui/screens/user_profile/my_orders/orders_list.dart';
 import '../../ui/screens/user_profile/recievers_list/recievers.dart';
 
 class Routes {
@@ -20,4 +21,5 @@ class Routes {
   static get checkOut => CupertinoPageRoute(builder: ((context) => CheckoutScreen(key: UniqueKey())));
   static get paymentRedirect => CupertinoPageRoute(builder: ((context) => const PaymentRedirectPage()));
   static get checkoutCompletePage => CupertinoPageRoute(builder: ((context) => const CheckoutCompletePage()));
+  static get ordersList => CupertinoPageRoute(builder: ((context) => const OrdersListPage()));
 }
