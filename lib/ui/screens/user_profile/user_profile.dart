@@ -10,6 +10,7 @@ import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adre
 import 'package:flutter_bloc_template/ui/screens/user_profile/components/personal_data.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/recievers.dart';
+import 'package:flutter_bloc_template/ui/screens/user_profile/reviews/reviews_list.dart';
 
 import '../../../app/routes/constants.dart';
 import 'personal_data_screen/personal_data_page.dart';
@@ -54,7 +55,12 @@ class UserProfile extends StatelessWidget {
             const Divider(),
             const ListTile(leading: Icon(Icons.shopping_bag_outlined), title: Text('Orders')),
             const Divider(),
-            const ListTile(leading: Icon(Icons.comment_rounded), title: Text('Reviews')),
+            ListTile(
+              leading: const Icon(Icons.comment_rounded),
+              title: const Text('Reviews'),
+              onTap: () => Navigator.of(context)
+                  .push(CupertinoPageRoute(builder: ((context) => const ReviewsList()))),
+            ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.people_rounded),

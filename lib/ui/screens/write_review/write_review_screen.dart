@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/reviews/model.dart';
+import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -18,9 +20,11 @@ class WriteReviewScreen extends StatefulWidget {
 class _WriteReviewScreenState extends State<WriteReviewScreen> {
   bool anonimously = false;
   TextEditingController nameController = TextEditingController();
+  TextEditingController commentController = TextEditingController();
   late UserBloc userBloc = context.read<UserBloc>();
-  double quality = 4;
-  double delivery = 4;
+  double orderRating = 4;
+  double qualityRating = 4;
+  double deliveryRating = 4;
   @override
   void initState() {
     nameController.text = (userBloc.state as UserDataLoaded).userData.firstName;
@@ -76,7 +80,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
             ),
           ),
           RatingBar.builder(
-            initialRating: 4,
+            initialRating: orderRating,
             itemSize: MediaQuery.of(context).size.width / 15,
             minRating: 1,
             direction: Axis.horizontal,
@@ -87,7 +91,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
               color: Colors.amber,
             ),
             onRatingUpdate: (rating) {
-              // print(rating);
+              orderRating = rating;
             },
           ),
           Padding(
@@ -104,10 +108,10 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                     min: 1,
                     max: 5,
                     divisions: 4,
-                    value: quality,
-                    onChanged: (val) => setState(() => quality = val)),
+                    value: qualityRating,
+                    onChanged: (val) => setState(() => qualityRating = val)),
                 Text(
-                  quality.toString(),
+                  qualityRating.toString(),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ],
@@ -127,10 +131,10 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                     min: 1,
                     max: 5,
                     divisions: 4,
-                    value: delivery,
-                    onChanged: (val) => setState(() => delivery = val)),
+                    value: deliveryRating,
+                    onChanged: (val) => setState(() => deliveryRating = val)),
                 Text(
-                  delivery.toString(),
+                  deliveryRating.toString(),
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ],
@@ -141,6 +145,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
             child: TextFormField(
               minLines: 3,
               maxLines: 5,
+              controller: commentController,
               decoration: const InputDecoration(
                 label: Text('Your comment'),
               ),
@@ -153,7 +158,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.width / 2.5,
             child: ListView.separated(
               separatorBuilder: (context, index) => SizedBox(
@@ -177,6 +182,24 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
             padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
             child: const Text(
               'Supported formats: JPG JPEG PNG',
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
+            child: ElevatedButton(
+              onPressed: () {
+                context.read<ReviewsBloc>().add(AddReview(
+                    item: Review(
+                        comment: commentController.text,
+                        anonimously: anonimously,
+                        orderRating: orderRating,
+                        qualityRating: qualityRating,
+                        deliveryRating: deliveryRating)));
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Send review',
+              ),
             ),
           ),
         ],

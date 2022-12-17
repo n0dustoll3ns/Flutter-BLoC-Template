@@ -107,9 +107,11 @@ class CheckoutScreen extends StatelessWidget {
             TotalSection(),
             SizedBox(height: MediaQuery.of(context).size.height / 44),
             ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(Routes.paymentRedirect);
-              },
+              onPressed: state.stageIndex != 3
+                  ? null
+                  : () {
+                      Navigator.of(context).push(Routes.paymentRedirect);
+                    },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(

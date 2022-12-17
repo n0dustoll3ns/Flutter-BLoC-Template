@@ -21,7 +21,11 @@ class CheckoutCompletePage extends StatelessWidget {
             'You can check info about your order in personal data section',
             style: Theme.of(context).textTheme.titleSmall,
           ),
-          ElevatedButton(onPressed: () {}, child: const Text('Go to personal data'))
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
+              child: const Text('Return to cart'))
         ],
       ),
     );
