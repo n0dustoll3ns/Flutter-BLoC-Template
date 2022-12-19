@@ -1,4 +1,5 @@
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
+import 'package:flutter_bloc_template/features/payment/methods/model.dart';
 
 import '../adresses/model.dart';
 import '../reciever/model.dart';
@@ -7,6 +8,7 @@ class Order {
   final Reciever reciever;
   final int id;
   final Adress adress;
+  final PaymentMethod paymentMethod;
   final List<Product> items;
   final DateTime date;
   Status status = Status.initial;
@@ -35,6 +37,7 @@ class Order {
   Order({
     required this.reciever,
     required this.adress,
+    required this.paymentMethod,
     required this.items,
     double paid = 0,
     int? id,
@@ -44,4 +47,13 @@ class Order {
         date = date ?? DateTime.now();
 }
 
-enum Status { initial, canceled, inProgress, inDelivery, done }
+enum Status {
+  initial,
+  canceled,
+  inProgress,
+  inDelivery,
+  done;
+
+  @override
+  String toString() => name;
+}

@@ -21,8 +21,12 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
     CreateOrder event,
     Emitter<CheckoutState> emit,
   ) {
-    ordersBloc
-        .add(AddOrder(item: Order(reciever: state.reciever!, adress: state.adress!, items: event.items)));
+    ordersBloc.add(AddOrder(
+        item: Order(
+            reciever: state.reciever!,
+            paymentMethod: state.paymentMethod!,
+            adress: state.adress!,
+            items: event.items)));
   }
 
   void onSetRecieverRemoved(

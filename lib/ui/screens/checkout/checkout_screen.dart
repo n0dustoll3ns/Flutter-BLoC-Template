@@ -119,6 +119,7 @@ class CheckoutScreen extends StatelessWidget {
                           item: Order(
                               reciever: state.reciever!,
                               adress: state.adress!,
+                              paymentMethod: state.paymentMethod!,
                               items: context.read<CartBloc>().state.items)));
                       context.read<CheckoutBloc>().add(CheckoutFinished());
                     },
