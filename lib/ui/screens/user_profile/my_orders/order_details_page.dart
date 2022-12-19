@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/ui/screens/checkout/components/total_section.dart';
 import 'package:flutter_bloc_template/utils/date_without_time.dart';
 import 'package:flutter_bloc_template/utils/string_capitalize.dart';
 
 import '../../../../app/routes/routes.dart';
 import '../../../../features/order/model.dart';
 import 'order_info_section.dart';
+import 'total_section.dart';
 
 class OrderDetailsPage extends StatelessWidget {
   final Order order;
@@ -86,12 +85,17 @@ class OrderDetailsPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 28),
-            child: const TotalSection(),
+            child: TotalSection(order: order),
           ),
           ElevatedButton(
-              onPressed:
-                  order.needsPayment ? () => Navigator.of(context).push(Routes.checkoutCompletePage) : null,
-              child: Text(order.needsPayment ? 'Pay now' : 'Paid'))
+            onPressed:
+                order.needsPayment ? () => Navigator.of(context).push(Routes.checkoutCompletePage) : null,
+            style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 32)),
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 28),
+              child: Text(order.needsPayment ? 'Pay now' : 'Paid'),
+            ),
+          ),
         ],
       ),
     );
