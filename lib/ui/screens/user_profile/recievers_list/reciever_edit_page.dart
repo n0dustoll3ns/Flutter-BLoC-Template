@@ -22,11 +22,15 @@ class RecieverEditPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(controller: nameController),
+            child: TextFormField(
+              decoration: const InputDecoration(label: Text('Full name')),
+              controller: nameController,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
+              decoration: const InputDecoration(label: Text('Phone number')),
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               controller: phoneController,

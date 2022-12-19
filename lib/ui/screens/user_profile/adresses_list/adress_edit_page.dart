@@ -24,15 +24,24 @@ class AdressEditPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(controller: buildingNumberController),
+            child: TextFormField(
+              controller: buildingNumberController,
+              decoration: const InputDecoration(label: Text('Building number')),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(controller: streetNameController),
+            child: TextFormField(
+              controller: streetNameController,
+              decoration: const InputDecoration(label: Text('Street name')),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextFormField(controller: townController),
+            child: TextFormField(
+              controller: townController,
+              decoration: const InputDecoration(label: Text('City name')),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -40,6 +49,7 @@ class AdressEditPage extends StatelessWidget {
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               controller: zipCodeController,
+              decoration: const InputDecoration(label: Text('Zip code')),
               onFieldSubmitted: (value) => completeEditing(
                 context,
                 buildingNumberController,
