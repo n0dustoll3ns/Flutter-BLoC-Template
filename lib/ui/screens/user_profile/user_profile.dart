@@ -80,8 +80,8 @@ class UserProfile extends StatelessWidget {
                   .push(CupertinoPageRoute(builder: ((context) => const AdressesListScreen()))),
             ),
             const Divider(),
-            const ListTile(leading: Icon(Icons.wallet_rounded), title: Text('My cards')),
-            const Divider(),
+            // const ListTile(leading: Icon(Icons.wallet_rounded), title: Text('My cards')),
+            // const Divider(),
             ListTile(
               leading: const Icon(Icons.card_giftcard_rounded),
               title: const Text('My certificates'),
