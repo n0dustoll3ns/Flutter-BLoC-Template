@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -15,17 +16,24 @@ class PaymentRedirectPage extends StatelessWidget {
       return Navigator.of(context).pushReplacement(Routes.checkoutCompletePage);
     });
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          LottieBuilder.asset('assets/animations/payment.json'),
-          Text(
-            'In this page happens paying magic of your order. \nYou will automatocally be returned to in 5 sec',
-            style: Theme.of(context).textTheme.headlineSmall,
-            textAlign: TextAlign.center,
-          ),
-        ],
+      body: GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(CupertinoPageRoute(
+              builder: (context) =>
+                  ErrorWidget.builder(FlutterErrorDetails(exception: Exception('Payment failed')))));
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            LottieBuilder.asset('assets/animations/payment.json'),
+            Text(
+              'In this page happens paying magic of your order. \nYou will automatocally be returned to in 5 sec',
+              style: Theme.of(context).textTheme.headlineSmall,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }

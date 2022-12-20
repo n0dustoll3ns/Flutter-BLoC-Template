@@ -33,6 +33,9 @@ class CustomError extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.black, fontSize: 14),
             ),
+            ElevatedButton(
+                onPressed: () => Navigator.of(context).popUntil((route) => route.isFirst),
+                child: const Text('Go back'))
           ],
         ),
       ),
