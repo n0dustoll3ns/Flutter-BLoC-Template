@@ -12,6 +12,7 @@ import '../../features/catalog/products/model/product.dart';
 import '../../ui/screens/checkout/checkout_screen.dart';
 import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
+import '../../ui/screens/user_profile/certificates/certificates_screen.dart';
 import '../../ui/screens/user_profile/my_orders/orders_list.dart';
 import '../../ui/screens/user_profile/recievers_list/recievers.dart';
 
@@ -26,6 +27,7 @@ class Routes {
   static get paymentRedirect => CupertinoPageRoute(builder: ((context) => const PaymentRedirectPage()));
   static get checkoutCompletePage => CupertinoPageRoute(builder: ((context) => const CheckoutCompletePage()));
   static get ordersList => CupertinoPageRoute(builder: ((context) => const OrdersListPage()));
+  static get certificatesScreen => CupertinoPageRoute(builder: ((context) => const CertificatesScreen()));
   static Route productScreen(Product product) => CupertinoPageRoute(
       builder: ((context) => ProductScreen(
             product: product,

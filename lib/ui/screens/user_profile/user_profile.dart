@@ -82,7 +82,11 @@ class UserProfile extends StatelessWidget {
             const Divider(),
             const ListTile(leading: Icon(Icons.wallet_rounded), title: Text('My cards')),
             const Divider(),
-            const ListTile(leading: Icon(Icons.card_giftcard_rounded), title: Text('My certificates')),
+            ListTile(
+              leading: const Icon(Icons.card_giftcard_rounded),
+              title: const Text('My certificates'),
+              onTap: () => Navigator.of(context).push(Routes.certificatesScreen),
+            ),
             const Divider(),
           ],
         ),

@@ -16,7 +16,9 @@ class ProductCard extends StatelessWidget {
     var favouriteBloc = context.read<FavouriteBloc>();
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(CupertinoPageRoute(builder: (context) => ProductScreen(product: product)));
+        Navigator.of(context).push(CupertinoPageRoute(
+            builder: (context) => ProductScreen(product: product),
+            settings: RouteSettings(name: '${product.id}', arguments: List.empty())));
       },
       child: Container(
         decoration: BoxDecoration(
