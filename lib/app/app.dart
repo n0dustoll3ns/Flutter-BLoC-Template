@@ -17,6 +17,7 @@ import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
 import '../features/login/login_bloc.dart';
+import '../ui/screens/error/error_screen.dart';
 import '../ui/screens/login_screen/login_screen.dart';
 import '../ui/screens/splash_screen.dart';
 import 'theme/theme.dart';
@@ -57,6 +58,12 @@ class App extends StatelessWidget {
         BlocProvider(create: (context) => CheckoutBloc(ordersBloc: context.read<OrdersBloc>())),
       ],
       child: MaterialApp(
+        builder: (BuildContext context, Widget? widget) {
+          ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
+            return CustomError(errorDetails: errorDetails);
+          };
+          return widget!;
+        },
         theme: theme,
         home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           bloc: authenticationBloc,
