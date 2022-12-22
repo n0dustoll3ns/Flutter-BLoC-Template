@@ -63,7 +63,7 @@ class CheckoutScreen extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context).push(Routes.recieversList);
+                      Navigator.of(context).pushNamed(Routes.recieversList);
                     },
                     icon: const Icon(Icons.edit),
                   ),
@@ -83,7 +83,7 @@ class CheckoutScreen extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context).push(Routes.adressesList);
+                      Navigator.of(context).pushNamed(Routes.adressesList);
                     },
                     icon: const Icon(Icons.edit),
                   ),
@@ -114,7 +114,7 @@ class CheckoutScreen extends StatelessWidget {
               onPressed: state.stageIndex != 3
                   ? null
                   : () {
-                      Navigator.of(context).push(Routes.paymentRedirect);
+                      Navigator.of(context).pushNamed(Routes.paymentRedirect);
                       context.read<OrdersBloc>().add(AddOrder(
                           item: Order(
                               reciever: state.reciever!,

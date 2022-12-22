@@ -119,7 +119,7 @@ class Cart extends StatelessWidget {
               child: ElevatedButton(
                   child: const Text('Checkout'),
                   onPressed: () {
-                    Navigator.of(context).push(Routes.checkOut);
+                    Navigator.of(context).pushNamed(Routes.checkOut);
                   }),
             ),
             Padding(

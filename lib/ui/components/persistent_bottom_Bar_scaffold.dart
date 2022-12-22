@@ -1,5 +1,8 @@
 // ignore: file_names
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../app/routes/routes.dart';
 
 class PersistentBottomBarScaffold extends StatefulWidget {
   /// pass the required items for the tabs and BottomNavigationBar
@@ -39,8 +42,9 @@ class PersistentBottomBarScaffoldState extends State<PersistentBottomBarScaffold
           children: widget.items
               .map((item) => Navigator(
                     key: item.navigatorkey,
+                    onGenerateRoute: Routes.onGenerateRouted,
                     onGenerateInitialRoutes: (navigator, initialRoute) {
-                      return [MaterialPageRoute(builder: (context) => item.tab)];
+                      return [CupertinoPageRoute(builder: (context) => item.tab)];
                     },
                   ))
               .toList(),

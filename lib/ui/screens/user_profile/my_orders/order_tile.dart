@@ -44,7 +44,8 @@ class OrderTile extends StatelessWidget {
                   ],
                 )),
                 IconButton(
-                    onPressed: () => Navigator.push(context, Routes.orderDetailsScreen(order)),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, Routes.orderDetailsScreen, arguments: order),
                     icon: const Icon(CupertinoIcons.arrow_right))
               ],
             ),

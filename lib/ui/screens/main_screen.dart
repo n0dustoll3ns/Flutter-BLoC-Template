@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
       bloc: BlocProvider.of<AuthenticationBloc>(context),
       listener: (context, state) {
         if (state is AuthenticationUnauthenticated) {
-          Navigator.push(context, Routes.signIn);
+          Navigator.pushNamed(context, Routes.login);
         }
       },
       builder: (context, state) {
@@ -40,10 +40,7 @@ class MainScreen extends StatelessWidget {
                 title: 'Catalog',
                 navigatorkey: itemsKeys[1]),
             PersistentTabItem(
-                tab: const Cart(),
-                icon: const CartIcon(),
-                title: 'Cart',
-                navigatorkey: itemsKeys[2]),
+                tab: const Cart(), icon: const CartIcon(), title: 'Cart', navigatorkey: itemsKeys[2]),
             PersistentTabItem(
                 tab: const Favourites(),
                 icon: const Icon(CupertinoIcons.heart),

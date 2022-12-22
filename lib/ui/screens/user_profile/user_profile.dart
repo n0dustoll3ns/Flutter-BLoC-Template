@@ -56,7 +56,7 @@ class UserProfile extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('Orders'),
-              onTap: () => Navigator.of(context).push(Routes.ordersList),
+              onTap: () => Navigator.of(context).pushNamed(Routes.ordersList),
             ),
             const Divider(),
             ListTile(
@@ -85,7 +85,7 @@ class UserProfile extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.card_giftcard_rounded),
               title: const Text('My certificates'),
-              onTap: () => Navigator.of(context).push(Routes.certificatesScreen),
+              onTap: () => Navigator.of(context).pushNamed(Routes.certificatesScreen),
             ),
             const Divider(),
           ],

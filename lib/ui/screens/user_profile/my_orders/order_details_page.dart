@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/utils/date_without_time.dart';
 import 'package:flutter_bloc_template/utils/string_capitalize.dart';
@@ -10,6 +11,11 @@ import 'total_section.dart';
 class OrderDetailsPage extends StatelessWidget {
   final Order order;
   const OrderDetailsPage({super.key, required this.order});
+
+  static Route<dynamic> route(RouteSettings routeSettings) {
+    var order = routeSettings.arguments as Order;
+    return CupertinoPageRoute(builder: (context) => OrderDetailsPage(order: order));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,8 +94,9 @@ class OrderDetailsPage extends StatelessWidget {
             child: TotalSection(order: order),
           ),
           ElevatedButton(
-            onPressed:
-                order.needsPayment ? () => Navigator.of(context).push(Routes.checkoutCompletePage) : null,
+            onPressed: order.needsPayment
+                ? () => Navigator.of(context).pushNamed(Routes.checkoutCompletePage)
+                : null,
             style: ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 32)),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 28),

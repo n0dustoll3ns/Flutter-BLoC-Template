@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/payment/methods/model.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import '../../../app/routes/routes.dart';
@@ -20,17 +19,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final AuthenticationBloc authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
-
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(
         listener: (context, state) {
           if (state is AuthenticationAuthenticated) {
-            Navigator.of(context).push(Routes.home);
+            Navigator.of(context).pushReplacementNamed(Routes.home);
             context.read<RecieversBloc>().add(Authorized(token: state.token));
             context.read<AdressesBloc>().add(AuthComplete(token: state.token));
             context.read<PaymentMethodsBloc>().add(AllowLoadPaymentMethods());
           }
         },
-        bloc: authenticationBloc,
         builder: ((context, state) {
           return Scaffold(
             appBar: AppBar(

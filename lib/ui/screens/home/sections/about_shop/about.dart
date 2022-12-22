@@ -54,7 +54,7 @@ class SectionAbout extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                    onPressed: () => Navigator.of(context).push(Routes.aboutShopScreen),
+                    onPressed: () => Navigator.of(context).pushNamed(Routes.aboutShopScreen),
                     child: const Text('Learn more')),
               ],
             ),

@@ -13,7 +13,7 @@ class PaymentRedirectPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 8)).then((_) {
       context.read<CartBloc>().add(ClearCart());
-      return Navigator.of(context).pushReplacement(Routes.checkoutCompletePage);
+      return Navigator.of(context).pushReplacementNamed(Routes.checkoutCompletePage);
     });
     return Scaffold(
       body: GestureDetector(

@@ -20,6 +20,7 @@ import '../features/login/login_bloc.dart';
 import '../ui/screens/error/error_screen.dart';
 import '../ui/screens/login_screen/login_screen.dart';
 import '../ui/screens/splash_screen.dart';
+import 'routes/routes.dart';
 import 'theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -65,15 +66,17 @@ class App extends StatelessWidget {
           return widget!;
         },
         theme: theme,
-        home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
-          bloc: authenticationBloc,
-          builder: (BuildContext context, AuthenticationState state) {
-            if (state is AuthenticationUninitialized) {
-              return const SplashScreen();
-            }
-            return const LoginPage();
-          },
-        ),
+        initialRoute: Routes.login,
+        onGenerateRoute: Routes.onGenerateRouted,
+        // home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
+        //   bloc: authenticationBloc,
+        //   builder: (BuildContext context, AuthenticationState state) {
+        //     if (state is AuthenticationUninitialized) {
+        //       return const SplashScreen();
+        //     }
+        //     return const LoginPage();
+        //   },
+        // ),
       ),
     );
   }
