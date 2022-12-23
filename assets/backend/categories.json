@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "Electronics",
+    "children": [
+      { "id": 15, "name": "Televsision" },
+      { "id": 16, "name": "AudiTechnics" },
+      { "id": 17, "name": "Games and consoles" },
+      { "id": 18, "name": "Phones" }
+    ]
+  },
+  { "id": 1, "name": "Transport" },
+  { "id": 2, "name": "Furniture" },
+  { "id": 3, "name": "Shoes" },
+  { "id": 4, "name": "Clothes" },
+  { "id": 5, "name": "Jewelry and Bijou" },
+  { "id": 6, "name": "Plumbing" },
+  { "id": 7, "name": "Sport" },
+  { "id": 8, "name": "Lighting" },
+  { "id": 9, "name": "Home and garden" },
+  { "id": 10, "name": "Clock" },
+  { "id": 11, "name": "Construction Materials" },
+  { "id": 12, "name": "Cosmetics and perfumery" },
+  { "id": 13, "name": "Toys" },
+  { "id": 14, "name": "Climatic technics" }
+]

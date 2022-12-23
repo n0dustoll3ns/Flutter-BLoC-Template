@@ -25,7 +25,7 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<UserBloc, UserState>(builder: (context, state) {
       if (state is UserInitial) {
-        return const ErrorBox(message: 'Somethig went wrong');
+        return ErrorWidget.builder(FlutterErrorDetails(exception: Exception('Authorization not complete')));
       } else if (state is UserFailure) {
         return ErrorBox(message: state.error);
       } else if (state is UserLoading) {
