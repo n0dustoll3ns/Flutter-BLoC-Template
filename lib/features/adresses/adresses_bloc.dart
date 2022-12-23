@@ -49,8 +49,7 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
       adress.town = event.item.town;
       adress.zipCode = event.item.zipCode;
       emit(AdressesUpdated(items: state.items));
-    } on Exception catch (e) {
-      // TODO
+    } on Exception catch (_) {
     }
   }
 
@@ -63,8 +62,7 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
       _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
       state.items.removeWhere((element) => element.id == event.item.id);
       emit(AdressesUpdated(items: state.items));
-    } on Exception catch (e) {
-      // TODO
+    } on Exception catch (_) {
     }
   }
 

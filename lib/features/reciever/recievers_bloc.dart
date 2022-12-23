@@ -47,8 +47,7 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
       reciever.name = event.item.name;
       reciever.phoneNumber = event.item.phoneNumber;
       emit(RecieversUpdated(items: state.items));
-    } on Exception catch (e) {
-      // TODO
+    } on Exception catch (_) {
     }
   }
 
@@ -61,8 +60,7 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
       _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
       state.items.removeWhere((element) => element.id == event.item.id);
       emit(RecieversUpdated(items: state.items));
-    } on Exception catch (e) {
-      // TODO
+    } on Exception catch (_) {
     }
   }
 

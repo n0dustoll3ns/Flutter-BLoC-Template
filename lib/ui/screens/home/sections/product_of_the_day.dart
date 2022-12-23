@@ -7,7 +7,6 @@ import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../../../app/routes/routes.dart';
 
 class ProductOfTheDay extends StatelessWidget {
   const ProductOfTheDay({super.key});

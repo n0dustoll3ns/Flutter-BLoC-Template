@@ -1,15 +1,21 @@
+import 'dart:math';
+
 import 'package:flutter_bloc_template/features/user/states.dart';
 
 class UserRepository {
   String token = '';
 
-  Future<String> authenticate({
+  Future<String?> authenticate({
     required String username,
     required String password,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
     token = 'token';
-    return 'token';
+    if (Random().nextInt(100) > 5) {
+      return token;
+    } else {
+      return null;
+    }
   }
 
   Future<void> deleteToken() async {

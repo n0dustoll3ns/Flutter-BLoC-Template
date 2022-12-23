@@ -6,9 +6,10 @@ import 'user_repository.dart';
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
   final UserRepository userRepository = UserRepository();
 
-  AuthenticationBloc() : super(AuthenticationUninitialized()) {
+  AuthenticationBloc() : super(AuthenticationUnauthenticated()) {
     on<AppStarted>(_startApp);
-    on<LoggedIn>(_tryLogin);
+    on<LoginButtonPressed>(_tryAuthorize);
+    on<LoggedIn>(_login);
     on<LoggedOut>(_logOut);
   }
 
@@ -24,10 +25,17 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     }
   }
 
-  void _tryLogin(
-    LoggedIn event,
-    Emitter<AuthenticationState> emitter,
-  ) {
+  Future<void> _tryAuthorize(LoginButtonPressed event, Emitter<AuthenticationState> emitter) async {
+    emitter(AuthenticationLoading());
+    var token = await userRepository.authenticate(username: event.userName, password: event.password);
+    if (token != null) {
+      emitter(AuthenticationAuthenticated(token: token));
+    } else {
+      emitter(AuthenticationFailed(message: 'failed'));
+    }
+  }
+
+  void _login(LoggedIn event, Emitter<AuthenticationState> emitter) {
     emitter(AuthenticationLoading());
     userRepository.persistToken(event.token);
     emitter(AuthenticationAuthenticated(token: event.token));

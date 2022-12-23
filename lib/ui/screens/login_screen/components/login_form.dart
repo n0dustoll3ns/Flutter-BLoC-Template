@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
 
-import '../../../../features/login/states.dart';
-import '../../../../features/login/login_bloc.dart';
 import '../../../components/loading_indicator.dart';
 
 class LoginForm extends StatefulWidget {
@@ -16,49 +16,22 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-  late LoginBloc _loginBloc;
-  bool dialogIsShown = false;
-
-  @override
-  void initState() {
-    _loginBloc = context.read<LoginBloc>();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginBloc, LoginState>(
+    return BlocConsumer<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
-        if (dialogIsShown) {
-          dialogIsShown = false;
-          Navigator.of(context).pop();
-        }
-        if (state is LoginLoading) {
-          dialogIsShown = true;
-          showCupertinoModalPopup<void>(
-            context: context,
-            builder: (BuildContext context) => const CupertinoAlertDialog(
-              content: LoadingIndicator(),
-            ),
-          );
-        }
-      },
-      bloc: _loginBloc,
-      builder: (
-        BuildContext context,
-        LoginState state,
-      ) {
-        if (state is LoginFailure) {
+        if (state is AuthenticationFailed) {
           _onWidgetDidBuild(() {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(state.error),
+                content: Text(state.message),
                 backgroundColor: Colors.red,
               ),
             );
           });
         }
-
+      },
+      builder: (BuildContext context, AuthenticationState state) {
         return Form(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -72,10 +45,12 @@ class _LoginFormState extends State<LoginForm> {
                 controller: _passwordController,
                 obscureText: true,
               ),
-              ElevatedButton(
-                onPressed: state is! LoginLoading ? _onLoginButtonPressed : null,
-                child: const Text('Login'),
-              ),
+              state is AuthenticationLoading
+                  ? const LoadingIndicator()
+                  : ElevatedButton(
+                      onPressed: _onLoginButtonPressed,
+                      child: const Text('Login'),
+                    ),
             ],
           ),
         );
@@ -90,9 +65,9 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   _onLoginButtonPressed() {
-    _loginBloc.add(LoginButtonPressed(
-      username: _usernameController.text,
-      password: _passwordController.text,
-    ));
+    context.read<AuthenticationBloc>().add(LoginButtonPressed(
+          userName: _usernameController.text,
+          password: _passwordController.text,
+        ));
   }
 }

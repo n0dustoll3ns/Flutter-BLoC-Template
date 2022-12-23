@@ -24,6 +24,7 @@ class _RecomendedItemsState extends State<RecomendedItems> with AutomaticKeepAli
       .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

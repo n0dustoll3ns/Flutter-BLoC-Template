@@ -24,7 +24,6 @@ class AdressesRepository {
 
   Future<void> updateAdress({required String token, required Adress adress}) async {
     await Future.delayed(const Duration(milliseconds: 700));
-    //TODO
     return;
   }
 }

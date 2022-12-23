@@ -12,16 +12,13 @@ class ChapterCard extends StatelessWidget {
       aspectRatio: 14 / 9,
       child: Card(
         child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kDefaultPadding / 4),
-          ),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(kDefaultPadding / 4)),
           width: MediaQuery.of(context).size.width / 3,
           child: Padding(
             padding: const EdgeInsets.all(kDefaultPadding / 2),
             child: Stack(
               fit: StackFit.expand,
               children: [
-                //TODO Replace icon with standart 404 notFoundImage
                 if (chapter.img.isEmpty)
                   const Opacity(opacity: 0.33, child: FittedBox(child: Icon(Icons.question_mark_rounded))),
                 if (chapter.img.isNotEmpty) Image.network(chapter.img),

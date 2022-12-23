@@ -24,8 +24,8 @@ class CategoriesBloc extends Bloc<CatalogEvent, CatalogState> {
     var newCategory = event.category;
     var res = await categoriesRepository.getInheritedCategories(
         token: userRepository.token, category: event.category);
-    newCategory.inheritedCategories = res;
     if (res != null) {
+      newCategory.inheritedCategories = res;
       emitter(CategoryLoaded(category: newCategory));
     } else {
       emitter(CategoryLoadFailure(error: 'error categories', category: Category.defaulta()));

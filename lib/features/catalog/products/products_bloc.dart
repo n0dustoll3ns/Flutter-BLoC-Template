@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
@@ -15,26 +17,31 @@ class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
     on<ProductsRequest>(_loadMoreProducts);
   }
 
-  Future<List<Product>> _loadMoreProducts(
+  Future<List<Product>?> _loadMoreProducts(
     ProductsRequest event,
     Emitter<ProductsState> emitter,
   ) async {
     emitter(ProductsLoading());
     bool noError = true;
+    noError = Random().nextInt(100) > 5;
     if (noError) {
       var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
       emitter(ProductsUpdated(items: res));
       return res;
     } else {
       emitter(ProductsFailure(error: 'error loading products'));
+      return null;
     }
   }
 
-  Future<List<Product>> loadProductsNoListen() async {
+  Future<List<Product>?> loadProductsNoListen() async {
     bool noError = true;
+    noError = Random().nextInt(100) > 5;
     if (noError) {
       var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
       return res;
-    } else {}
+    } else {
+      return null;
+    }
   }
 }

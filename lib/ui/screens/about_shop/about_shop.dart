@@ -8,9 +8,7 @@ class AboutShopScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'About Shop',
-        ),
+        title: const Text('About Shop'),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 22),

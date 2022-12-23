@@ -17,7 +17,7 @@ class ReviewTile extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.of(context).size.width / 3,
           child: asyncSnapshot.connectionState != ConnectionState.done
-              ? Center(child: const LoadingIndicator())
+              ? const Center(child:LoadingIndicator())
               : Row(
                   children: [
                     Padding(

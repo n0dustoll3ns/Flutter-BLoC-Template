@@ -12,10 +12,7 @@ class RecieversRepository {
 
   Future<void> updateReciever({required String token, required Reciever reciever}) async {
     await Future.delayed(const Duration(milliseconds: 700));
-    List<Reciever> recievers = [
-      Reciever(name: 'John Walker', phoneNumber: 15553332233, id: 0),
-      Reciever(name: 'Alice Wayne', phoneNumber: 15553332233, id: 1),
-    ];
+    // some repository magic
     return;
   }
 }

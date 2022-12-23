@@ -1,8 +1,6 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 
 import '../../../../features/authentication/auth_bloc.dart';
 import '../../../../features/catalog/products/model/product.dart';

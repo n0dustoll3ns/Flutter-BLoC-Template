@@ -16,10 +16,7 @@ import '../features/authentication/states.dart';
 import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
-import '../features/login/login_bloc.dart';
 import '../ui/screens/error/error_screen.dart';
-import '../ui/screens/login_screen/login_screen.dart';
-import '../ui/screens/splash_screen.dart';
 import 'routes/routes.dart';
 import 'theme/theme.dart';
 
@@ -41,12 +38,6 @@ class App extends StatelessWidget {
                   userRepository: authenticationBloc.userRepository,
                 )),
         BlocProvider<CategoriesBloc>(create: ((context) => categoriesBloc)),
-        BlocProvider<LoginBloc>(
-            create: (context) => LoginBloc(
-                  userRepository: authenticationBloc.userRepository,
-                  authenticationBloc: authenticationBloc,
-                  userBloc: userBloc,
-                )),
         BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => FavouriteBloc()),
@@ -68,15 +59,6 @@ class App extends StatelessWidget {
         theme: theme,
         initialRoute: Routes.login,
         onGenerateRoute: Routes.onGenerateRouted,
-        // home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
-        //   bloc: authenticationBloc,
-        //   builder: (BuildContext context, AuthenticationState state) {
-        //     if (state is AuthenticationUninitialized) {
-        //       return const SplashScreen();
-        //     }
-        //     return const LoginPage();
-        //   },
-        // ),
       ),
     );
   }

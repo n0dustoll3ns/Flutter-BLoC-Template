@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
-import '../catalog/products/model/product.dart';
 
 class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCategoriesState> {
   FavouriteCategoriesBloc() : super(FavouriteCategoriesInitial()) {
