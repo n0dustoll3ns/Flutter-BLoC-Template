@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
-import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
-import '../../../app/routes/routes.dart';
 import '../../../features/adresses/adresses_bloc.dart';
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';

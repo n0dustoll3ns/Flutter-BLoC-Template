@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../app/routes/routes.dart';
-import '../../features/authentication/states.dart';
-import '../../features/authentication/auth_bloc.dart';
 import '../../features/catalog/categories/categories_bloc.dart';
 import '../components/persistent_bottom_bar_scaffold.dart';
 import 'cart/components/cart_icon.dart';
