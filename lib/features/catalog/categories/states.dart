@@ -3,29 +3,31 @@
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
 abstract class CatalogState {
-  final Category? category;
-  CatalogState({this.category});
+  final List<Category> categories;
+  CatalogState({required this.categories});
 }
 
 class CategoryInitial extends CatalogState {
-  CategoryInitial({required super.category});
+  CategoryInitial({required super.categories});
 }
 
 class CategoryLoading extends CatalogState {
-  CategoryLoading({required super.category});
+  CategoryLoading({required super.categories});
 }
 
 class CategoryLoadFailure extends CatalogState {
   final String error;
 
-  CategoryLoadFailure({required this.error, });
+  CategoryLoadFailure({
+    required this.error,
+  }) : super(categories: []);
 
   @override
   String toString() => 'CategoryFailure { error: $error }';
 }
 
 class CategoryLoaded extends CatalogState {
-  CategoryLoaded({required super.category});
+  CategoryLoaded({required super.categories});
 }
 
 /* ---  Events   --- */
@@ -35,8 +37,6 @@ abstract class CatalogEvent {
 }
 
 class ProductsRequest extends CatalogEvent {
-  // final int skipCount;
-
   const ProductsRequest();
 
   @override

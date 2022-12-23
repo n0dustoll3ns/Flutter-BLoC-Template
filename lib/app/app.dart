@@ -7,6 +7,7 @@ import 'package:flutter_bloc_template/features/favourite/favourite_categories.da
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
 import 'package:flutter_bloc_template/features/order/orders_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
+import 'package:flutter_bloc_template/features/popular_categories/bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
@@ -47,6 +48,10 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => OrdersBloc()),
         BlocProvider(create: (_) => PaymentMethodsBloc()),
         BlocProvider(create: (_) => ReviewsBloc()),
+        BlocProvider(
+            create: (_) => PopularCategoriesBloc(
+                categoriesRepository: CategoriesRepository(),
+                userRepository: authenticationBloc.userRepository)),
         BlocProvider(create: (context) => CheckoutBloc(ordersBloc: context.read<OrdersBloc>())),
       ],
       child: MaterialApp(

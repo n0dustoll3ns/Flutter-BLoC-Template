@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../features/catalog/categories/categories_bloc.dart';
-import '../../../../../features/catalog/categories/states.dart';
+import '../../../../../features/popular_categories/bloc.dart';
+import '../../../../../features/popular_categories/popular_categories.dart';
 import '../../../../components/loading_indicator.dart';
 import 'category_tile.dart';
 
@@ -11,11 +11,9 @@ class PopularCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesBloc, CatalogState>(builder: (context, state) {
-      if (state is CategoryLoading) {
-        return const LoadingIndicator();
-      }
-      var categories = state.category!.inheritedCategories;
+    return BlocBuilder<PopularCategoriesBloc, PopularCategoriesState>(builder: (context, state) {
+      if (state is PopularCategoriesLoading) return const LoadingIndicator();
+      var categories = state.categories;
       return Column(
         children: [
           Text(
@@ -28,7 +26,8 @@ class PopularCategories extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
-              children: List.generate(5, (index) => CategoryTile(category: categories[index])),
+              children:
+                  List.generate(categories.length, (index) => CategoryTile(category: categories[index])),
             ),
           )
         ],

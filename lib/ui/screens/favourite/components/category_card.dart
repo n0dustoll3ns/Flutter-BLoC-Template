@@ -17,7 +17,7 @@ class FavourteCategoryCard extends StatelessWidget {
         Navigator.of(context).push(CupertinoPageRoute(builder: (context) => CatalogPage(category: category)));
       },
       isThreeLine: true,
-      leading: category.img.isEmpty ? const Icon(Icons.question_mark_rounded) : Image.network(category.img),
+      leading: category.img == null ? const Icon(Icons.question_mark_rounded) : Image.network(category.img!),
       title: Text(
         category.name,
         maxLines: 1,

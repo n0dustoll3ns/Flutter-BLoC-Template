@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../features/catalog/categories/categories_bloc.dart';
 import '../components/persistent_bottom_bar_scaffold.dart';
 import 'cart/components/cart_icon.dart';
 import 'catalog/catalog_page.dart';
@@ -18,13 +14,12 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final itemsKeys = List.generate(5, (index) => GlobalKey<NavigatorState>());
-    final categoriesState = context.read<CategoriesBloc>().state;
     return PersistentBottomBarScaffold(
       items: <PersistentTabItem>[
         PersistentTabItem(
             tab: const Home(), icon: const Icon(Icons.home), title: 'Home', navigatorkey: itemsKeys[0]),
         PersistentTabItem(
-            tab: CatalogPage(category: categoriesState.category),
+            tab: const CatalogPage(),
             icon: const Icon(Icons.menu),
             title: 'Catalog',
             navigatorkey: itemsKeys[1]),

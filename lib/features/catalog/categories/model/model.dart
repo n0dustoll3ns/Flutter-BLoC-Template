@@ -5,21 +5,19 @@ class Category {
   final String name;
   final int id;
   final String description;
-  final String? _img;
+  final String? img;
   final List<Product> productList = [];
 
   Category({
-    String? img,
     required this.id,
     required this.name,
     required this.description,
-  }) : _img = img;
+    this.img,
+  });
 
   Category.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         name = json['name'],
-        description = json['description'],
-        _img = json['img'];
-
-  String get img => _img ?? '';
+        description = json['description'] ?? '',
+        img = json['img'];
 }

@@ -2,6 +2,8 @@
   {
     "id": 0,
     "name": "Electronics",
+    "img": "/assets/images/catalog/0.png",
+
     "children": [
       {
         "id": 15,
@@ -15,6 +17,7 @@
   },
   {
     "id": 1,
+    "img": "assets/images/catalog/1.png",
     "name": "Transport",
     "children": [
       { "id": 19, "name": "Motorcycles" },
@@ -24,6 +27,7 @@
   },
   {
     "id": 2,
+    "img": "assets/images/catalog/2.png",
     "name": "Furniture",
     "children": [
       { "id": 22, "name": "Sofa" },
@@ -34,6 +38,7 @@
   },
   {
     "id": 3,
+    "img": "assets/images/catalog/2.png",
     "name": "Shoes",
     "children": [
       { "id": 26, "name": "Men shoes" },
@@ -44,6 +49,7 @@
   },
   {
     "id": 4,
+    "img": "assets/images/catalog/4.png",
     "name": "Clothes",
     "children": [
       { "id": 30, "name": "Men clothes" },
@@ -54,6 +60,7 @@
   },
   {
     "id": 5,
+    "img": "assets/images/catalog/5.png",
     "name": "Jewelry and Bijou",
     "children": [
       { "id": 34, "name": "Bracers" },
@@ -63,6 +70,7 @@
   },
   {
     "id": 6,
+    "img": "assets/images/catalog/6.png",
     "name": "Plumbing",
     "children": [
       { "id": 37, "name": "Bath" },
@@ -73,6 +81,8 @@
   },
   {
     "id": 7,
+    "img": "assets/images/catalog/7.png",
+
     "name": "Sport",
     "children": [
       { "id": 41, "name": "Dumbbells" },
@@ -82,6 +92,7 @@
   },
   {
     "id": 8,
+    "img": "assets/images/catalog/8.png",
     "name": "Lighting",
     "children": [
       { "id": 44, "name": "Chandelier" },
@@ -91,6 +102,7 @@
   },
   {
     "id": 9,
+    "img": "assets/images/catalog/9.png",
     "name": "Home and garden",
     "children": [
       { "id": 47, "name": "Textile" },
@@ -100,6 +112,7 @@
   },
   {
     "id": 10,
+    "img": "assets/images/catalog/10.png",
     "name": "Clock",
     "children": [
       { "id": 50, "name": "Men clock" },
@@ -109,6 +122,7 @@
   },
   {
     "id": 11,
+    "img": "assets/images/catalog/11.png",
     "name": "Construction Materials",
     "children": [
       { "id": 53, "name": "Wallpaper" },
@@ -117,6 +131,7 @@
   },
   {
     "id": 12,
+    "img": "assets/images/catalog/12.png",
     "name": "Cosmetics and perfumery",
     "children": [
       { "id": 55, "name": "Lipsticks" },
@@ -125,6 +140,7 @@
   },
   {
     "id": 13,
+    "img": "assets/images/catalog/13.png",
     "name": "Toys",
     "children": [
       { "id": 57, "name": "Soft toys" },
@@ -133,6 +149,7 @@
   },
   {
     "id": 14,
+    "img": "assets/images/catalog/14.png",
     "name": "Climatic technics",
     "children": [
       { "id": 59, "name": "Air breezer" },

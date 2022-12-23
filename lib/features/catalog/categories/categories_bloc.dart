@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
 import '../../authentication/user_repository.dart';
 import 'states.dart';
@@ -11,24 +10,22 @@ class CategoriesBloc extends Bloc<CatalogEvent, CatalogState> {
   CategoriesBloc({
     required this.userRepository,
     required this.categoriesRepository,
-  }) : super(CategoryInitial(
-            category: Category(id: -1, name: 'Root Category', description: 'Root category Description'))) {
-    on<CategoryPageEnter>(_loadInheritedCategories);
+  }) : super(CategoryInitial(categories: [])) {
+    on<CategoryPageEnter>(_loadCategories);
   }
 
-  Future<void> _loadInheritedCategories(
+  Future<void> _loadCategories(
     CategoryPageEnter event,
     Emitter<CatalogState> emitter,
   ) async {
-    emitter(CategoryLoading(category: state.category));
-    var newCategory = event.category;
+    emitter(CategoryLoading(categories: state.categories));
     var res = await categoriesRepository.getInheritedCategories(
-        token: userRepository.token, categoryId: event.category.id);
+        token: userRepository.token, categoryId: event.category?.id);
     if (res != null) {
-      newCategory.inheritedCategories = res;
-      emitter(CategoryLoaded(category: newCategory));
+      emitter(CategoryLoaded(categories: res));
     } else {
       emitter(CategoryLoadFailure(error: 'error categories'));
     }
   }
+
 }

@@ -17,7 +17,7 @@ import '../../components/product_list/product_list.dart';
 
 class CatalogPage extends StatefulWidget {
   final Category? category;
-  const CatalogPage({super.key, required this.category});
+  const CatalogPage({super.key, this.category});
 
   @override
   State<CatalogPage> createState() => _CatalogPageState();
