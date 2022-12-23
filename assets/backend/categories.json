@@ -3,24 +3,140 @@
     "id": 0,
     "name": "Electronics",
     "children": [
-      { "id": 15, "name": "Televsision" },
+      {
+        "id": 15,
+        "name": "Televsision",
+        "children": []
+      },
       { "id": 16, "name": "AudiTechnics" },
       { "id": 17, "name": "Games and consoles" },
       { "id": 18, "name": "Phones" }
     ]
   },
-  { "id": 1, "name": "Transport" },
-  { "id": 2, "name": "Furniture" },
-  { "id": 3, "name": "Shoes" },
-  { "id": 4, "name": "Clothes" },
-  { "id": 5, "name": "Jewelry and Bijou" },
-  { "id": 6, "name": "Plumbing" },
-  { "id": 7, "name": "Sport" },
-  { "id": 8, "name": "Lighting" },
-  { "id": 9, "name": "Home and garden" },
-  { "id": 10, "name": "Clock" },
-  { "id": 11, "name": "Construction Materials" },
-  { "id": 12, "name": "Cosmetics and perfumery" },
-  { "id": 13, "name": "Toys" },
-  { "id": 14, "name": "Climatic technics" }
+  {
+    "id": 1,
+    "name": "Transport",
+    "children": [
+      { "id": 19, "name": "Motorcycles" },
+      { "id": 20, "name": "Adult bikes" },
+      { "id": 21, "name": "Children bikes" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Furniture",
+    "children": [
+      { "id": 22, "name": "Sofa" },
+      { "id": 23, "name": "Cupboard" },
+      { "id": 24, "name": "Table" },
+      { "id": 25, "name": "Chair" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Shoes",
+    "children": [
+      { "id": 26, "name": "Men shoes" },
+      { "id": 27, "name": "Women shoes" },
+      { "id": 28, "name": "Boys shoes" },
+      { "id": 29, "name": "Girls Shoes" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Clothes",
+    "children": [
+      { "id": 30, "name": "Men clothes" },
+      { "id": 31, "name": "Women clothes" },
+      { "id": 32, "name": "Teenager clothes" },
+      { "id": 33, "name": "Baby clothes" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Jewelry and Bijou",
+    "children": [
+      { "id": 34, "name": "Bracers" },
+      { "id": 35, "name": "Brooch" },
+      { "id": 36, "name": "Earrings" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Plumbing",
+    "children": [
+      { "id": 37, "name": "Bath" },
+      { "id": 38, "name": "Shower cabin" },
+      { "id": 39, "name": "Faucet" },
+      { "id": 40, "name": "Toilet bowl" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sport",
+    "children": [
+      { "id": 41, "name": "Dumbbells" },
+      { "id": 42, "name": "Ball" },
+      { "id": 43, "name": "Equipment" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Lighting",
+    "children": [
+      { "id": 44, "name": "Chandelier" },
+      { "id": 45, "name": "Fixture" },
+      { "id": 46, "name": "Lantern" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Home and garden",
+    "children": [
+      { "id": 47, "name": "Textile" },
+      { "id": 48, "name": "Decoration" },
+      { "id": 49, "name": "Inventory" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Clock",
+    "children": [
+      { "id": 50, "name": "Men clock" },
+      { "id": 51, "name": "Women clock" },
+      { "id": 52, "name": "Children clock" }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Construction Materials",
+    "children": [
+      { "id": 53, "name": "Wallpaper" },
+      { "id": 54, "name": "Glue" }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Cosmetics and perfumery",
+    "children": [
+      { "id": 55, "name": "Lipsticks" },
+      { "id": 56, "name": "Perfumery" }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Toys",
+    "children": [
+      { "id": 57, "name": "Soft toys" },
+      { "id": 58, "name": "Educational toys" }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Climatic technics",
+    "children": [
+      { "id": 59, "name": "Air breezer" },
+      { "id": 60, "name": "Air conditioner" }
+    ]
+  }
 ]

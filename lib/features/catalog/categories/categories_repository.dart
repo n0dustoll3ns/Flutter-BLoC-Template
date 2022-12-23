@@ -1,19 +1,22 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 import 'model/model.dart';
 
 class CategoriesRepository {
-  Future<List<Category>?> getInheritedCategories({required String token, required Category category}) async {
-    await Future.delayed(const Duration(milliseconds: 1111));
+  Future<List<Category>?> getInheritedCategories({required String token, int? categoryId}) async {
+    List response = jsonDecode(await _readJson());
+
     var list = List.generate(
-      9,
+      response.length,
       (index) {
-        return Category(
-          name: 'Root Category ${lorem(paragraphs: 1, words: 2).toLowerCase()}',
-          description: lorem(paragraphs: 1, words: 9),
-        );
+        return Category.fromJson(response[index]);
       },
     );
     return list;
   }
+
+  Future<String> _readJson() async => await rootBundle.loadString('assets/backend/categories.json');
 }

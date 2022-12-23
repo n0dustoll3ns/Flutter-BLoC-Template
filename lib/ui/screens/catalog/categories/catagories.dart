@@ -21,10 +21,10 @@ class Categories extends StatelessWidget {
         return ListView.separated(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: state.category.inheritedCategories.length,
+          itemCount: state.category!.inheritedCategories.length,
           separatorBuilder: (context, index) => const Divider(height: 1),
           itemBuilder: (BuildContext context, int index) => CategoryCard(
-            category: state.category.inheritedCategories[index],
+            category: state.category!.inheritedCategories[index],
           ),
         );
       }

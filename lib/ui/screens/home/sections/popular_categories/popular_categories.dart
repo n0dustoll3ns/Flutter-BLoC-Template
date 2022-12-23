@@ -15,7 +15,7 @@ class PopularCategories extends StatelessWidget {
       if (state is CategoryLoading) {
         return const LoadingIndicator();
       }
-      var categories = state.category.inheritedCategories;
+      var categories = state.category!.inheritedCategories;
       return Column(
         children: [
           Text(

@@ -27,6 +27,7 @@ flutter:
   assets:
     - assets/images/
     - assets/animations/
+    - assets/backend/
 
   uses-material-design: true
   # example:

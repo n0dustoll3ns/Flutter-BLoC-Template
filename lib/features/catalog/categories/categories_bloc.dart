@@ -12,7 +12,7 @@ class CategoriesBloc extends Bloc<CatalogEvent, CatalogState> {
     required this.userRepository,
     required this.categoriesRepository,
   }) : super(CategoryInitial(
-            category: Category(name: 'Root Category', description: 'Root category Description'))) {
+            category: Category(id: -1, name: 'Root Category', description: 'Root category Description'))) {
     on<CategoryPageEnter>(_loadInheritedCategories);
   }
 
@@ -23,12 +23,12 @@ class CategoriesBloc extends Bloc<CatalogEvent, CatalogState> {
     emitter(CategoryLoading(category: state.category));
     var newCategory = event.category;
     var res = await categoriesRepository.getInheritedCategories(
-        token: userRepository.token, category: event.category);
+        token: userRepository.token, categoryId: event.category.id);
     if (res != null) {
       newCategory.inheritedCategories = res;
       emitter(CategoryLoaded(category: newCategory));
     } else {
-      emitter(CategoryLoadFailure(error: 'error categories', category: Category.defaulta()));
+      emitter(CategoryLoadFailure(error: 'error categories'));
     }
   }
 }

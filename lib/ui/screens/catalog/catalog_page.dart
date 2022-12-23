@@ -16,7 +16,7 @@ import 'components/quick_filters.dart';
 import '../../components/product_list/product_list.dart';
 
 class CatalogPage extends StatefulWidget {
-  final Category category;
+  final Category? category;
   const CatalogPage({super.key, required this.category});
 
   @override
@@ -25,7 +25,6 @@ class CatalogPage extends StatefulWidget {
 
 class _CatalogPageState extends State<CatalogPage> {
   final ScrollController _scrollController = ScrollController();
-  late Category category;
   late final ProductsBloc productsBloc;
   late final CategoriesBloc categoriesBloc;
   final List<Product> items = [];
@@ -34,7 +33,6 @@ class _CatalogPageState extends State<CatalogPage> {
   void initState() {
     categoriesBloc = context.read<CategoriesBloc>()..add(CategoryPageEnter(category: widget.category));
     productsBloc = context.read<ProductsBloc>()..add(const ProductsRequest());
-    category = widget.category;
     _scrollController.addListener(_scrollListener);
     super.initState();
   }
@@ -55,14 +53,17 @@ class _CatalogPageState extends State<CatalogPage> {
                 BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
           ),
           actions: [
-            BlocBuilder<FavouriteCategoriesBloc, FavouriteCategoriesState>(builder: (context, state) {
-              return IconButton(
-                onPressed: () {
-                  context.read<FavouriteCategoriesBloc>().add(LikeCategory(item: category));
-                },
-                icon: Icon(state.items.contains(category) ? CupertinoIcons.heart_fill : CupertinoIcons.heart),
-              );
-            }),
+            if (widget.category != null)
+              BlocBuilder<FavouriteCategoriesBloc, FavouriteCategoriesState>(builder: (context, state) {
+                return IconButton(
+                  onPressed: () {
+                    context.read<FavouriteCategoriesBloc>().add(LikeCategory(item: widget.category!));
+                  },
+                  icon: Icon(state.items.contains(widget.category!)
+                      ? CupertinoIcons.heart_fill
+                      : CupertinoIcons.heart),
+                );
+              }),
             ..._actions,
           ],
         ),

@@ -3,8 +3,8 @@
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
 abstract class CatalogState {
-  final Category category;
-  CatalogState({required this.category});
+  final Category? category;
+  CatalogState({this.category});
 }
 
 class CategoryInitial extends CatalogState {
@@ -18,7 +18,7 @@ class CategoryLoading extends CatalogState {
 class CategoryLoadFailure extends CatalogState {
   final String error;
 
-  CategoryLoadFailure({required this.error, required super.category});
+  CategoryLoadFailure({required this.error, });
 
   @override
   String toString() => 'CategoryFailure { error: $error }';
@@ -44,6 +44,6 @@ class ProductsRequest extends CatalogEvent {
 }
 
 class CategoryPageEnter extends CatalogEvent {
-  Category category;
-  CategoryPageEnter({required this.category});
+  Category? category;
+  CategoryPageEnter({this.category});
 }
