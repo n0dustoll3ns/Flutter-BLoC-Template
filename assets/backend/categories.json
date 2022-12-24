@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Electronics",
-    "img": "/assets/images/catalog/0.png",
+    "img": "assets/images/catalog/0.png",
 
     "children": [
       {
@@ -38,7 +38,7 @@
   },
   {
     "id": 3,
-    "img": "assets/images/catalog/2.png",
+    "img": "assets/images/catalog/3.png",
     "name": "Shoes",
     "children": [
       { "id": 26, "name": "Men shoes" },

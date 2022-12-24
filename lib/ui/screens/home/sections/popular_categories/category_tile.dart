@@ -20,7 +20,10 @@ class CategoryTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               category.img != null
-                  ? Image.asset(category.img!, fit: BoxFit.cover)
+                  ? Image.asset(
+                      category.img!,
+                      fit: BoxFit.contain,
+                    )
                   : Icon(Icons.question_mark_rounded, size: MediaQuery.of(context).size.width / 3),
               Text(category.name),
             ],

@@ -15,7 +15,12 @@ class CategoryCard extends StatelessWidget {
         Navigator.of(context).push(CupertinoPageRoute(builder: (context) => CatalogPage(category: category)));
       },
       isThreeLine: true,
-      leading: category.img == null ? const Icon(Icons.question_mark_rounded) : Image.network(category.img!),
+      leading: category.img != null
+          ? Image.asset(
+              category.img!,
+              fit: BoxFit.contain,
+            )
+          : const Icon(Icons.question_mark_rounded),
       title: Text(
         category.name,
         maxLines: 1,
