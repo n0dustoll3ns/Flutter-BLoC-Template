@@ -1,0 +1,78 @@
+{
+  "0": [
+    { "id": 15, "name": "Televsision" },
+    { "id": 16, "name": "AudiTechnics" },
+    { "id": 17, "name": "Games and consoles" },
+    { "id": 18, "name": "Phones" }
+  ],
+  "1": [
+    { "id": 19, "name": "Motorcycles" },
+    { "id": 20, "name": "Adult bikes" },
+    { "id": 21, "name": "Children bikes" }
+  ],
+  "2": [
+    { "id": 22, "name": "Sofa" },
+    { "id": 23, "name": "Cupboard" },
+    { "id": 24, "name": "Table" },
+    { "id": 25, "name": "Chair" }
+  ],
+  "3": [
+    { "id": 26, "name": "Men shoes" },
+    { "id": 27, "name": "Women shoes" },
+    { "id": 28, "name": "Boys shoes" },
+    { "id": 29, "name": "Girls Shoes" }
+  ],
+  "4": [
+    { "id": 30, "name": "Men clothes" },
+    { "id": 31, "name": "Women clothes" },
+    { "id": 32, "name": "Teenager clothes" },
+    { "id": 33, "name": "Baby clothes" }
+  ],
+  "5": [
+    { "id": 34, "name": "Bracers" },
+    { "id": 35, "name": "Brooch" },
+    { "id": 36, "name": "Earrings" }
+  ],
+  "6": [
+    { "id": 37, "name": "Bath" },
+    { "id": 38, "name": "Shower cabin" },
+    { "id": 39, "name": "Faucet" },
+    { "id": 40, "name": "Toilet bowl" }
+  ],
+  "7": [
+    { "id": 41, "name": "Dumbbells" },
+    { "id": 42, "name": "Ball" },
+    { "id": 43, "name": "Equipment" }
+  ],
+  "8": [
+    { "id": 44, "name": "Chandelier" },
+    { "id": 45, "name": "Fixture" },
+    { "id": 46, "name": "Lantern" }
+  ],
+  "9": [
+    { "id": 47, "name": "Textile" },
+    { "id": 48, "name": "Decoration" },
+    { "id": 49, "name": "Inventory" }
+  ],
+  "10": [
+    { "id": 50, "name": "Men clock" },
+    { "id": 51, "name": "Women clock" },
+    { "id": 52, "name": "Children clock" }
+  ],
+  "11": [
+    { "id": 53, "name": "Wallpaper" },
+    { "id": 54, "name": "Glue" }
+  ],
+  "12": [
+    { "id": 55, "name": "Lipsticks" },
+    { "id": 56, "name": "Perfumery" }
+  ],
+  "13": [
+    { "id": 57, "name": "Soft toys" },
+    { "id": 58, "name": "Educational toys" }
+  ],
+  "14": [
+    { "id": 59, "name": "Air breezer" },
+    { "id": 60, "name": "Air conditioner" }
+  ]
+}

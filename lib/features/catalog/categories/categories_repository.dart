@@ -27,31 +27,31 @@ class CategoriesRepository {
   }
 
   Future<List<Category>> _loadRootCategories({required String token}) async {
-    List response = jsonDecode(await _readJson());
+    List response = jsonDecode(await _readRootJson());
 
-    var list = List.generate(
-      response.length,
-      (index) {
-        return Category.fromJson(response[index]);
-      },
-    );
+    var list = List.generate(response.length, (index) => Category.fromJson(response[index]));
     return list;
   }
 
   Future<List<Category>> _loadInheritedCategories({required String token, required int categoryId}) async {
-    List response = jsonDecode(await _readJson());
+    Map response = jsonDecode(await _readNestedJson());
 
-    var list = List.generate(
-      response.length,
-      (index) {
-        return Category.fromJson(response[index]);
-      },
-    );
-    return list;
+    List? json = response[categoryId.toString()];
+    if (json == null) {
+      return [];
+    } else {
+      var list = List.generate(json.length, (index) => Category.fromJson(json[index]));
+      return list;
+    }
   }
 
-  Future<String> _readJson() async {
+  Future<String> _readRootJson() async {
     var s = await rootBundle.loadString('assets/backend/categories.json');
+    return s;
+  }
+
+  Future<String> _readNestedJson() async {
+    var s = await rootBundle.loadString('assets/backend/nested.json');
     return s;
   }
 }

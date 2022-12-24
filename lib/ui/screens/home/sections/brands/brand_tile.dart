@@ -20,7 +20,7 @@ class BrandTile extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              brand.img != null ? Image.network(brand.img!) : const Icon(Icons.brightness_auto_sharp),
+              brand.img != null ? Image.asset(brand.img!) : const Icon(Icons.brightness_auto_sharp),
               Text(
                 brand.name,
                 style: Theme.of(context).textTheme.headline5,

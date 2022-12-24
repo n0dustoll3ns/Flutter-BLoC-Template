@@ -21,7 +21,7 @@ class ChapterCard extends StatelessWidget {
               children: [
                 if (chapter.img.isEmpty)
                   const Opacity(opacity: 0.33, child: FittedBox(child: Icon(Icons.question_mark_rounded))),
-                if (chapter.img.isNotEmpty) Image.network(chapter.img),
+                if (chapter.img.isNotEmpty) Image.asset(chapter.img),
                 Align(alignment: Alignment.bottomLeft, child: Text(chapter.name)),
               ],
             ),

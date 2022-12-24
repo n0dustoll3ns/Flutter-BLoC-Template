@@ -26,7 +26,13 @@ class CategoryCard extends StatelessWidget {
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
-      subtitle: Text(category.description),
+      subtitle: category.description.isNotEmpty
+          ? null
+          : Text(
+              category.description,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
       trailing: const Icon(Icons.arrow_forward_ios_outlined),
     );
   }
