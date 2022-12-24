@@ -16,10 +16,12 @@ class ReviewOfferTile extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.all(MediaQuery.of(context).size.width / 38),
-            child: Image.asset(
-              product.img,
-              fit: BoxFit.contain,
-            ),
+            child: product.previewImage != null
+                ? Image.asset(
+                    product.previewImage!,
+                    fit: BoxFit.contain,
+                  )
+                : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
           ),
           Expanded(
             child: Column(

@@ -1,6 +1,6 @@
 {
   "0": [
-    { "id": 15, "name": "Televsision" },
+    { "id": 15, "name": "Televsision", "productIds": [0, 1, 2, 3, 4, 5, 6, 7] },
     { "id": 16, "name": "AudiTechnics" },
     { "id": 17, "name": "Games and consoles" },
     { "id": 18, "name": "Phones" }

@@ -3,12 +3,11 @@
     "id": 0,
     "name": "Electronics",
     "img": "assets/images/catalog/0.png",
-
+    "productIds": [0, 1, 2, 3, 4, 5, 6, 7],
     "children": [
       {
         "id": 15,
-        "name": "Televsision",
-        "children": []
+        "name": "Televsision"
       },
       { "id": 16, "name": "AudiTechnics" },
       { "id": 17, "name": "Games and consoles" },

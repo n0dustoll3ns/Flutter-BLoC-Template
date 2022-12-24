@@ -6,4 +6,8 @@ class Characteristic {
     required this.name,
     required this.value,
   });
+
+  Characteristic.fromJson(Map json)
+      : name = json['name'],
+        value = json['name'];
 }

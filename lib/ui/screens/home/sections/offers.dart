@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,8 +16,8 @@ class BestOffers extends StatefulWidget {
 }
 
 class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMixin {
-  late Future<List<Product>> _itemsLoader = ProductsRepository()
-      .getProductList(token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
+  late Future<List<Product>> _itemsLoader = ProductsRepository().getProductList(
+      token: context.read<AuthenticationBloc>().state.toString(), productIds: [1, 3, 4, 6, 7], skipCount: 0);
   List<Product> items = [];
   @override
   Widget build(BuildContext context) {
@@ -51,12 +50,7 @@ class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMi
               },
             ),
             ElevatedButton(
-              onPressed: () async {
-                setState(() {
-                  _itemsLoader = ProductsRepository().getProductList(
-                      token: context.read<AuthenticationBloc>().state.toString(), skipCount: 0);
-                });
-              },
+              onPressed: () {},
               child: const Text("Load more"),
             ),
           ],

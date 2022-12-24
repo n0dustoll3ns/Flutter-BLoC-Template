@@ -32,7 +32,8 @@ class _CatalogPageState extends State<CatalogPage> {
   @override
   void initState() {
     categoriesBloc = context.read<CategoriesBloc>()..add(CategoryPageEnter(category: widget.category));
-    productsBloc = context.read<ProductsBloc>()..add(const ProductsRequest());
+    productsBloc = context.read<ProductsBloc>()
+      ..add(ProductsRequest(productIds: widget.category?.productIds ?? []));
     _scrollController.addListener(_scrollListener);
     super.initState();
   }
@@ -106,7 +107,7 @@ class _CatalogPageState extends State<CatalogPage> {
   void _scrollListener() {
     if (_scrollController.offset >= _scrollController.position.maxScrollExtent &&
         !_scrollController.position.outOfRange) {
-      productsBloc.add(const ProductsRequest());
+      productsBloc.add(ProductsRequest(productIds: widget.category!.productIds));
     }
   }
 

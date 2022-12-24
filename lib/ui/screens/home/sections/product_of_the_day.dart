@@ -7,7 +7,6 @@ import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-
 class ProductOfTheDay extends StatelessWidget {
   const ProductOfTheDay({super.key});
 
@@ -46,10 +45,13 @@ class ProductOfTheDay extends StatelessWidget {
                         children: [
                           Align(
                             alignment: Alignment.topCenter,
-                            child: Image.asset(
-                              asyncSnapshot.data!.img,
-                              fit: BoxFit.contain,
-                            ),
+                            child: asyncSnapshot.data!.previewImage != null
+                                ? Image.asset(
+                                    asyncSnapshot.data!.previewImage!,
+                                    fit: BoxFit.contain,
+                                  )
+                                : const FittedBox(
+                                    fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
                           ),
                           Row(
                             children: [

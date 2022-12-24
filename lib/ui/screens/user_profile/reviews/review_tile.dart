@@ -17,15 +17,17 @@ class ReviewTile extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.of(context).size.width / 3,
           child: asyncSnapshot.connectionState != ConnectionState.done
-              ? const Center(child:LoadingIndicator())
+              ? const Center(child: LoadingIndicator())
               : Row(
                   children: [
                     Padding(
                       padding: EdgeInsets.all(MediaQuery.of(context).size.width / 38),
-                      child: Image.asset(
-                        asyncSnapshot.data!.img,
-                        fit: BoxFit.contain,
-                      ),
+                      child: asyncSnapshot.data!.previewImage != null
+                          ? Image.asset(
+                              asyncSnapshot.data!.previewImage!,
+                              fit: BoxFit.contain,
+                            )
+                          : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
                     ),
                     Expanded(
                       child: Column(
@@ -64,9 +66,7 @@ class ReviewTile extends StatelessWidget {
                         ],
                       ),
                     ),
-                    IconButton(onPressed: () {
-                      
-                    }, icon: const Icon(CupertinoIcons.arrow_right))
+                    IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.arrow_right))
                   ],
                 ),
         );

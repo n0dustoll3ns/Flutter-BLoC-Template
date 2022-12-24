@@ -25,22 +25,11 @@ class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
     bool noError = true;
     noError = Random().nextInt(100) > 5;
     if (noError) {
-      var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
+      var res = await productsRepository.getProductList(token: userRepository.token,productIds: event.productIds , skipCount: 0);
       emitter(ProductsUpdated(items: res));
       return res;
     } else {
       emitter(ProductsFailure(error: 'error loading products'));
-      return null;
-    }
-  }
-
-  Future<List<Product>?> loadProductsNoListen() async {
-    bool noError = true;
-    noError = Random().nextInt(100) > 5;
-    if (noError) {
-      var res = await productsRepository.getProductList(token: userRepository.token, skipCount: 0);
-      return res;
-    } else {
       return null;
     }
   }

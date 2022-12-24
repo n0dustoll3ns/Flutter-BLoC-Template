@@ -29,7 +29,7 @@ class CheckoutCompletePage extends StatelessWidget {
                 Navigator.of(context).popUntil((route) => route.isFirst);
                 context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 4));
               },
-              child: const Text('Return to cart'))
+              child: const Text('Go to profile'))
         ],
       ),
     );

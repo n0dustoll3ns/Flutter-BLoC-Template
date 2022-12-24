@@ -16,10 +16,12 @@ class ItemCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image.asset(
-              item.img,
-              fit: BoxFit.contain,
-            ),
+            child: item.previewImage != null
+                ? Image.asset(
+                    item.previewImage!,
+                    fit: BoxFit.contain,
+                  )
+                : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
           ),
           Expanded(
             child: Padding(

@@ -37,7 +37,8 @@ abstract class CatalogEvent {
 }
 
 class ProductsRequest extends CatalogEvent {
-  const ProductsRequest();
+  final List<int> productIds;
+  const ProductsRequest({required this.productIds});
 
   @override
   String toString() => 'Products requested.';

@@ -41,10 +41,12 @@ class _ProductScreenState extends State<ProductScreen> {
       body: ListView(
         padding: EdgeInsets.all(MediaQuery.of(context).size.width / 22),
         children: [
-          Image.asset(
-            widget.product.img,
-            fit: BoxFit.contain,
-          ),
+          widget.product.previewImage != null
+              ? Image.asset(
+                  widget.product.previewImage!,
+                  fit: BoxFit.contain,
+                )
+              : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
           Row(
             children: [
               Expanded(

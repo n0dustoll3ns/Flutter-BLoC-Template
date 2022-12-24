@@ -1,37 +1,35 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
 class Product {
   final int id;
   final String name;
   final String description;
-  final String img;
+  final int? previewImgIndex;
+  final List<String> images;
+  String? get previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
   final double price;
-  final int? brandID;
+  final int? brandId;
   final List<Characteristic> characteristics = [];
 
-  Product(
-      {required this.id, required this.name, required this.price, required this.description, this.brandID})
-      : img = 'assets/images/1_main.jpg';
-}
+  Product({
+    required this.id,
+    required this.name,
+    required this.price,
+    required this.description,
+    required this.images,
+    this.brandId,
+    this.previewImgIndex,
+  });
 
-const List<IconData> icons = [
-  Icons.propane_tank_rounded,
-  Icons.access_alarm_sharp,
-  Icons.account_balance_wallet,
-  Icons.work_outline_outlined,
-  Icons.wine_bar_rounded,
-  Icons.icecream,
-  Icons.ice_skating_rounded,
-  Icons.image,
-  Icons.umbrella_rounded,
-  Icons.two_wheeler_rounded,
-  Icons.tv_sharp,
-  Icons.tungsten_sharp,
-  Icons.time_to_leave_rounded,
-  Icons.tablet_android_outlined,
-  Icons.table_bar_sharp,
-  Icons.sports_tennis_rounded,
-  Icons.sports_soccer_rounded,
-  Icons.sports_rugby_rounded,
-];
+  Product.fromJson(Map json)
+      : id = json['id'],
+        name = json['name'],
+        description = json['description'],
+        previewImgIndex = json['previewImgIndex'],
+        images = List<String>.from(json['images']),
+        price = json['price'],
+        brandId = json['brandId'] {
+    characteristics.addAll(List<Characteristic>.generate(
+        json['characteristics'].length, (index) => Characteristic.fromJson(json['characteristics'][index])));
+  }
+}
