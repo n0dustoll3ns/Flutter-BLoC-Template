@@ -113,7 +113,7 @@ class CheckoutScreen extends StatelessWidget {
               onPressed: state.stageIndex != 3
                   ? null
                   : () {
-                      Navigator.of(context).pushNamed(Routes.paymentRedirect);
+                      Navigator.of(context).popAndPushNamed(Routes.paymentRedirect);
                       context.read<OrdersBloc>().add(AddOrder(
                           item: Order(
                               reciever: state.reciever!,

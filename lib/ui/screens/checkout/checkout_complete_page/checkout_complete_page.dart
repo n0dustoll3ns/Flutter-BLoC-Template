@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 
 class CheckoutCompletePage extends StatelessWidget {
   const CheckoutCompletePage({super.key});
@@ -24,6 +27,7 @@ class CheckoutCompletePage extends StatelessWidget {
           ElevatedButton(
               onPressed: () {
                 Navigator.of(context).popUntil((route) => route.isFirst);
+                context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 4));
               },
               child: const Text('Return to cart'))
         ],

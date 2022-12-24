@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/adresses/adresses_bloc.dart';
+import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
@@ -48,6 +49,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => OrdersBloc()),
         BlocProvider(create: (_) => PaymentMethodsBloc()),
         BlocProvider(create: (_) => ReviewsBloc()),
+        BlocProvider(create: (_) => BottomNavBarBloc()),
         BlocProvider(
             create: (_) => PopularCategoriesBloc(
                 categoriesRepository: CategoriesRepository(),

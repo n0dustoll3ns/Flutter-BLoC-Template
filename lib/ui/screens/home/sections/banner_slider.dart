@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 class BannerSlider extends StatelessWidget {
@@ -38,7 +40,10 @@ class BannerSlider extends StatelessWidget {
                           style: Theme.of(context).textTheme.bodyMedium,
                         ),
                         SizedBox(height: MediaQuery.of(context).size.height / 44),
-                        ElevatedButton(onPressed: () {}, child: const Text('Go to calalog'))
+                        ElevatedButton(
+                            onPressed: () =>
+                                context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 1)),
+                            child: const Text('Go to calalog'))
                       ],
                     ),
                   )
