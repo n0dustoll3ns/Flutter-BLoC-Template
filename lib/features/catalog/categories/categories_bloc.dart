@@ -1,25 +1,31 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
 import '../../authentication/user_repository.dart';
 import 'states.dart';
 import 'categories_repository.dart';
 
-class CategoriesBloc extends Bloc<CatalogEvent, CatalogPageState> {
+class CatalogPageBloc extends Bloc<CatalogEvent, CatalogPageState> {
   final CategoriesRepository categoriesRepository;
+  final ProductsRepository productsRepository;
   final UserRepository userRepository;
-  CategoriesBloc({
+  CatalogPageBloc({
     required this.userRepository,
     required this.categoriesRepository,
-  }) : super(CatalogPageInitial(categories: [])) {
-    on<CatalogPageEnter>(_loadCategories);
+    required this.productsRepository,
+  }) : super(CatalogPageInitial(categories: [], items: [])) {
+    on<CatalogPageEnter>(_loadPageElements);
   }
 
-  Future<void> _loadCategories(CatalogPageEnter event, Emitter<CatalogPageState> emitter) async {
-    emitter(CatalogPageLoading(categories: state.categories));
-    var res = await categoriesRepository.getInheritedCategories(
+  Future<void> _loadPageElements(CatalogPageEnter event, Emitter<CatalogPageState> emitter) async {
+    emitter(CatalogPageLoading(categories: state.categories, items: state.items));
+    var inheritedCategories = await categoriesRepository.getInheritedCategories(
         token: userRepository.token, categoryId: event.category?.id);
-    if (res != null) {
-      emitter(CatalogPageLoaded(categories: res));
+    var items = await productsRepository.getProductList(
+        token: userRepository.token, productIds: event.category?.inheritedCategoryIds ?? [], skipCount: 0);
+    if (inheritedCategories != null) {
+      emitter(CatalogPageLoaded(categories: inheritedCategories, items: state.items));
     } else {
       emitter(CatalogPageLoadFailure(error: 'error categories'));
     }

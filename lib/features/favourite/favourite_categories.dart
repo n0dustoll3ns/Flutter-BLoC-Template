@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
-
 class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCategoriesState> {
   FavouriteCategoriesBloc() : super(FavouriteCategoriesInitial()) {
     on<LikeCategory>(onItemAdded);
@@ -13,16 +12,16 @@ class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCa
     LikeCategory event,
     Emitter<FavouriteCategoriesState> emit,
   ) {
-    var list = state.items..add(event.item);
-    emit(FavouriteCategoriesUpdated(items: list));
+    var list = state.categories..add(event.item);
+    emit(FavouriteCategoriesUpdated(categories: list));
   }
 
   void onItemRemoved(
     DislikeCategory event,
     Emitter<FavouriteCategoriesState> emit,
   ) {
-    state.items.removeWhere(((element) => element == event.item));
-    emit(FavouriteCategoriesUpdated(items: state.items));
+    state.categories.removeWhere(((element) => element == event.item));
+    emit(FavouriteCategoriesUpdated(categories: state.categories));
   }
 
   void onClearFavouriteCategories(
@@ -35,17 +34,17 @@ class FavouriteCategoriesBloc extends Bloc<FavouriteCategoriesEvent, FavouriteCa
 
 /* ---  States   --- */
 abstract class FavouriteCategoriesState {
-  final Set<Category> items;
+  final Set<Category> categories;
 
-  FavouriteCategoriesState({required this.items});
+  FavouriteCategoriesState({required this.categories});
 }
 
 class FavouriteCategoriesInitial extends FavouriteCategoriesState {
-  FavouriteCategoriesInitial() : super(items: {});
+  FavouriteCategoriesInitial() : super(categories: {});
 }
 
 class FavouriteCategoriesUpdated extends FavouriteCategoriesState {
-  FavouriteCategoriesUpdated({required super.items});
+  FavouriteCategoriesUpdated({required super.categories});
 }
 
 /* ---  Events   --- */

@@ -12,7 +12,7 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesBloc, CatalogPageState>(builder: (context, state) {
+    return BlocBuilder<CatalogPageBloc, CatalogPageState>(builder: (context, state) {
       if (state is CatalogPageLoading) {
         return const LoadingIndicator();
       } else if (state is CatalogPageLoadFailure) {

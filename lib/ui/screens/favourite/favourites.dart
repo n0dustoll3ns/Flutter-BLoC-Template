@@ -41,8 +41,8 @@ class Favourites extends StatelessWidget {
             }),
             BlocBuilder<FavouriteCategoriesBloc, FavouriteCategoriesState>(builder: (context, state) {
               return Column(children: [
-                ...List.generate(state.items.length, (index) {
-                  var item = state.items.toList()[index];
+                ...List.generate(state.categories.length, (index) {
+                  var item = state.categories.toList()[index];
                   return Dismissible(
                     background: Container(color: Colors.redAccent),
                     onDismissed: (DismissDirection direction) =>

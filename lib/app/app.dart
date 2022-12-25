@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/adresses/adresses_bloc.dart';
 import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
@@ -29,8 +32,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     var authenticationBloc = AuthenticationBloc();
     authenticationBloc.add(AppStarted());
-    var categoriesBloc = CategoriesBloc(
-        userRepository: authenticationBloc.userRepository, categoriesRepository: CategoriesRepository());
+    var categoriesBloc = CatalogPageBloc(
+        userRepository: authenticationBloc.userRepository,
+        categoriesRepository: CategoriesRepository(),
+        productsRepository: ProductsRepository());
     var userBloc = UserBloc();
     return MultiBlocProvider(
       providers: [

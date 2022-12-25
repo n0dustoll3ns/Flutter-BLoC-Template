@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/categories_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
+import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
@@ -11,7 +12,6 @@ import '../../../features/authentication/states.dart';
 import '../../../features/catalog/categories/states.dart';
 import '../../../features/catalog/categories/categories_bloc.dart';
 import '../../../features/catalog/products/model/product.dart';
-import '../../../features/catalog/products/products_bloc.dart';
 import 'categories/catagories.dart';
 import 'chapters/chapters_horizontal_view.dart';
 import 'components/quick_filters.dart';
@@ -27,13 +27,12 @@ class CatalogPage extends StatefulWidget {
 
 class _CatalogPageState extends State<CatalogPage> {
   final ScrollController _scrollController = ScrollController();
-  late final ProductsBloc productsBloc;
+  late final CatalogPageBloc productsBloc;
   final List<Product> items = [];
 
   @override
   void initState() {
-    productsBloc = context.read<ProductsBloc>()
-      ..add(ProductsRequest(productIds: widget.category?.productIds ?? []));
+    productsBloc = context.read<CatalogPageBloc>()..add(CatalogPageEnter(category: widget.category));
     _scrollController.addListener(_scrollListener);
     super.initState();
   }
@@ -42,7 +41,7 @@ class _CatalogPageState extends State<CatalogPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          CategoriesBloc(categoriesRepository: CategoriesRepository(), userRepository: UserRepository())
+          CatalogPageBloc(categoriesRepository: CategoriesRepository(), userRepository: UserRepository(), productsRepository: ProductsRepository())
             ..add(CatalogPageEnter(category: widget.category)),
       child: Scaffold(
           appBar: AppBar(
@@ -64,7 +63,7 @@ class _CatalogPageState extends State<CatalogPage> {
                     onPressed: () {
                       context.read<FavouriteCategoriesBloc>().add(LikeCategory(item: widget.category!));
                     },
-                    icon: Icon(state.items.contains(widget.category!)
+                    icon: Icon(state.categories.contains(widget.category!)
                         ? CupertinoIcons.heart_fill
                         : CupertinoIcons.heart),
                   );

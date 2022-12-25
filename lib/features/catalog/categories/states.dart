@@ -2,17 +2,23 @@
 
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
+import '../products/model/product.dart';
+
 abstract class CatalogPageState {
   final List<Category> categories;
-  CatalogPageState({required this.categories});
+  final List<Product> items;
+  CatalogPageState({
+    required this.categories,
+    required this.items,
+  });
 }
 
 class CatalogPageInitial extends CatalogPageState {
-  CatalogPageInitial({required super.categories});
+  CatalogPageInitial({required super.categories, required super.items});
 }
 
 class CatalogPageLoading extends CatalogPageState {
-  CatalogPageLoading({required super.categories});
+  CatalogPageLoading({required super.categories, required super.items});
 }
 
 class CatalogPageLoadFailure extends CatalogPageState {
@@ -20,14 +26,14 @@ class CatalogPageLoadFailure extends CatalogPageState {
 
   CatalogPageLoadFailure({
     required this.error,
-  }) : super(categories: []);
+  }) : super(categories: [], items: []);
 
   @override
   String toString() => 'CatalogPageFailure { error: $error }';
 }
 
 class CatalogPageLoaded extends CatalogPageState {
-  CatalogPageLoaded({required super.categories});
+  CatalogPageLoaded({required super.categories, required super.items});
 }
 
 /* ---  Events   --- */
