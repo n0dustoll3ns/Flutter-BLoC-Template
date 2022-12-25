@@ -1,18 +1,39 @@
 {
   "0": [
-    { "id": 15, "name": "Televsision", "productIds": [0, 1, 2, 3, 4, 5, 6, 7] },
-    { "id": 16, "name": "AudiTechnics" },
-    { "id": 17, "name": "Games and consoles" },
-    { "id": 18, "name": "Phones" }
+    {
+      "id": 15,
+      "name": "Televsision",
+      "productIds": [0, 1, 2, 3, 4, 5, 6, 7],
+      "icon": "assets/icons/television.svg"
+    },
+    {
+      "id": 16,
+      "name": "Audiotechnics",
+      "icon": "assets/icons/audiotechnics.svg"
+    },
+    {
+      "id": 17,
+      "name": "Games and consoles",
+      "icon": "assets/icons/games_and_consoles.svg"
+    },
+    { "id": 18, "name": "Phones", "icon": "assets/icons/phones.svg" }
   ],
   "1": [
-    { "id": 19, "name": "Motorcycles" },
-    { "id": 20, "name": "Adult bikes" },
-    { "id": 21, "name": "Children bikes" }
+    {
+      "id": 19,
+      "name": "Motorcycles",
+      "icon": "assets/icons/motorcycles.svg"
+    },
+    { "id": 20, "name": "Adult bikes", "icon": "assets/icons/adult_bikes.svg" },
+    {
+      "id": 21,
+      "name": "Children bikes",
+      "icon": "assets/icons/children_bikes.svg"
+    }
   ],
   "2": [
-    { "id": 22, "name": "Sofa" },
-    { "id": 23, "name": "Cupboard" },
+    { "id": 22, "name": "Sofa", "icon": "assets/icons/sofa.svg" },
+    { "id": 23, "name": "Cupboard", "icon": "assets/icons/cupboard.svg" },
     { "id": 24, "name": "Table" },
     { "id": 25, "name": "Chair" }
   ],
