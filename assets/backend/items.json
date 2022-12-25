@@ -137,5 +137,144 @@
     "brandId": 0,
     "rating": 3.1,
     "characteristics": []
+  },
+  {
+    "id": 8,
+    "name": "Headphones TSD-2223",
+    "description": "Enjoy clear and spacious sound with the new acoustic model. The case is made of high-strength material, which ensures the durability of the product. Headphones are equipped with a built-in remote control that allows you to adjust the volume and switch tracks.\n\nBuy a stylish and functional accessory in our online store at a bargain price. You can learn more about payment methods and delivery terms in the 'How to buy' section. If you have any questions, write to our online chat.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/0_main.jpg",
+      "assets/images/0_0.jpg",
+      "assets/images/0_1.jpg",
+      "assets/images/0_2.jpg"
+    ],
+    "price": 1229.99,
+    "brandId": 0,
+    "rating": 3.8,
+    "characteristics": []
+  },
+  {
+    "id": 9,
+    "name": "Kibela microphone",
+    "description": "The Kibela microphone has an attractive appearance and advanced technical features. It will easily fit into a creative space, office or home interior. The model is compact and takes up little space on the desktop.\n\nThe device is equipped with three built-in DSP presets, with the help of which the optimal settings for sound recording are selected. The built-in headphone output allows you to monitor the recording in real time. Includes Micro-B/USB and Micro-B/LTG cables for connecting to computers and Apple devices.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/1_main.jpg",
+      "assets/images/1_0.jpg",
+      "assets/images/1_1.jpg",
+      "assets/images/1_2.jpg"
+    ],
+    "price": 849.99,
+    "brandId": 0,
+    "rating": 2.3,
+    "characteristics": []
+  },
+  {
+    "id": 10,
+    "name": "smart speaker Rares",
+    "description": "The voice assistant built into the portable speaker will help you easily find out the weather, or find and play the songs of your favorite artist. And he can control the light and technology. Keep your home safe.\n\nYou can take it with you to nature or travel. The column is compact and operates in active mode up to 24 hours. The power of the device is 60 watts. Buy a speaker system in our online store at a discounted price.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/2_main.jpg",
+      "assets/images/2_0.jpg",
+      "assets/images/2_1.jpg",
+      "assets/images/2_2.jpg"
+    ],
+    "price": 1049.99,
+    "brandId": 0,
+    "rating": 5.0,
+    "characteristics": []
+  },
+  {
+    "id": 11,
+    "name": "Player Kleon",
+    "description": "With an active lifestyle, listen to your favorite music without restricting movement: whether it's in the gym, jogging in the fresh air or snowboarding. The robust aluminum housing is durable and easy to maintain. The size of the player will fit into the pocket of trousers, sports shorts or even a kitchen apron.\n\nThe elegant design will bring aesthetic pleasure, and the technical parameters will save the sound from interference and noise. The device has a built-in voice recorder, FM radio and a microSD memory card slot. The color LCD display makes it easy to navigate between folders and mark your favorite tracks.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/3_main.jpg",
+      "assets/images/3_0.jpg",
+      "assets/images/3_1.jpg"
+    ],
+    "price": 799.99,
+    "brandId": 0,
+    "rating": 1.5,
+    "characteristics": []
+  },
+  {
+    "id": 12,
+    "name": "Portable speaker Koralia",
+    "description": "The speaker is equipped with a built-in player for audio files from flash drives, an SD card slot and an FM tuner. Connect your laptop, player or phone and enjoy high-quality sound at home.\n\nOn the front panel there are volume controls, a mode switch button, connectors and a slot for a memory card, an LED display. Control your speakers with the remote control and enjoy surround sound!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/4_main.jpg",
+      "assets/images/4_0.jpg",
+      "assets/images/4_1.jpg",
+      "assets/images/4_2.jpg",
+      "assets/images/4_3.jpg",
+      "assets/images/4_4.jpg"
+    ],
+    "price": 349.99,
+    "brandId": 0,
+    "rating": 1.5,
+    "characteristics": []
+  },
+  {
+    "id": 13,
+    "name": "Headphones Sapple-9",
+    "description": "Crystal clear sound, comfortable shape and stylish design - these are the new headphones for the Sapple-9 smartphone. In the telephone conversation mode, they work up to 5 hours. The model is equipped with fast charging in a compact case that will fit even in a small clutch.\n\nBuy headphones in our online store in just 1 click. For questions, you can contact via online chat or by phone +1 000 000 00 00.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/5_main.jpg",
+      "assets/images/5_0.jpg",
+      "assets/images/5_1.jpg",
+      "assets/images/5_2.jpg",
+      "assets/images/5_3.jpg",
+      "assets/images/5_4.jpg",
+      "assets/images/5_5.jpg",
+      "assets/images/5_6.jpg",
+      "assets/images/5_7.jpg"
+    ],
+    "price": 479.99,
+    "brandId": 0,
+    "rating": 4.5,
+    "characteristics": []
+  },
+  {
+    "id": 14,
+    "name": "Headphones Dony-339",
+    "description": "EXTRA BASS technology allows you to make low-frequency sounds more spacious, richer and more velvety. The earphones are equipped with soft ear pads and an adjustable headband for comfortable use.\n\nThe model has a built-in microphone and remote control, which can be used to switch tracks, adjust the sound volume. Headphones have a stylish and modern design - they are made for real music lovers.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/6_main.jpg",
+      "assets/images/6_0.jpg",
+      "assets/images/6_1.jpg",
+      "assets/images/6_2.jpg"
+    ],
+    "price": 419.99,
+    "brandId": 0,
+    "rating": 4.2,
+    "characteristics": []
+  },
+  {
+    "id": 15,
+    "name": "Headphones Lambr",
+    "description": "Lambr wireless headphones will give you the purest sound and vivid emotions from your favorite music. Customize touch buttons and manage playlists through the mobile app. Adjust equalizer settings and background sounds, update firmware and monitor battery life in one place.\n\nPleasant to the touch silicone ear cushions fit snugly and comfortably lie in the auricles. The light weight of 10 grams will create a comfortable wearing experience and will be imperceptible. The advanced filling of the headphones will remove interference, and the active noise cancellation system will eliminate unwanted noise.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/7_main.jpg",
+      "assets/images/7_0.jpg",
+      "assets/images/7_1.jpg",
+      "assets/images/7_2.jpg",
+      "assets/images/7_3.jpg",
+      "assets/images/7_4.jpg",
+      "assets/images/7_5.jpg",
+      "assets/images/7_6.jpg",
+      "assets/images/7_7.jpg"
+    ],
+    "price": 249.99,
+    "brandId": 0,
+    "rating": 3.1,
+    "characteristics": []
   }
 ]

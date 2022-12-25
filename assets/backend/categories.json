@@ -3,8 +3,8 @@
     "id": 0,
     "name": "Electronics",
     "img": "assets/images/catalog/0.png",
-    "productIds": [0, 1, 2, 3, 4, 5, 6, 7],
-    "inheritedCategoryIds": [15, 16, 17, 18]
+    "inheritedCategoryIds": [15, 16, 17, 18],
+    "productIds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   },
   {
     "id": 1,
@@ -94,20 +94,29 @@
   {
     "id": 15,
     "name": "Televsision",
+    "inheritedCategoryIds": [61, 62],
     "productIds": [0, 1, 2, 3, 4, 5, 6, 7],
     "icon": "assets/icons/television.svg"
   },
   {
     "id": 16,
     "name": "Audiotechnics",
+    "inheritedCategoryIds": [63, 64],
+    "productIds": [8, 9, 10, 11, 12, 13, 14, 15],
     "icon": "assets/icons/audiotechnics.svg"
   },
   {
     "id": 17,
     "name": "Games and consoles",
+    "inheritedCategoryIds": [65, 66],
     "icon": "assets/icons/games_and_consoles.svg"
   },
-  { "id": 18, "name": "Phones", "icon": "assets/icons/phones.svg" },
+  {
+    "id": 18,
+    "name": "Phones",
+    "inheritedCategoryIds": [67, 68],
+    "icon": "assets/icons/phones.svg"
+  },
   {
     "id": 19,
     "name": "Motorcycles",
@@ -173,5 +182,48 @@
     "id": 60,
     "name": "Air conditioner",
     "icon": "assets/icons/air_conditioner.svg"
+  },
+  {
+    "id": 61,
+    "name": "Full-HD TV",
+    "productIds": [0, 1, 2, 3],
+
+    "icon": "assets/icons/full_hd_tv.svg"
+  },
+  {
+    "id": 62,
+    "name": "Smart-TV",
+    "productIds": [4, 5, 6, 7],
+    "icon": "assets/icons/smart_tv.svg"
+  },
+  {
+    "id": 63,
+    "name": "Acoustic",
+    "icon": "assets/icons/acoustic.svg"
+  },
+  {
+    "id": 64,
+    "name": "Headphones",
+    "icon": "assets/icons/headphones.svg"
+  },
+  {
+    "id": 65,
+    "name": "Accessories",
+    "icon": "assets/icons/accessories.svg"
+  },
+  {
+    "id": 66,
+    "name": "Console",
+    "icon": "assets/icons/console.svg"
+  },
+  {
+    "id": 67,
+    "name": "Phone_accessories",
+    "icon": "assets/icons/phone_accessories.svg"
+  },
+  {
+    "id": 68,
+    "name": "Smartphones",
+    "icon": "assets/icons/smartphones.svg"
   }
 ]

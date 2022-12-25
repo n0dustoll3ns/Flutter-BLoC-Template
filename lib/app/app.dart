@@ -37,7 +37,7 @@ class App extends StatelessWidget {
         BlocProvider<AuthenticationBloc>(create: (context) => authenticationBloc),
         BlocProvider<ProductsBloc>(
             create: (context) => ProductsBloc(userRepository: authenticationBloc.userRepository)),
-        BlocProvider<CategoriesBloc>(create: ((context) => categoriesBloc)),
+        BlocProvider(create: ((context) => categoriesBloc)),
         BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => FavouriteBloc()),
