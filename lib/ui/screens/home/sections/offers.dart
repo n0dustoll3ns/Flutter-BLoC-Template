@@ -16,9 +16,10 @@ class BestOffers extends StatefulWidget {
 }
 
 class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMixin {
-  late Future<List<Product>> _itemsLoader = ProductsRepository().getProductList(
+  late Future<List<Product>> itemsLoader = ProductsRepository().getProductList(
       token: context.read<AuthenticationBloc>().state.toString(), productIds: [1, 3, 4, 6, 7], skipCount: 0);
   List<Product> items = [];
+  
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -28,7 +29,7 @@ class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMi
         Column(
           children: [
             FutureBuilder(
-              future: _itemsLoader,
+              future: itemsLoader,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) items.addAll(snapshot.data!);
                 return Column(
