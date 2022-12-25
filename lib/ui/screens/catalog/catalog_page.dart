@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
+import 'package:flutter_bloc_template/features/catalog/categories/categories_repository.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 
@@ -26,12 +28,10 @@ class CatalogPage extends StatefulWidget {
 class _CatalogPageState extends State<CatalogPage> {
   final ScrollController _scrollController = ScrollController();
   late final ProductsBloc productsBloc;
-  late final CategoriesBloc categoriesBloc;
   final List<Product> items = [];
 
   @override
   void initState() {
-    categoriesBloc = context.read<CategoriesBloc>()..add(CategoryPageEnter(category: widget.category));
     productsBloc = context.read<ProductsBloc>()
       ..add(ProductsRequest(productIds: widget.category?.productIds ?? []));
     _scrollController.addListener(_scrollListener);
@@ -40,45 +40,50 @@ class _CatalogPageState extends State<CatalogPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const CupertinoTextField(
-            prefix: Padding(
-              padding: EdgeInsets.all(6.0),
-              child: Icon(
-                CupertinoIcons.search,
-                color: Colors.black45,
+    return BlocProvider(
+      create: (context) =>
+          CategoriesBloc(categoriesRepository: CategoriesRepository(), userRepository: UserRepository())
+            ..add(CatalogPageEnter(category: widget.category)),
+      child: Scaffold(
+          appBar: AppBar(
+            title: const CupertinoTextField(
+              prefix: Padding(
+                padding: EdgeInsets.all(6.0),
+                child: Icon(
+                  CupertinoIcons.search,
+                  color: Colors.black45,
+                ),
               ),
+              decoration:
+                  BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
             ),
-            decoration:
-                BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
+            actions: [
+              if (widget.category != null)
+                BlocBuilder<FavouriteCategoriesBloc, FavouriteCategoriesState>(builder: (context, state) {
+                  return IconButton(
+                    onPressed: () {
+                      context.read<FavouriteCategoriesBloc>().add(LikeCategory(item: widget.category!));
+                    },
+                    icon: Icon(state.items.contains(widget.category!)
+                        ? CupertinoIcons.heart_fill
+                        : CupertinoIcons.heart),
+                  );
+                }),
+              ..._actions,
+            ],
           ),
-          actions: [
-            if (widget.category != null)
-              BlocBuilder<FavouriteCategoriesBloc, FavouriteCategoriesState>(builder: (context, state) {
-                return IconButton(
-                  onPressed: () {
-                    context.read<FavouriteCategoriesBloc>().add(LikeCategory(item: widget.category!));
-                  },
-                  icon: Icon(state.items.contains(widget.category!)
-                      ? CupertinoIcons.heart_fill
-                      : CupertinoIcons.heart),
-                );
-              }),
-            ..._actions,
-          ],
-        ),
-        body: ListView(
-          physics: const BouncingScrollPhysics(),
-          scrollDirection: Axis.vertical,
-          controller: _scrollController,
-          children: [
-            QuickFilters(onFilterChange: (quickFilter) {}),
-            const ChaptersHorizontalView(),
-            const Categories(),
-            ProductList(items: items),
-          ],
-        ));
+          body: ListView(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            controller: _scrollController,
+            children: [
+              QuickFilters(onFilterChange: (quickFilter) {}),
+              const ChaptersHorizontalView(),
+              const Categories(),
+              ProductList(items: items),
+            ],
+          )),
+    );
   }
 
   List<Widget> get _actions {

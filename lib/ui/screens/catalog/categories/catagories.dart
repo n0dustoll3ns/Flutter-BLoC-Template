@@ -12,12 +12,12 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoriesBloc, CatalogState>(builder: (context, state) {
-      if (state is CategoryLoading) {
+    return BlocBuilder<CategoriesBloc, CatalogPageState>(builder: (context, state) {
+      if (state is CatalogPageLoading) {
         return const LoadingIndicator();
-      } else if (state is CategoryLoadFailure) {
+      } else if (state is CatalogPageLoadFailure) {
         return ErrorBox(message: state.error);
-      } else if (state is CategoryLoaded) {
+      } else if (state is CatalogPageLoaded) {
         return ListView.separated(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
