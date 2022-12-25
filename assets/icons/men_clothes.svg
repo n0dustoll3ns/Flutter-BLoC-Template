@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="40px" width="40px" viewBox="0 0 40 40">
+  <g id="svg">
+    <path id="Rounded_Rectangle_10" data-name="Rounded Rectangle 10" class="" d="M822,381a1.994,1.994,0,0,1-1,1.723V384a2,2,0,0,1-2,2h-3v1a1.994,1.994,0,0,1-1,1.723V390a2,2,0,0,1-2,2H791a2,2,0,0,1-2-2v-1.277A1.994,1.994,0,0,1,788,387v-1h-3a2,2,0,0,1-2-2v-1.277A1.994,1.994,0,0,1,782,381V364a12,12,0,0,1,12-12h16a12,12,0,0,1,12,12v4h0v13Zm-6,3h3v-1h-3v1Zm-25,6h22v-1H791v1Zm-1-6v3h24V375H790v9Zm0-11h24v-6H790v6Zm-5,11h3v-1h-3v1Zm12.1-30a5,5,0,0,0,9.8,0h-9.8ZM820,364a10,10,0,0,0-10-10h-1.08a6.991,6.991,0,0,1-13.84,0H794a10,10,0,0,0-10,10v17h4V363a1,1,0,0,1,2,0v2h24v-2a1,1,0,0,1,2,0v18h4V364Z" transform="translate(-782 -352)" style=""/>
+    <path class="" d="M815,385v-3h5v3h-5Zm-26-19h26v8H789v-8Zm13-7a6,6,0,0,1-6-6h12A6,6,0,0,1,802,359Zm-13,26h-5v-3h5v3Zm25,6H790v-3h24v3Z" transform="translate(-782 -352)" style="opacity: 0.1;"/>
+  </g>
+</svg>

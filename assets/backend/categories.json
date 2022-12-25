@@ -4,155 +4,174 @@
     "name": "Electronics",
     "img": "assets/images/catalog/0.png",
     "productIds": [0, 1, 2, 3, 4, 5, 6, 7],
-    "children": [
-      {
-        "id": 15,
-        "name": "Televsision"
-      },
-      { "id": 16, "name": "AudiTechnics" },
-      { "id": 17, "name": "Games and consoles" },
-      { "id": 18, "name": "Phones" }
-    ]
+    "inheritedCategoryIds": [15, 16, 17, 18]
   },
   {
     "id": 1,
     "img": "assets/images/catalog/1.png",
     "name": "Transport",
-    "children": [
-      { "id": 19, "name": "Motorcycles" },
-      { "id": 20, "name": "Adult bikes" },
-      { "id": 21, "name": "Children bikes" }
-    ]
+    "inheritedCategoryIds": [19, 20, 21]
   },
   {
     "id": 2,
     "img": "assets/images/catalog/2.png",
     "name": "Furniture",
-    "children": [
-      { "id": 22, "name": "Sofa" },
-      { "id": 23, "name": "Cupboard" },
-      { "id": 24, "name": "Table" },
-      { "id": 25, "name": "Chair" }
-    ]
+    "inheritedCategoryIds": [22, 23, 24, 25]
   },
   {
     "id": 3,
     "img": "assets/images/catalog/3.png",
     "name": "Shoes",
-    "children": [
-      { "id": 26, "name": "Men shoes" },
-      { "id": 27, "name": "Women shoes" },
-      { "id": 28, "name": "Boys shoes" },
-      { "id": 29, "name": "Girls Shoes" }
-    ]
+    "inheritedCategoryIds": [26, 27, 28, 29]
   },
   {
     "id": 4,
     "img": "assets/images/catalog/4.png",
     "name": "Clothes",
-    "children": [
-      { "id": 30, "name": "Men clothes" },
-      { "id": 31, "name": "Women clothes" },
-      { "id": 32, "name": "Teenager clothes" },
-      { "id": 33, "name": "Baby clothes" }
-    ]
+    "inheritedCategoryIds": [30, 31, 32, 33]
   },
   {
     "id": 5,
     "img": "assets/images/catalog/5.png",
     "name": "Jewelry and Bijou",
-    "children": [
-      { "id": 34, "name": "Bracers" },
-      { "id": 35, "name": "Brooch" },
-      { "id": 36, "name": "Earrings" }
-    ]
+    "inheritedCategoryIds": [34, 35, 36]
   },
   {
     "id": 6,
     "img": "assets/images/catalog/6.png",
     "name": "Plumbing",
-    "children": [
-      { "id": 37, "name": "Bath" },
-      { "id": 38, "name": "Shower cabin" },
-      { "id": 39, "name": "Faucet" },
-      { "id": 40, "name": "Toilet bowl" }
-    ]
+    "inheritedCategoryIds": [37, 38, 39, 40]
   },
   {
     "id": 7,
     "img": "assets/images/catalog/7.png",
 
     "name": "Sport",
-    "children": [
-      { "id": 41, "name": "Dumbbells" },
-      { "id": 42, "name": "Ball" },
-      { "id": 43, "name": "Equipment" }
-    ]
+    "inheritedCategoryIds": [41, 42, 43]
   },
   {
     "id": 8,
     "img": "assets/images/catalog/8.png",
     "name": "Lighting",
-    "children": [
-      { "id": 44, "name": "Chandelier" },
-      { "id": 45, "name": "Fixture" },
-      { "id": 46, "name": "Lantern" }
-    ]
+    "inheritedCategoryIds": [44, 45, 46]
   },
   {
     "id": 9,
     "img": "assets/images/catalog/9.png",
     "name": "Home and garden",
-    "children": [
-      { "id": 47, "name": "Textile" },
-      { "id": 48, "name": "Decoration" },
-      { "id": 49, "name": "Inventory" }
-    ]
+    "inheritedCategoryIds": [47, 48, 49]
   },
   {
     "id": 10,
     "img": "assets/images/catalog/10.png",
     "name": "Clock",
-    "children": [
-      { "id": 50, "name": "Men clock" },
-      { "id": 51, "name": "Women clock" },
-      { "id": 52, "name": "Children clock" }
-    ]
+    "inheritedCategoryIds": [50, 51, 52]
   },
   {
     "id": 11,
     "img": "assets/images/catalog/11.png",
     "name": "Construction Materials",
-    "children": [
-      { "id": 53, "name": "Wallpaper" },
-      { "id": 54, "name": "Glue" }
-    ]
+    "inheritedCategoryIds": [53, 54]
   },
   {
     "id": 12,
     "img": "assets/images/catalog/12.png",
     "name": "Cosmetics and perfumery",
-    "children": [
-      { "id": 55, "name": "Lipsticks" },
-      { "id": 56, "name": "Perfumery" }
-    ]
+    "inheritedCategoryIds": [55, 56]
   },
   {
     "id": 13,
     "img": "assets/images/catalog/13.png",
     "name": "Toys",
-    "children": [
-      { "id": 57, "name": "Soft toys" },
-      { "id": 58, "name": "Educational toys" }
-    ]
+    "inheritedCategoryIds": [57, 58]
   },
   {
     "id": 14,
     "img": "assets/images/catalog/14.png",
     "name": "Climatic technics",
-    "children": [
-      { "id": 59, "name": "Air breezer" },
-      { "id": 60, "name": "Air conditioner" }
-    ]
+    "inheritedCategoryIds": [59, 60]
+  },
+  {
+    "id": 15,
+    "name": "Televsision",
+    "productIds": [0, 1, 2, 3, 4, 5, 6, 7],
+    "icon": "assets/icons/television.svg"
+  },
+  {
+    "id": 16,
+    "name": "Audiotechnics",
+    "icon": "assets/icons/audiotechnics.svg"
+  },
+  {
+    "id": 17,
+    "name": "Games and consoles",
+    "icon": "assets/icons/games_and_consoles.svg"
+  },
+  { "id": 18, "name": "Phones", "icon": "assets/icons/phones.svg" },
+  {
+    "id": 19,
+    "name": "Motorcycles",
+    "icon": "assets/icons/motorcycles.svg"
+  },
+  { "id": 20, "name": "Adult bikes", "icon": "assets/icons/adult_bikes.svg" },
+  {
+    "id": 21,
+    "name": "Children bikes",
+    "icon": "assets/icons/children_bikes.svg"
+  },
+  { "id": 22, "name": "Sofa", "icon": "assets/icons/sofa.svg" },
+  { "id": 23, "name": "Cupboard", "icon": "assets/icons/cupboard.svg" },
+  { "id": 24, "name": "Table", "icon": "assets/icons/table.svg" },
+  { "id": 25, "name": "Chair", "icon": "assets/icons/chair.svg" },
+  { "id": 26, "name": "Men shoes", "icon": "assets/icons/women_shoes.svg" },
+  { "id": 27, "name": "Women shoes", "icon": "assets/icons/men_shoes.svg" },
+  { "id": 28, "name": "Boys shoes", "icon": "assets/icons/boys_shoes.svg" },
+  { "id": 29, "name": "Girls Shoes", "icon": "assets/icons/girls_shoes.svg" },
+  { "id": 30, "name": "Men clothes", "icon": "assets/icons/women_clothes.svg" },
+  { "id": 31, "name": "Women clothes", "icon": "assets/icons/men_clothes.svg" },
+  {
+    "id": 32,
+    "name": "Teenager clothes",
+    "icon": "assets/icons/teenager_clothes.svg"
+  },
+  { "id": 33, "name": "Baby clothes", "icon": "assets/icons/baby_clothes.svg" },
+  { "id": 34, "name": "Bracers", "icon": "assets/icons/bracer.svg" },
+  { "id": 35, "name": "Brooch", "icon": "assets/icons/brooch.svg" },
+  { "id": 36, "name": "Earrings", "icon": "assets/icons/earring.svg" },
+  { "id": 37, "name": "Bath", "icon": "assets/icons/bath.svg" },
+  { "id": 38, "name": "Shower cabin", "icon": "assets/icons/shower_cabin.svg" },
+  { "id": 39, "name": "Faucet", "icon": "assets/icons/faucet.svg" },
+  { "id": 40, "name": "Toilet bowl", "icon": "assets/icons/toilet_bowl.svg" },
+  { "id": 41, "name": "Dumbbells", "icon": "assets/icons/dumbbells.svg" },
+  { "id": 42, "name": "Ball", "icon": "assets/icons/ball.svg" },
+  { "id": 43, "name": "Equipment", "icon": "assets/icons/equipment.svg" },
+  { "id": 44, "name": "Chandelier", "icon": "assets/icons/chandelier.svg" },
+  { "id": 45, "name": "Fixture", "icon": "assets/icons/fixture.svg" },
+  { "id": 46, "name": "Lantern", "icon": "assets/icons/lantern.svg" },
+  { "id": 47, "name": "Textile", "icon": "assets/icons/textile.svg" },
+  { "id": 48, "name": "Decoration", "icon": "assets/icons/decoration.svg" },
+  { "id": 49, "name": "Inventory", "icon": "assets/icons/inventory.svg" },
+  { "id": 50, "name": "Men clock", "icon": "assets/icons/men_clock.svg" },
+  { "id": 51, "name": "Women clock", "icon": "assets/icons/women_clock.svg" },
+  {
+    "id": 52,
+    "name": "Children clock",
+    "icon": "assets/icons/children_clock.svg"
+  },
+  { "id": 53, "name": "Wallpaper", "icon": "assets/icons/wallpaper.svg" },
+  { "id": 54, "name": "Glue", "icon": "assets/icons/glue.svg" },
+  { "id": 55, "name": "Lipsticks", "icon": "assets/icons/lipsticks.svg" },
+  { "id": 56, "name": "Perfumery", "icon": "assets/icons/perfumery.svg" },
+  { "id": 57, "name": "Soft toys", "icon": "assets/icons/soft_toys.svg" },
+  {
+    "id": 58,
+    "name": "Educational toys",
+    "icon": "assets/icons/educational_toys.svg"
+  },
+  { "id": 59, "name": "Air breezer", "icon": "assets/icons/air_breezer.svg" },
+  {
+    "id": 60,
+    "name": "Air conditioner",
+    "icon": "assets/icons/air_conditioner.svg"
   }
 ]

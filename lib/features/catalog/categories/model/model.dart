@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../products/model/product.dart';
 
 class Category {
-  List<Category> inheritedCategories = [];
+  final List<int> inheritedCategoryIds;
   final String name;
   final int id;
   final List<int> productIds;
@@ -17,22 +17,24 @@ class Category {
       ? Image.asset(_img!, fit: BoxFit.contain)
       : _icon != null
           ? SvgPicture.asset(_icon!)
-          : Icon(Icons.question_mark_rounded);
+          : const Icon(Icons.question_mark_rounded);
 
   Category({
     required this.id,
     required this.name,
     required this.description,
     required this.productIds,
+    required this.inheritedCategoryIds,
     String? icon,
     String? img,
   })  : _img = img,
         _icon = icon;
 
-  Category.fromJson(Map<String, dynamic> json)
+  Category.fromJson(Map json)
       : id = json['id'],
         name = json['name'],
         productIds = List.from(json['productIds'] ?? []),
+        inheritedCategoryIds = List.from(json['inheritedCategoryIds'] ?? []),
         description = json['description'] ?? '',
         _img = json['img'],
         _icon = json['icon'];
