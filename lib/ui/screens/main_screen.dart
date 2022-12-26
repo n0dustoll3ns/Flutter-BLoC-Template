@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../components/persistent_bottom_bar_scaffold.dart';
+import '../components/persistent_bottom_bar_widget.dart';
 import 'cart/components/cart_icon.dart';
 import 'catalog/catalog_page.dart';
 import 'cart/cart.dart';

@@ -144,10 +144,9 @@
     "description": "Enjoy clear and spacious sound with the new acoustic model. The case is made of high-strength material, which ensures the durability of the product. Headphones are equipped with a built-in remote control that allows you to adjust the volume and switch tracks.\n\nBuy a stylish and functional accessory in our online store at a bargain price. You can learn more about payment methods and delivery terms in the 'How to buy' section. If you have any questions, write to our online chat.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/0_main.jpg",
-      "assets/images/0_0.jpg",
-      "assets/images/0_1.jpg",
-      "assets/images/0_2.jpg"
+      "assets/images/8_main.jpg",
+      "assets/images/8_0.jpg",
+      "assets/images/8_1.jpg"
     ],
     "price": 1229.99,
     "brandId": 0,
@@ -160,10 +159,10 @@
     "description": "The Kibela microphone has an attractive appearance and advanced technical features. It will easily fit into a creative space, office or home interior. The model is compact and takes up little space on the desktop.\n\nThe device is equipped with three built-in DSP presets, with the help of which the optimal settings for sound recording are selected. The built-in headphone output allows you to monitor the recording in real time. Includes Micro-B/USB and Micro-B/LTG cables for connecting to computers and Apple devices.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/1_main.jpg",
-      "assets/images/1_0.jpg",
-      "assets/images/1_1.jpg",
-      "assets/images/1_2.jpg"
+      "assets/images/9_main.jpg",
+      "assets/images/9_0.jpg",
+      "assets/images/9_1.jpg",
+      "assets/images/9_2.jpg"
     ],
     "price": 849.99,
     "brandId": 0,
@@ -172,14 +171,15 @@
   },
   {
     "id": 10,
-    "name": "smart speaker Rares",
+    "name": "Smart speaker Rares",
     "description": "The voice assistant built into the portable speaker will help you easily find out the weather, or find and play the songs of your favorite artist. And he can control the light and technology. Keep your home safe.\n\nYou can take it with you to nature or travel. The column is compact and operates in active mode up to 24 hours. The power of the device is 60 watts. Buy a speaker system in our online store at a discounted price.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/2_main.jpg",
-      "assets/images/2_0.jpg",
-      "assets/images/2_1.jpg",
-      "assets/images/2_2.jpg"
+      "assets/images/10_main.jpg",
+      "assets/images/10_0.jpg",
+      "assets/images/10_1.jpg",
+      "assets/images/10_2.jpg",
+      "assets/images/10_3.jpg"
     ],
     "price": 1049.99,
     "brandId": 0,
@@ -192,9 +192,9 @@
     "description": "With an active lifestyle, listen to your favorite music without restricting movement: whether it's in the gym, jogging in the fresh air or snowboarding. The robust aluminum housing is durable and easy to maintain. The size of the player will fit into the pocket of trousers, sports shorts or even a kitchen apron.\n\nThe elegant design will bring aesthetic pleasure, and the technical parameters will save the sound from interference and noise. The device has a built-in voice recorder, FM radio and a microSD memory card slot. The color LCD display makes it easy to navigate between folders and mark your favorite tracks.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/3_main.jpg",
-      "assets/images/3_0.jpg",
-      "assets/images/3_1.jpg"
+      "assets/images/11_main.jpg",
+      "assets/images/11_0.jpg",
+      "assets/images/11_1.jpg"
     ],
     "price": 799.99,
     "brandId": 0,
@@ -207,12 +207,10 @@
     "description": "The speaker is equipped with a built-in player for audio files from flash drives, an SD card slot and an FM tuner. Connect your laptop, player or phone and enjoy high-quality sound at home.\n\nOn the front panel there are volume controls, a mode switch button, connectors and a slot for a memory card, an LED display. Control your speakers with the remote control and enjoy surround sound!",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/4_main.jpg",
-      "assets/images/4_0.jpg",
-      "assets/images/4_1.jpg",
-      "assets/images/4_2.jpg",
-      "assets/images/4_3.jpg",
-      "assets/images/4_4.jpg"
+      "assets/images/12_main.jpg",
+      "assets/images/12_0.jpg",
+      "assets/images/12_1.jpg",
+      "assets/images/12_2.jpg"
     ],
     "price": 349.99,
     "brandId": 0,
@@ -224,17 +222,7 @@
     "name": "Headphones Sapple-9",
     "description": "Crystal clear sound, comfortable shape and stylish design - these are the new headphones for the Sapple-9 smartphone. In the telephone conversation mode, they work up to 5 hours. The model is equipped with fast charging in a compact case that will fit even in a small clutch.\n\nBuy headphones in our online store in just 1 click. For questions, you can contact via online chat or by phone +1 000 000 00 00.",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/5_main.jpg",
-      "assets/images/5_0.jpg",
-      "assets/images/5_1.jpg",
-      "assets/images/5_2.jpg",
-      "assets/images/5_3.jpg",
-      "assets/images/5_4.jpg",
-      "assets/images/5_5.jpg",
-      "assets/images/5_6.jpg",
-      "assets/images/5_7.jpg"
-    ],
+    "images": ["assets/images/13_main.jpg", "assets/images/13_0.jpg"],
     "price": 479.99,
     "brandId": 0,
     "rating": 4.5,
@@ -246,10 +234,9 @@
     "description": "EXTRA BASS technology allows you to make low-frequency sounds more spacious, richer and more velvety. The earphones are equipped with soft ear pads and an adjustable headband for comfortable use.\n\nThe model has a built-in microphone and remote control, which can be used to switch tracks, adjust the sound volume. Headphones have a stylish and modern design - they are made for real music lovers.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/6_main.jpg",
-      "assets/images/6_0.jpg",
-      "assets/images/6_1.jpg",
-      "assets/images/6_2.jpg"
+      "assets/images/14_main.jpg",
+      "assets/images/14_0.jpg",
+      "assets/images/14_1.jpg"
     ],
     "price": 419.99,
     "brandId": 0,
@@ -261,20 +248,279 @@
     "name": "Headphones Lambr",
     "description": "Lambr wireless headphones will give you the purest sound and vivid emotions from your favorite music. Customize touch buttons and manage playlists through the mobile app. Adjust equalizer settings and background sounds, update firmware and monitor battery life in one place.\n\nPleasant to the touch silicone ear cushions fit snugly and comfortably lie in the auricles. The light weight of 10 grams will create a comfortable wearing experience and will be imperceptible. The advanced filling of the headphones will remove interference, and the active noise cancellation system will eliminate unwanted noise.",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/7_main.jpg",
-      "assets/images/7_0.jpg",
-      "assets/images/7_1.jpg",
-      "assets/images/7_2.jpg",
-      "assets/images/7_3.jpg",
-      "assets/images/7_4.jpg",
-      "assets/images/7_5.jpg",
-      "assets/images/7_6.jpg",
-      "assets/images/7_7.jpg"
-    ],
+    "images": ["assets/images/15_main.jpg", "assets/images/15_0.jpg"],
     "price": 249.99,
     "brandId": 0,
     "rating": 3.1,
+    "characteristics": []
+  },
+  {
+    "id": 16,
+    "name": "Play mat PPS",
+    "description": "The PPS play mat will be a great helper during the passage of exciting and responsible missions. Its role is subtle, but in fact it affects the speed of the mouse, thereby providing a lightning-fast reaction that affects the course of the game.\n\nMade in a minimalist style and perfectly complements any desktop. The natural rubber base keeps the mat firmly in place and prevents it from shifting during intense play. You can buy a mouse pad in our online store at a bargain price.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/16_main.jpg"],
+    "price": 9.99,
+    "brandId": 0,
+    "rating": 3.8,
+    "characteristics": []
+  },
+  {
+    "id": 17,
+    "name": "Game console H-18",
+    "description": "The H-18 game console is a realism of the picture, high performance, no freezes and breakdowns. The developers of the model took into account all the nuances and created all the conditions for an uninterrupted comfortable game.\n\nThe set-top box is equipped with HDR technology, due to which the depth of the image shades is automatically increased. The console has a built-in memory that allows you to store up to 1 TB of information. Immerse yourself in the world of games with H-18.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/17_main.jpg", "assets/images/17_0.jpg"],
+    "price": 559.99,
+    "brandId": 0,
+    "rating": 2.3,
+    "characteristics": []
+  },
+  {
+    "id": 18,
+    "name": "Game for the console «Design of Time»",
+    "description": "Try yourself in sparkling shooters and adventure platformers. Conquer Everest, participate in a dangerous safari, explore space or the bottom of the ocean - this is more than just a game.\n\nCarefully drawn characters, detailed locations and realistic movements - appreciate the advantages during fascinating missions. The game involves the plot and the rapidly developing story of the hero. Don't miss your chance to win this game!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/18_main.jpg"],
+    "price": 39.99,
+    "brandId": 0,
+    "rating": 5.0,
+    "characteristics": []
+  },
+  {
+    "id": 19,
+    "name": "Gamepad for Adonis phone",
+    "description": "The console manipulator is able to give new emotions even from the passed game. Connect to tablets and smartphones using Bluetooth. Equipped with two analog sticks, the gamepad has the widest compatibility with devices.\n\nThe controller works wirelessly and wired, has a phone holder and a comfortable shape for long games. Additional keys, double vibration and a powerful battery will make using the gamepad more enjoyable.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/19_main.jpg",
+      "assets/images/19_0.jpg",
+      "assets/images/19_1.jpg",
+      "assets/images/19_2.jpg",
+      "assets/images/19_3.jpg",
+      "assets/images/19_4.jpg"
+    ],
+    "price": 199.99,
+    "brandId": 0,
+    "rating": 1.5,
+    "characteristics": []
+  },
+  {
+    "id": 20,
+    "name": "Game console LS-11",
+    "description": "In cold weather, warm up with hot tea and a game on the DDS-33903 console. The model will please you with technical characteristics: 4k resolution, FFD Letuar x86-64 processor, LLD Padeom TRU graphics core and 8 GB RAM.\n\nBuy the game console DDS-33903 in our online store at a bargain price. The set includes 2 games to choose from, a wireless joystick and specialized headphones.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/20_main.jpg",
+      "assets/images/20_0.jpg",
+      "assets/images/20_1.jpg",
+      "assets/images/20_2.jpg"
+    ],
+    "price": 349.99,
+    "brandId": 0,
+    "rating": 1.5,
+    "characteristics": []
+  },
+  {
+    "id": 21,
+    "name": "Game console Parystat 5",
+    "description": "The console is equipped with a memory capacity of 2 TB, a powerful processor and support for 4K resolution. Immerse yourself in a world of exciting adventures with the console, created using the latest technology.\n\nThe Parystation 5 comes with two wireless joysticks and a voucher for useful upgrades for the most popular games. Buy electronics in our online store in just 1 click. Read more about the terms of payment and delivery in the \"How to buy\" section.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/21_main.jpg", "assets/images/21_0.jpg"],
+    "price": 479.99,
+    "brandId": 0,
+    "rating": 4.5,
+    "characteristics": []
+  },
+  {
+    "id": 22,
+    "name": "Action X game console",
+    "description": "The console supports HDR technology, which brings the game to life. Incredible image clarity and a realistic spectrum of colors will make your journey through the game worlds unforgettable!\n\nInvite friends and family for multiplayer games. Use your tablet or smartphone as a controller. See the world with different eyes - virtual reality glasses and applications will give you a completely new gaming experience.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/22_main.jpg", "assets/images/22_0.jpg"],
+    "price": 489.99,
+    "brandId": 0,
+    "rating": 4.2,
+    "characteristics": []
+  },
+  {
+    "id": 23,
+    "name": "Argiris 10 gaming wheel",
+    "description": "The Argiris 10 is a racing model with a diameter of 28 cm. The material of the steering wheel is made of rubber, which prevents hands from slipping during games. 12 buttons are located on both sides to control the car and are easily configured for circuit racing or drifting. Paddles duplicate the gas and brake pedals, which are also included.\n\nReady to immerse yourself in the atmosphere of the race track and come to the finish line first? Then fix the steering wheel at a 45˚ angle, install the pedals and adjust the car control buttons for easy driving. Connect the model to the computer via USB port and become the winner of the championships!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/23_main.jpg",
+      "assets/images/23_0.jpg",
+      "assets/images/23_1.jpg",
+      "assets/images/23_2.jpg"
+    ],
+    "price": 219.99,
+    "brandId": 0,
+    "rating": 3.1,
+    "characteristics": []
+  },
+  {
+    "id": 24,
+    "name": "Powerbank GF-3000",
+    "description": "The GF-3000 external battery is equipped with two USB ports and a fast charging function. The battery capacity is 10 000 mAh. Built-in indication of the level of charge of the device.\n\nThe battery has an ergonomic shape and shockproof housing, which increases wear resistance and durability of electronics. The compact battery will fit even in a small women's bag. You can purchase goods in our online store in just 1 click.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/24_main.jpg",
+      "assets/images/24_0.jpg",
+      "assets/images/24_1.jpg",
+      "assets/images/24_2.jpg"
+    ],
+    "price": 15.99,
+    "brandId": 0,
+    "rating": 3.1,
+    "characteristics": []
+  },
+  {
+    "id": 25,
+    "name": "SY 15 Case",
+    "description": "Case for Rony-M322 is made of polyurethane. It reliably protects your phone from scratches, bumps and dirt. The sophisticated design of the minimalistic style will show the owner's taste.\n\nMade in the shape of a \"book\" and closes with a magnetic clasp. Locks the screen automatically. All cutouts for charging, headphones, camera and side buttons are precisely cut to fit the model. Buy a case in our online store at a discounted price.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/25_main.jpg",
+      "assets/images/25_0.jpg",
+      "assets/images/25_1.jpg"
+    ],
+    "price": 9.99,
+    "brandId": 0,
+    "rating": 3.1,
+    "characteristics": []
+  },
+  {
+    "id": 26,
+    "name": "Protective film for smartphone Nika 7",
+    "description": "Protective film eliminates unpleasant scratches on phone screens. Comes with a spatula for smoothing the accessory. As well as a special wet wipe, which you need to wipe the phone before applying the film.\n\nYou can buy a useful product in our online store at a bargain price. Terms of payment and delivery are reflected in the section of the site \"How to buy\". If you have any questions, just write them to our online chat.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/26_main.jpg", "assets/images/26_0.jpg"],
+    "price": 9.99,
+    "brandId": 0,
+    "rating": 3.1,
+    "characteristics": []
+  },
+  {
+    "id": 27,
+    "name": "Wireless headphones FD-542",
+    "description": "The FD-542 wireless headphones will delight you with crystal clear sound and a well-thought-out design. Their main feature is the absence of wires and touch control.\n\nThe device is equipped with a built-in microphone. Comes with a compact charging case. In active mode, the headphones work up to 5 hours. If you need more information about an accessory, write to the online chat. We will advise and help you choose for free.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/27_main.jpg",
+      "assets/images/27_0.jpg",
+      "assets/images/27_1.jpg",
+      "assets/images/27_2.jpg"
+    ],
+    "price": 79.99,
+    "brandId": 0,
+    "rating": 3.1,
+    "characteristics": []
+  },
+  {
+    "id": 28,
+    "name": "Smartphone SY 17",
+    "description": "Эргономичный дизайн и биометрическая безопасность — вот главные критерии продвинутого смартфона. Оцените превосходство с новым гаджетом от SY.\n\nСолидный смартфон SY сочетает в себе последние технологии и продвинутые функции. Энергоемкий аккумулятор, биометрическая безопасность устройства и функционал премиального уровня теперь в ваших руках. Дисплей с расширенным динамическим диапазоном HDR и камера с разрешением 19 МП сохранят незабываемые впечатления и передадут их в ярких красках.\n\nмероприятие в детском саду, поиграть в онлайн-режиме и настроить устройство под себя — проще простого. Новый SY 17 объединил в себе удобство использования и эргономичный дизайн. Попробуйте овладеть совершенством!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/28_main.jpg",
+      "assets/images/28_0.jpg",
+      "assets/images/28_1.jpg",
+      "assets/images/28_2.jpg",
+      "assets/images/28_3.jpg",
+      "assets/images/28_4.jpg",
+      "assets/images/28_5.jpg",
+      "assets/images/28_6.jpg"
+    ],
+    "price": 519.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 29,
+    "name": "Smartphone Nika HR",
+    "description": "Work, chat or movies on the new Nika HR. Lead an active lifestyle with a smart smartphone that can replace a computer and tablet.\n\nTo cope with work applications, online services and exceed expectations is possible with Nika HR. The 3100 mAh battery is wirelessly charged and keeps you always connected. The smartphone is protected IP68 and is not afraid of dust or water. Travel with Nika and overcome obstacles with ease.\n\nArtificial intelligence and smart optimization will make your photos perfect: daytime shots will be clear, and night shots will get more light. Now you do not need to adjust the saturation, white balance and brightness - the smartphone will do everything for you.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/29_main.jpg",
+      "assets/images/29_0.jpg",
+      "assets/images/29_1.jpg",
+      "assets/images/29_2.jpg"
+    ],
+    "price": 389.99,
+    "brandId": 0,
+    "rating": 4.4,
+    "characteristics": []
+  },
+  {
+    "id": 30,
+    "name": "Smartphone Nika 8 LITE",
+    "description": "The borderless screen and FHD+ resolution will create an immersive experience. Ready to take your clarity to the next level? Nika 8 LITE will make your ideas come true!\n\nCapture what is happening on the borderless screen of Nika 8 LITE. The display covers the entire front panel of the smartphone from edge to edge, creating the effect of complete immersion. FHD+ resolution and AMOLED color reproduction let you record vivid videos and take crisp photos.\n\nSlim body, frameless display and attention to detail make Nika 8 LITE aesthetic and unique. The back panel creates a smooth outline of the body, thanks to which the phone fits comfortably in the hand.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/30_main.jpg",
+      "assets/images/30_0.jpg",
+      "assets/images/30_1.jpg",
+      "assets/images/30_2.jpg",
+      "assets/images/30_3.jpg",
+      "assets/images/30_4.jpg",
+      "assets/images/30_5.jpg"
+    ],
+    "price": 259.99,
+    "brandId": 0,
+    "rating": 4.4,
+    "characteristics": []
+  },
+  {
+    "id": 31,
+    "name": "Smartphone Nika 7",
+    "description": "Unparalleled security and great power - now available with Nika 7. Don't miss the opportunity to be the first to experience superiority with advanced technology and a borderless screen.\n\nCompact smartphone with the latest technology. Improved performance, unlimited screen real estate and a 3180 mAh high-capacity battery will allow you to work in online mode up to 72 hours. With a 25 MP front camera, 32 GB of RAM and unsurpassed device security, this is what it means to be the best.\n\nTake great selfies with the wide-angle camera with Nika 7. The dynamic AMOLED display and 2 cameras deliver Full HD+ quality photos. Use auto settings for expressive and realistic shots with natural colors. Let your photos speak for you - with soft-blur autofocus, you'll be the center of attention.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/31_main.jpg",
+      "assets/images/31_0.jpg",
+      "assets/images/31_1.jpg",
+      "assets/images/31_2.jpg"
+    ],
+    "price": 239.99,
+    "brandId": 0,
+    "rating": 4.4,
+    "characteristics": []
+  },
+  {
+    "id": 32,
+    "name": "Smartphone Nika Premium",
+    "description": "Unparalleled security and great power - now available with Nika 7. Don't miss the opportunity to be the first to experience superiority with advanced technology and a borderless screen.\n\nCompact smartphone with the latest technology. Improved performance, unlimited screen real estate and a 3180 mAh high-capacity battery will allow you to work in online mode up to 72 hours. With a 25 MP front camera, 32 GB of RAM and unsurpassed device security, this is what it means to be the best.\n\nTake great selfies with the wide-angle camera with Nika 7. The dynamic AMOLED display and 2 cameras deliver Full HD+ quality photos. Use auto settings for expressive and realistic shots with natural colors. Let your photos speak for you - with soft-blur autofocus, you'll be the center of attention.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/31_main.jpg",
+      "assets/images/31_0.jpg",
+      "assets/images/31_1.jpg",
+      "assets/images/31_2.jpg"
+    ],
+    "price": 239.99,
+    "brandId": 0,
+    "rating": 4.4,
+    "characteristics": []
+  },
+  {
+    "id": 33,
+    "name": "Smartphone SY 15",
+    "description": "Vivid impressions are possible even after past events. The wide-angle camera and intelligent shooting system are already on par with professional cameras!\n\nCompact and ergonomic smartphone with 3500 mAh battery and latest technology. The processor will support high-speed information processing, and the wide-angle screen will allow you to see more than usual. Try to plunge into a world full of possibilities and rich colors!\n\nThe intelligent system will help you take expressive and vivid photos. A wide-angle lens with a fixed focus and advanced defect detection functions will help out in difficult shooting conditions. Save the best moments of life in the memory of your smartphone with 64 GB.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/33_main.jpg",
+      "assets/images/33_0.jpg",
+      "assets/images/33_1.jpg",
+      "assets/images/33_2.jpg",
+      "assets/images/33_3.jpg",
+      "assets/images/33_4.jpg",
+      "assets/images/33_5.jpg"
+    ],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
     "characteristics": []
   }
 ]

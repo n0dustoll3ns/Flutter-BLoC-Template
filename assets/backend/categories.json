@@ -4,7 +4,10 @@
     "name": "Electronics",
     "img": "assets/images/catalog/0.png",
     "inheritedCategoryIds": [15, 16, 17, 18],
-    "productIds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    "productIds": [
+      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+      21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33
+    ]
   },
   {
     "id": 1,
@@ -45,7 +48,6 @@
   {
     "id": 7,
     "img": "assets/images/catalog/7.png",
-
     "name": "Sport",
     "inheritedCategoryIds": [41, 42, 43]
   },
@@ -109,12 +111,14 @@
     "id": 17,
     "name": "Games and consoles",
     "inheritedCategoryIds": [65, 66],
+    "productIds": [16, 17, 18, 19, 20, 21, 22, 23],
     "icon": "assets/icons/games_and_consoles.svg"
   },
   {
     "id": 18,
     "name": "Phones",
     "inheritedCategoryIds": [67, 68],
+    "productIds": [24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
     "icon": "assets/icons/phones.svg"
   },
   {
@@ -187,7 +191,6 @@
     "id": 61,
     "name": "Full-HD TV",
     "productIds": [0, 1, 2, 3],
-
     "icon": "assets/icons/full_hd_tv.svg"
   },
   {
@@ -199,31 +202,37 @@
   {
     "id": 63,
     "name": "Acoustic",
+    "productIds": [9, 11, 10, 12],
     "icon": "assets/icons/acoustic.svg"
   },
   {
     "id": 64,
     "name": "Headphones",
+    "productIds": [8, 13, 14, 15],
     "icon": "assets/icons/headphones.svg"
   },
   {
     "id": 65,
     "name": "Accessories",
+    "productIds": [16, 18, 19, 23],
     "icon": "assets/icons/accessories.svg"
   },
   {
     "id": 66,
     "name": "Console",
+    "productIds": [17, 20, 21, 22],
     "icon": "assets/icons/console.svg"
   },
   {
     "id": 67,
     "name": "Phone_accessories",
+    "productIds": [24, 25, 26, 27],
     "icon": "assets/icons/phone_accessories.svg"
   },
   {
     "id": 68,
     "name": "Smartphones",
+    "productIds": [28, 29, 30, 31, 32, 33],
     "icon": "assets/icons/smartphones.svg"
   }
 ]
