@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
@@ -22,8 +21,6 @@ class CatalogPageBloc extends Bloc<CatalogEvent, CatalogPageState> {
     emitter(CatalogPageLoading(categories: state.categories, items: state.items));
     var inheritedCategories = await categoriesRepository.getInheritedCategories(
         token: userRepository.token, categoryId: event.category?.id);
-    var items = await productsRepository.getProductList(
-        token: userRepository.token, productIds: event.category?.inheritedCategoryIds ?? [], skipCount: 0);
     if (inheritedCategories != null) {
       emitter(CatalogPageLoaded(categories: inheritedCategories, items: state.items));
     } else {
