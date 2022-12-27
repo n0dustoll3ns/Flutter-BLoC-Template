@@ -1,36 +1,58 @@
-import 'dart:math';
+import 'dart:html';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/authentication/user_repository.dart';
+import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 
-import '../categories/states.dart';
-import 'model/product.dart';
-import 'states.dart';
+import '../categories/model/model.dart';
 
-class ProductsBloc extends Bloc<CatalogEvent, ProductsState> {
-  final ProductsRepository productsRepository = ProductsRepository();
-  final UserRepository userRepository;
-  ProductsBloc({
-    required this.userRepository,
-  }) : super(ProductsInitial()) {
-    on<ProductsRequest>(_loadMoreProducts);
+class CatalogPageProductsBloc extends Bloc<ProductEvent, ProductsState> {
+  CatalogPageProductsBloc() : super(ProductsLoading(items: [])) {
+    on<RequestMoreProducts>(loadItems);
   }
+  ProductsRepository productsRepository = ProductsRepository();
 
-  Future<List<Product>?> _loadMoreProducts(
-    ProductsRequest event,
-    Emitter<ProductsState> emitter,
-  ) async {
-    emitter(ProductsLoading());
-    bool noError = true;
-    noError = Random().nextInt(100) > 5;
-    if (noError) {
-      var res = await productsRepository.getProductList(token: userRepository.token,productIds: event.productIds , skipCount: 0);
-      emitter(ProductsUpdated(items: res));
-      return res;
-    } else {
-      emitter(ProductsFailure(error: 'error loading products'));
-      return null;
+  Future<void> loadItems(RequestMoreProducts event, Emitter<ProductsState> emit) async {
+    emit(ProductsLoading(items: state.items));
+    try {
+      var products = await productsRepository.getProductList(
+          token: 'token', productIds: event.category?.productIds ?? [], skipCount: state.items.length);
+
+      state.items.addAll(products);
+      emit(ProductsUpdated(items: state.items));
+    } on Exception catch (_) {
+      emit(ProductsFailure('Error loading products'));
     }
   }
+}
+
+/* ---  States   --- */
+abstract class ProductsState {
+  final List<Product> items;
+
+  ProductsState({required this.items});
+}
+
+class ProductsLoading extends ProductsState {
+  ProductsLoading({required super.items});
+}
+
+class ProductsUpdated extends ProductsState {
+  ProductsUpdated({required super.items});
+}
+
+class ProductsFailure extends ProductsState {
+  final String errorMessage;
+  ProductsFailure(this.errorMessage) : super(items: []);
+}
+
+/* ---  Events   --- */
+
+abstract class ProductEvent {
+  const ProductEvent();
+}
+
+class RequestMoreProducts extends ProductEvent {
+  Category? category;
+  RequestMoreProducts({this.category});
 }

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
-import 'package:flutter_bloc_template/ui/components/error_container.dart';
-import '../../../features/catalog/products/states.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import 'components/product_card.dart';
 import '../../styles/constants.dart';
@@ -13,10 +11,12 @@ class ProductList extends StatelessWidget {
   const ProductList({super.key, required this.items});
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductsBloc, ProductsState>(
-        bloc: context.read<ProductsBloc>(),
+    return BlocBuilder<CatalogPageProductsBloc, ProductsState>(
+        bloc: context.read<CatalogPageProductsBloc>(),
         builder: (context, state) {
-          if (state is ProductsFailure) return ErrorBox(message: state.error);
+          if (state is ProductsFailure) {
+            return ErrorWidget.builder(FlutterErrorDetails(exception: Exception(state.errorMessage)));
+          }
           if (state is ProductsUpdated) items.addAll(state.items);
           return Column(
             mainAxisSize: MainAxisSize.min,

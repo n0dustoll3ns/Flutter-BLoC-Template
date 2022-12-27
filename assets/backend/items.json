@@ -522,5 +522,168 @@
     "brandId": 0,
     "rating": 4.1,
     "characteristics": []
+  },
+  {
+    "id": 34,
+    "name": "Bicycle for teenagers",
+    "description": "A two-wheeled bicycle is a faithful assistant to a teenager. It is convenient to get to your grandmother on it, go to races with friends, or you can train sports skills. The bike is foldable, so it will fit in the hallway or on the balcony. The seat is adjustable, so the transport will last more than one year.\n\nSteel frame, stylish coloring and chain protection for brutal teenagers. Trunk, fenders, bell and rearview mirror for safety. For beginner riders, safety wheels are provided in the kit.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/34_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 35,
+    "name": "Folding bike COMF",
+    "description": "The COMF folding bike is a transport that can be taken on a trip or stored even in a room. Getting on the subway or taking the bus won't be a problem. An active lifestyle has become convenient and affordable.\n\nDisc brake on the rear wheel, rigid fork, double aluminum rim and signal light. A frame with a footrest improves bike stability when folded. One high-speed gear provides an even stride of the bike.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/35_main.jpg", "assets/images/35_0.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 36,
+    "name": "Tricycle for kids Luna",
+    "description": "A tricycle is a convenient transport for a girl. A great solution for an active pastime after the stroller. Previously, the child was rolled in a stroller and he liked it. But it's time to grow up! Switch to personal transportation to make this process fun.\n\nThe set includes a basket for storing toys, mirrors and a bell. 12\" wheel diameter, steel frame and long fenders. Buy an additional helmet, knee pads and elbow pads to protect against falls. For purchase questions, write to the online chat.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/36_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 37,
+    "name": "Mountain bike PROF",
+    "description": "Mountain bike PROF for professionals and connoisseurs of smart technology. Carbon frame, reinforced rims, 22 gear transmission and mechanical rim brakes. Transport is light - weighs 8 kg.\n\nErgonomic saddle and 2 shock absorbers. The wide fenders will protect your clothes when riding on wet roads. Sports have become comfortable and accessible to everyone. Buy bicycles for the whole family in our online store. Trips to the mountains will become a favorite sport.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/37_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 38,
+    "name": "City bike XR10",
+    "description": "The XR10 city bike is more than just transportation, it's a way of life. Be on the move and keep fit. A soft seat, a curved steering wheel and rear-view mirrors - everything for a comfortable ride.\n\nWhy bike in the city?\n\nRoad to work.\n\nNight trips.\n\nFamily trips.\n\nAdd a product to your shopping cart and checkout in 1 click. For questions, write to the online chat. We will advise you in real time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/38_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 39,
+    "name": "Electric bike",
+    "description": "Electric bike with double solid aluminum frame. Lightweight: weight 10 kg. High speed and comfortable chair. The battery at the bottom of the frame provides economical energy consumption. 12 speeds to adjust the transport to your rhythm. Get 10 minutes to work, office or home.\n\nFolding innovative vehicle with a powerful motor and stylish appearance. Compact and convenient type of personal electric transport. Pedal to the max!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/_main.jpg"],
+    "price": 2149.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 40,
+    "name": "Children's mountain bike",
+    "description": "A children's mountain bike is the conquest of off-road and high peaks. Make your family vacation interesting, sporty and unforgettable. Disc type brakes, 20 speeds, leather seat and aluminum frame. Comfortable ride on any road!\n\nBrighter, faster and more fun - this is how they spend time on our bikes. Make a purchase in 1 click and order goods with delivery. Ask questions in the online chat. We will consult in more detail about the possibilities of transport and help with the choice.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/40_main.jpg"],
+    "price": 89.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 41,
+    "name": "Women's bike ROSE2",
+    "description": "The ROSE2 women's bike is a comfortable fit, easy handling and maneuverability. 18 speed, aluminum frame and elastomer spring fork. The model features a low frame geometry, an easy chair and rear-view mirrors.\n\nOwn transport has become even more affordable. It is convenient to store it in the apartment. Another advantage is that you don't need a license to ride a bike. You can drive around the city on the day of purchase at no additional cost. At the same time, we recommend that you know the rules of the road in order to comfortably ride in the stream and not interfere with other drivers.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/41_main.jpg"],
+    "price": 79.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 42,
+    "name": "Bicycle for boys \"Rocket\"",
+    "description": "Walking outdoors is a great pastime for the whole family. To keep your kid busy on the street, buy a bike in our online store. Suitable for a child from 3 years old. Steering wheel limiter and chain guard for road safety.\n\nThe kit includes front and rear fenders, rear-view mirrors. To teach your child to ride, install the side wheels. If you are picking up a gift, we will arrange the bike in a box and decorate it with a bow. We will bring delivery at any time to congratulate the child. If you have any questions, write to the online chat. Managers will advise in more detail and help with the choice.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/42_main.jpg"],
+    "price": 59.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 43,
+    "name": "Bicycle with child seat",
+    "description": "A bicycle with a child seat is a great solution for a family holiday if the child is 3 years old. When the baby does not yet have personal transport, trips can be shared. The chair is mounted on the trunk. The belt will provide security. Rear-view mirrors, a bell and a rubberized steering wheel will create comfort in motion.\n\nWe will select a chair taking into account the age and parameters of the child. For questions, write to the online chat. The manager will advise in more detail and help with the choice. Order goods with delivery so as not to waste time traveling to shopping centers. Pedal, gas, let's go!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/43_main.jpg"],
+    "price": 249.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 44,
+    "name": "Cross bike Arcadaios",
+    "description": "Reduced weight and increased power for a comfortable ride and stunts. The new version of the motorcycle in 2020 has a redesigned engine. Significantly increased traction in the lower rev range and maintained performance in the middle.\n\nA retuned engine combined with an updated intake system and a unique muffler boosted performance. New control electronics - three engine modes for optimal traction and soft kickback. Choose the right mode for your riding style and have fun!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/44_main.jpg"],
+    "price": 3349.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 45,
+    "name": "Sports motorcycle Leader sport DE-34",
+    "description": "Leader sport DE-34 is a high-speed motorcycle for those who understand professional transport. Steel frame, 4-cylinder engine, hydraulic brake system and LED lighting.\n\nFuel tank capacity - 15 l. The model is suitable for those who appreciate comfort and speed.\n\nThe motorcycle attracts attention with its stylish design and clear lines. Round headlights, matte finish, large wheels and alloy wheels. Comes with 2 helmets for a safe ride. The alarm comes as a gift. The model will help to gain confidence on the road. Suitable for long trips. Copes even with mountainous surfaces.\n\nSafety in every move is the Leader sport DE-34 motorcycle.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/45_main.jpg"],
+    "price": 3149.99,
+    "brandId": 0,
+    "rating": 4.7,
+    "characteristics": []
+  },
+  {
+    "id": 46,
+    "name": "Road bike Amintas Z1000RW",
+    "description": "Thanks to advanced braking systems, the motorcycle accelerates in 4 seconds and stops with ease without losing control. The engine has been modified and retuned in contrast to the old version of the Z500R. Now the speed has become much more accessible. The 1,000cc, 4-cylinder engine surprises with its increased torque in the operating range.\n\nSafety electronics added to maximum performance. ABS, traction control and engine braking system - improved safety for the Z1000RW owner. He became even more responsive and powerful for completeness of sensations. Experience pure driving pleasure in the city and on the highway.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/46_main.jpg",
+      "assets/images/46_0.jpg",
+      "assets/images/46_1.jpg",
+      "assets/images/46_2.jpg"
+    ],
+    "price": 2949.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 47,
+    "name": "Motorcycle Damor KG250",
+    "description": "The new model has become lighter by 15 kg. Complete with reinforced suspension provides a comfortable ride without being distracted by trifles. The front brake has become more responsive: the accuracy of its work has increased. Improved feedback is a new brake line and caliper.\n\nThe KG250 model differs from previous versions in its stable operation and smooth running. It has a 4-speed manual gearbox. Disc brakes combined with central shock absorbers provide a smooth stopping distance.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/47_main.jpg",
+      "assets/images/47_0.jpg",
+      "assets/images/47_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
   }
 ]

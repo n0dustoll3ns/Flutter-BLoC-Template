@@ -38,8 +38,8 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthenticationBloc>(create: (context) => authenticationBloc),
-        BlocProvider<ProductsBloc>(
-            create: (context) => ProductsBloc(userRepository: authenticationBloc.userRepository)),
+        BlocProvider<CatalogPageProductsBloc>(
+            create: (context) => CatalogPageProductsBloc(userRepository: authenticationBloc.userRepository)),
         BlocProvider(create: ((context) => categoriesBloc)),
         BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
