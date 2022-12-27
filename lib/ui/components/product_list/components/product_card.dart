@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marquee/marquee.dart';
 
 import '../../../../../../../features/catalog/products/model/product.dart';
 import '../../../../app/routes/routes.dart';
@@ -62,11 +63,21 @@ class ProductCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        product.name,
-                        maxLines: 1,
-                        overflow: TextOverflow.fade,
-                        style: Theme.of(context).textTheme.titleLarge,
+                      SizedBox(
+                        height: Theme.of(context).textTheme.titleLarge!.fontSize!*1.2,
+                        child: Marquee(
+                          text: product.name,
+                          style: Theme.of(context).textTheme.titleLarge,
+                          scrollAxis: Axis.horizontal, //scroll direction
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          velocity: 20.0,
+                          pauseAfterRound: const Duration(seconds: 2),
+                          startPadding: 10.0,
+                          accelerationDuration: const Duration(seconds: 1),
+                          accelerationCurve: Curves.linear,
+                          decelerationDuration: const Duration(milliseconds: 500),
+                          decelerationCurve: Curves.easeOut,
+                        ),
                       ),
                       Text(
                         product.name,

@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';

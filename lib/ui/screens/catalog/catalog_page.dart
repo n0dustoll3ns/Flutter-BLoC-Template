@@ -46,7 +46,7 @@ class _CatalogPageState extends State<CatalogPage> {
           productsRepository: ProductsRepository())
         ..add(CatalogPageEnter(category: widget.category)),
       child: BlocProvider<CatalogPageProductsBloc>(
-        create: (_) => catalogPageProductsBloc,
+        create: (_) => catalogPageProductsBloc..add(RequestMoreProducts(category: widget.category)),
         child: Scaffold(
             appBar: AppBar(
               title: const CupertinoTextField(
@@ -83,7 +83,7 @@ class _CatalogPageState extends State<CatalogPage> {
                 QuickFilters(onFilterChange: (quickFilter) {}),
                 const ChaptersHorizontalView(),
                 const Categories(),
-                ProductList(items: items),
+                const ProductList(),
               ],
             )),
       ),
