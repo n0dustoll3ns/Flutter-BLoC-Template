@@ -583,7 +583,7 @@
     "name": "Electric bike",
     "description": "Electric bike with double solid aluminum frame. Lightweight: weight 10 kg. High speed and comfortable chair. The battery at the bottom of the frame provides economical energy consumption. 12 speeds to adjust the transport to your rhythm. Get 10 minutes to work, office or home.\n\nFolding innovative vehicle with a powerful motor and stylish appearance. Compact and convenient type of personal electric transport. Pedal to the max!",
     "previewImgIndex": 0,
-    "images": ["assets/images/_main.jpg"],
+    "images": ["assets/images/39_main.jpg"],
     "price": 2149.99,
     "brandId": 0,
     "rating": 4.1,
@@ -680,6 +680,196 @@
       "assets/images/47_main.jpg",
       "assets/images/47_0.jpg",
       "assets/images/47_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 48,
+    "name": "Double wardrobe",
+    "description": "Simple and practical wardrobe. Roomy and does not take up much space. There are shelves for storing things folded and a hanger for storing clothes on a coat hanger. On the top shelf you can store seasonal items or accessories. Looks great as an independent piece of furniture, and in combination with other modules.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/34_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 49,
+    "name": "Floor stand",
+    "description": "A convenient and concise module can accommodate a large-screen TV. The open shelf is suitable for a game console, DVD or magazine storage. The module is roomy and has two compartments with doors and a drawer. In them you can place what you want to hide from strangers.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/35_main.jpg", "assets/images/35_0.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 50,
+    "name": "Pencil case with open shelves",
+    "description": "The module combines open and closed storage. Arrange interior items, flowers or books on open shelves. And in closed ones, remove what you do not want to show to others.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/50_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 51,
+    "name": "Hinged shelf",
+    "description": "Mounted module with closed and open type of storage. Place your favorite books or magazines on the shelf, place candles or something else. The module will help you organize the space and storage of your belongings.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/51_main.jpg"],
+    "price": 449.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 52,
+    "name": "Coffee table",
+    "description": "The table is made in high-tech style. Non-standard leg geometry and frosted glass will give your interior a special style. The table goes well with upholstered and wooden furniture. An indispensable thing if guests suddenly descended on a tea party.\n\nStore your favorite magazines or bring breakfast to bed - this coffee table fits it all. Use as a separate interior detail and complement it with vases, photo frames or scented candles.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/52_main.jpg"],
+    "price": 64.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 53,
+    "name": "Kitchen single leg chair",
+    "description": "The combination of chrome details and leather seats will make the kitchen unique. The curved back follows the natural curves of the body for a comfortable fit. Loft-style chairs will be a noticeable detail that will create an atmosphere of home comfort.\n\nThe sturdy single-leg design can hold up to 120kg, and the unusual shape is no problem. Enjoy the comfort and stylish element of the interior.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/53_main.jpg",
+      "assets/images/53_0.jpg",
+      "assets/images/53_1.jpg",
+      "assets/images/53_2.jpg",
+      "assets/images/53_3.jpg",
+      "assets/images/53_4.jpg"
+    ],
+    "price": 2149.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 54,
+    "name": "Chair with metal frame",
+    "description": "Thanks to the rigid frame, the chair can withstand heavy loads, and the perforated surface does not absorb odors. The seat will endure numerous cleanings and will remain free of visible dirt for a long time.\n\nDurable and attractive option for frequent gatherings. The comfortable shape of the chair, high back and soft seat will provide comfort for long hours. Chrome-plated legs complement the color scheme and fit easily into the interior.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/54_main.jpg",
+      "assets/images/54_0.jpg",
+      "assets/images/54_1.jpg"
+    ],
+    "price": 89.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 55,
+    "name": "Bar stool",
+    "description": "It is comfortable to lean on a straight back with rounded edges even without soft upholstery. Pleasant to the touch texture gives the impression of raw wood. Ergonomic design withstands up to 130 kg load.\n\nThe footboard with a leather lining protects against mechanical damage, and the cork elements on the legs preserve the floor covering. The chair will not fade from direct sunlight, as it is covered with 3 layers of varnish. A strong and durable decor element is ready to stand in your kitchen.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/55_main.jpg",
+      "assets/images/55_0.jpg",
+      "assets/images/55_1.jpg"
+    ],
+    "price": 79.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 56,
+    "name": "Wardrobe",
+    "description": "We always want to fit the maximum of things in the minimum space allotted for them. Create a space that is easy to keep organized and use every inch of space wisely.\n\nSpacious shelving, pull-out baskets, hangers, trouser racks and shoe racks are the ingredients of the perfect dressing room. The system is easy to install and allows you to combine modules, placing them in the desired order.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/56_main.jpg",
+      "assets/images/56_0.jpg",
+      "assets/images/56_1.jpg",
+      "assets/images/56_2.jpg"
+    ],
+    "price": 59.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 57,
+    "name": "Corner wardrobe",
+    "description": "The corner wardrobe consists of three separate ones: single-leaf, double-leaf and corner. Three doors are mirrored, and one is deaf. Handles, a cornice and 4 rods for clothes are included with the cases. Thoughtful filling of cabinets will help to compactly and conveniently arrange clothes.\n\nWould you like to change the details in the interior? Then make a new combination of cabinets or move to another wall. Create coziness in a room with modular corner furniture.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/57_main.jpg",
+      "assets/images/57_0.jpg",
+      "assets/images/57_1.jpg"
+    ],
+    "price": 249.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 58,
+    "name": "Computer desk",
+    "description": "The table is ideal for long-term work: the high surface allows you to take a comfortable position at the table. The large table top allows you to place documents, books and other supplies to keep things organized with ease.\n\nRugged design will withstand not only the computer, but also other technical devices. The design of the table is suitable for a modern interior, as it is made in basic colors. A functional workplace is available to everyone!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/58_main.jpg"],
+    "price": 3349.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 59,
+    "name": "Children's desk",
+    "description": "The table is ideal for long-term work and allows the child to maintain the correct posture. You can’t do without roomy drawers at all: toys, plasticine, drawing supplies and notebooks - everything will fit. The table is covered with a special film, thanks to which you do not have to worry about mechanical damage or spilled water. Organize documents, books, and other supplies to keep things organized with ease.\n\nOn a wide surface, there is enough space to lay out textbooks with notebooks, and cut and mold figures from plasticine. The depth of the table is enough to completely push a chair or armchair and fit straightened legs there. Let the child enjoy the comfort at the table!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/59_main.jpg"],
+    "price": 3149.99,
+    "brandId": 0,
+    "rating": 4.7,
+    "characteristics": []
+  },
+  {
+    "id": 60,
+    "name": "Kitchen table",
+    "description": "Modern design, high material strength and durability are the main advantages of this table surface. The tabletop is easy to clean even from complex dried dirt and does not require special care. With careful use, you can keep the original look for many years.\n\nThe rectangular shape visually makes the interior more comfortable. The table is especially suitable for modern contemporary and high-tech styles. Natural wood poles go well with light-colored surfaces and stone patterns on laminate or tile.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/46_main.jpg",
+      "assets/images/46_0.jpg",
+      "assets/images/46_1.jpg",
+      "assets/images/46_2.jpg"
+    ],
+    "price": 2949.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 61,
+    "name": "Motorcycle Damor KG250",
+    "description": "The new model has become lighter by 15 kg. Complete with reinforced suspension provides a comfortable ride without being distracted by trifles. The front brake has become more responsive: the accuracy of its work has increased. Improved feedback is a new brake line and caliper.\n\nThe KG250 model differs from previous versions in its stable operation and smooth running. It has a 4-speed manual gearbox. Disc brakes combined with central shock absorbers provide a smooth stopping distance.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/61_main.jpg",
+      "assets/images/61_0.jpg",
+      "assets/images/61_1.jpg",
+      "assets/images/61_2.jpg",
+      "assets/images/61_3.jpg",
+      "assets/images/61_4.jpg"
     ],
     "price": 3999.99,
     "brandId": 0,

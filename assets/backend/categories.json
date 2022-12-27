@@ -13,13 +13,18 @@
     "id": 1,
     "img": "assets/images/catalog/1.png",
     "name": "Transport",
-    "inheritedCategoryIds": [19, 20, 21]
+    "inheritedCategoryIds": [19, 20, 21],
+    "productIds": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
   },
   {
     "id": 2,
     "img": "assets/images/catalog/2.png",
     "name": "Furniture",
-    "inheritedCategoryIds": [22, 23, 24, 25]
+    "inheritedCategoryIds": [22, 23, 24, 25],
+    "productIds": [
+      48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65,
+      66, 67, 68, 69
+    ]
   },
   {
     "id": 3,
@@ -124,18 +129,45 @@
   {
     "id": 19,
     "name": "Motorcycles",
-    "icon": "assets/icons/motorcycles.svg"
+    "icon": "assets/icons/motorcycles.svg",
+    "productIds": [44, 45, 46, 47]
   },
-  { "id": 20, "name": "Adult bikes", "icon": "assets/icons/adult_bikes.svg" },
+  {
+    "id": 20,
+    "name": "Adult bikes",
+    "icon": "assets/icons/adult_bikes.svg",
+    "productIds": [34, 36, 40, 42]
+  },
   {
     "id": 21,
     "name": "Children bikes",
-    "icon": "assets/icons/children_bikes.svg"
+    "icon": "assets/icons/children_bikes.svg",
+    "productIds": [35, 37, 38, 39, 41, 43]
   },
-  { "id": 22, "name": "Sofa", "icon": "assets/icons/sofa.svg" },
-  { "id": 23, "name": "Cupboard", "icon": "assets/icons/cupboard.svg" },
-  { "id": 24, "name": "Table", "icon": "assets/icons/table.svg" },
-  { "id": 25, "name": "Chair", "icon": "assets/icons/chair.svg" },
+  {
+    "id": 22,
+    "name": "Sofa",
+    "icon": "assets/icons/sofa.svg",
+    "productIds": [61, 62, 64, 65, 66, 67]
+  },
+  {
+    "id": 23,
+    "name": "Cupboard",
+    "icon": "assets/icons/cupboard.svg",
+    "productIds": [48, 49, 50, 51, 56, 57, 63, 64]
+  },
+  {
+    "id": 24,
+    "name": "Table",
+    "icon": "assets/icons/table.svg",
+    "productIds": [52, 58, 59, 60]
+  },
+  {
+    "id": 25,
+    "name": "Chair",
+    "icon": "assets/icons/chair.svg",
+    "productIds": [53, 54, 55, 69]
+  },
   { "id": 26, "name": "Men shoes", "icon": "assets/icons/women_shoes.svg" },
   { "id": 27, "name": "Women shoes", "icon": "assets/icons/men_shoes.svg" },
   { "id": 28, "name": "Boys shoes", "icon": "assets/icons/boys_shoes.svg" },
