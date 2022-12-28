@@ -50,6 +50,9 @@
     "img": "assets/images/catalog/5.png",
     "name": "Jewelry and Bijou",
     "inheritedCategoryIds": [34, 35, 36],
+    "productIds": [
+      110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122
+    ],
     "description": "Brooches are an adornment of any image. Fashionable accessory that attracts attention. Wear them as a set or as one piece. It all depends on your preferences. Choose brooches for yourself or as a gift to loved ones.\n\nWhat to combine with an accessory?\n\nHat with high brim.\nCoat with collar.\nSingle color blouse.\nWide skirt belt\nThe handle or body of the bag.\nThick stole, etc.\n\nOnly you decide how to wear the brooch! Experiment, surprise and attract attention. Ducharme - new generation accessories. Emphasize character, style and mood. Buy goods in 1 click and order delivery to the apartment. Make time for loved ones, not shopping malls."
   },
   {
@@ -224,9 +227,24 @@
     "icon": "assets/icons/baby_clothes.svg",
     "productIds": [106, 107, 108, 109]
   },
-  { "id": 34, "name": "Bracers", "icon": "assets/icons/bracer.svg" },
-  { "id": 35, "name": "Brooch", "icon": "assets/icons/brooch.svg" },
-  { "id": 36, "name": "Earrings", "icon": "assets/icons/earring.svg" },
+  {
+    "id": 34,
+    "name": "Bracers",
+    "icon": "assets/icons/bracer.svg",
+    "productIds": [110, 111, 112, 113]
+  },
+  {
+    "id": 35,
+    "name": "Brooch",
+    "icon": "assets/icons/brooch.svg",
+    "productIds": [114, 115, 116, 117, 118]
+  },
+  {
+    "id": 36,
+    "name": "Earrings",
+    "icon": "assets/icons/earring.svg",
+    "productIds": [119, 120, 121, 122]
+  },
   { "id": 37, "name": "Bath", "icon": "assets/icons/bath.svg" },
   { "id": 38, "name": "Shower cabin", "icon": "assets/icons/shower_cabin.svg" },
   { "id": 39, "name": "Faucet", "icon": "assets/icons/faucet.svg" },
