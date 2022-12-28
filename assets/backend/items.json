@@ -691,7 +691,7 @@
     "name": "Double wardrobe",
     "description": "Simple and practical wardrobe. Roomy and does not take up much space. There are shelves for storing things folded and a hanger for storing clothes on a coat hanger. On the top shelf you can store seasonal items or accessories. Looks great as an independent piece of furniture, and in combination with other modules.",
     "previewImgIndex": 0,
-    "images": ["assets/images/34_main.jpg"],
+    "images": ["assets/images/48_main.jpg"],
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
@@ -702,7 +702,7 @@
     "name": "Floor stand",
     "description": "A convenient and concise module can accommodate a large-screen TV. The open shelf is suitable for a game console, DVD or magazine storage. The module is roomy and has two compartments with doors and a drawer. In them you can place what you want to hide from strangers.",
     "previewImgIndex": 0,
-    "images": ["assets/images/35_main.jpg", "assets/images/35_0.jpg"],
+    "images": ["assets/images/49_main.jpg", "assets/images/49_0.jpg"],
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
@@ -860,8 +860,8 @@
   },
   {
     "id": 61,
-    "name": "Motorcycle Damor KG250",
-    "description": "The new model has become lighter by 15 kg. Complete with reinforced suspension provides a comfortable ride without being distracted by trifles. The front brake has become more responsive: the accuracy of its work has increased. Improved feedback is a new brake line and caliper.\n\nThe KG250 model differs from previous versions in its stable operation and smooth running. It has a 4-speed manual gearbox. Disc brakes combined with central shock absorbers provide a smooth stopping distance.",
+    "name": "Sofa with click-clack mechanism",
+    "description": "Attractive appearance and unusual shape attract the eye. Add some zest to your cozy interior and enjoy relaxing on your new sofa.\n\nChoose from leather or fabric upholstery to best match your room's décor. The sofa is easy to fold out - even a child can handle it. A multifunctional, compact and simply interesting element of the interior is waiting for its owner.",
     "previewImgIndex": 0,
     "images": [
       "assets/images/61_main.jpg",
@@ -870,6 +870,852 @@
       "assets/images/61_2.jpg",
       "assets/images/61_3.jpg",
       "assets/images/61_4.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 62,
+    "name": "Pantograph sofa",
+    "description": "The pantograph sofa will last for many years - it is easy to clean and equipped with a strong transformation mechanism. If you are looking for a reliable sofa - this is what you need. When assembled, it occupies a small area and decorates the interior.\n\nInside there is a place to store bedding. Double-sided pillows quickly restore their original shape, which is why it is so pleasant to sleep on them. Choose a sofa for comfortable sleep and relaxation.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/62_main.jpg",
+      "assets/images/62_0.jpg",
+      "assets/images/62_1.jpg",
+      "assets/images/62_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 63,
+    "name": "Closet",
+    "description": "The best option for a bedroom, living room or nursery is a closet with silent sliding doors on rails. Spacious drawers and a clothes rail will help to complete a large number of clothes and accessories.\n\nStop thinking about where and how to place wardrobe items. Mesh baskets, clothes rails, chipboard shelves are made in a light and elegant style. Let yourself enjoy the convenience and order in your things.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/63_main.jpg", "assets/images/63_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 64,
+    "name": "Modular cabinet",
+    "description": "Use furniture elements as a constructor: a set of bedside tables, shelving, shelves and compartments can be combined as you like. Try yourself as a designer - you will definitely enjoy moving the modules, thereby changing the interior.\n\nThe assembled set will look very harmonious, since all the elements are made in the same style. Practicality, convenience and functionality are the main criteria for modular systems. Complete the look of the room with a bright detail!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/64_main.jpg",
+      "assets/images/64_0.jpg",
+      "assets/images/64_1.jpg",
+      "assets/images/64_2.jpg",
+      "assets/images/64_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 65,
+    "name": "Modular sofa",
+    "description": "Complete the finished combination with new components and implement design ideas. Change the position of the sofa in the room and rearrange the modules - this way you show your creativity and try different options in the interior of the living room or nursery.\n\nConvenience is above all. Moderately soft pillow filler will create optimal comfort in a sitting or lying position. A chaise longue with a compartment for storing bed linen and pillows will save space in closets. Lid with a lock for easy and safe removal of the necessary things. All this is made for you.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/65_main.jpg",
+      "assets/images/65_0.jpg",
+      "assets/images/65_1.jpg",
+      "assets/images/65_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 66,
+    "name": "Folding sofa",
+    "description": "This unusually soft sofa will not leave anyone indifferent. Its filler is made of polyurethane foam, which quickly restores its original shape even after a long sleep.\n\nAn impressive bed is more than enough for two adults. Under the seats there is a spacious compartment for storing pajamas and bedding. The sofa has a simple transformation mechanism. Pillows provide optimal support for the body and help you relax as much as possible.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/66_main.jpg",
+      "assets/images/66_0.jpg",
+      "assets/images/66_1.jpg",
+      "assets/images/66_2.jpg",
+      "assets/images/66_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 67,
+    "name": "Sofa bed",
+    "description": "After a night's sleep, the bedroom can easily become a living room. A built-in bed linen storage box will save space in the closet, and wide armrests with built-in shelves will replace a coffee table. Turn your sofa into a spacious bed in no time!\n\nChoose the perfect mattress for you - the package allows you to change mattresses that are right for you in size and type. Make your sleep as comfortable as possible with a collection of different-sized pillows.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/67_main.jpg",
+      "assets/images/67_0.jpg",
+      "assets/images/67_1.jpg",
+      "assets/images/67_2.jpg",
+      "assets/images/67_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 68,
+    "name": "Sofa with click-clack mechanism",
+    "description": "Add a soft leather sofa to the interior - a natural look, easy care and pleasant texture will please the hostess. Invite your friends to watch a football match or arrange a family movie show - there is enough space for everyone!\n\nPocket-type springs create a secure support and adapt to the curves of the body. The top layer of filler makes the sofa soft and maintains a comfortable position. Due to the high back and headrest, the excess tension accumulated during the day will go away from the spine.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/68_main.jpg",
+      "assets/images/68_0.jpg",
+      "assets/images/68_1.jpg",
+      "assets/images/68_2.jpg",
+      "assets/images/68_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 69,
+    "name": "Plastic chair",
+    "description": "The combination of comfort and functionality looks like this: a backrest made of polypropylene, solid beech legs and a soft removable seat made of artificial leather. The anatomical shape of the chair is suitable for long gatherings with friends or at the workplace.\n\nThe color palette will allow you to dilute the interior with bright colors. The model is resistant to scratches and is not afraid of stubborn dirt.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/69_main.jpg",
+      "assets/images/69_0.jpg",
+      "assets/images/69_1.jpg",
+      "assets/images/69_2.jpg",
+      "assets/images/69_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 70,
+    "name": "Women's boots",
+    "description": "Smooth leather is highly durable and water-repellent. She is easy to care for. This will make you look great even in bad weather. An improved model with a heater is suitable for the cold season.\n\nThe model will not soon lose its relevance in the fashion world. The sleek silhouette is finished with criss-cross straps and a decorative zip at the side. Pair the boots with a classic pantsuit or rough jeans with a leather jacket.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/70_main.jpg",
+      "assets/images/70_0.jpg",
+      "assets/images/70_1.jpg",
+      "assets/images/70_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 71,
+    "name": "Women's shoes",
+    "description": "A stable heel and a comfortable last do not cause fatigue. Shoes are suitable for evening dress and business suit. Natural materials and breathable insoles provide all-day comfort.\n\nThe model is made of premium genuine leather. Smart insole technology correctly places the load on the foot and follows the natural curves. Shoes cushion every step and maintain a comfortable microclimate. The block gives confidence when walking on asphalt or a tile.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/71_main.jpg",
+      "assets/images/71_0.jpg",
+      "assets/images/71_1.jpg",
+      "assets/images/71_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 72,
+    "name": "Sandals for women",
+    "description": "Sandals are a great option for those who love elegance, but at the same time appreciate comfort. The innovative design of the last will allow you to forget about the discomfort when walking in heels.\n\nA light pair of smooth leather will highlight the natural beauty and impress men. Shoes are easy to care for - wipe with a damp cloth and you will look great again. Medium heel will not cause fatigue throughout the day.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/72_main.jpg",
+      "assets/images/72_0.jpg",
+      "assets/images/72_1.jpg",
+      "assets/images/72_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 73,
+    "name": "Ankle boots for women",
+    "description": "Combine this model with dresses, trousers and jeans. Heeled ankle boots visually lengthen the legs and make the image feminine. Create unique looks with smooth leather shoes.\n\nEnjoy the convenience of an innovative platform and forget about corns. Two-layer insoles made of foam base and genuine leather will provide a comfortable microclimate even after a long day spent on your feet.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/73_main.jpg",
+      "assets/images/73_0.jpg",
+      "assets/images/73_1.jpg",
+      "assets/images/73_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 74,
+    "name": "Low shoes for men",
+    "description": "The ribbed outsole provides good grip on wet ground, sand and pebbles. The upper of the low shoes consists of 80% genuine leather. The laces are made of durable and abrasion-resistant material.\n\nThe structure contains rubber, which guarantees the durability of shoes. It is safe in aggressive environments and helps to withstand bad weather conditions.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/74_main.jpg",
+      "assets/images/74_0.jpg",
+      "assets/images/74_1.jpg",
+      "assets/images/74_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 75,
+    "name": "Men's derby shoes",
+    "description": "Genuine leather shoes look elegant and fit snugly to the foot. Derbies are a popular type of shoe that will go well with formal trousers and straight jeans.\n\nTextile lining allows the foot to breathe. The leather upper is stain resistant and easy to care for. The lacing will allow you to fix the leg in a comfortable position and complement the image with a neat detail.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/75_main.jpg",
+      "assets/images/75_0.jpg",
+      "assets/images/75_1.jpg",
+      "assets/images/75_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 76,
+    "name": "Slippers for men",
+    "description": "The sole is made of polymer material and provides good grip on the ground or sand. The insole is made with the addition of silicone, which prevents slipping even with wet feet. The slippers themselves are made of mesh textile, which fits snugly to the foot.\n\nThe soft anatomical insole supports the foot in the correct position and creates comfort for the whole day. Shoes are easy to care for and do not absorb odors. The materials of the insole, sole and outer part are resistant to dirt.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/76_main.jpg",
+      "assets/images/76_0.jpg",
+      "assets/images/76_1.jpg",
+      "assets/images/76_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 77,
+    "name": "Low shoes for men",
+    "description": "Leather boots are comfortable for walking around the city. A soft heel pad will prevent the appearance of blisters, and a textile insole will remove excess moisture. With a sole of 3 cm, forget about hypothermia of the feet.\n\nThe stylish pair is paired with trousers, skinny jeans and classics. Suitable for any color scheme of the wardrobe, as the boots are made in basic black. Made of genuine leather, sole material - thermoplastic elastomer.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/77_main.jpg",
+      "assets/images/77_0.jpg",
+      "assets/images/77_1.jpg",
+      "assets/images/77_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 78,
+    "name": "Espadrilles for men",
+    "description": "The product is made of genuine leather and textiles with cotton. Lightweight and breathable, the espadrilles fit perfectly on the leg and will be slightly attached. The insole is made of jute and leather, which will allow the foot to sit comfortably while walking.\n\nNatural shoes are always in trend, so you are guaranteed a stylish look. Pair with jeans and shorts. The size corresponds to the declared. Composition: polyester - 49%, cotton - 36%, genuine leather - 15%.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/78_main.jpg",
+      "assets/images/78_0.jpg",
+      "assets/images/78_1.jpg",
+      "assets/images/78_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 79,
+    "name": "Running shoes for men",
+    "description": "Running shoes provide optimum support without sacrificing comfort. The waterproof, breathable membrane helps keep moisture out, while the high outsole cushions you as you run.\n\nThe main advantages of sneakers are lightness and aggressive grip of the sole with surfaces. Loose earth, wet asphalt or rough terrain is not a hindrance to jogging. Overcome different obstacles with comfortable shoes!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/79_main.jpg",
+      "assets/images/79_0.jpg",
+      "assets/images/79_1.jpg",
+      "assets/images/79_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 80,
+    "name": "Boots for boys",
+    "description": "The lining between the sole and the insole is made of wool, and the insole itself is 100% wool. Shoes with polyurethane impregnation and a protective coating will easily endure snow. Genuine leather upper keeps cold weather out.\n\nYour baby will look great and your feet will always be warm. Walk in nature, in the city or go to school in comfortable winter boots.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/80_main.jpg",
+      "assets/images/80_0.jpg",
+      "assets/images/80_1.jpg",
+      "assets/images/80_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 81,
+    "name": "Boys sandals",
+    "description": "Cross straps with Velcro allow you to quickly put on shoes. Adjust them in length to loosen or tighten. The flexible outsole provides decent cushioning, and the anatomical insole will create maximum comfort for the foot.\n\nSandals made of artificial leather with textile inserts and three Velcro. The gray color prevails, with which it is very easy to assemble an image: jeans, shorts or sweatpants.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/81_main.jpg",
+      "assets/images/81_0.jpg",
+      "assets/images/81_1.jpg",
+      "assets/images/81_2.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 82,
+    "name": "Boys flip flops",
+    "description": "The heel strap securely fixes the shoes on the foot. Perforations on the upper help keep you ventilated, while a foam midsole keeps you comfortable as you walk. The strap retracts and lifts with the adjustment button.\n\nTake it to the beach, to the pool or to nature! The unique shape of children's clogs looks stylish, and the bright color attracts attention. Technological materials guarantee wear resistance of closed flip-flops.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/82_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 83,
+    "name": "Boys' sneakers",
+    "description": "The classic black color will suit the look for a visit, a park or active games on the street. Combine sneakers with jeans, sweatpants or summer shorts.\n\nA polymeric corrugated sole, a leather insole with an arch support and dense textiles will provide support for the ankle joint and create comfort when walking. It is comfortable to run, as the lacing securely fixes the leg.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/83_main.jpg",
+      "assets/images/83_0.jpg",
+      "assets/images/83_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 84,
+    "name": "Boots for girls",
+    "description": "The shoes are made using a special technology that follows the natural curves of the foot and provides a snug fit. Lightweight waterproof material on the top will allow the child to jump through puddles and walk on damp ground without fear of getting his feet wet.\n\nThe thick sole cushions and keeps you comfortable when walking or light running. Shoes are made in basic colors, with which you can combine a large number of things from the children's wardrobe.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/84_main.jpg",
+      "assets/images/84_0.jpg",
+      "assets/images/84_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 85,
+    "name": "Sneakers for girls",
+    "description": "Leather sneakers have high durability and good water-repellent properties. They require minimal maintenance, so they are perfect for outdoor activities and forest walks.\n\nThe midsole with an internal porous structure reduces the weight of the shoe and gives a feeling of lightness to the feet. The Velcro straps are adjustable and securely fix the shoes on the foot. With them, taking off your sneakers is easy and fast.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/85_main.jpg",
+      "assets/images/85_0.jpg",
+      "assets/images/85_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 86,
+    "name": "Rubber boots for girls",
+    "description": "High boots will protect from rain and splashing puddles. Children's feet will feel comfortable and soft when it's slushy outside. The inner lining will keep you warm, and the insole will remove excess moisture from the foot.\n\nThe thick and soft sole will provide comfortable movement on small stones, mud and puddles. With the help of comfortable straps on the sides, the boots are put on in no time even with a warm toe.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/86_main.jpg",
+      "assets/images/86_0.jpg",
+      "assets/images/86_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 87,
+    "name": "Sandals for girls",
+    "description": "",
+    "previewImgIndex": 0,
+    "images": ["assets/images/87_main.jpg", "assets/images/87_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 88,
+    "name": "Pleated skirt",
+    "description": "Pleated skirt - femininity, lightness and grace. Emphasizes the romantic nature and sense of taste. The skirt highlights the waist and silhouette. Suitable for every day and solemn event.\n\nCombine bold looks and shine:\n\nSkirt, shoes and blouse;\n\nSkirt, T-shirt and sneakers;\n\nSkirt, boots and longsleeve.\n\nBuy a skirt in the online store in 1 click. If you need help, write to the online chat. Experts will help you choose the color, size and make a purchase.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/88_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 89,
+    "name": "High waist jeans",
+    "description": "High waisted jeans from the sustainable fashion collection. Light color, 5 pockets and ankle length. Concealed zip fly with button closure and a snug fit. The high waist is eye-catching and accentuates the silhouette.\n\nThree options for a stylish look for summer and spring:\n\njeans, sweater, coat and boots;\n\njeans, short top, dzhinsovka and sandals;\n\njeans, t-shirt and sneakers.\n\nThey will last more than 1 year if properly cared for. Jeans are only suitable for delicate washing at a temperature not exceeding 30C. Bleach is prohibited.\n\nChoose jeans in our online store and place an order in 1 click. Clothing that fits perfectly is the mission of our company. We will bring the goods to the apartment and let you try them on before buying. We will be happy to advise you in more detail by phone or in an online chat.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/89_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 90,
+    "name": "Dress with flowers",
+    "description": "The main element of the spring look is a bright dress with flowers. Suitable for secular parties, dates or walks in the park. Floral print wins the hearts of men, as it emphasizes the femininity of the image. V-neckline elongates the neck. Therefore, a pearl necklace or a chain with a pendant look harmoniously with the neck. Massive earrings in the shape of a lotus or plumeria will perfectly complement the bow.\n\nA dress with flowers in combination with a leather jacket and over the knee boots will create a daring look. And jeans and sandals are suitable for gentle girls. The dress is easy to wash in the machine at medium temperatures. Use the size chart to find the right fit for you. If you have any questions, write to the online chat. Let us help you choose the style and place your order.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/90_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 91,
+    "name": "Women's T-shirt with print",
+    "description": "T-shirt - clothes for every day. Every wardrobe should have at least 5 of these items. To walk around the city, go to school or watch TV shows on a laptop. Buy T-shirts in our online store in 1 click.\n\nBenefits of a cotton t-shirt:\n\nAnti-allergic fabric fibers.\n\nThe print is made using silk-screen printing, so the pattern will withstand 1,000 washes.\n\nThe material supports both hand washing and machine washing.\n\nLow price, as the purchase comes directly from the factory.\n\nThe Poff brand is comfort and convenience in every movement. Choose your t-shirts according to your measurements using the size chart. The print is bright and sunny. Therefore, it is nice to receive such a thing as a gift. If you choose goods for the holiday, we will place an order in a gift box and complement it with a large bow. Happy shopping!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/91_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 92,
+    "name": "Genuine leather leather jacket",
+    "description": "Leather jackets made of genuine leather - outerwear for more than one season. With proper care, it will last up to 5 years. A good investment in style. Cropped style with asymmetrical zip. 2 side pockets with press studs, a straight silhouette and shiny panels. Sleeve length 65 cm. Leather jacket is easy to combine with things of any cut.\n\nTop 3 looks for this fall:\n\nBiker jacket, high-waisted jeans, T-shirt and sneakers.\nBiker jacket, dress and pumps.\nBiker jacket, shirt, skirt and cowboy boots.\nEye-catching design. Buy a jacket in our online store at an attractive price. We will deliver the order to the apartment. It is possible to sample goods. It is important that the clothes fit the parameters. The size chart on the page will also help with this. Buy leather jackets. Choose for yourself what to be today!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/92_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 93,
+    "name": "Mans sportswear",
+    "description": "Tracksuit - comfort in every movement. He does not oblige to train in the gym. It is comfortable clothing for outdoor activities and everyday life. Buy pants and a jacket in the same style. You will definitely find a use for the suit:\n\nWalk in the park.\nHiking in the mountains or for mushrooms.\nWalking the dog early in the morning.\nEvening run at the stadium, etc.\n\nIn our online store you can buy a jacket and pants in different sizes. The suit will sit on the figure. We will be happy to advise you in more detail and help with the choice through consultants. Write for this in the online chat. Happy shopping. And forward for new adventures!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/93_main.jpg",
+      "assets/images/69_0.jpg",
+      "assets/images/69_1.jpg",
+      "assets/images/69_2.jpg",
+      "assets/images/69_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 94,
+    "name": "Men's sweatshirt with print",
+    "description": "Sweatshirt - comfortable outerwear. A round collar accentuates the silhouette of the neck. Therefore, the jacket can be worn over a shirt or T-shirt. This combination looks unusual and stylish. A bright print on the sweatshirt sets the tone for the look. Choose wardrobe details for the main picture. For example, socks, laces or a watch strap - in a single color.\n\nThe sweatshirt is made of thick jersey and lined with fleece. It won't be cold! Quality fabrics will retain color even after machine washing. The sweatshirt is suitable for every day. Buy an irreplaceable thing in your wardrobe.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/94_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 95,
+    "name": "Men's shorts with pockets",
+    "description": "Shorts are an indispensable part of the wardrobe for the summer season. They are comfortable for walking around the city, climbing mountains and just driving a car. And shorts with pockets are not only fashionable, but also roomy. Put your phone, keys, portable chargers in your pocket. This option will allow you to leave the bag at home. Keep the rhythm of the city!\n\nChoose your size and order goods in the online store. We will deliver to the apartment on the same day. Diversify your wardrobe or highlight your style.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/95_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 96,
+    "name": "Men's straight trousers",
+    "description": "Looking for versatile pants to create different looks? Choose plain trousers with a straight cut. The best option for both classic and casual styles.\n\nStraight leg trousers are made from soft cotton fabric. They are perfect for summer. Trousers adapt to the figure, provide comfort and good breathability. You can buy them with or without a suit. Also in our store you can find a similar model of wool for demi-season.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/96_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 97,
+    "name": "Men's shirt",
+    "description": "A shirt is a universal piece of men's wardrobe. Great for everyday wear to school, university or work. And also for special occasions: weddings, anniversaries or christenings. Combine the shirt with trousers, sweatshirts and bow ties. Or add your wardrobe details. Viscose in the composition of the fabric will retain its appearance after machine washing.\n\nMen's shirt emphasizes strength, courage and a sense of taste. The size chart will help you choose the product according to your parameters. And if you need help from consultants, write to the online chat. We will show you how to choose a shirt in the online store and place an order.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/97_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 98,
+    "name": "Men's bomber jacket",
+    "description": "Bomber is a spectacular men's jacket. This is not an accessory, but the main detail of the image. Matches with standard wardrobe. The polyester in the composition will keep the thing for at least 2 years. Choose a jacket according to your style and shape. The attention of women will be yours!\n\n3 cool combinations:\n\nBomber, T-shirt, jeans and sneakers.\nBomber, shirt, pants and boots.\nBomber jacket, denim overalls and sneakers.\nWe will help you choose a jacket in our online store. Write questions in the online chat or call by phone. We will deliver the order on the same day. Everyone should have a stylish bomber jacket!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/98_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 99,
+    "name": "Man's T-shirt",
+    "description": "T-shirt will decorate and complement any image. Contains natural fabrics. Therefore, the material will not lose color and shape even after machine washing. The polyester in the composition will retain the structure - there will never be pellets. The t-shirt is suitable for a tracksuit, trousers and shorts. Dress for the weather and combine looks. Remember that ironed clothes adorn a man.\n\nWe will collect an image taking into account preferences in our online store. Write to online chat. We will help you choose the style, color and size. When choosing a T-shirt, be guided by the size chart in the product card.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/99_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 100,
+    "name": "Boys vest",
+    "description": "The quilted vest retains heat and does not retain moisture. Unzip when it gets hot and zip it up when you feel a slight chill. The hood will protect from wind and rain, and zippered pockets will not let small items and phone fall out.\n\nIn our online store you will find vests of different colors and sizes that are suitable for a child from 5 to 12 years old. Choose what your child likes and order home delivery. Save time choosing clothes online!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/69_main.jpg",
+      "assets/images/69_0.jpg",
+      "assets/images/69_1.jpg",
+      "assets/images/69_2.jpg",
+      "assets/images/69_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 101,
+    "name": "Kigurumi unicorn",
+    "description": "Kigurumi is a new round of home wear. The suit is comfortable and does not restrict movement. It's warm and comfortable. Suitable for home, cottage or masquerade. Surprise those around you.\n\nA bright image for a teenager has become even more accessible! Kigurumi unicorn is a one-piece jumpsuit with a zipper. Change up your wardrobe or give pajamas for your birthday. The child will be delighted with such a cute and fluffy outfit.\n\nUnicorns exist! Don't believe? Then put on a Kigurumi and lower the hood. The real horn leaves no doubt that this is a magical pajama. Complete the look with slippers in the form of paws or a piece of a rainbow. It's time to believe in miracles!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/101_main.jpg", "assets/images/101_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 102,
+    "name": "Jean jacket for girls",
+    "description": "Teenage clothes are almost no different from adults. This season it is fashionable to wear denim jackets. Let your kids be in trend! Button-down denim is a fall hit. Choose the size according to the growth in the catalog and order the product in 1 click.\n\nWhat to wear with a jacket?\n\nDress and sandals.\nT-shirt, jeans and sneakers.\nSkirt, blouse and sandals.\nSpacious zippered pockets keep your phone and keys safe. And in the inside pocket you can put a key or a wallet. A denim jacket is practical and will never go out of style. Long, buttoned sleeves let you adjust the cuffs to fit your arm. Wear-resistant material - outerwear will last more than 1 season. Machine washable.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/102_main.jpg", "assets/images/102_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 103,
+    "name": "T-shirt for teenagers",
+    "description": "Teenage T-shirt - clothes for every day. This is an independent outfit or part of the image. Suitable for a cardigan, sweater or vest. The material is pleasant to the body. Comfort in motion is guaranteed.\n\nChildren are always looking for adventure. Therefore, weekly laundry is an integral part of life. The T-shirt is made from natural materials, which allows it to retain its color and shape even after 1,000 washes. Care instructions are on the label. Choose clothes in our online store and order goods in 1 click. Make time for the child, not shopping malls. Care is much more appreciated!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/103_main.jpg", "assets/images/103_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 104,
+    "name": "Jeans for boys",
+    "description": "Jeans for boys are universal clothes in the wardrobe. Suitable for walks, school visits, holidays and shopping trips. Natural denim, straight fit, adjustable waistband and 5 pockets. Zipper and button closure.\n\nThe size chart will help you choose a model according to your parameters and age. Jeans go well with t-shirts, sweaters, shirts. Complete the look with a watch with a silicone strap and socks to match the top. Children's clothing - stylish and relevant.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/104_main.jpg", "assets/images/104_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 105,
+    "name": "Sweatshirt for boy",
+    "description": "Sweatshirt - a warm jacket with a hood. Loose fit provides comfort. Cotton jersey - comfort in every movement. Looks stylish with a t-shirt and jeans. Complete the look with colorful socks to catch the eye.\n\nJacket with a zipper with large pockets. The hood is adjustable. Cuffs and hem with elastic. Hand wash recommended. Do not wash the sweatshirt with other types of fabric to keep the shape and color. Use the size chart to find the right sweater for your measurements. Sample available upon delivery. To do this, contact the manager by phone or online chat. Enjoy the shopping!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/105_main.jpg", "assets/images/105_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 106,
+    "name": "Baby 2010 discharge envelope",
+    "description": "The birth of a child is the most long-awaited day in the life of parents. Discharge from the hospital is a happy moment for friends and relatives. To make you and your baby feel comfortable on this day, choose safe baby envelopes in our online store.\n\nEnvelope Baby 2010 - comfort, warmth and a tribute to fashion. Suitable for air temperature from -10 to +20 degrees. The lapel of an envelope fastens on buttons for convenience. The envelope is suitable for discharge, for the cradle of a car seat and walking in a stroller. Because in the wardrobe of the baby you need universal things. Also, a blanket measuring 100x100 cm is suitable for a crib. Buy clothes not for 1 time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/106_main.jpg", "assets/images/106_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 107,
+    "name": "Jumpsuit Force 04A for girls",
+    "description": "The Force 04A overalls are clothes for walks and trips. In it, the baby feels comfortable and protected. The jumpsuit does not hinder movement, so it is suitable for active children. Buy clothes online to save time on trips to malls. Pay attention to the baby!\n\nDemi-season jumpsuit made of warm footer and soft cotton lining. Suitable for warm spring and cool autumn. 4 pieces keep you comfortable: hood, long sleeves, open foot and full length zip.\n\nChoose clothes with a margin. Children are growing fast. Expect that the overalls will last for 2 seasons. Therefore, choose wisely. Study the size chart in the catalog or ask questions in the online chat. We will be happy to help you buy things for the child.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/107_main.jpg",
+      "assets/images/107_0.jpg",
+      "assets/images/107_1.jpg",
+      "assets/images/107_2.jpg",
+      "assets/images/107_3.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 108,
+    "name": "Ruffle dress",
+    "description": "Dress with ruffles - clothes for a birthday, matinee or photo shoot. Also, these outfits can be worn at home. After all, girls want to be smart not only on holidays. The image of a little fairy will be decorated with a crown and a magic wand. A hairstyle with hairpins will please the princess on any day of the week.\n\nChoose a dress for your daughter or as a gift. A round neckline will accentuate your eyes and smile. Short sleeves won't restrict movement. Button fastening at the back for easy dressing. The bottom of sleeves and a mouth are processed by a fringing.\n\nBuy a dress with delivery to save time. It is possible to try on an outfit. If you need help in choosing a size, write to the online chat. Experts will advise in more detail and help with the choice. Happy shopping!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/108_main.jpg", "assets/images/108_0.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "characteristics": []
+  },
+  {
+    "id": 109,
+    "name": "Dressy suit for a boy",
+    "description": "Holidays for a child begin from birth. For these events, every kid needs an elegant costume. Buy a 4-piece set to captivate adults in style:\n\nPants with standard waist height and 2 pockets.\nWhite shirt with long sleeves. Looks great on the issue and in the dressed version.\nFitted jacket with 3 pockets.\n2 butterflies: light and dark.\n\nThe material of the suit is pleasant to the body. To maintain color and shape, hand wash in warm water. Decorate the jacket with a scarf to match the shirt or a fresh flower. Choose clothes in the online store to save time on the selection of goods. Pay attention to loved ones! And the kid will be the star of the party in a smart suit.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/109_main.jpg",
+      "assets/images/109_0.jpg",
+      "assets/images/109_1.jpg"
     ],
     "price": 3999.99,
     "brandId": 0,

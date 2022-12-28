@@ -30,19 +30,27 @@
     "id": 3,
     "img": "assets/images/catalog/3.png",
     "name": "Shoes",
-    "inheritedCategoryIds": [26, 27, 28, 29]
+    "inheritedCategoryIds": [26, 27, 28, 29],
+    "productIds": [
+      70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87
+    ]
   },
   {
     "id": 4,
     "img": "assets/images/catalog/4.png",
     "name": "Clothes",
-    "inheritedCategoryIds": [30, 31, 32, 33]
+    "inheritedCategoryIds": [30, 31, 32, 33],
+    "productIds": [
+      88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104,
+      105, 106, 107, 108, 109
+    ]
   },
   {
     "id": 5,
     "img": "assets/images/catalog/5.png",
     "name": "Jewelry and Bijou",
-    "inheritedCategoryIds": [34, 35, 36]
+    "inheritedCategoryIds": [34, 35, 36],
+    "description": "Brooches are an adornment of any image. Fashionable accessory that attracts attention. Wear them as a set or as one piece. It all depends on your preferences. Choose brooches for yourself or as a gift to loved ones.\n\nWhat to combine with an accessory?\n\nHat with high brim.\nCoat with collar.\nSingle color blouse.\nWide skirt belt\nThe handle or body of the bag.\nThick stole, etc.\n\nOnly you decide how to wear the brooch! Experiment, surprise and attract attention. Ducharme - new generation accessories. Emphasize character, style and mood. Buy goods in 1 click and order delivery to the apartment. Make time for loved ones, not shopping malls."
   },
   {
     "id": 6,
@@ -136,13 +144,13 @@
     "id": 20,
     "name": "Adult bikes",
     "icon": "assets/icons/adult_bikes.svg",
-    "productIds": [34, 36, 40, 42]
+    "productIds": [35, 38, 39, 41, 37, 43]
   },
   {
     "id": 21,
     "name": "Children bikes",
     "icon": "assets/icons/children_bikes.svg",
-    "productIds": [35, 37, 38, 39, 41, 43]
+    "productIds": [40, 34, 36, 42]
   },
   {
     "id": 22,
@@ -168,18 +176,54 @@
     "icon": "assets/icons/chair.svg",
     "productIds": [53, 54, 55, 69]
   },
-  { "id": 26, "name": "Men shoes", "icon": "assets/icons/women_shoes.svg" },
-  { "id": 27, "name": "Women shoes", "icon": "assets/icons/men_shoes.svg" },
-  { "id": 28, "name": "Boys shoes", "icon": "assets/icons/boys_shoes.svg" },
-  { "id": 29, "name": "Girls Shoes", "icon": "assets/icons/girls_shoes.svg" },
-  { "id": 30, "name": "Men clothes", "icon": "assets/icons/women_clothes.svg" },
-  { "id": 31, "name": "Women clothes", "icon": "assets/icons/men_clothes.svg" },
+  {
+    "id": 26,
+    "name": "Men shoes",
+    "icon": "assets/icons/women_shoes.svg",
+    "productIds": [70, 71, 72, 73]
+  },
+  {
+    "id": 27,
+    "name": "Women shoes",
+    "icon": "assets/icons/men_shoes.svg",
+    "productIds": [74, 75, 76, 77, 78, 79]
+  },
+  {
+    "id": 28,
+    "name": "Boys shoes",
+    "icon": "assets/icons/boys_shoes.svg",
+    "productIds": [80, 81, 82, 83]
+  },
+  {
+    "id": 29,
+    "name": "Girls Shoes",
+    "icon": "assets/icons/girls_shoes.svg",
+    "productIds": [84, 85, 86, 87]
+  },
+  {
+    "id": 30,
+    "name": "Men clothes",
+    "icon": "assets/icons/women_clothes.svg",
+    "productIds": [93, 94, 95, 96, 97, 98, 99]
+  },
+  {
+    "id": 31,
+    "name": "Women clothes",
+    "icon": "assets/icons/men_clothes.svg",
+    "productIds": [88, 89, 90, 91, 92]
+  },
   {
     "id": 32,
     "name": "Teenager clothes",
-    "icon": "assets/icons/teenager_clothes.svg"
+    "icon": "assets/icons/teenager_clothes.svg",
+    "productIds": [100, 101, 102, 103, 104, 105]
   },
-  { "id": 33, "name": "Baby clothes", "icon": "assets/icons/baby_clothes.svg" },
+  {
+    "id": 33,
+    "name": "Baby clothes",
+    "icon": "assets/icons/baby_clothes.svg",
+    "productIds": [106, 107, 108, 109]
+  },
   { "id": 34, "name": "Bracers", "icon": "assets/icons/bracer.svg" },
   { "id": 35, "name": "Brooch", "icon": "assets/icons/brooch.svg" },
   { "id": 36, "name": "Earrings", "icon": "assets/icons/earring.svg" },
