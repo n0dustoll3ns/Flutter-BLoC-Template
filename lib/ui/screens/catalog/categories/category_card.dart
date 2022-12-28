@@ -14,7 +14,6 @@ class CategoryCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(CupertinoPageRoute(builder: (context) => CatalogPage(category: category)));
       },
-      isThreeLine: true,
       leading: category.imageWidget,
       title: Text(
         category.name,
