@@ -59,7 +59,11 @@
     "id": 6,
     "img": "assets/images/catalog/6.png",
     "name": "Plumbing",
-    "inheritedCategoryIds": [37, 38, 39, 40]
+    "inheritedCategoryIds": [37, 38, 39, 40],
+    "productIds": [
+      123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137,
+      138, 139, 140, 141, 142
+    ]
   },
   {
     "id": 7,
@@ -245,10 +249,30 @@
     "icon": "assets/icons/earring.svg",
     "productIds": [119, 120, 121, 122]
   },
-  { "id": 37, "name": "Bath", "icon": "assets/icons/bath.svg" },
-  { "id": 38, "name": "Shower cabin", "icon": "assets/icons/shower_cabin.svg" },
-  { "id": 39, "name": "Faucet", "icon": "assets/icons/faucet.svg" },
-  { "id": 40, "name": "Toilet bowl", "icon": "assets/icons/toilet_bowl.svg" },
+  {
+    "id": 37,
+    "name": "Bath",
+    "icon": "assets/icons/bath.svg",
+    "productIds": [123, 124, 125, 126, 127, 128, 129]
+  },
+  {
+    "id": 38,
+    "name": "Shower cabin",
+    "icon": "assets/icons/shower_cabin.svg",
+    "productIds": [130, 131, 132, 133]
+  },
+  {
+    "id": 39,
+    "name": "Faucet",
+    "icon": "assets/icons/faucet.svg",
+    "productIds": [134, 135, 136, 137]
+  },
+  {
+    "id": 40,
+    "name": "Toilet bowl",
+    "icon": "assets/icons/toilet_bowl.svg",
+    "productIds": [138, 139, 140, 141]
+  },
   { "id": 41, "name": "Dumbbells", "icon": "assets/icons/dumbbells.svg" },
   { "id": 42, "name": "Ball", "icon": "assets/icons/ball.svg" },
   { "id": 43, "name": "Equipment", "icon": "assets/icons/equipment.svg" },
