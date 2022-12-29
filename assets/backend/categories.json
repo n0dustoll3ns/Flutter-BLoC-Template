@@ -69,19 +69,28 @@
     "id": 7,
     "img": "assets/images/catalog/7.png",
     "name": "Sport",
-    "inheritedCategoryIds": [41, 42, 43]
+    "inheritedCategoryIds": [41, 42, 43],
+    "productIds": [
+      142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155
+    ]
   },
   {
     "id": 8,
     "img": "assets/images/catalog/8.png",
     "name": "Lighting",
-    "inheritedCategoryIds": [44, 45, 46]
+    "inheritedCategoryIds": [44, 45, 46],
+    "productIds": [
+      156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169
+    ]
   },
   {
     "id": 9,
     "img": "assets/images/catalog/9.png",
     "name": "Home and garden",
-    "inheritedCategoryIds": [47, 48, 49]
+    "inheritedCategoryIds": [47, 48, 49],
+    "productIds": [
+      170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183
+    ]
   },
   {
     "id": 10,
@@ -273,15 +282,60 @@
     "icon": "assets/icons/toilet_bowl.svg",
     "productIds": [138, 139, 140, 141]
   },
-  { "id": 41, "name": "Dumbbells", "icon": "assets/icons/dumbbells.svg" },
-  { "id": 42, "name": "Ball", "icon": "assets/icons/ball.svg" },
-  { "id": 43, "name": "Equipment", "icon": "assets/icons/equipment.svg" },
-  { "id": 44, "name": "Chandelier", "icon": "assets/icons/chandelier.svg" },
-  { "id": 45, "name": "Fixture", "icon": "assets/icons/fixture.svg" },
-  { "id": 46, "name": "Lantern", "icon": "assets/icons/lantern.svg" },
-  { "id": 47, "name": "Textile", "icon": "assets/icons/textile.svg" },
-  { "id": 48, "name": "Decoration", "icon": "assets/icons/decoration.svg" },
-  { "id": 49, "name": "Inventory", "icon": "assets/icons/inventory.svg" },
+  {
+    "id": 41,
+    "name": "Dumbbells",
+    "icon": "assets/icons/dumbbells.svg",
+    "productIds": [142, 143, 144, 145]
+  },
+  {
+    "id": 42,
+    "name": "Ball",
+    "icon": "assets/icons/ball.svg",
+    "productIds": [146, 147, 148, 149, 150, 151]
+  },
+  {
+    "id": 43,
+    "name": "Equipment",
+    "icon": "assets/icons/equipment.svg",
+    "productIds": [152, 153, 154, 155]
+  },
+  {
+    "id": 44,
+    "name": "Chandelier",
+    "icon": "assets/icons/chandelier.svg",
+    "productIds": [156, 157, 158, 159, 160, 161]
+  },
+  {
+    "id": 45,
+    "name": "Fixture",
+    "icon": "assets/icons/fixture.svg",
+    "productIds": [162, 163, 164, 165]
+  },
+  {
+    "id": 46,
+    "name": "Lantern",
+    "icon": "assets/icons/lantern.svg",
+    "productIds": [166, 167, 168, 169]
+  },
+  {
+    "id": 47,
+    "name": "Textile",
+    "icon": "assets/icons/textile.svg",
+    "productIds": [170, 171, 172, 173, 174, 175]
+  },
+  {
+    "id": 48,
+    "name": "Decoration",
+    "icon": "assets/icons/decoration.svg",
+    "productIds": [176, 177, 178, 179]
+  },
+  {
+    "id": 49,
+    "name": "Inventory",
+    "icon": "assets/icons/inventory.svg",
+    "productIds": [180, 181, 182, 183]
+  },
   { "id": 50, "name": "Men clock", "icon": "assets/icons/men_clock.svg" },
   { "id": 51, "name": "Women clock", "icon": "assets/icons/women_clock.svg" },
   {
