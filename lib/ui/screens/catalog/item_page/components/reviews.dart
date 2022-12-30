@@ -47,10 +47,8 @@ class ReviewsBox extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(CupertinoPageRoute(builder: (_) => WriteReviewScreen(
-                  key: UniqueKey(),
-                  product: product)));
+            Navigator.of(context).push(
+                CupertinoPageRoute(builder: (_) => WriteReviewScreen(key: UniqueKey(), product: product)));
           },
           child: const Text('Write review'),
         ),

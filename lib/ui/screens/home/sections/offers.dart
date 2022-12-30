@@ -19,7 +19,7 @@ class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMi
   late Future<List<Product>> itemsLoader = ProductsRepository().getProductList(
       token: context.read<AuthenticationBloc>().state.toString(), productIds: [1, 3, 4, 6, 7], skipCount: 0);
   List<Product> items = [];
-  
+
   @override
   Widget build(BuildContext context) {
     super.build(context);

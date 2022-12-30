@@ -64,7 +64,7 @@ class ProductCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: Theme.of(context).textTheme.titleLarge!.fontSize!*1.2,
+                        height: Theme.of(context).textTheme.titleLarge!.fontSize! * 1.2,
                         child: Marquee(
                           text: product.name,
                           style: Theme.of(context).textTheme.titleLarge,

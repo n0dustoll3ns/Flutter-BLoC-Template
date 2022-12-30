@@ -13,7 +13,7 @@
     "price": 1229.99,
     "brandId": 0,
     "rating": 3.8,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 1,
@@ -29,7 +29,7 @@
     "price": 849.99,
     "brandId": 0,
     "rating": 2.3,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 2,
@@ -45,7 +45,7 @@
     "price": 1049.99,
     "brandId": 0,
     "rating": 5.0,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 3,
@@ -60,7 +60,7 @@
     "price": 799.99,
     "brandId": 0,
     "rating": 1.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 4,
@@ -78,7 +78,7 @@
     "price": 349.99,
     "brandId": 0,
     "rating": 1.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 5,
@@ -99,7 +99,7 @@
     "price": 479.99,
     "brandId": 0,
     "rating": 4.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 6,
@@ -115,7 +115,7 @@
     "price": 419.99,
     "brandId": 0,
     "rating": 4.2,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 7,
@@ -136,7 +136,7 @@
     "price": 249.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 8,
@@ -151,7 +151,7 @@
     "price": 1229.99,
     "brandId": 0,
     "rating": 3.8,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 9,
@@ -167,7 +167,7 @@
     "price": 849.99,
     "brandId": 0,
     "rating": 2.3,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 10,
@@ -184,7 +184,7 @@
     "price": 1049.99,
     "brandId": 0,
     "rating": 5.0,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 11,
@@ -199,7 +199,7 @@
     "price": 799.99,
     "brandId": 0,
     "rating": 1.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 12,
@@ -215,7 +215,7 @@
     "price": 349.99,
     "brandId": 0,
     "rating": 1.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 13,
@@ -226,7 +226,7 @@
     "price": 479.99,
     "brandId": 0,
     "rating": 4.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 14,
@@ -241,7 +241,7 @@
     "price": 419.99,
     "brandId": 0,
     "rating": 4.2,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 15,
@@ -252,7 +252,7 @@
     "price": 249.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 16,
@@ -263,7 +263,7 @@
     "price": 9.99,
     "brandId": 0,
     "rating": 3.8,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 17,
@@ -274,7 +274,7 @@
     "price": 559.99,
     "brandId": 0,
     "rating": 2.3,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 18,
@@ -285,7 +285,7 @@
     "price": 39.99,
     "brandId": 0,
     "rating": 5.0,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 19,
@@ -303,12 +303,12 @@
     "price": 199.99,
     "brandId": 0,
     "rating": 1.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 20,
     "name": "Game console LS-11",
-    "description": "In cold weather, warm up with hot tea and a game on the DDS-33903 console. The model will please you with technical characteristics: 4k resolution, FFD Letuar x86-64 processor, LLD Padeom TRU graphics core and 8 GB RAM.\n\nBuy the game console DDS-33903 in our online store at a bargain price. The set includes 2 games to choose from, a wireless joystick and specialized headphones.",
+    "description": "In cold weather, warm up with hot tea and a game on the DDS-33903 console. The model will please you with technical properties: 4k resolution, FFD Letuar x86-64 processor, LLD Padeom TRU graphics core and 8 GB RAM.\n\nBuy the game console DDS-33903 in our online store at a bargain price. The set includes 2 games to choose from, a wireless joystick and specialized headphones.",
     "previewImgIndex": 0,
     "images": [
       "assets/images/20_main.jpg",
@@ -319,7 +319,7 @@
     "price": 349.99,
     "brandId": 0,
     "rating": 1.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 21,
@@ -330,7 +330,7 @@
     "price": 479.99,
     "brandId": 0,
     "rating": 4.5,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 22,
@@ -341,7 +341,7 @@
     "price": 489.99,
     "brandId": 0,
     "rating": 4.2,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 23,
@@ -357,7 +357,7 @@
     "price": 219.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 24,
@@ -373,7 +373,7 @@
     "price": 15.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 25,
@@ -388,7 +388,7 @@
     "price": 9.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 26,
@@ -399,7 +399,7 @@
     "price": 9.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 27,
@@ -415,7 +415,7 @@
     "price": 79.99,
     "brandId": 0,
     "rating": 3.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 28,
@@ -435,7 +435,7 @@
     "price": 519.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 29,
@@ -451,7 +451,7 @@
     "price": 389.99,
     "brandId": 0,
     "rating": 4.4,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 30,
@@ -470,7 +470,7 @@
     "price": 259.99,
     "brandId": 0,
     "rating": 4.4,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 31,
@@ -486,7 +486,7 @@
     "price": 239.99,
     "brandId": 0,
     "rating": 4.4,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 32,
@@ -502,7 +502,7 @@
     "price": 239.99,
     "brandId": 0,
     "rating": 4.4,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 33,
@@ -521,7 +521,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 34,
@@ -532,7 +532,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 35,
@@ -543,7 +543,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 36,
@@ -554,7 +554,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 37,
@@ -565,7 +565,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 38,
@@ -576,7 +576,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 39,
@@ -587,7 +587,7 @@
     "price": 2149.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 40,
@@ -598,7 +598,7 @@
     "price": 89.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 41,
@@ -609,7 +609,7 @@
     "price": 79.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 42,
@@ -620,7 +620,7 @@
     "price": 59.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 43,
@@ -631,7 +631,7 @@
     "price": 249.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 44,
@@ -642,7 +642,7 @@
     "price": 3349.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 45,
@@ -653,7 +653,7 @@
     "price": 3149.99,
     "brandId": 0,
     "rating": 4.7,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 46,
@@ -669,7 +669,7 @@
     "price": 2949.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 47,
@@ -684,7 +684,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 48,
@@ -695,7 +695,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 49,
@@ -706,7 +706,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 50,
@@ -717,7 +717,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 51,
@@ -728,7 +728,7 @@
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 52,
@@ -739,7 +739,7 @@
     "price": 64.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 53,
@@ -757,7 +757,7 @@
     "price": 2149.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 54,
@@ -772,7 +772,7 @@
     "price": 89.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 55,
@@ -787,7 +787,7 @@
     "price": 79.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 56,
@@ -803,7 +803,7 @@
     "price": 59.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 57,
@@ -818,7 +818,7 @@
     "price": 249.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 58,
@@ -829,7 +829,7 @@
     "price": 3349.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 59,
@@ -840,7 +840,7 @@
     "price": 3149.99,
     "brandId": 0,
     "rating": 4.7,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 60,
@@ -856,7 +856,7 @@
     "price": 2949.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 61,
@@ -874,7 +874,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 62,
@@ -890,7 +890,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 63,
@@ -901,7 +901,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 64,
@@ -918,7 +918,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 65,
@@ -934,7 +934,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 66,
@@ -951,7 +951,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 67,
@@ -968,7 +968,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 68,
@@ -985,7 +985,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 69,
@@ -1002,7 +1002,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 70,
@@ -1018,7 +1018,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 71,
@@ -1034,7 +1034,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 72,
@@ -1050,7 +1050,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 73,
@@ -1066,7 +1066,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 74,
@@ -1082,7 +1082,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 75,
@@ -1098,7 +1098,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 76,
@@ -1114,7 +1114,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 77,
@@ -1130,7 +1130,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 78,
@@ -1146,7 +1146,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 79,
@@ -1162,7 +1162,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 80,
@@ -1178,7 +1178,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 81,
@@ -1194,7 +1194,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 82,
@@ -1205,7 +1205,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 83,
@@ -1220,7 +1220,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 84,
@@ -1235,7 +1235,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 85,
@@ -1250,7 +1250,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 86,
@@ -1265,7 +1265,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 87,
@@ -1276,7 +1276,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 88,
@@ -1287,7 +1287,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 89,
@@ -1298,7 +1298,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 90,
@@ -1309,7 +1309,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 91,
@@ -1320,7 +1320,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 92,
@@ -1331,7 +1331,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 93,
@@ -1348,7 +1348,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 94,
@@ -1359,7 +1359,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 95,
@@ -1370,7 +1370,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 96,
@@ -1381,7 +1381,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 97,
@@ -1392,7 +1392,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 98,
@@ -1403,7 +1403,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 99,
@@ -1414,7 +1414,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 100,
@@ -1425,7 +1425,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 101,
@@ -1436,7 +1436,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 102,
@@ -1447,7 +1447,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 103,
@@ -1458,7 +1458,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 104,
@@ -1469,7 +1469,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 105,
@@ -1480,7 +1480,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 106,
@@ -1491,7 +1491,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 107,
@@ -1508,7 +1508,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 108,
@@ -1519,7 +1519,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 109,
@@ -1534,7 +1534,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 110,
@@ -1545,7 +1545,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 111,
@@ -1556,7 +1556,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 112,
@@ -1567,7 +1567,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 113,
@@ -1578,7 +1578,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 114,
@@ -1594,7 +1594,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 115,
@@ -1609,7 +1609,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 116,
@@ -1624,7 +1624,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 117,
@@ -1635,7 +1635,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 118,
@@ -1646,7 +1646,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 119,
@@ -1657,7 +1657,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 120,
@@ -1668,7 +1668,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 121,
@@ -1679,7 +1679,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 122,
@@ -1690,7 +1690,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 123,
@@ -1701,7 +1701,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 124,
@@ -1712,7 +1712,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 125,
@@ -1723,7 +1723,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 126,
@@ -1734,7 +1734,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 127,
@@ -1745,7 +1745,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 128,
@@ -1756,7 +1756,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 129,
@@ -1767,7 +1767,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 130,
@@ -1778,7 +1778,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 131,
@@ -1789,7 +1789,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 132,
@@ -1800,7 +1800,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 133,
@@ -1811,7 +1811,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 134,
@@ -1822,7 +1822,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 135,
@@ -1833,7 +1833,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 136,
@@ -1844,7 +1844,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 137,
@@ -1855,7 +1855,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 138,
@@ -1870,7 +1870,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 139,
@@ -1887,7 +1887,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 140,
@@ -1898,7 +1898,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 141,
@@ -1909,7 +1909,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 142,
@@ -1920,7 +1920,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 143,
@@ -1937,7 +1937,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 144,
@@ -1953,7 +1953,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 145,
@@ -1964,7 +1964,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 146,
@@ -1975,7 +1975,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 147,
@@ -1986,7 +1986,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 148,
@@ -1997,29 +1997,29 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 149,
     "name": "Volleyball ball Kasaki-M 600",
-    "description": "Kasaki-M 600 is a model for professional matches. Made using the latest technology from high quality faux leather. Does not slip in the hands and provides an accurate flight path. The new structure of the ball frame allows it to bounce perfectly at the slightest impact.\n\nThe brand guarantees the quality of the product and its durability. You can test the product in our store. On the characteristics of the goods and delivery conditions, you can consult through the online chat on our website.",
+    "description": "Kasaki-M 600 is a model for professional matches. Made using the latest technology from high quality faux leather. Does not slip in the hands and provides an accurate flight path. The new structure of the ball frame allows it to bounce perfectly at the slightest impact.\n\nThe brand guarantees the quality of the product and its durability. You can test the product in our store. On the properties of the goods and delivery conditions, you can consult through the online chat on our website.",
     "previewImgIndex": 0,
     "images": ["assets/images/149_main.jpg"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 150,
     "name": "Football ball",
-    "description": "The Nalks soccer ball is designed specifically for professional games. The revolutionary new product is made of high-tech synthetic leather with embossed application. The material ensures the accuracy of the flight path of the attribute even in wet weather and guarantees its durability.\n\nThe bright color of the ball makes it highly visible on the football field. And thanks to the heat press technology, the product has a perfectly round shape, does not let moisture into the seams and is perfectly balanced.\n\nIf you have any questions about the characteristics of the goods or the terms of delivery, write to the online chat or call + 1 (000) 000 00 00. We will consult for free and select the appropriate option.",
+    "description": "The Nalks soccer ball is designed specifically for professional games. The revolutionary new product is made of high-tech synthetic leather with embossed application. The material ensures the accuracy of the flight path of the attribute even in wet weather and guarantees its durability.\n\nThe bright color of the ball makes it highly visible on the football field. And thanks to the heat press technology, the product has a perfectly round shape, does not let moisture into the seams and is perfectly balanced.\n\nIf you have any questions about the properties of the goods or the terms of delivery, write to the online chat or call + 1 (000) 000 00 00. We will consult for free and select the appropriate option.",
     "previewImgIndex": 0,
     "images": ["assets/images/150_main.jpg"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 151,
@@ -2030,7 +2030,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 152,
@@ -2041,7 +2041,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 153,
@@ -2052,7 +2052,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 154,
@@ -2063,7 +2063,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 155,
@@ -2074,7 +2074,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 156,
@@ -2085,7 +2085,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 157,
@@ -2096,7 +2096,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 158,
@@ -2107,7 +2107,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 159,
@@ -2118,18 +2118,18 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 160,
     "name": "Cascading chandelier Mastio-206",
-    "description": "Unique design, bright light and iridescent crystal details - this is the Mastio-206 cascading chandelier. Lighting area - 40 m2, total power - 650 watts. Due to the arrangement of shades and decorative elements at different levels, the model seems weightless and very unusual.\n\nAdd chic to your interior and enjoy pleasant lighting from the Mastio-206 chandelier. You can buy the product in our online store at a bargain price. If you have questions about the characteristics of the model, please contact us via online chat.",
+    "description": "Unique design, bright light and iridescent crystal details - this is the Mastio-206 cascading chandelier. Lighting area - 40 m2, total power - 650 watts. Due to the arrangement of shades and decorative elements at different levels, the model seems weightless and very unusual.\n\nAdd chic to your interior and enjoy pleasant lighting from the Mastio-206 chandelier. You can buy the product in our online store at a bargain price. If you have questions about the properties of the model, please contact us via online chat.",
     "previewImgIndex": 0,
     "images": ["assets/images/160_main.png"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 161,
@@ -2140,7 +2140,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 162,
@@ -2151,7 +2151,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 163,
@@ -2162,18 +2162,18 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 164,
     "name": "Ceiling lamp Fario",
-    "description": "The Fario lamp is made in the shape of a ball. Its shade is made of natural fiber and perfectly complements the design in country and Provence style. Suitable for small kitchen or bedroom.\n\nThe total power of the lamp is 32 watts. Comes with an energy saving lamp. You can buy goods on our website in 1 click. If you have any questions about the characteristics of the product, write to the online chat. We'll help you figure it all out.",
+    "description": "The Fario lamp is made in the shape of a ball. Its shade is made of natural fiber and perfectly complements the design in country and Provence style. Suitable for small kitchen or bedroom.\n\nThe total power of the lamp is 32 watts. Comes with an energy saving lamp. You can buy goods on our website in 1 click. If you have any questions about the properties of the product, write to the online chat. We'll help you figure it all out.",
     "previewImgIndex": 0,
     "images": ["assets/images/164_main.png"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 165,
@@ -2184,7 +2184,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 166,
@@ -2195,7 +2195,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 167,
@@ -2206,7 +2206,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 168,
@@ -2217,7 +2217,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 169,
@@ -2228,7 +2228,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 170,
@@ -2239,7 +2239,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 171,
@@ -2251,7 +2251,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 172,
@@ -2262,7 +2262,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 173,
@@ -2273,7 +2273,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 174,
@@ -2284,7 +2284,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 175,
@@ -2295,7 +2295,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 176,
@@ -2306,7 +2306,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 177,
@@ -2317,7 +2317,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 178,
@@ -2328,7 +2328,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 179,
@@ -2339,7 +2339,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 180,
@@ -2350,7 +2350,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 181,
@@ -2361,7 +2361,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 182,
@@ -2376,7 +2376,7 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
   },
   {
     "id": 183,
@@ -2387,6 +2387,694 @@
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
-    "characteristics": []
+    "properties": []
+  },
+  {
+    "id": 184,
+    "name": "Smart watch Morser",
+    "description": "Morser smart watches combine unsurpassed design and versatility. In addition to time, they show the steps taken, count calories, monitor heart rate. And also allow you to control the player and camera. It is possible to remind and display notifications about calls and messages.\n\nThe clock is controlled by a touch button. You can buy a modern model in our online store in just 1 click. You can learn more about the properties of the product from our managers in the online chat.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/184_main.jpg",
+      "assets/images/184_0.jpg",
+      "assets/images/184_1.jpg",
+      "assets/images/184_2.jpg"
+    ],
+    "price": 89.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 185,
+    "name": "Golser mechanical watch",
+    "description": "Men's mechanical watch Golser with automatic winding is a symbol of time and reliability. The skeletonized dial is water resistant and scratch resistant. The case and strap are made of stainless steel - the accessory will become your faithful companion for many years.\n\nThe Golser model is suitable for any look, be it a sports or a business suit. You can buy watches in our online store. For delivery terms, see the \"How to buy\" section.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/185_main.jpg"],
+    "price": 399.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 186,
+    "name": "Rolis quartz watch",
+    "description": "A Rolis quartz watch will always be accurate to the millisecond. The model is equipped with automatic LED backlight. Shockproof, magnetically resistant and waterproof. And the leather strap is reliable and will last for many years.\n\nThe watch contains world time, calendar, timer, speed display and alarm functions. They are designed for successful men who control their lives. Make yourself a useful gift and always be the center of attention!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/186_main.jpg",
+      "assets/images/186_0.jpg",
+      "assets/images/186_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 187,
+    "name": "Swiss watches Modox",
+    "description": "Modox Swiss watches combine versatile style, richness and quality. They don't need to be turned on. A leather strap will last for many years. The sapphire crystal protects the case from minor scratches.\n\nThe watch is equipped with additional dials. Here you can watch not only time, but also the speed of movement for a certain distance. The model also displays the date.\n\nBuy a Swiss watch Modox, feel confident in any situation!",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/187_main.jpg",
+      "assets/images/187_0.jpg",
+      "assets/images/187_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 188,
+    "name": "Watch with rhinestones Ferowsky",
+    "description": "A model with Ferowsky rhinestones is not only a beautiful decoration, but also a functional assistant. The watch always shows the exact time, it does not need to be wound. They also control the speed of movement.\n\nThe steel strap, decorated in gold, is equipped with a reliable clip. You don't have to worry about the watch opening unexpectedly. Make your look unique and memorable with the elegant Ferowsky rhinestone model.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/188_main.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 189,
+    "name": "Lioso gold watch",
+    "description": "Lioso is a watch with the most precise Swiss movement. The dial is protected by a durable sapphire crystal, which does not leave scratches. The role of the regulator is performed by the crystal. Every detail of the product is thought out to the smallest detail and qualitatively worked out.\n\nThe case, screw-down crown and case back, as well as the bracelet with folding clasp are all made of yellow gold. The strap is equipped with double lock buttons and an extension system.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/189_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 190,
+    "name": "Kiot mechanical watch",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/190_main.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 191,
+    "name": "Refia quartz watch",
+    "description": "Modern design, shock-resistant case, anti-reflective coating - this is a Refia chronograph watch. The model is waterproof and shockproof. Equipped with additional dials, shows the speed of the distance traveled.\n\nThe strap is made of stainless steel, and the clasp is made in the form of a clip. They provide a secure fit and durability. Brighten up your look with a unique accessory!",
+    "previewImgIndex": 0,
+    "images": ["assets/images/191_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 183,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 182,
+    "name": "Watering can",
+    "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
+    "previewImgIndex": 0,
+    "images": [
+      "assets/images/182_main.jpg",
+      "assets/images/182_0.jpg",
+      "assets/images/182_1.jpg"
+    ],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 235,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
+  },
+  {
+    "id": 236,
+    "name": "Drip irrigation",
+    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
+    "previewImgIndex": 0,
+    "images": ["assets/images/183_main.jpg"],
+    "price": 3999.99,
+    "brandId": 0,
+    "rating": 4.1,
+    "properties": []
   }
 ]

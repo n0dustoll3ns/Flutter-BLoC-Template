@@ -16,9 +16,9 @@ class CharactericticsLines extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ...List.generate(
-            min(product.characteristics.length, maxLines ?? product.characteristics.length),
+            min(product.properties.length, maxLines ?? product.properties.length),
             (index) => CharacteristicLine(
-                  characteristic: product.characteristics[index],
+                  characteristic: product.properties[index],
                 ))
       ],
     );

@@ -1,13 +1,13 @@
-class Characteristic {
+class Property {
   final String name;
   final String value;
 
-  Characteristic({
+  Property({
     required this.name,
     required this.value,
   });
 
-  Characteristic.fromJson(Map json)
+  Property.fromJson(Map json)
       : name = json['name'],
         value = json['name'];
 }

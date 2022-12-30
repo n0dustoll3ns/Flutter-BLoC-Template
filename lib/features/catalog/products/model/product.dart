@@ -9,7 +9,7 @@ class Product {
   String? get previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
   final double price;
   final int? brandId;
-  final List<Characteristic> characteristics = [];
+  final List<Property> properties = [];
 
   Product({
     required this.id,
@@ -29,7 +29,7 @@ class Product {
         images = List<String>.from(json['images']),
         price = json['price'],
         brandId = json['brandId'] {
-    characteristics.addAll(List<Characteristic>.generate(
-        json['characteristics'].length, (index) => Characteristic.fromJson(json['characteristics'][index])));
+    properties.addAll(List<Property>.generate(
+        json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
   }
 }

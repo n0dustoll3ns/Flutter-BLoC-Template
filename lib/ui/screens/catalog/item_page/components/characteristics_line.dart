@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../features/catalog/products/model/crahacteristic.dart';
 
 class CharacteristicLine extends StatelessWidget {
-  final Characteristic characteristic;
+  final Property characteristic;
   const CharacteristicLine({super.key, required this.characteristic});
 
   @override
