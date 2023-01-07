@@ -8,6 +8,7 @@ class Product {
   final List<String> images;
   String? get previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
   final double price;
+  final double rating;
   final int? brandId;
   final List<Property> properties = [];
 
@@ -17,6 +18,7 @@ class Product {
     required this.price,
     required this.description,
     required this.images,
+    required this.rating,
     this.brandId,
     this.previewImgIndex,
   });
@@ -28,6 +30,7 @@ class Product {
         previewImgIndex = json['previewImgIndex'],
         images = List<String>.from(json['images']),
         price = json['price'],
+        rating = json['rating'],
         brandId = json['brandId'] {
     properties.addAll(List<Property>.generate(
         json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));

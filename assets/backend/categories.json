@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": "dsplxf4it766a0u",
     "name": "Electronics",
     "img": "assets/images/catalog/0.png",
     "inheritedCategoryIds": [15, 16, 17, 18],
@@ -10,14 +10,14 @@
     ]
   },
   {
-    "id": 1,
+    "id": "63ykw895gqjpo8r",
     "img": "assets/images/catalog/1.png",
     "name": "Transport",
     "inheritedCategoryIds": [19, 20, 21],
     "productIds": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
   },
   {
-    "id": 2,
+    "id": "e25a77ldzn9o7xz",
     "img": "assets/images/catalog/2.png",
     "name": "Furniture",
     "inheritedCategoryIds": [22, 23, 24, 25],
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": "erdkp0245mcadkf",
     "img": "assets/images/catalog/3.png",
     "name": "Shoes",
     "inheritedCategoryIds": [26, 27, 28, 29],
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": "1a2w9vfusy8m8gs",
     "img": "assets/images/catalog/4.png",
     "name": "Clothes",
     "inheritedCategoryIds": [30, 31, 32, 33],
@@ -46,7 +46,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": "apxzcfy647brbzl",
     "img": "assets/images/catalog/5.png",
     "name": "Jewelry and Bijou",
     "inheritedCategoryIds": [34, 35, 36],
@@ -56,7 +56,7 @@
     "description": "Brooches are an adornment of any image. Fashionable accessory that attracts attention. Wear them as a set or as one piece. It all depends on your preferences. Choose brooches for yourself or as a gift to loved ones.\n\nWhat to combine with an accessory?\n\nHat with high brim.\nCoat with collar.\nSingle color blouse.\nWide skirt belt\nThe handle or body of the bag.\nThick stole, etc.\n\nOnly you decide how to wear the brooch! Experiment, surprise and attract attention. Ducharme - new generation accessories. Emphasize character, style and mood. Buy goods in 1 click and order delivery to the apartment. Make time for loved ones, not shopping malls."
   },
   {
-    "id": 6,
+    "id": "9iouat1htbme59w",
     "img": "assets/images/catalog/6.png",
     "name": "Plumbing",
     "inheritedCategoryIds": [37, 38, 39, 40],
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": "hh1g6h0wpsykwch",
     "img": "assets/images/catalog/7.png",
     "name": "Sport",
     "inheritedCategoryIds": [41, 42, 43],
@@ -75,7 +75,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": "mb31i3nfx90rtv0",
     "img": "assets/images/catalog/8.png",
     "name": "Lighting",
     "inheritedCategoryIds": [44, 45, 46],
@@ -84,7 +84,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": "4pgcmsilsawlx7c",
     "img": "assets/images/catalog/9.png",
     "name": "Home and garden",
     "inheritedCategoryIds": [47, 48, 49],
@@ -93,35 +93,35 @@
     ]
   },
   {
-    "id": 10,
+    "id": "x34ggc1u98cm3ei",
     "img": "assets/images/catalog/10.png",
     "name": "Clock",
     "inheritedCategoryIds": [50, 51, 52],
     "productIds": [184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195]
   },
   {
-    "id": 11,
+    "id": "3lirgbhm8dgblzc",
     "img": "assets/images/catalog/11.png",
     "name": "Construction Materials",
     "inheritedCategoryIds": [53, 54],
     "productIds": [196, 197, 198, 199, 200, 201, 202, 203, 204, 205]
   },
   {
-    "id": 12,
+    "id": "qod5cdzk5ea0tnn",
     "img": "assets/images/catalog/12.png",
     "name": "Cosmetics and perfumery",
     "inheritedCategoryIds": [55, 56],
     "productIds": [206, 207, 208, 209, 210, 211, 212, 213, 214, 237]
   },
   {
-    "id": 13,
+    "id": "9wfl7dleg5zchvv",
     "img": "assets/images/catalog/13.png",
     "name": "Toys",
     "inheritedCategoryIds": [57, 58],
     "productIds": [215, 216, 217, 218, 219, 220, 221, 222, 223, 224]
   },
   {
-    "id": 14,
+    "id": "kivxhquygwgu71p",
     "img": "assets/images/catalog/14.png",
     "name": "Climatic technics",
     "inheritedCategoryIds": [59, 60],

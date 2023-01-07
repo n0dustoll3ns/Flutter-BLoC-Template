@@ -17,7 +17,9 @@ class BestOffers extends StatefulWidget {
 
 class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMixin {
   late Future<List<Product>> itemsLoader = ProductsRepository().getProductList(
-      token: context.read<AuthenticationBloc>().state.toString(), productIds: [1, 3, 4, 6, 7], skipCount: 0);
+      token: context.read<AuthenticationBloc>().state.toString(),
+      categoryId: "qod5cdzk5ea0tnn",
+      skipCount: 0);
   List<Product> items = [];
 
   @override

@@ -21,9 +21,10 @@ class _RecomendedItemsState extends State<RecomendedItems> with AutomaticKeepAli
   var dotsCount = 0;
   var activeDotIndex = 0;
   late final _itemsLoader = ProductsRepository().getProductList(
-      token: context.read<AuthenticationBloc>().state.toString(),
-      skipCount: 0,
-      productIds: [0, 1, 2, 3, 4, 5]);
+    token: context.read<AuthenticationBloc>().state.toString(),
+    skipCount: 0,
+    categoryId: "qod5cdzk5ea0tnn",
+  );
   @override
   Widget build(BuildContext context) {
     super.build(context);

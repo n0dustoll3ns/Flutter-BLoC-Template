@@ -6,7 +6,8 @@ import 'model/product.dart';
 
 class ProductsRepository {
   Future<List<Product>> getProductList(
-      {required String token, required List<int> productIds, required int skipCount}) async {
+      {required String token, required String categoryId, required int skipCount}) async {
+    List<int> productIds = await _getProductIds(categoryId);
     List response = jsonDecode(await _readProductsJson());
     var objects = response.where((element) => productIds.contains(element['id'])).toList();
     List<Product> products = (List.generate(objects.length, (index) => Product.fromJson(objects[index])));
@@ -35,4 +36,13 @@ class ProductsRepository {
   }
 
   Future<String> _readProductsJson() async => await rootBundle.loadString('assets/backend/items.json');
+
+  Future<List<int>> _getProductIds(String categoryId) async {
+    if (categoryId.isEmpty) {
+      return [];
+    }
+    List json = jsonDecode(await rootBundle.loadString('assets/backend/categories.json'));
+    var obj = json.singleWhere((element) => element['id'] == categoryId);
+    return List<int>.from(obj['productIds']);
+  }
 }

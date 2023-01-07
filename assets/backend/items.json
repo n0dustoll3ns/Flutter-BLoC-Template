@@ -2874,7 +2874,7 @@
     "name": "Children's lotto",
     "description": "Lotto is a traditional Russian game that is popular even today. Up to 4 people can play at once, because there are 16 cards with locations. The rules of the game are detailed in the instructions, complicate them with additional tasks or riddles for the child.\n\nPictures depicting animals are quite realistic, so the baby will recognize them after the game. Study together animals from the taiga, desert, arctic coast or steppe. Time for the game will fly by unnoticed!",
     "previewImgIndex": 0,
-    "images": ["assets/images/216_main.jpg"],
+    "images": ["assets/images/216_main.png"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
@@ -2885,7 +2885,7 @@
     "name": "Educational wheelchair-walker",
     "description": "The colorful toy is designed to improve tactile sensations, color perception and development of motor skills. Children will be happy to push the walker, holding on to comfortable handles.\n\nThe wheelchair will attract the attention of kids with an interactive panel, movable elements and sound accompaniment. A bright sorter with geometric shapes will introduce the child to the basic shapes and colors.",
     "previewImgIndex": 0,
-    "images": ["assets/images/217_main.jpg", "assets/images/217_0.jpg"],
+    "images": ["assets/images/217_main.png", "assets/images/217_0.png"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
@@ -2897,9 +2897,9 @@
     "description": "The toy combines a puzzle and a traditional insert frame. Various combinations of elements and arrangement of figures on the board are possible - the child will choose an interesting option for himself.\n\nThe game is accompanied by an instruction, which describes in detail the games with the complication of conditions. The figures will turn into unusual images - letters, a person or an animal. So you develop your child's memory, fine motor skills and imagination.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/218_main.jpg",
-      "assets/images/218_0.jpg",
-      "assets/images/218_1.jpg"
+      "assets/images/218_main.png",
+      "assets/images/218_0.png",
+      "assets/images/218_1.png"
     ],
     "price": 3999.99,
     "brandId": 0,
@@ -2944,7 +2944,7 @@
     "name": "Musical piano mat",
     "description": "There are 8 white and 5 black keys on a musical piano rug. Each of them is spelled out according to the note it plays when pressed. Try to compose simple melodies and develop musical taste from childhood.\n\nThanks to the built-in sound module, the mat will become an interesting and educational toy for the baby. Lightweight design and simple layout will allow you to take the rug with you on a visit or a kindergarten.",
     "previewImgIndex": 0,
-    "images": ["assets/images/222_main.jpg"],
+    "images": ["assets/images/222_main.png"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
@@ -2956,9 +2956,9 @@
     "description": "Geometric shapes and details that are interesting to interact with and learn new things. The toy will not soon get bored: on each side of the cube there are elements that can be pressed, turned over, twisted. The cube attracts attention not only by the number of details, but also by the color scheme.\n\nThe plastic toy is safe for the baby and hypoallergenic. There are no small details in it that could be removed without the efforts of an adult.",
     "previewImgIndex": 0,
     "images": [
-      "assets/images/223_main.jpg",
-      "assets/images/223_0.jpg",
-      "assets/images/223_1.jpg"
+      "assets/images/223_main.png",
+      "assets/images/223_0.png",
+      "assets/images/223_1.png"
     ],
     "price": 3999.99,
     "brandId": 0,
@@ -2970,7 +2970,7 @@
     "name": "Parking tower",
     "description": "A great gift for boys from 1 to 5 years old. Parking spaces are located on the upper tier, and 2 spiral roads with safety bumpers lead to it. While driving, the baby will pay attention to people, obstacles and traffic signs.\n\nAt locations, when interacting with the car, sound effects are activated. The toy will give the child positive emotions and a great mood for the whole day.",
     "previewImgIndex": 0,
-    "images": ["assets/images/224_main.jpg"],
+    "images": ["assets/images/224_main.png"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
