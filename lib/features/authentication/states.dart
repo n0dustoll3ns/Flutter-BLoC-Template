@@ -1,10 +1,12 @@
 /* ---  States   --- */
 
+import 'package:pocketbase/pocketbase.dart';
+
 abstract class AuthenticationState {}
 
 class AuthenticationAuthenticated extends AuthenticationState {
-  String token;
-  AuthenticationAuthenticated({required this.token});
+  AdminAuth authData;
+  AuthenticationAuthenticated({required this.authData});
 }
 
 class AuthenticationLoading extends AuthenticationState {}

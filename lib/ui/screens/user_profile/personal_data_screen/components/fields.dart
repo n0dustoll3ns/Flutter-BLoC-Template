@@ -81,7 +81,7 @@ class UserDataFields extends StatelessWidget {
               if (authBlocState is AuthenticationAuthenticated) {
                 context
                     .read<UserBloc>()
-                    .add(EditUserDataButtonPressed(newUserData: userData, token: authBlocState.token));
+                    .add(EditUserDataButtonPressed(newUserData: userData, token: authBlocState.authData.token));
               }
             },
             child: const Text('Save'))

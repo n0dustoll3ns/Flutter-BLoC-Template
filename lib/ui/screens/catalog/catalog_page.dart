@@ -7,6 +7,7 @@ import 'package:flutter_bloc_template/features/catalog/categories/model/model.da
 import 'package:flutter_bloc_template/features/catalog/products/products_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
+import 'package:pocketbase/pocketbase.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';
@@ -84,15 +85,32 @@ class _CatalogPageState extends State<CatalogPage> {
                 const ChaptersHorizontalView(),
                 const Categories(),
                 const ProductList(),
-                ElevatedButton(onPressed: () {}, child: const Text('Add to PB'))
+                ElevatedButton(onPressed: addToPb, child: const Text('Add to PB'))
               ],
             )),
       ),
     );
   }
 
-  void addToPb() {
-    
+  Future<void> addToPb() async {
+    final body = <String, dynamic>{
+      "category": "jdnk8kosfyclynw",
+      "name": "TV IME-430",
+      "description":
+          "TV IME-430 is a clear contrast picture, support for 1920x1080 resolution, surround sound, ultra-thin frame. Built-in SMART-TV function, which allows you to surf the Internet directly through your TV and watch your favorite movies online.\n\nImmerse yourself in the world of television with functional technology. Attention! The product is presented in limited quantities. Buy electronics at the best price.",
+      "price": 849.99,
+      "rating": 2.3,
+    };
+    AdminAuth adminAuth = AdminAuth();
+    var authState = context.read<AuthenticationBloc>().state;
+    if (authState is AuthenticationAuthenticated) {
+      adminAuth = authState.authData;
+    }
+    final pb =
+        PocketBase('http://10.0.2.2:8090', authStore: AuthStore()..save(adminAuth.token, adminAuth.admin));
+
+    final record = await pb.collection('products').create(body: body);
+    print(record.data);
   }
 
   List<Widget> get _actions {

@@ -1,21 +1,17 @@
-import 'dart:math';
+import 'package:pocketbase/pocketbase.dart';
 
 import 'package:flutter_bloc_template/features/user/states.dart';
 
 class UserRepository {
   String token = '';
 
-  Future<String?> authenticate({
+  Future<AdminAuth?> authenticate({
     required String username,
     required String password,
   }) async {
-    await Future.delayed(const Duration(seconds: 1));
-    token = 'token';
-    if (Random().nextInt(100) > 5) {
-      return token;
-    } else {
-      return null;
-    }
+    final pb = PocketBase('http://10.0.2.2:8090');
+    AdminAuth authData = await pb.admins.authWithPassword(username, password);
+    return authData;
   }
 
   Future<void> deleteToken() async {

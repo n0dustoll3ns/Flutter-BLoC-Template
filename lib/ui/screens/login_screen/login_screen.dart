@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(
       builder: (context, state) {
         if (state is AuthenticationAuthenticated) {
-          initializeUserData(context, state.token);
+          initializeUserData(context, state.authData.token);
           return const MainScreen();
         }
         return Scaffold(
