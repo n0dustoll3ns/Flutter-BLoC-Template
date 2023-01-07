@@ -17,7 +17,7 @@ class Category {
   Widget get imageWidget => _img != null
       ? Image.network(_img!, fit: BoxFit.contain)
       : _icon != null
-          ? SvgPicture.asset(_icon!)
+          ? SvgPicture.network(_icon!)
           : const Icon(Icons.question_mark_rounded);
 
   Category({

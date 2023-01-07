@@ -39,7 +39,7 @@ class CategoriesRepository {
 
   Future<List<Category>> _loadInheritedCategories({required String parentCategoryId}) async {
     final resultList = await pb.collection('categories').getList(
-          filter: 'parent = $parentCategoryId',
+          filter: 'parent = "$parentCategoryId"',
         );
     List<Category> categories = [];
     for (var model in resultList.items) {
