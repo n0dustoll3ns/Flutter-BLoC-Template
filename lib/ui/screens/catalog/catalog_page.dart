@@ -85,7 +85,7 @@ class _CatalogPageState extends State<CatalogPage> {
                 const ChaptersHorizontalView(),
                 const Categories(),
                 const ProductList(),
-                ElevatedButton(onPressed: addToPb, child: const Text('Add to PB'))
+                ElevatedButton(onPressed: addToPb, child: const Text('Add to PB')),
               ],
             )),
       ),

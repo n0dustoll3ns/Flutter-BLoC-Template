@@ -9,12 +9,12 @@ class Category {
   final int id;
   final List<int> productIds;
   final String description;
-  final String? _img;
+  final String? img;
   final String? _icon;
   final List<Product> productList = [];
 
-  Widget get imageWidget => _img != null
-      ? Image.asset(_img!, fit: BoxFit.contain)
+  Widget get imageWidget => img != null
+      ? Image.asset(img!, fit: BoxFit.contain)
       : _icon != null
           ? SvgPicture.asset(_icon!)
           : const Icon(Icons.question_mark_rounded);
@@ -27,7 +27,7 @@ class Category {
     required this.inheritedCategoryIds,
     String? icon,
     String? img,
-  })  : _img = img,
+  })  : img = img,
         _icon = icon;
 
   Category.fromJson(Map json)
@@ -36,6 +36,6 @@ class Category {
         productIds = List.from(json['productIds'] ?? []),
         inheritedCategoryIds = List.from(json['inheritedCategoryIds'] ?? []),
         description = json['description'] ?? '',
-        _img = json['img'],
+        img = json['img'],
         _icon = json['icon'];
 }

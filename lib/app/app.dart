@@ -64,7 +64,7 @@ class App extends StatelessWidget {
           return widget!;
         },
         theme: theme,
-        initialRoute: Routes.login,
+        initialRoute: Routes.home,
         onGenerateRoute: Routes.onGenerateRouted,
       ),
     );
