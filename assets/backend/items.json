@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "name": "TV EM-bb4",
-    "description": "TV LK-tt4 is equipped with a built-in speaker system, which consists of two speakers of 10 W and a subwoofer. Users can enjoy deep, lively sound that reaches every corner of the room.\n\nAmple opportunities for connecting external devices and the Smart-TV function make it a home entertainment center. It's time to pamper yourself! Buy TV EM-bb4 on our website and get a personalized discount. Details can be found through the online chat or our managers on the trading floor.",
+    "name": "TV LK-tt4",
+    "description": "TV LK-tt4 is equipped with a built-in speaker system, which consists of two speakers of 10 W and a subwoofer. Users can enjoy deep, lively sound that reaches every corner of the room.\n\nAmple opportunities for connecting external devices and the Smart-TV function make it a home entertainment center. It's time to pamper yourself! Buy TV LK-tt4 on our website and get a personalized discount. Details can be found through the online chat or our managers on the trading floor.",
     "previewImgIndex": 0,
     "images": [
       "assets/images/0_main.jpg",
@@ -826,7 +826,7 @@
     "description": "The table is ideal for long-term work: the high surface allows you to take a comfortable position at the table. The large table top allows you to place documents, books and other supplies to keep things organized with ease.\n\nRugged design will withstand not only the computer, but also other technical devices. The design of the table is suitable for a modern interior, as it is made in basic colors. A functional workplace is available to everyone!",
     "previewImgIndex": 0,
     "images": ["assets/images/58_main.jpg"],
-    "price": 3349.99,
+    "price": 129.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -837,7 +837,7 @@
     "description": "The table is ideal for long-term work and allows the child to maintain the correct posture. You can’t do without roomy drawers at all: toys, plasticine, drawing supplies and notebooks - everything will fit. The table is covered with a special film, thanks to which you do not have to worry about mechanical damage or spilled water. Organize documents, books, and other supplies to keep things organized with ease.\n\nOn a wide surface, there is enough space to lay out textbooks with notebooks, and cut and mold figures from plasticine. The depth of the table is enough to completely push a chair or armchair and fit straightened legs there. Let the child enjoy the comfort at the table!",
     "previewImgIndex": 0,
     "images": ["assets/images/59_main.jpg"],
-    "price": 3149.99,
+    "price": 79.99,
     "brandId": 0,
     "rating": 4.7,
     "properties": []
@@ -853,7 +853,7 @@
       "assets/images/46_1.jpg",
       "assets/images/46_2.jpg"
     ],
-    "price": 2949.99,
+    "price": 189.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -871,7 +871,7 @@
       "assets/images/61_3.jpg",
       "assets/images/61_4.jpg"
     ],
-    "price": 3999.99,
+    "price": 649.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -887,7 +887,7 @@
       "assets/images/62_1.jpg",
       "assets/images/62_2.jpg"
     ],
-    "price": 3999.99,
+    "price": 689.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -898,7 +898,7 @@
     "description": "The best option for a bedroom, living room or nursery is a closet with silent sliding doors on rails. Spacious drawers and a clothes rail will help to complete a large number of clothes and accessories.\n\nStop thinking about where and how to place wardrobe items. Mesh baskets, clothes rails, chipboard shelves are made in a light and elegant style. Let yourself enjoy the convenience and order in your things.",
     "previewImgIndex": 0,
     "images": ["assets/images/63_main.jpg", "assets/images/63_0.jpg"],
-    "price": 3999.99,
+    "price": 559.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -915,7 +915,7 @@
       "assets/images/64_2.jpg",
       "assets/images/64_3.jpg"
     ],
-    "price": 3999.99,
+    "price": 639.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -931,7 +931,7 @@
       "assets/images/65_1.jpg",
       "assets/images/65_2.jpg"
     ],
-    "price": 3999.99,
+    "price": 549.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -948,7 +948,7 @@
       "assets/images/66_2.jpg",
       "assets/images/66_3.jpg"
     ],
-    "price": 3999.99,
+    "price": 489.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
@@ -965,14 +965,14 @@
       "assets/images/67_2.jpg",
       "assets/images/67_3.jpg"
     ],
-    "price": 3999.99,
+    "price": 519.99,
     "brandId": 0,
     "rating": 4.1,
     "properties": []
   },
   {
     "id": 68,
-    "name": "Sofa with click-clack mechanism",
+    "name": "Сorner sofa",
     "description": "Add a soft leather sofa to the interior - a natural look, easy care and pleasant texture will please the hostess. Invite your friends to watch a football match or arrange a family movie show - there is enough space for everyone!\n\nPocket-type springs create a secure support and adapt to the curves of the body. The top layer of filler makes the sofa soft and maintains a comfortable position. Due to the high back and headrest, the excess tension accumulated during the day will go away from the spine.",
     "previewImgIndex": 0,
     "images": [
@@ -1407,14 +1407,125 @@
   },
   {
     "id": 99,
+    "productType": "productWithOffers",
     "name": "Man's T-shirt",
     "description": "T-shirt will decorate and complement any image. Contains natural fabrics. Therefore, the material will not lose color and shape even after machine washing. The polyester in the composition will retain the structure - there will never be pellets. The t-shirt is suitable for a tracksuit, trousers and shorts. Dress for the weather and combine looks. Remember that ironed clothes adorn a man.\n\nWe will collect an image taking into account preferences in our online store. Write to online chat. We will help you choose the style, color and size. When choosing a T-shirt, be guided by the size chart in the product card.",
     "previewImgIndex": 0,
     "images": ["assets/images/99_main.jpg"],
-    "price": 3999.99,
+    "price": 55.99,
     "brandId": 0,
     "rating": 4.1,
-    "properties": []
+    "properties": [],
+    "offers": [
+      {
+        "id": 235,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/235_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "Dark blue", "presentation": "img" },
+          { "name": "Size", "value": "S", "presentation": "letter"  }
+        ]
+      },
+      {
+        "id": 236,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/236_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "White" },
+          { "name": "Size", "value": "S" }
+        ]
+      },
+      {
+        "id": 237,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/99_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "Orange" },
+          { "name": "Size", "value": "S" }
+        ]
+      },
+      {
+        "id": 238,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/235_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "Dark blue" },
+          { "name": "Size", "value": "M" }
+        ]
+      },
+      {
+        "id": 239,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/236_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "White" },
+          { "name": "Size", "value": "M" }
+        ]
+      },
+      {
+        "id": 240,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/99_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "Orange" },
+          { "name": "Size", "value": "M" }
+        ]
+      },
+      {
+        "id": 241,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/235_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "Dark blue" },
+          { "name": "Size", "value": "L" }
+        ]
+      },
+      {
+        "id": 242,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/236_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "White" },
+          { "name": "Size", "value": "L" }
+        ]
+      },
+      {
+        "id": 243,
+        "name": "Man's T-shirt",
+        "previewImgIndex": 0,
+        "images": ["assets/images/99_main.jpg"],
+        "price": 55.99,
+        "rating": 4.4,
+        "characterisctcs": [
+          { "name": "Сolor", "value": "Orange" },
+          { "name": "Size", "value": "L" }
+        ]
+      }
+    ]
   },
   {
     "id": 100,
@@ -2881,10 +2992,7 @@
     "name": "Breather for conference rooms",
     "description": "Breezer for conference rooms - clean indoor air and a comfortable climate for listeners. The technique protects against stuffiness, dust, allergies, odor and dampness. You don't need to open windows for this! The breather is silent and ensures the flow of oxygen, and also displaces polluted air into the natural exhaust.\n\nOrder specialized equipment in the online store. Breezers are designed taking into account high walls and rooms from 50 sq. m. Ready to help with the installation! We will carry out a clean installation without repair work. For all questions, write to the online chat. We will help you to open an account as an individual or legal entity.",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/226_main.jpg",
-      "assets/images/226_0.jpg"
-    ],
+    "images": ["assets/images/226_main.jpg", "assets/images/226_0.jpg"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
@@ -2932,8 +3040,7 @@
     "name": "Watering can",
     "description": "TDS STAR air conditioner is a professional equipment for office premises. Included: mounting brackets, remote control, warranty card and instructions. Smart mode will automatically set the temperature according to the room climate. Low noise level from 23 dB will not distract employees from work.\n\nOffice air conditioning - air purification, cooling and heating. Set a timer to turn off the air conditioner. The function is relevant for the office, as employees forget to turn off their devices. The automatic mode will help to reduce energy costs and ensure safety. Order an air conditioner with delivery and installation to the office. We give a 3-year warranty on equipment and installation work.",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/230_main.jpg"    ],
+    "images": ["assets/images/230_main.jpg"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,
@@ -2977,31 +3084,7 @@
     "name": "Mobile breather TDS LI3",
     "description": "The watering can is made of plastic and weighs little. A thin nose with interchangeable nozzles will help you get close to bulky plants and dense planting.\n\nThe ergonomic handle makes it easy to grip and effortlessly tilt the watering can. The convex nozzle on the spout waters evenly without washing away the soil or nailing the plants to the ground.",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/234_main.jpg"
-    ],
-    "price": 3999.99,
-    "brandId": 0,
-    "rating": 4.1,
-    "properties": []
-  },
-  {
-    "id": 235,
-    "name": "Drip irrigation",
-    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
-    "previewImgIndex": 0,
-    "images": ["assets/images/183_main.jpg"],
-    "price": 3999.99,
-    "brandId": 0,
-    "rating": 4.1,
-    "properties": []
-  },
-  {
-    "id": 236,
-    "name": "Drip irrigation",
-    "description": "The basic system includes everything you need to organize plant nutrition. Connect the kit to a barrel or other water tank and micro-drip irrigation will do the trick. Such a system will save up to 70% of water and direct the flow to the roots of plants.\n\nThe hose is safe, comfortable and easy to handle. It will create the necessary pressure, and the pegs will fix it in the correct position on a certain piece of land. Reliability, high-quality materials and wear resistance will allow you to operate the irrigation system for a long time.",
-    "previewImgIndex": 0,
-    "images": ["assets/images/183_main.jpg"],
+    "images": ["assets/images/234_main.jpg"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,

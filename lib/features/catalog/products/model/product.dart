@@ -33,3 +33,13 @@ class Product {
         json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
   }
 }
+
+class ProductWithOffers {}
+
+class Characteristic {
+  final String name;
+  List<String> values;
+  int selectedIndex = 0;
+
+  Characteristic({required this.name, required this.values}) : assert(values.isNotEmpty);
+}

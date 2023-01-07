@@ -19,6 +19,7 @@ dependencies:
   lottie: ^2.0.0
   flutter_svg: ^1.1.6
   marquee: ^2.2.3
+  pocketbase: 0.5.0
 
 dev_dependencies:
   flutter_test:

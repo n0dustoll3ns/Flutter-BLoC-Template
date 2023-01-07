@@ -137,6 +137,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.5"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.2"
   js:
     dependency: transitive
     description:
@@ -144,6 +158,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.5"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.7.0"
   lints:
     dependency: transitive
     description:
@@ -221,6 +242,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+  pocketbase:
+    dependency: "direct main"
+    description:
+      name: pocketbase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0"
   pointycastle:
     dependency: transitive
     description:

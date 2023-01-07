@@ -84,10 +84,15 @@ class _CatalogPageState extends State<CatalogPage> {
                 const ChaptersHorizontalView(),
                 const Categories(),
                 const ProductList(),
+                ElevatedButton(onPressed: () {}, child: const Text('Add to PB'))
               ],
             )),
       ),
     );
+  }
+
+  void addToPb() {
+    
   }
 
   List<Widget> get _actions {
