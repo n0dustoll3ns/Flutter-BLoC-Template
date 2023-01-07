@@ -19,7 +19,7 @@ class PopularCategoriesBloc extends Bloc<PopularCategoriesEvent, PopularCategori
     Emitter<PopularCategoriesState> emitter,
   ) async {
     emitter(PopularCategoriesLoading(categories: state.categories));
-    var res = await categoriesRepository.getPopularCategories(token: userRepository.token);
+    var res = await categoriesRepository.getPopularCategories();
     if (res != null) {
       emitter(PopularCategoriesLoaded(categories: res));
     } else {
