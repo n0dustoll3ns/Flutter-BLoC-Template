@@ -1426,7 +1426,7 @@
         "rating": 4.4,
         "characterisctcs": [
           { "name": "Сolor", "value": "Dark blue", "presentation": "img" },
-          { "name": "Size", "value": "S", "presentation": "letter"  }
+          { "name": "Size", "value": "S", "presentation": "letter" }
         ]
       },
       {
@@ -3014,11 +3014,7 @@
     "name": "Mobile air conditioner Mobile L25",
     "description": "The Mobile L25 air conditioner is a silent home appliance. The model is suitable for rooms with an area of up to 30 sq.m. Lightweight and compact: weight - 20 kg, dimensions - 580x275x200 mm.\n\nAdvantages:\n\nenergy efficient class A;\nionization;\nSleep mode for comfortable sleep;\nheating power 3 600 W;\n24 hour timer;\nWiFi control;\nautomatic Smart mode.\n\nWipe the air conditioner with a dry cloth once every 1-2 weeks. Wash the filter with warm water once a month. Dry the indoor unit with filter before turning it on. Order equipment with delivery and installation. Save time on installation - trust professionals with more than 5 years of experience.",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/228_main.jpg",
-      "assets/images/228_0.jpg",
-      "assets/images/228_1.jpg"
-    ],
+    "images": ["assets/images/228_main.jpg", "assets/images/228_0.jpg"],
     "price": 3999.99,
     "brandId": 0,
     "rating": 4.1,

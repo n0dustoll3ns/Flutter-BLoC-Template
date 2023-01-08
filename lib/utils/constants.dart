@@ -1,1 +1,1 @@
-const categoriesImagePath = "http://10.0.2.2:8090/api/files/categories";
+const categoriesImagePath = "https://pocketbase.dancheg97.ru/api/files/categories";

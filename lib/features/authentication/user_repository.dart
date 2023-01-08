@@ -9,7 +9,7 @@ class UserRepository {
     required String username,
     required String password,
   }) async {
-    final pb = PocketBase('http://10.0.2.2:8090');
+    final pb = PocketBase('https://pocketbase.dancheg97.ru/');
     AdminAuth authData = await pb.admins.authWithPassword(username, password);
     return authData;
   }

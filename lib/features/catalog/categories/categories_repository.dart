@@ -3,7 +3,7 @@ import 'package:pocketbase/pocketbase.dart';
 import 'model/model.dart';
 
 class CategoriesRepository {
-  PocketBase pb = PocketBase('http://10.0.2.2:8090');
+  PocketBase pb = PocketBase('https://pocketbase.dancheg97.ru');
   Future<List<Category>?> getInheritedCategories({required String token, String? parentCategoryId}) async {
     List<Category>? res;
 
