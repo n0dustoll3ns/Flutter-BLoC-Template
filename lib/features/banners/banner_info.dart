@@ -15,7 +15,8 @@ class BannerInfo {
         announce = json["announce"],
         description = json["description"],
         buttonText = json["button_text"],
-        routeName = json["routeName"],
-        routeSettings = RouteSettings(arguments: json["route_settings"]),
-        moveToTab = json["moveToTab"];
+        routeName = json["route_name"],
+        routeSettings =
+            json["route_settings"] != null ? RouteSettings(arguments: json["route_settings"]) : null,
+        moveToTab = json["move_to_tab"];
 }
