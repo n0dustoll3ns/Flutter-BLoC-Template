@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
 import '../../../../ui/components/loading_indicator.dart';
-import '../../../../utils/constants.dart';
+import '../../../../utils/urls.dart';
 
 class Product {
   final String id;
@@ -42,7 +42,7 @@ class Product {
         previewImgIndex = json['previewImgIndex'],
         images = List<String>.from(json['images']),
         price = json['price'],
-        rating = json['rating'],
+        rating = json['rating'].toDouble(),
         brandId = json['brandId'] {
     if (json['properties'] != null) {
       properties.addAll(List<Property>.generate(

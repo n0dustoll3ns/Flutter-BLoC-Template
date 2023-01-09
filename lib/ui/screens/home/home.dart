@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/banners/main_banners_bloc.dart';
 
 import '../../../app/routes/constants.dart';
 import '../../components/menu_button.dart';
@@ -28,16 +30,18 @@ class Home extends StatelessWidget {
       const SectionAbout(),
       const SectionBrands(),
     ];
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(mainPageSections[0]),
-        actions: const [MenuButton()],
-      ),
-      body: ListView.separated(
-        separatorBuilder: ((context, index) => SizedBox(height: MediaQuery.of(context).size.height / 44)),
-        itemBuilder: (context, index) => children[index],
-        itemCount: children.length,
+    return BlocProvider(
+      create: (context) => MainBannersBloc()..add(AppStarted()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(mainPageSections[0]),
+          actions: const [MenuButton()],
+        ),
+        body: ListView.separated(
+          separatorBuilder: ((context, index) => SizedBox(height: MediaQuery.of(context).size.height / 44)),
+          itemBuilder: (context, index) => children[index],
+          itemCount: children.length,
+        ),
       ),
     );
   }

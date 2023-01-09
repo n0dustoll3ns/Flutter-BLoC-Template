@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
-import 'package:flutter_bloc_template/utils/constants.dart';
+import 'package:flutter_bloc_template/utils/urls.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Category {

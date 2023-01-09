@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
+import '../../utils/urls.dart';
+
 class BannerInfo {
+  final String id;
   final String backgroundUrl;
   final String? foregroundUrl;
   final String announce;
@@ -9,9 +12,9 @@ class BannerInfo {
   final String? routeName;
   final RouteSettings? routeSettings;
   final int? moveToTab;
-  BannerInfo.fromJson({required Map json})
-      : backgroundUrl = json["background"],
-        foregroundUrl = json["foreground"],
+  BannerInfo.fromJson(this.id, Map json)
+      : backgroundUrl = "$mainBannerFilesUrl/$id/${json["background"]}",
+        foregroundUrl = "$mainBannerFilesUrl/$id/${json["foreground"]}",
         announce = json["announce"],
         description = json["description"],
         buttonText = json["button_text"],
