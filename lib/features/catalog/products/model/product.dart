@@ -1,7 +1,7 @@
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
 class Product {
-  final int id;
+  final String id;
   final String name;
   final String description;
   final int? previewImgIndex;

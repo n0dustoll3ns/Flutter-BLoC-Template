@@ -25,7 +25,7 @@ class ProductList extends StatelessWidget {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(onPressed: () => addToPb(context), child: Text('UploadProducts')),
+            ElevatedButton(onPressed: () => attachToCategory(context), child: Text('Attach to category')),
             GridView.count(
                 padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
                 shrinkWrap: true,
@@ -41,7 +41,7 @@ class ProductList extends StatelessWidget {
     );
   }
 
-  Future<void> addToPb(BuildContext context) async {
+  Future<void> attachToCategory(BuildContext context) async {
     var bloc = context.read<CatalogPageProductsBloc>();
     AdminAuth adminAuth = AdminAuth();
     var authState = context.read<AuthenticationBloc>().state;
@@ -52,35 +52,15 @@ class ProductList extends StatelessWidget {
         authStore: AuthStore()..save(adminAuth.token, adminAuth.admin));
 
     List<RecordModel> products = [];
-
     for (var product in bloc.state.items) {
-      var futureImages = product.images
-          .map((e) async => http.MultipartFile.fromBytes(
-                'images',
-                (await rootBundle.load(e)).buffer.asInt8List(),
-                filename: e.substring(e.lastIndexOf('/') + 1),
-              ))
-          .toList();
-      List<http.MultipartFile> images = [];
+      final record = await pb.collection('products').getFirstListItem(
+            'name="${product.name}"',
+          );
 
-      for (var file in futureImages) {
-        images.add(await file);
-      }
-
-      final body = <String, dynamic>{
-        "name": product.name,
-        "description": product.description,
-        "price": product.price,
-        "rating": product.rating,
-      };
-      final record = await pb.collection('products').create(body: body, files: images);
       products.add(record);
     }
 
-    final cbody = <String, dynamic>{
-      "name": category!.name,
-      "products": products.map((e) => e.id).toList()
-    };
+    final cbody = <String, dynamic>{"name": category!.name, "products": products.map((e) => e.id).toList()};
 
     final update = await pb.collection('categories').update(category!.id, body: cbody);
   }

@@ -28,7 +28,7 @@ class ProductsRepository {
     return product;
   }
 
-  Future<Product> getProductInfoById({required String token, required int id}) async {
+  Future<Product> getProductInfoById({required String token, required String id}) async {
     List response = jsonDecode(await _readProductsJson());
     var obj = response.singleWhere((element) => element['id'] == id);
     Product product = Product.fromJson(obj);
