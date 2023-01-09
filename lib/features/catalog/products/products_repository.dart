@@ -10,13 +10,13 @@ class ProductsRepository {
 
   Future<List<Product>> getProductList(
       {required String token, required Category? category, required int skipCount}) async {
-    final response;
+    RecordModel response;
     if (category != null) {
       response = await pb.collection('categories').getOne(category.id, expand: 'products');
     } else {
-      response = {};
+      return [];
     }
-    var productMaps = response['products'] ?? List<RecordModel>.empty() as List<RecordModel>;
+    var productMaps = response.expand['products'] ?? List<RecordModel>.empty() as List<RecordModel>;
     List<Product> products = (List.generate(
         productMaps.length, (index) => Product.fromJson(productMaps[index].id, productMaps[index].data)));
     return products;
@@ -24,9 +24,9 @@ class ProductsRepository {
 
   Future<List<Product>> getRecommendedItems({required String token, required Product product}) async {
     final response = await pb.collection('products').getList(
-      page: Random().nextInt(43) + 1,
-      perPage: 5,
-    );
+          page: Random().nextInt(43) + 1,
+          perPage: 5,
+        );
     var productMaps = response.items;
     List<Product> products = (List.generate(
         productMaps.length, (index) => Product.fromJson(productMaps[index].id, productMaps[index].data)));

@@ -12,9 +12,9 @@ class Category {
   final String? _icon;
 
   Widget get imageWidget => _img != null
-      ? Image.network(_img!, fit: BoxFit.contain)
+      ? Image.network("$categoriesFilesUrl/$id/${_img!}", fit: BoxFit.contain)
       : _icon != null
-          ? SvgPicture.network(_icon!)
+          ? SvgPicture.network("$categoriesFilesUrl/$id/${_icon!}")
           : const Icon(Icons.question_mark_rounded);
 
   Category({
@@ -33,6 +33,6 @@ class Category {
         productIds = List.from(json['products'] ?? []),
         inheritedCategoryIds = List.from(json['inheritedCategoryIds'] ?? []),
         description = json['description'] ?? '',
-        _img = json['image'] != '' ? "$categoriesImagePath/$id/${json['image']}" : null,
-        _icon = json['icon'] != '' ? "$categoriesImagePath/$id/${json['icon']}" : null;
+        _img = json['image'] != '' ? "${json['image']}" : null,
+        _icon = json['icon'] != '' ? "${json['icon']}" : null;
 }

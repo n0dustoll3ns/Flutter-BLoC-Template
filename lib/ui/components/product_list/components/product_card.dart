@@ -35,12 +35,7 @@ class ProductCard extends StatelessWidget {
                   child: Stack(
                     alignment: AlignmentDirectional.topEnd,
                     children: [
-                      product.previewImage != null
-                          ? Image.network(
-                              product.previewImage!,
-                              fit: BoxFit.contain,
-                            )
-                          : const FittedBox(fit: BoxFit.contain, child: Icon(Icons.question_mark_rounded)),
+                      product.imageWidget,
                       BlocBuilder<FavouriteBloc, FavouriteState>(builder: (context, state) {
                         return IconButton(
                             onPressed: () {

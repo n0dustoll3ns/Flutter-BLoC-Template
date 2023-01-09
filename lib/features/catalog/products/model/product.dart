@@ -1,4 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
+
+import '../../../../utils/constants.dart';
 
 class Product {
   final String id;
@@ -6,11 +9,15 @@ class Product {
   final String description;
   final int? previewImgIndex;
   final List<String> images;
-  String? get previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
+  String? get _previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
   final double price;
   final double rating;
   final int? brandId;
   final List<Property> properties = [];
+
+  Widget get imageWidget => _previewImage != null
+      ? Image.network("$productsFilesUrl/$id/${_previewImage!}", fit: BoxFit.contain)
+      : const FittedBox(fit: BoxFit.contain, child: Icon(Icons.question_mark_rounded));
 
   Product({
     required this.id,
