@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,7 +70,7 @@ class ProductList extends StatelessWidget {
         "description": product.description,
         "price": product.price,
         "rating": product.rating,
-        "images": product.images.map((e) => e.substring(e.lastIndexOf('/') + 1)).toList(),
+        // "images": product.images.map((e) => e.substring(e.lastIndexOf('/') + 1)).toList(),
       };
       final record = await pb.collection('products').create(body: body, files: images);
 
