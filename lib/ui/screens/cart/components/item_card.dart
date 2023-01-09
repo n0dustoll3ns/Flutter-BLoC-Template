@@ -16,7 +16,7 @@ class ItemCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: item.imageWidget,
+            child: AspectRatio(aspectRatio: 1, child: item.imageWidget),
           ),
           Expanded(
             child: Padding(

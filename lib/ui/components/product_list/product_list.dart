@@ -25,7 +25,6 @@ class ProductList extends StatelessWidget {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(onPressed: () => attachToCategory(context), child: Text('Attach to category')),
             GridView.count(
                 padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
                 shrinkWrap: true,
@@ -39,29 +38,5 @@ class ProductList extends StatelessWidget {
         );
       },
     );
-  }
-
-  Future<void> attachToCategory(BuildContext context) async {
-    var bloc = context.read<CatalogPageProductsBloc>();
-    AdminAuth adminAuth = AdminAuth();
-    var authState = context.read<AuthenticationBloc>().state;
-    if (authState is AuthenticationAuthenticated) {
-      adminAuth = authState.authData;
-    }
-    final pb = PocketBase('https://pocketbase.dancheg97.ru',
-        authStore: AuthStore()..save(adminAuth.token, adminAuth.admin));
-
-    List<RecordModel> products = [];
-    for (var product in bloc.state.items) {
-      final record = await pb.collection('products').getFirstListItem(
-            'name="${product.name}"',
-          );
-
-      products.add(record);
-    }
-
-    final cbody = <String, dynamic>{"name": category!.name, "products": products.map((e) => e.id).toList()};
-
-    final update = await pb.collection('categories').update(category!.id, body: cbody);
   }
 }
