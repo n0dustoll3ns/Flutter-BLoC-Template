@@ -702,7 +702,7 @@
     "name": "Floor stand",
     "description": "A convenient and concise module can accommodate a large-screen TV. The open shelf is suitable for a game console, DVD or magazine storage. The module is roomy and has two compartments with doors and a drawer. In them you can place what you want to hide from strangers.",
     "previewImgIndex": 0,
-    "images": ["assets/images/49_main.jpg", "assets/images/49_0.jpg"],
+    "images": ["assets/images/49_main.jpg"],
     "price": 449.99,
     "brandId": 0,
     "rating": 4.1,
@@ -1992,8 +1992,7 @@
       "assets/images/139_main.jpg",
       "assets/images/139_0.jpg",
       "assets/images/139_1.jpg",
-      "assets/images/139_2.jpg",
-      "assets/images/139_3.jpg"
+      "assets/images/139_2.jpg"
     ],
     "price": 219.99,
     "brandId": 0,
@@ -2038,13 +2037,7 @@
     "name": "Composite dumbbells Braves",
     "description": "Strength training can also be provided at home. The main thing is to have the right equipment. Composite dumbbells Braves are a great solution for men who are focused on results.\n\nThe model consists of 3 steel discs: 2 x 10 kg and 1 -12 kg. They can be combined according to preference. And also buy other components of the weight you need. The discs are fixed with high-strength plastic nuts. They will protect against falling out of elements and guarantee the safety of use.\n\nBuy collapsible composite dumbbells Braves and achieve the perfect shape!",
     "previewImgIndex": 0,
-    "images": [
-      "assets/images/143_main.jpg",
-      "assets/images/143_0.jpg",
-      "assets/images/143_1.jpg",
-      "assets/images/143_2.jpg",
-      "assets/images/143_3.jpg"
-    ],
+    "images": ["assets/images/143_main.jpg"],
     "price": 39.99,
     "brandId": 0,
     "rating": 4.1,
