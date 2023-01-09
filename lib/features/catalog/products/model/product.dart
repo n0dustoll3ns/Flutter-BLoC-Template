@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
+import '../../../../ui/components/loading_indicator.dart';
 import '../../../../utils/constants.dart';
 
 class Product {
@@ -16,7 +17,12 @@ class Product {
   final List<Property> properties = [];
 
   Widget get imageWidget => _previewImage != null
-      ? Image.network("$productsFilesUrl/$id/${_previewImage!}", fit: BoxFit.contain)
+      ? Image.network(
+          "$productsFilesUrl/$id/${_previewImage!}",
+          fit: BoxFit.contain,
+          loadingBuilder: (context, widget, loadingProgress) =>
+              loadingProgress == null ? widget : const CircularProgressIndicator(),
+        )
       : const FittedBox(fit: BoxFit.contain, child: Icon(Icons.question_mark_rounded));
 
   Product({

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/utils/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,7 +13,12 @@ class Category {
   final String? _icon;
 
   Widget get imageWidget => _img != null
-      ? Image.network("$categoriesFilesUrl/$id/${_img!}", fit: BoxFit.contain)
+      ? Image.network(
+          "$categoriesFilesUrl/$id/${_img!}",
+          fit: BoxFit.contain,
+          loadingBuilder: (context, widget, loadingProgress) =>
+              loadingProgress == null ? widget : const CircularProgressIndicator(),
+        )
       : _icon != null
           ? SvgPicture.network("$categoriesFilesUrl/$id/${_icon!}")
           : const Icon(Icons.question_mark_rounded);
