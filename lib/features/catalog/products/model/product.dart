@@ -1,16 +1,29 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
+import '../../../../ui/components/loading_indicator.dart';
+import '../../../../utils/constants.dart';
+
 class Product {
-  final int id;
+  final String id;
   final String name;
   final String description;
   final int? previewImgIndex;
   final List<String> images;
-  String? get previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
+  String? get _previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
   final double price;
   final double rating;
   final int? brandId;
   final List<Property> properties = [];
+
+  Widget get imageWidget => _previewImage != null
+      ? Image.network(
+          "$productsFilesUrl/$id/${_previewImage!}",
+          fit: BoxFit.contain,
+          loadingBuilder: (context, widget, loadingProgress) =>
+              loadingProgress == null ? widget : const CircularProgressIndicator(),
+        )
+      : const FittedBox(fit: BoxFit.contain, child: Icon(Icons.question_mark_rounded));
 
   Product({
     required this.id,
@@ -23,17 +36,18 @@ class Product {
     this.previewImgIndex,
   });
 
-  Product.fromJson(Map json)
-      : id = json['id'],
-        name = json['name'],
+  Product.fromJson(this.id, Map json)
+      : name = json['name'],
         description = json['description'],
         previewImgIndex = json['previewImgIndex'],
         images = List<String>.from(json['images']),
         price = json['price'],
         rating = json['rating'],
         brandId = json['brandId'] {
-    properties.addAll(List<Property>.generate(
-        json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
+    if (json['properties'] != null) {
+      properties.addAll(List<Property>.generate(
+          json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
+    }
   }
 }
 

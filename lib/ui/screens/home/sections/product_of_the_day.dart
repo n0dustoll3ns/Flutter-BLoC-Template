@@ -45,13 +45,7 @@ class ProductOfTheDay extends StatelessWidget {
                         children: [
                           Align(
                             alignment: Alignment.topCenter,
-                            child: asyncSnapshot.data!.previewImage != null
-                                ? Image.asset(
-                                    asyncSnapshot.data!.previewImage!,
-                                    fit: BoxFit.contain,
-                                  )
-                                : const FittedBox(
-                                    fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
+                            child: asyncSnapshot.data!.imageWidget,
                           ),
                           Row(
                             children: [

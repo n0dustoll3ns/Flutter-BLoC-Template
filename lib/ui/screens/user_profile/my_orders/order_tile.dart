@@ -54,12 +54,7 @@ class OrderTile extends StatelessWidget {
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => SizedBox(
-                        child: items[index].previewImage != null
-                            ? Image.asset(
-                                items[index].previewImage!,
-                                fit: BoxFit.contain,
-                              )
-                            : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
+                        child: items[index].imageWidget,
                       ),
                   separatorBuilder: (context, index) =>
                       SizedBox(width: MediaQuery.of(context).size.width / 55),

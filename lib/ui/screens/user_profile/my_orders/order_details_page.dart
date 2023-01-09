@@ -85,13 +85,7 @@ class OrderDetailsPage extends StatelessWidget {
                 separatorBuilder: (context, index) => SizedBox(
                   width: MediaQuery.of(context).size.width / 44,
                 ),
-                itemBuilder: (context, index) =>
-                    order.itemsCounted.keys.toList()[index].previewImage != null
-                ? Image.asset(
-                    order.itemsCounted.keys.toList()[index].previewImage!,
-                    fit: BoxFit.contain,
-                  )
-                : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
+                itemBuilder: (context, index) => order.itemsCounted.keys.toList()[index].imageWidget,
               ),
             ),
           ),

@@ -1,7 +1,7 @@
 class Review {
   final String comment;
   final bool anonimously;
-  final int productId;
+  final String productId;
   final double orderRating;
   final double qualityRating;
   final double deliveryRating;

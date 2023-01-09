@@ -22,12 +22,7 @@ class ReviewTile extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.all(MediaQuery.of(context).size.width / 38),
-                      child: asyncSnapshot.data!.previewImage != null
-                          ? Image.asset(
-                              asyncSnapshot.data!.previewImage!,
-                              fit: BoxFit.contain,
-                            )
-                          : const FittedBox(fit: BoxFit.cover, child: Icon(Icons.question_mark_rounded)),
+                      child: asyncSnapshot.data!.imageWidget,
                     ),
                     Expanded(
                       child: Column(
