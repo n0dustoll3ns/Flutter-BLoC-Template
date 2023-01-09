@@ -2,17 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/utils/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../products/model/product.dart';
-
 class Category {
   final List<int> inheritedCategoryIds;
   final String name;
   final String id;
-  final List<int> productIds;
+  final List<String> productIds;
   final String description;
   final String? _img;
   final String? _icon;
-  final List<Product> productList = [];
 
   Widget get imageWidget => _img != null
       ? Image.network(_img!, fit: BoxFit.contain)
@@ -33,7 +30,7 @@ class Category {
 
   Category.fromJson(this.id, Map json)
       : name = json['name'],
-        productIds = List.from(json['productIds'] ?? []),
+        productIds = List.from(json['products'] ?? []),
         inheritedCategoryIds = List.from(json['inheritedCategoryIds'] ?? []),
         description = json['description'] ?? '',
         _img = json['image'] != '' ? "$categoriesImagePath/$id/${json['image']}" : null,

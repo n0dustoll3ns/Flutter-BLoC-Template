@@ -14,7 +14,7 @@ class CatalogPageProductsBloc extends Bloc<ProductEvent, ProductsState> {
     emit(ProductsLoading(items: state.items));
     try {
       var products = await productsRepository.getProductList(
-          token: 'token', categoryId: event.category?.id ?? '', skipCount: state.items.length);
+          token: 'token', category: event.category, skipCount: state.items.length);
 
       state.items.addAll(products);
       emit(ProductsUpdated(items: state.items));

@@ -20,10 +20,9 @@ class RecomendedItems extends StatefulWidget {
 class _RecomendedItemsState extends State<RecomendedItems> with AutomaticKeepAliveClientMixin {
   var dotsCount = 0;
   var activeDotIndex = 0;
-  late final _itemsLoader = ProductsRepository().getProductList(
+  late final _itemsLoader = ProductsRepository().getRecommendedItems(
     token: context.read<AuthenticationBloc>().state.toString(),
-    skipCount: 0,
-    categoryId: "qod5cdzk5ea0tnn",
+    product: widget.product,
   );
   @override
   Widget build(BuildContext context) {

@@ -4,12 +4,12 @@ import 'package:flutter_bloc_template/features/user/states.dart';
 
 class UserRepository {
   String token = '';
+  final pb = PocketBase('https://pocketbase.dancheg97.ru/');
 
   Future<AdminAuth?> authenticate({
     required String username,
     required String password,
   }) async {
-    final pb = PocketBase('https://pocketbase.dancheg97.ru/');
     AdminAuth authData = await pb.admins.authWithPassword(username, password);
     return authData;
   }

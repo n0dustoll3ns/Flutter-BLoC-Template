@@ -36,7 +36,7 @@ class ProductCard extends StatelessWidget {
                     alignment: AlignmentDirectional.topEnd,
                     children: [
                       product.previewImage != null
-                          ? Image.asset(
+                          ? Image.network(
                               product.previewImage!,
                               fit: BoxFit.contain,
                             )

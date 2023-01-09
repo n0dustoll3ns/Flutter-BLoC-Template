@@ -23,17 +23,18 @@ class Product {
     this.previewImgIndex,
   });
 
-  Product.fromJson(Map json)
-      : id = json['id'],
-        name = json['name'],
+  Product.fromJson(this.id, Map json)
+      : name = json['name'],
         description = json['description'],
         previewImgIndex = json['previewImgIndex'],
         images = List<String>.from(json['images']),
         price = json['price'],
         rating = json['rating'],
         brandId = json['brandId'] {
-    properties.addAll(List<Property>.generate(
-        json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
+    if (json['properties'] != null) {
+      properties.addAll(List<Property>.generate(
+          json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
+    }
   }
 }
 

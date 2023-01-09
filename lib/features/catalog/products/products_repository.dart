@@ -1,48 +1,57 @@
-import 'dart:convert';
+import 'dart:math';
 
-import 'package:flutter/services.dart';
+import 'package:pocketbase/pocketbase.dart';
 
+import '../categories/model/model.dart';
 import 'model/product.dart';
 
 class ProductsRepository {
+  PocketBase pb = PocketBase('https://pocketbase.dancheg97.ru');
+
   Future<List<Product>> getProductList(
-      {required String token, required String categoryId, required int skipCount}) async {
-    List<int> productIds = await _getProductIds(categoryId);
-    List response = jsonDecode(await _readProductsJson());
-    var objects = response.where((element) => productIds.contains(element['id'])).toList();
-    List<Product> products = (List.generate(objects.length, (index) => Product.fromJson(objects[index])));
+      {required String token, required Category? category, required int skipCount}) async {
+    final response;
+    if (category != null) {
+      response = await pb.collection('categories').getOne(category.id, expand: 'products');
+    } else {
+      response = {};
+    }
+    var productMaps = response['products'] ?? List<RecordModel>.empty() as List<RecordModel>;
+    List<Product> products = (List.generate(
+        productMaps.length, (index) => Product.fromJson(productMaps[index].id, productMaps[index].data)));
     return products;
   }
 
-  Future<List<Product>> getRecommendedItems({required String token, required int productId}) async {
-    List response = jsonDecode(await _readProductsJson());
-    var objects = response.where((element) => element['id'] < 6 && element['id'] >= 1).toList();
-    List<Product> products = (List.generate(objects.length, (index) => Product.fromJson(objects[index])));
+  Future<List<Product>> getRecommendedItems({required String token, required Product product}) async {
+    final response = await pb.collection('products').getList(
+      page: Random().nextInt(43) + 1,
+      perPage: 5,
+    );
+    var productMaps = response.items;
+    List<Product> products = (List.generate(
+        productMaps.length, (index) => Product.fromJson(productMaps[index].id, productMaps[index].data)));
     return products;
   }
 
   Future<Product> getProductOfTheDay({required String token}) async {
-    List response = jsonDecode(await _readProductsJson());
-    var obj = response.singleWhere((element) => element['id'] == 3);
-    Product product = Product.fromJson(obj);
+    var response = await pb.collection('products').getOne('fw3d5rooti3ueqh');
+    Product product = Product.fromJson(response.id, response.data);
     return product;
   }
 
   Future<Product> getProductInfoById({required String token, required String id}) async {
-    List response = jsonDecode(await _readProductsJson());
-    var obj = response.singleWhere((element) => element['id'] == id);
-    Product product = Product.fromJson(obj);
+    var response = await pb.collection('products').getOne(id);
+    Product product = Product.fromJson(response.id, response.data);
     return product;
   }
 
-  Future<String> _readProductsJson() async => await rootBundle.loadString('assets/backend/items.json');
-
-  Future<List<int>> _getProductIds(String categoryId) async {
-    if (categoryId.isEmpty) {
-      return [];
-    }
-    List json = jsonDecode(await rootBundle.loadString('assets/backend/categories.json'));
-    var obj = json.singleWhere((element) => element['id'] == categoryId);
-    return List<int>.from(obj['productIds']);
+  Future<List<Product>> getBestOffers({required String token}) async {
+    var response = await pb.collection('products').getList(
+          filter: 'price >= 500 && price < 600',
+        );
+    var list = response.items;
+    List<Product> products =
+        (List.generate(list.length, (index) => Product.fromJson(list[index].id, list[index].data)));
+    return products;
   }
 }
