@@ -28,11 +28,7 @@ dev_dependencies:
 flutter:
 
   assets:
-    - assets/images/catalog/
-    - assets/images/
-    - assets/icons/
     - assets/animations/
-    - assets/backend/
 
   uses-material-design: true
   # example:

@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_bloc_template/features/banners/secondary_banner/secondary_banner.dart';
 
 class SecondaryBanner extends StatelessWidget {
-  final bool isBig;
-  final String img;
-  const SecondaryBanner({super.key, required this.isBig, required this.img});
+  final SecondaryBannerInfo details;
+  const SecondaryBanner({super.key, required this.details});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: isBig ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width / 2,
+      width: details.isBig ? MediaQuery.of(context).size.width : MediaQuery.of(context).size.width / 2,
       height: MediaQuery.of(context).size.width / 2,
       child: Stack(
         fit: StackFit.expand,
         alignment: Alignment.bottomLeft,
         children: [
-          Image.asset('assets/images/$img.jpg', fit: BoxFit.cover),
+          Image.network(details.imageUrl, fit: BoxFit.cover),
           Container(
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -30,12 +29,16 @@ class SecondaryBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  'Headline',
+                  details.header ?? '',
                   style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.white60),
+                  maxLines: 1,
+                  overflow: TextOverflow.clip,
                 ),
                 Text(
-                  lorem(paragraphs: 1, words: 4),
+                  details.title,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white70),
+                  maxLines: 1,
+                  overflow: TextOverflow.clip,
                 ),
               ],
             ),
