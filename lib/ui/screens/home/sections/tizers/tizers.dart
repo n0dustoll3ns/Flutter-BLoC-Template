@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/home_page_data/tizers/bloc.dart';
+import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 
 import 'tizer.dart';
 
@@ -8,21 +10,18 @@ class Tizers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: ThemeData(
-          iconTheme: IconThemeData(
-              color: Theme.of(context).primaryColor, size: MediaQuery.of(context).size.width / 7)),
-      child: Wrap(
-        runSpacing: MediaQuery.of(context).size.height / 55,
-        alignment: WrapAlignment.center,
-        children: [
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.delivery_dining_outlined)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.co_present_rounded)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.card_giftcard_rounded)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.list_outlined)),
-          Tizer(text: lorem(paragraphs: 1, words: 8), icon: const Icon(Icons.wallet_rounded)),
-        ],
-      ),
+    return BlocProvider(
+      create: (_) => TizersBloc()..add(AppStarted()),
+      child: BlocBuilder<TizersBloc, TizersState>(builder: (context, state) {
+        if (state is TizersLoading) {
+          return const LoadingIndicator();
+        }
+        return Wrap(
+          runSpacing: MediaQuery.of(context).size.height / 55,
+          alignment: WrapAlignment.center,
+          children: state.items.map((e) => Tizer(details: e)).toList(),
+        );
+      }),
     );
   }
 }

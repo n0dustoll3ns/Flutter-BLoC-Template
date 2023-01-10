@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/banners/main_banner/main_banners_bloc.dart';
+import 'package:flutter_bloc_template/features/home_page_data/main_banner/main_banners_bloc.dart';
 import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 

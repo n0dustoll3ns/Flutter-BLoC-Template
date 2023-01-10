@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/banners/secondary_banner/secondary_banner.dart';
+import 'package:flutter_bloc_template/features/home_page_data/secondary_banner/secondary_banner.dart';
 
 import 'repository.dart';
 

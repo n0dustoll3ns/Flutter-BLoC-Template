@@ -8,3 +8,4 @@ const categoriesFilesUrl = "$baseUrl$filesUrl/categories";
 const productsFilesUrl = "$baseUrl$filesUrl/products";
 const mainBannerFilesUrl = "$baseUrl$filesUrl/main_banners";
 const secondaryBannerFilesUrl = "$baseUrl$filesUrl/secondary_banners";
+const tizersIconsUrl = "$baseUrl$filesUrl/tizers";
