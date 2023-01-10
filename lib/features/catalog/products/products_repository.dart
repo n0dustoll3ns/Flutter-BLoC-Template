@@ -2,12 +2,11 @@ import 'dart:math';
 
 import 'package:pocketbase/pocketbase.dart';
 
+import '../../../utils/urls.dart';
 import '../categories/model/model.dart';
 import 'model/product.dart';
 
 class ProductsRepository {
-  PocketBase pb = PocketBase('https://pocketbase.dancheg97.ru');
-
   Future<List<Product>> getProductList(
       {required String token, required Category? category, required int skipCount}) async {
     RecordModel response;

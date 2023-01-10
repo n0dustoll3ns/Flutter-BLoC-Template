@@ -1,9 +1,7 @@
-import 'package:pocketbase/pocketbase.dart';
-
+import '../../../utils/urls.dart';
 import 'model/model.dart';
 
 class CategoriesRepository {
-  PocketBase pb = PocketBase('https://pocketbase.dancheg97.ru');
   Future<List<Category>?> getInheritedCategories({required String token, String? parentCategoryId}) async {
     List<Category>? res;
 

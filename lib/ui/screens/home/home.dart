@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/banners/main_banners_bloc.dart';
+import 'package:flutter_bloc_template/features/banners/main_banner/main_banners_bloc.dart';
 
 import '../../../app/routes/constants.dart';
 import '../../components/menu_button.dart';

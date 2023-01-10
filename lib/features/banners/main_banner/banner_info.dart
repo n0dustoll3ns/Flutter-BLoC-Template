@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../utils/urls.dart';
+import '../../../utils/urls.dart';
 
 class BannerInfo {
   final String id;
