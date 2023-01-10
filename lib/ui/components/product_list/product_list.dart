@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pocketbase/pocketbase.dart';
-import '../../../features/authentication/auth_bloc.dart';
-import '../../../features/authentication/states.dart';
-import '../../../features/catalog/categories/model/model.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import 'components/product_card.dart';
 import '../../styles/constants.dart';
 import '../loading_indicator.dart';
-import 'package:http/http.dart' as http;
 
 class ProductList extends StatelessWidget {
-  final Category? category; // TODO remove later as unnecessary;
-  const ProductList({super.key, required this.category});
+  const ProductList({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CatalogPageProductsBloc, ProductsState>(

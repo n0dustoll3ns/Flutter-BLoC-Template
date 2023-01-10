@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="40px" width="40px" viewBox="0 0 40 40">
-  <g id="svg">
-    <path id="Rounded_Rectangle_73_copy_2" data-name="Rounded Rectangle 73 copy 2" class="" d="M1243,845a1,1,0,0,1-1-1h-36a1,1,0,0,1-2,0V807a2,2,0,0,1,2-2h36a2,2,0,0,1,2,2v37A1,1,0,0,1,1243,845Zm-6-20h5v-2h-5A1,1,0,0,0,1237,825Zm-1,2h-1a1,1,0,0,0,0,2h7v-2h-6Zm-2,5a1,1,0,0,0,1,1h7v-2h-7A1,1,0,0,0,1234,832Zm-4,10h12v-7h-12v7Zm-14-35h-10v35h10V807Zm12,0h-10v35h10V807Zm14,0h-12v7h12v-7Zm0,9h-12v17h2v-2a1.926,1.926,0,0,0,0-2v-2a2,2,0,0,1,2-2v-2a2,2,0,0,1,2-2h6v-5Zm-7-5h2a1,1,0,0,1,0,2h-2A1,1,0,0,1,1235,811Zm-14,11a1,1,0,0,1,1,1v3a1,1,0,0,1-2,0v-3A1,1,0,0,1,1221,822Zm-8,0a1,1,0,0,1,1,1v3a1,1,0,0,1-2,0v-3A1,1,0,0,1,1213,822Z" transform="translate(-1204 -805)" style=""/>
-    <path class="" d="M1229,843v-9h14v9h-14Zm0-37h14v9h-14v-9Zm-24,0h12v37h-12V806Z" transform="translate(-1204 -805)" style="opacity: 0.1;"/>
-  </g>
-</svg>

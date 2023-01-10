@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/crahacteristic.dart';
 
-import '../../../../ui/components/loading_indicator.dart';
 import '../../../../utils/urls.dart';
 
 class Product {

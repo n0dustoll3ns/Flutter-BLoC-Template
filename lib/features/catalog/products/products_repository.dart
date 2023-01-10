@@ -16,7 +16,7 @@ class ProductsRepository {
     } else {
       return [];
     }
-    var productMaps = response.expand['products'] ?? List<RecordModel>.empty() as List<RecordModel>;
+    var productMaps = response.expand['products'] ?? List<RecordModel>.empty();
     List<Product> products = (List.generate(
         productMaps.length, (index) => Product.fromJson(productMaps[index].id, productMaps[index].data)));
     return products;

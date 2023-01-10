@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/banners/main_banners_bloc.dart';
 import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 
 class BannerSlider extends StatelessWidget {
   const BannerSlider({super.key});

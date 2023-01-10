@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="40px" width="40px" viewBox="0 0 40 40">
-  <g id="svg">
-    <path id="Rounded_Rectangle_1414" data-name="Rounded Rectangle 1414" class="" d="M334,4090H308a6.993,6.993,0,0,1-4.889-12H303a2,2,0,0,1-2-2v-24a2,2,0,0,1,2-2h31a7,7,0,0,1,7,7v26A7,7,0,0,1,334,4090Zm-26-38h-5v24h5v-24Zm8,0h-6v24h6v-24Zm23,26.11V4057a5,5,0,0,0-5-5H318v24h14a5,5,0,0,1,0,10H308a3,3,0,0,1,0-6h24a1,1,0,0,1,0,2H308a1,1,0,0,0,0,2h24a3,3,0,0,0,0-6H308a5,5,0,0,0,0,10h26a5,5,0,0,0,5-5v-4.89Z" transform="translate(-301 -4050)" style=""/>
-    <path class="" d="M339,4082v-2a6,6,0,0,0-6-6v-23h3l4,4v26Zm-30-31h8v26h-8v-26Z" transform="translate(-301 -4050)" style="opacity: 0.1;"/>
-  </g>
-</svg>
