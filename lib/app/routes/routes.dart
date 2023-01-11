@@ -72,8 +72,7 @@ class Routes {
       case orderDetailsScreen:
         return OrderDetailsPage.route(routeSettings);
       case brand:
-        var model = routeSettings.arguments as RecordModel;
-        var brand = Brand.fromJson(model.id, model.data);
+        var brand = routeSettings.arguments as Brand;
         return BrandPage.route(brand);
       default:
         return CupertinoPageRoute(builder: (context) => const Scaffold());

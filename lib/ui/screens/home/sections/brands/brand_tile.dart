@@ -3,13 +3,15 @@ import 'package:flutter_bloc_template/features/brands/model.dart';
 import 'package:flutter_bloc_template/features/brands/repository.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 
+import '../../../../../app/routes/routes.dart';
+
 class BrandTileLoader extends StatelessWidget {
   final String brandId;
   const BrandTileLoader({super.key, required this.brandId});
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Brand>(
-        future: Future<Brand>(() async => BrandsRepository().singleBrandInfo(brandId)),
+        future: _loadBrandData(),
         builder: (context, asyncSnapshot) {
           if (asyncSnapshot.connectionState != ConnectionState.done) {
             const LoadingIndicator();
@@ -18,6 +20,8 @@ class BrandTileLoader extends StatelessWidget {
           return BrandTile(brand: brand);
         });
   }
+
+  Future<Brand> _loadBrandData() async => BrandsRepository().singleBrandInfo(brandId);
 }
 
 class BrandTile extends StatelessWidget {
@@ -27,7 +31,7 @@ class BrandTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(context, Routes.brand, arguments: brand),
       child: Container(
         width: MediaQuery.of(context).size.width / 7 * 3,
         height: MediaQuery.of(context).size.width / 7 * 3 / 2.5,
@@ -39,10 +43,21 @@ class BrandTile extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              brand.imageUrl != null ? Image.asset(brand.imageUrl!) : const Icon(Icons.brightness_auto_sharp),
-              Text(
-                brand.name,
-                style: Theme.of(context).textTheme.headline5,
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.all(MediaQuery.of(context).size.height / 66),
+                  child: brand.imageUrl != null
+                      ? Image.network(brand.imageUrl!, fit: BoxFit.contain)
+                      : const Icon(Icons.question_mark_rounded),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Text(
+                  brand.name,
+                  style: Theme.of(context).textTheme.headline5,
+                ),
               ),
             ],
           ),
