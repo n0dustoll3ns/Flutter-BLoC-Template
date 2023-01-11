@@ -42,7 +42,7 @@ class Product {
         images = List<String>.from(json['images']),
         price = json['price'],
         rating = json['rating'].toDouble(),
-        brandId = json['brandId'] {
+        brandId = json['brand'] {
     if (json['properties'] != null) {
       properties.addAll(List<Property>.generate(
           json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));

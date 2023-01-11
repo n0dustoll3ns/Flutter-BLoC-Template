@@ -19,7 +19,7 @@ class SectionBrands extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: height / 66),
         mainAxisSpacing: height / 66,
         crossAxisSpacing: height / 66,
-        childAspectRatio: 1.66,
+        childAspectRatio: 1.88,
         crossAxisCount: 2,
         children: state.items.map((e) => BrandTile(brand: e)).toList(),
       );
