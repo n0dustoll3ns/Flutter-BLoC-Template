@@ -20,7 +20,7 @@ class SectionAbout extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Image.asset(
-                    'assets/images/${2}.jpg',
+                    'assets/images/bg.jpg',
                     fit: BoxFit.cover,
                   ),
                   Icon(

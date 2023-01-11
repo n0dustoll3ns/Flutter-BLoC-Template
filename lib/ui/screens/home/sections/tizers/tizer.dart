@@ -17,6 +17,7 @@ class Tizer extends StatelessWidget {
             details.iconUrl,
             color: Theme.of(context).primaryColor,
           ),
+          SizedBox(height: MediaQuery.of(context).size.height / 44),
           Text(
             details.title,
             style: Theme.of(context).textTheme.headline5,
@@ -24,6 +25,7 @@ class Tizer extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
+          SizedBox(height: MediaQuery.of(context).size.height / 44),
           Text(
             details.description,
             textAlign: TextAlign.center,

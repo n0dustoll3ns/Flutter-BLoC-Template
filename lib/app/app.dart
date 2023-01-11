@@ -50,10 +50,6 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => PaymentMethodsBloc()),
         BlocProvider(create: (_) => ReviewsBloc()),
         BlocProvider(create: (_) => BottomNavBarBloc()),
-        BlocProvider(
-            create: (_) => PopularCategoriesBloc(
-                categoriesRepository: CategoriesRepository(),
-                userRepository: authenticationBloc.userRepository)),
         BlocProvider(create: (context) => CheckoutBloc(ordersBloc: context.read<OrdersBloc>())),
       ],
       child: MaterialApp(

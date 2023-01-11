@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/ui/screens/about_shop/about_shop.dart';
+import 'package:flutter_bloc_template/ui/screens/brand/brand_page.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 import 'package:flutter_bloc_template/ui/screens/checkout/checkout_complete_page/checkout_complete_page.dart';
 import 'package:flutter_bloc_template/ui/screens/loyalty_program/loyalty_program_screen.dart';
@@ -8,7 +9,9 @@ import 'package:flutter_bloc_template/ui/screens/checkout/payment_redirect_page/
 import 'package:flutter_bloc_template/ui/screens/splash_screen.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/my_orders/order_details_page.dart';
+import 'package:pocketbase/pocketbase.dart';
 
+import '../../features/brands/model.dart';
 import '../../ui/screens/checkout/checkout_screen.dart';
 import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
@@ -31,6 +34,7 @@ class Routes {
   static const certificatesScreen = '/certificatesScreen';
   static const productScreen = '/productScreen';
   static const orderDetailsScreen = '/orderDetailsScreen';
+  static const brand = '/brand';
 
   static String currentRoute = splash;
 
@@ -67,6 +71,10 @@ class Routes {
         return ProductScreen.route(routeSettings);
       case orderDetailsScreen:
         return OrderDetailsPage.route(routeSettings);
+      case brand:
+        var model = routeSettings.arguments as RecordModel;
+        var brand = Brand.fromJson(model.id, model.data);
+        return BrandPage.route(brand);
       default:
         return CupertinoPageRoute(builder: (context) => const Scaffold());
     }

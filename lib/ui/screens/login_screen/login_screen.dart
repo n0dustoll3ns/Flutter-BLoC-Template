@@ -49,7 +49,6 @@ class _LoginPageState extends State<LoginPage> {
     context.read<UserBloc>().add(Authorized(token: token));
     context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: token));
     context.read<AdressesBloc>().add(AuthComplete(token: token));
-    context.read<PopularCategoriesBloc>().add(popular_categories.Authorized(token: token));
     context.read<PaymentMethodsBloc>().add(AllowLoadPaymentMethods());
   }
 }

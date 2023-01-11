@@ -36,7 +36,6 @@ abstract class PopularCategoriesEvent {
   const PopularCategoriesEvent();
 }
 
-class Authorized extends PopularCategoriesEvent {
-  final String token;
-  const Authorized({required this.token});
+class AppStarted extends PopularCategoriesEvent {
+  const AppStarted();
 }
