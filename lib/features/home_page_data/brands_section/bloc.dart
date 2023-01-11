@@ -45,5 +45,5 @@ abstract class BrandEvent {
 }
 
 class AppStarted extends BrandEvent {
-  AppStarted();
+  const AppStarted();
 }

@@ -7,11 +7,17 @@ import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ProductOfTheDay extends StatelessWidget {
+class ProductOfTheDay extends StatefulWidget {
   const ProductOfTheDay({super.key});
 
   @override
+  State<ProductOfTheDay> createState() => _ProductOfTheDayState();
+}
+
+class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return FutureBuilder(
       future: ProductsRepository().getProductOfTheDay(token: 'token'),
       builder: (context, asyncSnapshot) {
@@ -111,4 +117,7 @@ class ProductOfTheDay extends StatelessWidget {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

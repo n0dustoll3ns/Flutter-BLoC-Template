@@ -9,7 +9,7 @@ import 'package:flutter_bloc_template/features/favourite/favourite_categories.da
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
 import 'package:flutter_bloc_template/features/order/orders_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
-import 'package:flutter_bloc_template/features/popular_categories/bloc.dart';
+import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as popularCategories;
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
@@ -20,6 +20,8 @@ import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
 import '../features/home_page_data/brands_section/bloc.dart' as mainPageBrandsBloc;
+import '../features/home_page_data/secondary_banner/bloc.dart' as secondaryBanners;
+import '../features/home_page_data/tizers/bloc.dart' as tizers;
 import '../ui/screens/error/error_screen.dart';
 import 'routes/routes.dart';
 import 'theme/theme.dart';
@@ -43,8 +45,15 @@ class App extends StatelessWidget {
         BlocProvider(create: ((context) => categoriesBloc)),
         BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
+        BlocProvider(create: (_) => tizers.TizersBloc()..add(tizers.AppStarted())),
         BlocProvider(
-            create: (_) => mainPageBrandsBloc.MainPageBrandsBloc()..add(mainPageBrandsBloc.AppStarted())),
+            create: (_) =>
+                popularCategories.PopularCategoriesBloc()..add(const popularCategories.AppStarted())),
+        BlocProvider(
+            create: (_) =>
+                mainPageBrandsBloc.MainPageBrandsBloc()..add(const mainPageBrandsBloc.AppStarted())),
+        BlocProvider(
+            create: (_) => secondaryBanners.SecondaryBannersBloc()..add(secondaryBanners.AppStarted())),
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
         BlocProvider(create: (_) => RecieversBloc(userRepository: authenticationBloc.userRepository)),

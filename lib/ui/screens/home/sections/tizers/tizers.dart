@@ -10,18 +10,15 @@ class Tizers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => TizersBloc()..add(AppStarted()),
-      child: BlocBuilder<TizersBloc, TizersState>(builder: (context, state) {
-        if (state is TizersLoading) {
-          return const LoadingIndicator();
-        }
-        return Wrap(
-          runSpacing: MediaQuery.of(context).size.height / 55,
-          alignment: WrapAlignment.center,
-          children: state.items.map((e) => Tizer(details: e)).toList(),
-        );
-      }),
-    );
+    return BlocBuilder<TizersBloc, TizersState>(builder: (context, state) {
+      if (state is TizersLoading) {
+        return const LoadingIndicator();
+      }
+      return Wrap(
+        runSpacing: MediaQuery.of(context).size.height / 55,
+        alignment: WrapAlignment.center,
+        children: state.items.map((e) => Tizer(details: e)).toList(),
+      );
+    });
   }
 }

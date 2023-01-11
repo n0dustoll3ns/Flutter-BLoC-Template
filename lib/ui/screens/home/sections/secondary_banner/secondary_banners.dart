@@ -11,20 +11,17 @@ class SecondaryBanners extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => SecondaryBannersBloc()..add(AppStarted()),
-      child: BlocBuilder<SecondaryBannersBloc, SecondaryBannersState>(builder: (context, state) {
-        if (state is SecondaryBannersLoading) {
-          return const LoadingIndicator();
-        }
-        return SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.width,
-          child: Wrap(
-            children: state.items.map((e) => SecondaryBanner(details: e)).toList(),
-          ),
-        );
-      }),
-    );
+    return BlocBuilder<SecondaryBannersBloc, SecondaryBannersState>(builder: (context, state) {
+      if (state is SecondaryBannersLoading) {
+        return const LoadingIndicator();
+      }
+      return SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.width,
+        child: Wrap(
+          children: state.items.map((e) => SecondaryBanner(details: e)).toList(),
+        ),
+      );
+    });
   }
 }
