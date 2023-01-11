@@ -12,7 +12,7 @@ class Product {
   String? get _previewImage => images.isEmpty ? null : images[previewImgIndex ?? 0];
   final double price;
   final double rating;
-  final int? brandId;
+  final String? brandId;
   final List<Property> properties = [];
 
   Widget get imageWidget => _previewImage != null

@@ -1,5 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/brands/model.dart';
+import 'package:flutter_bloc_template/features/brands/repository.dart';
+import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
+
+class BrandTileLoader extends StatelessWidget {
+  final String brandId;
+  const BrandTileLoader({super.key, required this.brandId});
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<Brand>(
+        future: Future<Brand>(() async => BrandsRepository().singleBrandInfo(brandId)),
+        builder: (context, asyncSnapshot) {
+          if (asyncSnapshot.connectionState != ConnectionState.done) {
+            const LoadingIndicator();
+          }
+          var brand = asyncSnapshot.data!;
+          return BrandTile(brand: brand);
+        });
+  }
+}
 
 class BrandTile extends StatelessWidget {
   final Brand brand;
@@ -20,7 +39,7 @@ class BrandTile extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              brand.img != null ? Image.asset(brand.img!) : const Icon(Icons.brightness_auto_sharp),
+              brand.imageUrl != null ? Image.asset(brand.imageUrl!) : const Icon(Icons.brightness_auto_sharp),
               Text(
                 brand.name,
                 style: Theme.of(context).textTheme.headline5,

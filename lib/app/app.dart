@@ -19,6 +19,7 @@ import '../features/authentication/states.dart';
 import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
+import '../features/home_page_data/brands_section/bloc.dart' as mainPageBrandsBloc;
 import '../ui/screens/error/error_screen.dart';
 import 'routes/routes.dart';
 import 'theme/theme.dart';
@@ -42,6 +43,8 @@ class App extends StatelessWidget {
         BlocProvider(create: ((context) => categoriesBloc)),
         BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
+        BlocProvider(
+            create: (_) => mainPageBrandsBloc.MainPageBrandsBloc()..add(mainPageBrandsBloc.AppStarted())),
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
         BlocProvider(create: (_) => RecieversBloc(userRepository: authenticationBloc.userRepository)),

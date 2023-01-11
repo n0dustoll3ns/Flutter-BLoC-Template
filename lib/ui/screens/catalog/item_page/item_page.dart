@@ -86,6 +86,7 @@ class _ProductScreenState extends State<ProductScreen> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Expanded(
                 child: RatingBar.builder(
@@ -105,11 +106,8 @@ class _ProductScreenState extends State<ProductScreen> {
                   },
                 ),
               ),
-              SizedBox(
-                child: BrandTile(
-                  brand: Brand(name: lorem(paragraphs: 1, words: 1)),
-                ),
-              )
+              if (widget.product.brandId != null)
+                SizedBox(child: BrandTileLoader(brandId: widget.product.brandId!))
             ],
           ),
           const Divider(),
