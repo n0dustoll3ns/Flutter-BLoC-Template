@@ -112,7 +112,7 @@ class _ProductScreenState extends State<ProductScreen> {
           ),
           const Divider(),
           Text(
-            'Charatceristics',
+            'Characteristics',
             style: Theme.of(context).textTheme.headline6,
           ),
           CharactericticsLines(product: widget.product, maxLines: 7),

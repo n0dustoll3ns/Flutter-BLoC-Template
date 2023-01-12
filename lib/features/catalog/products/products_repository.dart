@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:pocketbase/pocketbase.dart';
 
 import '../../../utils/urls.dart';
+import '../../brands/model.dart';
 import '../categories/model/model.dart';
 import 'model/product.dart';
 
@@ -45,12 +46,18 @@ class ProductsRepository {
   }
 
   Future<List<Product>> getBestOffers({required String token}) async {
-    var response = await pb.collection('products').getList(
+    var response = await pb.collection('products').getFullList(
           filter: 'price >= 500 && price < 600',
         );
-    var list = response.items;
-    List<Product> products =
-        (List.generate(list.length, (index) => Product.fromJson(list[index].id, list[index].data)));
+    List<Product> products = response.map((e) => Product.fromJson(e.id, e.data)).toList();
+    return products;
+  }
+
+  Future<List<Product>> getProductsByBrand({required Brand brand}) async {
+    var response = await pb.collection('products').getFullList(
+          filter: 'brand = "${brand.id}"',
+        );
+    List<Product> products = response.map((e) => Product.fromJson(e.id, e.data)).toList();
     return products;
   }
 }
