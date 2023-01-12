@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/model.dart';
@@ -14,6 +15,11 @@ class WriteReviewScreen extends StatefulWidget {
 
   @override
   State<WriteReviewScreen> createState() => _WriteReviewScreenState();
+
+  static Route route(RouteSettings routeSettings) {
+    var product = routeSettings.arguments as Product;
+    return CupertinoPageRoute(builder: (context) => WriteReviewScreen(product: product));
+  }
 }
 
 class _WriteReviewScreenState extends State<WriteReviewScreen> {
@@ -33,9 +39,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Write new Review'),
-      ),
+      appBar: AppBar(title: const Text('Write new Review')),
       body: ListView(
         padding: EdgeInsets.all(MediaQuery.of(context).size.width / 33),
         children: [

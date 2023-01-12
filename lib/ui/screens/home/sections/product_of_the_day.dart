@@ -7,6 +7,8 @@ import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../../app/routes/routes.dart';
+
 class ProductOfTheDay extends StatefulWidget {
   const ProductOfTheDay({super.key});
 
@@ -65,7 +67,7 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
                             ],
                           ),
                           RatingBar.builder(
-                            initialRating: 3,
+                            initialRating: asyncSnapshot.data!.rating,
                             minRating: 1,
                             direction: Axis.horizontal,
                             allowHalfRating: true,
@@ -75,9 +77,8 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
                               Icons.star,
                               color: Colors.amber,
                             ),
-                            onRatingUpdate: (rating) {
-                              // print(rating);
-                            },
+                            onRatingUpdate: (rating) => Navigator.pushNamed(context, Routes.writeReview,
+                                arguments: asyncSnapshot.data!),
                           ),
                           Text(
                             asyncSnapshot.data!.name,

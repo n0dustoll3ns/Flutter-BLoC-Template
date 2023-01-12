@@ -9,6 +9,7 @@ import 'package:flutter_bloc_template/ui/screens/checkout/payment_redirect_page/
 import 'package:flutter_bloc_template/ui/screens/splash_screen.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/my_orders/order_details_page.dart';
+import 'package:flutter_bloc_template/ui/screens/write_review/write_review_screen.dart';
 import 'package:pocketbase/pocketbase.dart';
 
 import '../../features/brands/model.dart';
@@ -31,6 +32,7 @@ class Routes {
   static const paymentRedirect = '/paymentRedirect';
   static const checkoutCompletePage = '/checkoutCompletePage';
   static const ordersList = '/ordersList';
+  static const writeReview = '/writeReview';
   static const certificatesScreen = '/certificatesScreen';
   static const productScreen = '/productScreen';
   static const orderDetailsScreen = '/orderDetailsScreen';
@@ -67,6 +69,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const OrdersListPage());
       case certificatesScreen:
         return CupertinoPageRoute(builder: (context) => const CertificatesScreen());
+      case writeReview:
+        return WriteReviewScreen.route(routeSettings);
       case productScreen:
         return ProductScreen.route(routeSettings);
       case orderDetailsScreen:
