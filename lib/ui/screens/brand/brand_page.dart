@@ -67,9 +67,9 @@ class _BrandPageState extends State<BrandPage> {
               SizedBox(height: MediaQuery.of(context).size.height / 33),
               CategoryFilters(
                 items: categories.map((e) => e.name).toSet().toList(),
-                onFilterChange: (p0) {
+                onFilterChange: (filter) {
                   setState(() {
-                    _selectedCategory = categories.firstWhere((category) => category.name == p0);
+                    _selectedCategory = categories.firstWhere((category) => category.name == filter);
                   });
                 },
               ),

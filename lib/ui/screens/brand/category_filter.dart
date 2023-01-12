@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc_template/app/routes/constants.dart';
 import 'package:flutter_bloc_template/ui/styles/constants.dart';
 
 import '../catalog/components/quick_filter.dart';
@@ -29,7 +28,7 @@ class _CategoryFiltersState extends State<CategoryFilters> {
           onTap: () {
             setState(() {
               filter = widget.items[index];
-              widget.onFilterChange(quickFilters[index]);
+              widget.onFilterChange(widget.items[index]);
             });
           },
           isSelected: filter == widget.items[index],

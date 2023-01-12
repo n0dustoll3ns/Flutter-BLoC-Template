@@ -35,7 +35,9 @@ class CategoriesRepository {
     }
     List<Category> categories = [];
     for (var model in lst) {
-      categories.add(Category.fromJson(model.id, model.data));
+      if (!categories.map((e) => e.name).contains(model.data["name"])) {
+        categories.add(Category.fromJson(model.id, model.data));
+      }
     }
     return categories;
   }
