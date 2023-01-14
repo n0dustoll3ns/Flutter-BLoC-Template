@@ -10,3 +10,4 @@ const mainBannerFilesUrl = "$baseUrl$filesUrl/main_banners";
 const secondaryBannerFilesUrl = "$baseUrl$filesUrl/secondary_banners";
 const tizersIconsUrl = "$baseUrl$filesUrl/tizers";
 const brandsImagesUrl = "$baseUrl$filesUrl/brands";
+const promoImagesUrl = "$baseUrl$filesUrl/promo";

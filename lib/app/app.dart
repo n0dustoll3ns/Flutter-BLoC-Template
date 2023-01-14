@@ -9,7 +9,8 @@ import 'package:flutter_bloc_template/features/favourite/favourite_categories.da
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
 import 'package:flutter_bloc_template/features/order/orders_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
-import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as popularCategories;
+import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as popular_categories;
+import 'package:flutter_bloc_template/features/promo/bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
@@ -19,8 +20,9 @@ import '../features/authentication/states.dart';
 import '../features/catalog/categories/categories_bloc.dart';
 import '../features/catalog/categories/categories_repository.dart';
 import '../features/catalog/products/products_bloc.dart';
-import '../features/home_page_data/brands_section/bloc.dart' as mainPageBrandsBloc;
-import '../features/home_page_data/secondary_banner/bloc.dart' as secondaryBanners;
+import '../features/home_page_data/brands_section/bloc.dart' as main_page_brands_bloc;
+import '../features/home_page_data/promotions/bloc.dart' as main_page_promotions_bloc;
+import '../features/home_page_data/secondary_banner/bloc.dart' as secondary_banners;
 import '../features/home_page_data/tizers/bloc.dart' as tizers;
 import '../ui/screens/error/error_screen.dart';
 import 'routes/routes.dart';
@@ -48,14 +50,18 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => tizers.TizersBloc()..add(tizers.AppStarted())),
         BlocProvider(
             create: (_) =>
-                popularCategories.PopularCategoriesBloc()..add(const popularCategories.AppStarted())),
+                popular_categories.PopularCategoriesBloc()..add(const popular_categories.AppStarted())),
         BlocProvider(
             create: (_) =>
-                mainPageBrandsBloc.MainPageBrandsBloc()..add(const mainPageBrandsBloc.AppStarted())),
+                main_page_brands_bloc.MainPageBrandsBloc()..add(const main_page_brands_bloc.AppStarted())),
         BlocProvider(
-            create: (_) => secondaryBanners.SecondaryBannersBloc()..add(secondaryBanners.AppStarted())),
+            create: (_) => secondary_banners.SecondaryBannersBloc()..add(secondary_banners.AppStarted())),
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
+        BlocProvider(create: (_) => PromosBloc()),
+        BlocProvider(
+            create: (_) => main_page_promotions_bloc.MainPagePromotionsBloc()
+              ..add(main_page_promotions_bloc.AppStarted())),
         BlocProvider(create: (_) => RecieversBloc(userRepository: authenticationBloc.userRepository)),
         BlocProvider(create: (_) => AdressesBloc(userRepository: authenticationBloc.userRepository)),
         BlocProvider(create: (_) => OrdersBloc()),

@@ -17,7 +17,7 @@ class _CategoryFiltersState extends State<CategoryFilters> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.width/7,
+      height: MediaQuery.of(context).size.width / 7,
       child: ListView.separated(
         separatorBuilder: (context, index) => const SizedBox(width: kDefaultPadding),
         padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding, vertical: kDefaultPadding / 2),

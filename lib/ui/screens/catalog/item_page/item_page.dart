@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/brands/model.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/components/recommended_items.dart';
 import 'package:flutter_bloc_template/ui/screens/home/sections/brands/brand_tile.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../features/catalog/products/model/product.dart';

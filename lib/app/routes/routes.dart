@@ -10,7 +10,6 @@ import 'package:flutter_bloc_template/ui/screens/splash_screen.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/my_orders/order_details_page.dart';
 import 'package:flutter_bloc_template/ui/screens/write_review/write_review_screen.dart';
-import 'package:pocketbase/pocketbase.dart';
 
 import '../../features/brands/model.dart';
 import '../../ui/screens/checkout/checkout_screen.dart';
@@ -18,6 +17,7 @@ import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
 import '../../ui/screens/user_profile/certificates/certificates_screen.dart';
 import '../../ui/screens/user_profile/my_orders/orders_list.dart';
+import '../../ui/screens/user_profile/promo_actions/promo_actions_screen.dart';
 import '../../ui/screens/user_profile/recievers_list/recievers.dart';
 
 class Routes {
@@ -26,6 +26,7 @@ class Routes {
   static const login = 'login';
   static const loyaltyProgramScreen = '/loyaltyProgramScreen';
   static const aboutShopScreen = '/aboutShopScreen';
+  static const promoActionScreen = '/promoActionScreen';
   static const recieversList = '/recieversList';
   static const adressesList = '/adressesList';
   static const checkOut = '/checkOut';
@@ -55,6 +56,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const LoyaltyProgramScreen());
       case aboutShopScreen:
         return CupertinoPageRoute(builder: (context) => const AboutShopScreen());
+      case promoActionScreen:
+        return CupertinoPageRoute(builder: (context) => const PromoActionScreen());
       case recieversList:
         return CupertinoPageRoute(builder: (context) => const RecieversListScreen());
       case adressesList:

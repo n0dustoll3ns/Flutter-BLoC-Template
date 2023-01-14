@@ -9,39 +9,40 @@ class PromoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      height: MediaQuery.of(context).size.height / 8,
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: MediaQuery.of(context).size.height / 14,
-            child: Icon(
-              Icons.savings_outlined,
-              size: MediaQuery.of(context).size.height / 18,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        height: MediaQuery.of(context).size.height / 8,
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: MediaQuery.of(context).size.height / 15,
+              backgroundImage: NetworkImage(promo.backgroundUrl),
+              foregroundImage: promo.foregroundUrl == null ? null : NetworkImage(promo.foregroundUrl!),
             ),
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  promo.title,
-                  maxLines: 1,
-                  overflow: TextOverflow.fade,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                Text(
-                  promo.preview,
-                  maxLines: 2,
-                  overflow: TextOverflow.fade,
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                ExpiringTimer(expiringTimer: promo.expireDate),
-              ],
-            ),
-          )
-        ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    promo.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.fade,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  Text(
+                    promo.announce,
+                    maxLines: 2,
+                    overflow: TextOverflow.fade,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  if (promo.expireDate != null) ExpiringTimer(expiringTimer: promo.expireDate!),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
