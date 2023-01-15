@@ -26,7 +26,7 @@ class ProductsRepository {
   Future<List<Product>> getRecommendedItems({required String token, required Product product}) async {
     final response = await pb.collection('products').getList(
           page: Random().nextInt(43) + 1,
-          perPage: 5,
+          perPage: 6,
         );
     var productMaps = response.items;
     List<Product> products = (List.generate(

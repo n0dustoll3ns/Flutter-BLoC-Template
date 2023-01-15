@@ -60,7 +60,7 @@ class _RecomendedItemsState extends State<RecomendedItems> with AutomaticKeepAli
                         return Expanded(
                           flex: 1,
                           child: ProductCard(
-                            product: snapshot.data![index],
+                            product: snapshot.data![idx],
                           ),
                         );
                       }).toList(),

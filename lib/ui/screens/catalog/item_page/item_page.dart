@@ -99,7 +99,7 @@ class _ProductScreenState extends State<ProductScreen> {
             children: [
               Expanded(
                 child: RatingBar.builder(
-                  initialRating: 3,
+                  initialRating: widget.product.rating,
                   itemSize: MediaQuery.of(context).size.width / 15,
                   minRating: 1,
                   direction: Axis.horizontal,
@@ -115,17 +115,16 @@ class _ProductScreenState extends State<ProductScreen> {
                   },
                 ),
               ),
-              if (widget.product.brandId != null)
-                SizedBox(
-                    child: FutureBuilder<Brand>(
-                        future: brandLoader,
-                        builder: (context, snapshot) {
-                          if (snapshot.connectionState != ConnectionState.done) {
-                            return const LoadingIndicator();
-                          }
-                          var brand = snapshot.data!;
-                          return BrandTile(brand: brand);
-                        }))
+              if (widget.product.brandId != null && widget.product.brandId != '')
+                FutureBuilder<Brand>(
+                    future: brandLoader,
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState != ConnectionState.done) {
+                        return const LoadingIndicator();
+                      }
+                      var brand = snapshot.data!;
+                      return BrandTile(brand: brand);
+                    }),
             ],
           ),
           const Divider(),
