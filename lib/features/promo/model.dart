@@ -1,3 +1,5 @@
+import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
+
 import '../../utils/urls.dart';
 
 class Promo {
@@ -7,7 +9,7 @@ class Promo {
   final String description;
   final DateTime? expireDate;
   final List<String> tizerIds;
-  final List<String> productIds;
+  final List<Product> products;
   final double? discountPercentage;
   final String backgroundUrl;
   final String? foregroundUrl;
@@ -19,19 +21,20 @@ class Promo {
     required this.description,
     this.expireDate,
     required this.tizerIds,
-    required this.productIds,
+    required this.products,
     required this.backgroundUrl,
     this.foregroundUrl,
     this.discountPercentage,
   });
 
-  Promo.fromJson(this.id, Map json)
+  Promo.fromJson(this.id, Map json, Map expand)
       : title = json['title'],
         announce = json['announce'],
         description = json['description'],
         expireDate = DateTime.tryParse(json['expires']),
         tizerIds = List.from(json['tizers'] ?? []),
-        productIds = List.from(json['products'] ?? []),
+        products = expand['products'].map<Product>((model) => Product.fromJson(model.id, model.data)).toList()
+            as List<Product>,
         backgroundUrl = "$promoImagesUrl/$id/${json["background"]}",
         foregroundUrl = json["foreground"].isEmpty ? null : "$promoImagesUrl/$id/${json["foreground"]}",
         discountPercentage = json['discount_percentage'].toDouble();

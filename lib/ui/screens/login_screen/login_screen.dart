@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
-import 'package:flutter_bloc_template/features/popular_categories/bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart' as recievers;
 
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';

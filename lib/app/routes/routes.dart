@@ -6,6 +6,7 @@ import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dar
 import 'package:flutter_bloc_template/ui/screens/checkout/checkout_complete_page/checkout_complete_page.dart';
 import 'package:flutter_bloc_template/ui/screens/loyalty_program/loyalty_program_screen.dart';
 import 'package:flutter_bloc_template/ui/screens/checkout/payment_redirect_page/payment_redirect_page.dart';
+import 'package:flutter_bloc_template/ui/screens/promotion/promotion_screen.dart';
 import 'package:flutter_bloc_template/ui/screens/splash_screen.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/my_orders/order_details_page.dart';
@@ -38,8 +39,10 @@ class Routes {
   static const productScreen = '/productScreen';
   static const orderDetailsScreen = '/orderDetailsScreen';
   static const brand = '/brand';
+  static const promotionScreen = '/promotionScreen';
 
   static String currentRoute = splash;
+  
 
   static Route<dynamic> onGenerateRouted(RouteSettings routeSettings) {
     //to track current route
@@ -74,6 +77,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const CertificatesScreen());
       case writeReview:
         return WriteReviewScreen.route(routeSettings);
+      case promotionScreen:
+        return PromotionScreen.route(routeSettings);
       case productScreen:
         return ProductScreen.route(routeSettings);
       case orderDetailsScreen:

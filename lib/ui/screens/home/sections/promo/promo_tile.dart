@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_template/app/routes/routes.dart';
 import 'package:flutter_bloc_template/ui/components/expiring_timer.dart';
 
 import '../../../../../features/promo/model.dart';
@@ -10,7 +11,7 @@ class PromoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(context, Routes.promotionScreen, arguments: promo),
       child: Container(
         padding: const EdgeInsets.all(8),
         height: MediaQuery.of(context).size.height / 8,
