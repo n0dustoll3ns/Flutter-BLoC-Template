@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
+import 'package:flutter_bloc_template/features/promo/model.dart';
+import 'package:flutter_bloc_template/features/promo/repository.dart';
+import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/components/recommended_items.dart';
 import 'package:flutter_bloc_template/ui/screens/home/sections/brands/brand_tile.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../../app/routes/routes.dart';
+import '../../../../features/brands/model.dart';
+import '../../../../features/brands/repository.dart';
 import '../../../../features/catalog/products/model/product.dart';
 import '../../../styles/constants.dart';
 import 'components/characteristics_lines.dart';
@@ -27,13 +33,18 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   int selectedTabIndex = 0;
+
+  late Future<List<Promo>> promosLoader =
+      Future<List<Promo>>(() async => await PromoRepository().loadPromosOf(widget.product));
+  late Future<Brand>? brandLoader = widget.product.brandId != null
+      ? Future<Brand>(() async => await BrandsRepository().singleBrandInfo(widget.product.brandId!))
+      : null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.product.name,
-        ),
+        title: Text(widget.product.name),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.share))],
       ),
       body: ListView(
@@ -105,7 +116,16 @@ class _ProductScreenState extends State<ProductScreen> {
                 ),
               ),
               if (widget.product.brandId != null)
-                SizedBox(child: BrandTileLoader(brandId: widget.product.brandId!))
+                SizedBox(
+                    child: FutureBuilder<Brand>(
+                        future: brandLoader,
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState != ConnectionState.done) {
+                            return const LoadingIndicator();
+                          }
+                          var brand = snapshot.data!;
+                          return BrandTile(brand: brand);
+                        }))
             ],
           ),
           const Divider(),
@@ -141,6 +161,49 @@ class _ProductScreenState extends State<ProductScreen> {
                     child: const Text('Buy now')),
               ],
             ),
+          ),
+          SizedBox(height: MediaQuery.of(context).size.height / 44),
+          FutureBuilder<List<Promo>>(
+            future: promosLoader,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState != ConnectionState.done) return const LoadingIndicator();
+              return snapshot.data!.isNotEmpty
+                  ? Row(
+                      children: [
+                        Icon(
+                          CupertinoIcons.bolt,
+                          color: Theme.of(context).primaryColor,
+                          size: MediaQuery.of(context).size.height / 12,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'The product is included to promotions',
+                              style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
+                            ),
+                            ...snapshot.data!.map(
+                              (promo) => InkWell(
+                                onTap: () =>
+                                    Navigator.pushNamed(context, Routes.promotionScreen, arguments: promo),
+                                child: Text(
+                                  promo.title,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                      decoration: TextDecoration.underline,
+                                      height: 1.2,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+                  : const SizedBox();
+            },
           ),
           SizedBox(
             height: 55,

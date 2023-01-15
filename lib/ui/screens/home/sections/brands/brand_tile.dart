@@ -1,28 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/brands/model.dart';
-import 'package:flutter_bloc_template/features/brands/repository.dart';
-import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 
 import '../../../../../app/routes/routes.dart';
-
-class BrandTileLoader extends StatelessWidget {
-  final String brandId;
-  const BrandTileLoader({super.key, required this.brandId});
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<Brand>(
-        future: _loadBrandData(),
-        builder: (context, asyncSnapshot) {
-          if (asyncSnapshot.connectionState != ConnectionState.done) {
-            return const LoadingIndicator();
-          }
-          var brand = asyncSnapshot.data!;
-          return BrandTile(brand: brand);
-        });
-  }
-
-  Future<Brand> _loadBrandData() async => await BrandsRepository().singleBrandInfo(brandId);
-}
 
 class BrandTile extends StatelessWidget {
   final Brand brand;

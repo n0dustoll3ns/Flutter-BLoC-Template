@@ -4,6 +4,7 @@ import 'package:pocketbase/pocketbase.dart';
 
 import '../../../utils/urls.dart';
 import '../../brands/model.dart';
+import '../../promo/model.dart';
 import '../categories/model/model.dart';
 import 'model/product.dart';
 
@@ -58,6 +59,12 @@ class ProductsRepository {
           filter: 'brand = "${brand.id}"',
         );
     List<Product> products = response.map((e) => Product.fromJson(e.id, e.data)).toList();
+    return products;
+  }
+
+  Future<List<Product>> getProductsByPromo({required Promo promo}) async {
+    final response = await pb.collection('promo').getOne(promo.id, expand: 'products');
+    List<Product> products = response.expand['products']!.map((e) => Product.fromJson(e.id, e.data)).toList();
     return products;
   }
 }

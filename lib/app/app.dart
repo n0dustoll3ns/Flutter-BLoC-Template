@@ -10,7 +10,7 @@ import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc
 import 'package:flutter_bloc_template/features/order/orders_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as popular_categories;
-import 'package:flutter_bloc_template/features/promo/bloc.dart';
+import 'package:flutter_bloc_template/features/promo/main_page_promos_bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';

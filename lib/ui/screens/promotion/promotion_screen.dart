@@ -6,6 +6,7 @@ import 'package:flutter_bloc_template/ui/screens/promotion/components/expiring_t
 
 import '../../../features/catalog/products/model/product.dart';
 import '../../../features/promo/model.dart';
+import '../../components/loading_indicator.dart';
 import '../../components/product_list/components/product_card.dart';
 import '../../styles/constants.dart';
 
@@ -68,13 +69,21 @@ class PromotionScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(height: 1.3),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height / 22),
-                  GridView.count(
-                      padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.5,
-                      children: promo.products.map((product) => ProductCard(product: product)).toList())
+                  FutureBuilder<List<Product>>(
+                    future: () async {
+                      return ProductsRepository().getProductsByPromo(promo: promo);
+                    }.call(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState != ConnectionState.done) return const LoadingIndicator();
+                      return GridView.count(
+                          padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          crossAxisCount: 2,
+                          childAspectRatio: 0.5,
+                          children: snapshot.data!.map((product) => ProductCard(product: product)).toList());
+                    },
+                  ),
                 ],
               ),
             ),

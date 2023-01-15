@@ -9,7 +9,7 @@ class Promo {
   final String description;
   final DateTime? expireDate;
   final List<String> tizerIds;
-  final List<Product> products;
+  final List<String> productIds;
   final double? discountPercentage;
   final String backgroundUrl;
   final String? foregroundUrl;
@@ -21,20 +21,19 @@ class Promo {
     required this.description,
     this.expireDate,
     required this.tizerIds,
-    required this.products,
+    required this.productIds,
     required this.backgroundUrl,
     this.foregroundUrl,
     this.discountPercentage,
   });
 
-  Promo.fromJson(this.id, Map json, Map expand)
+  Promo.fromJson(this.id, Map json)
       : title = json['title'],
         announce = json['announce'],
         description = json['description'],
         expireDate = DateTime.tryParse(json['expires']),
         tizerIds = List.from(json['tizers'] ?? []),
-        products = expand['products'].map<Product>((model) => Product.fromJson(model.id, model.data)).toList()
-            as List<Product>,
+        productIds = List.from(json['products'] ?? []),
         backgroundUrl = "$promoImagesUrl/$id/${json["background"]}",
         foregroundUrl = json["foreground"].isEmpty ? null : "$promoImagesUrl/$id/${json["foreground"]}",
         discountPercentage = json['discount_percentage'].toDouble();
