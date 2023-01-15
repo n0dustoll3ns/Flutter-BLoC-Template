@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 import 'package:flutter_bloc_template/ui/screens/about_shop/about_shop.dart';
 import 'package:flutter_bloc_template/ui/screens/brand/brand_page.dart';
+import 'package:flutter_bloc_template/ui/screens/catalog/catalog_page.dart';
 import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
 import 'package:flutter_bloc_template/ui/screens/checkout/checkout_complete_page/checkout_complete_page.dart';
 import 'package:flutter_bloc_template/ui/screens/loyalty_program/loyalty_program_screen.dart';
@@ -13,6 +17,7 @@ import 'package:flutter_bloc_template/ui/screens/user_profile/my_orders/order_de
 import 'package:flutter_bloc_template/ui/screens/write_review/write_review_screen.dart';
 
 import '../../features/brands/model.dart';
+import '../../features/catalog/products/model/product.dart';
 import '../../ui/screens/checkout/checkout_screen.dart';
 import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
@@ -25,6 +30,7 @@ class Routes {
   static const splash = 'splash';
   static const home = '/';
   static const login = 'login';
+  static const catalog = '/catalog';
   static const loyaltyProgramScreen = '/loyaltyProgramScreen';
   static const aboutShopScreen = '/aboutShopScreen';
   static const promoActionScreen = '/promoActionScreen';
@@ -42,7 +48,6 @@ class Routes {
   static const promotionScreen = '/promotionScreen';
 
   static String currentRoute = splash;
-  
 
   static Route<dynamic> onGenerateRouted(RouteSettings routeSettings) {
     //to track current route
@@ -55,6 +60,13 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const MainScreen());
       case login:
         return CupertinoPageRoute(builder: (context) => const LoginPage());
+      case catalog:
+        Category? category;
+        if (routeSettings.name != null && routeSettings.arguments != null) {
+          category =
+              Category.fromJson((routeSettings.arguments! as Map)["id"], (routeSettings.arguments! as Map));
+        }
+        return CatalogPage.route(category);
       case loyaltyProgramScreen:
         return CupertinoPageRoute(builder: (context) => const LoyaltyProgramScreen());
       case aboutShopScreen:
@@ -80,7 +92,10 @@ class Routes {
       case promotionScreen:
         return PromotionScreen.route(routeSettings);
       case productScreen:
-        return ProductScreen.route(routeSettings);
+        Product product = routeSettings.arguments is Product
+            ? routeSettings.arguments as Product
+            : Product.fromJson((routeSettings.arguments! as Map)["id"], routeSettings.arguments! as Map);
+        return ProductScreen.route(product);
       case orderDetailsScreen:
         return OrderDetailsPage.route(routeSettings);
       case brand:

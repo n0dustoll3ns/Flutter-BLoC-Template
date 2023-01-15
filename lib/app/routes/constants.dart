@@ -5,13 +5,3 @@ const List<String> mainPageSections = [
   'Favourite',
   'Profile',
 ];
-
-const List<String> quickFilters = [
-  'Appliances',
-  'Clothes',
-  'Tackles',
-  'Electronics',
-  'Transport',
-  'Furniture',
-  'Plumbing',
-];

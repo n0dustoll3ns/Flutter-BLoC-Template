@@ -15,7 +15,6 @@ import '../../../features/catalog/products/products_repository.dart';
 import '../../../features/favourite/favourite_categories.dart';
 import 'categories/catagories.dart';
 import 'chapters/chapters_horizontal_view.dart';
-import 'components/quick_filters.dart';
 import '../../components/product_list/product_list.dart';
 
 class CatalogPage extends StatefulWidget {
@@ -24,6 +23,10 @@ class CatalogPage extends StatefulWidget {
 
   @override
   State<CatalogPage> createState() => _CatalogPageState();
+
+  static Route<CatalogPage> route(Category? category) {
+    return CupertinoPageRoute(builder: (context) => CatalogPage(category: category));
+  }
 }
 
 class _CatalogPageState extends State<CatalogPage> {
@@ -80,7 +83,7 @@ class _CatalogPageState extends State<CatalogPage> {
               scrollDirection: Axis.vertical,
               controller: _scrollController,
               children: [
-                QuickFilters(onFilterChange: (quickFilter) {}),
+                // QuickFilters(onFilterChange: (quickFilter) {}),
                 const ChaptersHorizontalView(),
                 const Categories(),
                 const ProductList(),

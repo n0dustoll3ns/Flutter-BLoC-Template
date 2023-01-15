@@ -25,8 +25,7 @@ class ProductScreen extends StatefulWidget {
   @override
   State<ProductScreen> createState() => _ProductScreenState();
 
-  static Route<ProductScreen> route(RouteSettings routeSettings) {
-    var product = routeSettings.arguments as Product;
+  static Route<ProductScreen> route(Product product) {
     return CupertinoPageRoute(builder: (context) => ProductScreen(product: product));
   }
 }
