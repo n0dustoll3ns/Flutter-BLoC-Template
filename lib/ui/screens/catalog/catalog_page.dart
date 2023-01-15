@@ -82,11 +82,9 @@ class _CatalogPageState extends State<CatalogPage> {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               controller: _scrollController,
-              children: [
-                // QuickFilters(onFilterChange: (quickFilter) {}),
-                const ChaptersHorizontalView(),
-                const Categories(),
-                const ProductList(),
+              children: const [
+                Categories(),
+                ProductList(),
               ],
             )),
       ),
