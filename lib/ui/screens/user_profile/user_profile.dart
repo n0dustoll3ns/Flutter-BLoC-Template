@@ -24,14 +24,14 @@ class UserProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UserBloc, UserState>(builder: (context, state) {
-      if (state is UserInitial) {
-        return ErrorWidget.builder(FlutterErrorDetails(exception: Exception('Authorization not complete')));
-      } else if (state is UserFailure) {
-        return ErrorBox(message: state.error);
-      } else if (state is UserLoading) {
-        return const LoadingIndicator();
-      }
-      state as UserDataLoaded;
+      // if (state is UserInitial) {
+      //   return ErrorWidget.builder(FlutterErrorDetails(exception: Exception('Authorization not complete')));
+      // } else if (state is UserFailure) {
+      //   return ErrorBox(message: state.error);
+      // } else if (state is UserLoading) {
+      //   return const LoadingIndicator();
+      // }
+      // state as UserDataLoaded;
       return Scaffold(
         appBar: AppBar(
           title: Text(mainPageSections[4]),
@@ -42,21 +42,26 @@ class UserProfile extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             const Avatar(),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
-            PersonalData(userData: state.userData),
+            // PersonalData(userData: state.userData),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
-            BonusesInfo(userData: state.userData),
+            // BonusesInfo(userData: state.userData),
             const LearnMore(),
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Personal data'),
-              onTap: () => Navigator.of(context).push(
-                  CupertinoPageRoute(builder: ((context) => PersonalDataPage(userData: state.userData)))),
+              onTap: () => Navigator.of(context).pushNamed(Routes.personalData),
             ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('Orders'),
               onTap: () => Navigator.of(context).pushNamed(Routes.ordersList),
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(CupertinoIcons.bolt),
+              title: const Text('Active promotions'),
+              onTap: () => Navigator.of(context).pushNamed(Routes.promotionsListPage),
             ),
             const Divider(),
             ListTile(
@@ -80,8 +85,6 @@ class UserProfile extends StatelessWidget {
                   .push(CupertinoPageRoute(builder: ((context) => const AdressesListScreen()))),
             ),
             const Divider(),
-            // const ListTile(leading: Icon(Icons.wallet_rounded), title: Text('My cards')),
-            // const Divider(),
             ListTile(
               leading: const Icon(Icons.card_giftcard_rounded),
               title: const Text('My certificates'),

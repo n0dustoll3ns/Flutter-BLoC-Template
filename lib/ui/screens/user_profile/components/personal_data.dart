@@ -24,7 +24,7 @@ class PersonalData extends StatelessWidget {
             style: Theme.of(context).textTheme.headline4,
           ),
           Text(
-            'Status ${userData.customerStatus.toString().toCapitalized()} позволяет накапливать 10% бонусами с каждоый покупки',
+            'Status ${userData.customerStatus.toString().toCapitalized()} allows you to accumulate 10% from every purchase as bonuses',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PromoActionScreen extends StatelessWidget {
-  const PromoActionScreen({super.key});
+class PromotionsListPage extends StatelessWidget {
+  const PromotionsListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +10,7 @@ class PromoActionScreen extends StatelessWidget {
         title: const Text('Active promotions'),
       ),
       body: ListView(
-        children: [
-          
-        ],
+        children: [],
       ),
     );
   }

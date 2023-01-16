@@ -23,6 +23,7 @@ import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
 import '../../ui/screens/user_profile/certificates/certificates_screen.dart';
 import '../../ui/screens/user_profile/my_orders/orders_list.dart';
+import '../../ui/screens/user_profile/personal_data_screen/personal_data_page.dart';
 import '../../ui/screens/user_profile/promo_actions/promo_actions_screen.dart';
 import '../../ui/screens/user_profile/recievers_list/recievers.dart';
 
@@ -33,7 +34,7 @@ class Routes {
   static const catalog = '/catalog';
   static const loyaltyProgramScreen = '/loyaltyProgramScreen';
   static const aboutShopScreen = '/aboutShopScreen';
-  static const promoActionScreen = '/promoActionScreen';
+  static const promotionsListPage = '/promotionsListPage';
   static const recieversList = '/recieversList';
   static const adressesList = '/adressesList';
   static const checkOut = '/checkOut';
@@ -46,6 +47,7 @@ class Routes {
   static const orderDetailsScreen = '/orderDetailsScreen';
   static const brand = '/brand';
   static const promotionScreen = '/promotionScreen';
+  static const personalData = "/personalData";
 
   static String currentRoute = splash;
 
@@ -71,8 +73,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const LoyaltyProgramScreen());
       case aboutShopScreen:
         return CupertinoPageRoute(builder: (context) => const AboutShopScreen());
-      case promoActionScreen:
-        return CupertinoPageRoute(builder: (context) => const PromoActionScreen());
+      case promotionsListPage:
+        return CupertinoPageRoute(builder: (context) => const PromotionsListPage());
       case recieversList:
         return CupertinoPageRoute(builder: (context) => const RecieversListScreen());
       case adressesList:
@@ -101,6 +103,8 @@ class Routes {
       case brand:
         var brand = routeSettings.arguments as Brand;
         return BrandPage.route(brand);
+      case personalData:
+        return CupertinoPageRoute(builder: ((context) => const PersonalDataPage()));
       default:
         return CupertinoPageRoute(builder: (context) => const Scaffold());
     }
