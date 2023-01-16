@@ -14,7 +14,6 @@ import '../../../features/catalog/products/products_bloc.dart';
 import '../../../features/catalog/products/products_repository.dart';
 import '../../../features/favourite/favourite_categories.dart';
 import 'categories/catagories.dart';
-import 'chapters/chapters_horizontal_view.dart';
 import '../../components/product_list/product_list.dart';
 
 class CatalogPage extends StatefulWidget {

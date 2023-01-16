@@ -4,18 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/routes/routes.dart';
 import 'package:flutter_bloc_template/features/user/states.dart';
 import 'package:flutter_bloc_template/features/user/user_bloc.dart';
-import 'package:flutter_bloc_template/ui/components/error_container.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/components/personal_data.dart';
-import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/recievers.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/reviews/reviews_list.dart';
 
 import '../../../app/routes/constants.dart';
-import 'personal_data_screen/personal_data_page.dart';
 import 'components/avatar.dart';
-import 'components/bonuses_info.dart';
 import 'components/learn_more_button.dart';
 
 class UserProfile extends StatelessWidget {

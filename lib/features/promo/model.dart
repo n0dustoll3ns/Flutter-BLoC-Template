@@ -1,4 +1,3 @@
-import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 
 import '../../utils/urls.dart';
 
