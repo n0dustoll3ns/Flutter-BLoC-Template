@@ -10,6 +10,7 @@ import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/rec
 import 'package:flutter_bloc_template/ui/screens/user_profile/reviews/reviews_list.dart';
 
 import '../../../app/routes/constants.dart';
+import 'components/authorization_form.dart';
 import 'components/avatar.dart';
 import 'components/learn_more_button.dart';
 
@@ -29,13 +30,14 @@ class UserProfile extends StatelessWidget {
       // state as UserDataLoaded;
       return Scaffold(
         appBar: AppBar(
-          title: Text(mainPageSections[4]),
+          title: Text(state is! UserDataLoaded ? mainPageSections[4] : "Login"),
+          centerTitle: true,
           actions: const [MenuButton()],
         ),
         body: ListView(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height / 32),
-            const Avatar(),
+            state is! UserDataLoaded ? const AuthorizationForm() : const Avatar(),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             // PersonalData(userData: state.userData),
             SizedBox(height: MediaQuery.of(context).size.height / 32),

@@ -19,8 +19,8 @@ class CatalogPageBloc extends Bloc<CatalogEvent, CatalogPageState> {
 
   Future<void> _loadPageElements(CatalogPageEnter event, Emitter<CatalogPageState> emitter) async {
     emitter(CatalogPageLoading(categories: state.categories, items: state.items));
-    var inheritedCategories = await categoriesRepository.getInheritedCategories(
-        token: userRepository.token, parentCategoryId: event.category?.id);
+    var inheritedCategories =
+        await categoriesRepository.getInheritedCategories(parentCategoryId: event.category?.id);
     if (inheritedCategories != null) {
       emitter(CatalogPageLoaded(categories: inheritedCategories, items: state.items));
     } else {

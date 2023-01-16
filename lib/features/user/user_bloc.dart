@@ -1,38 +1,37 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
 
 import '../authentication/user_repository.dart';
 import 'states.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
-  final UserRepository userRepository = UserRepository();
-
-  UserBloc() : super(UserInitial()) {
+  final UserRepository repository = UserRepository();
+  final AuthenticationBloc authenticationBloc;
+  UserBloc({required this.authenticationBloc}) : super(UserInitial()) {
     on<Authorized>(loadPersonalData);
     on<EditUserDataButtonPressed>(editUserData);
   }
 
-  Future<void> loadPersonalData(
+  void loadPersonalData(
     Authorized event,
     Emitter<UserState> emit,
   ) async {
-    emit(UserLoading());
-    try {
-      final userData = await userRepository.personalDataRequest(event.token);
-      emit(UserDataLoaded(userData: userData));
-    } catch (error) {
-      emit(UserFailure(error: error.toString()));
-    }
+    emit(UserDataLoaded(userData: event.userData));
   }
 
   Future<void> editUserData(EditUserDataButtonPressed event, Emitter<UserState> emit) async {
-    emit(UserLoading()); 
-    try {
-      final newUserData = await userRepository.personalDataEdit(event.token, event.newUserData);
-      emit(UserDataLoaded(userData: newUserData));
-    } catch (error) {
-      emit(UserFailure(error: error.toString()));
+    var authState = authenticationBloc.state;
+    if (authState is AuthenticationAuthenticated) {
+      emit(UserLoading());
+      try {
+        final newUserData = await repository.personalDataEdit(authState.token, event.newUserData);
+        emit(UserDataLoaded(userData: newUserData));
+      } catch (error) {
+        emit(UserFailure(error: error.toString()));
+      }
     }
   }
 }

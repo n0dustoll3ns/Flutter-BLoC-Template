@@ -32,7 +32,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
   double deliveryRating = 4;
   @override
   void initState() {
-    nameController.text = (userBloc.state as UserDataLoaded).userData.firstName;
+    nameController.text = (userBloc.state as UserDataLoaded).userData.name;
     super.initState();
   }
 
@@ -67,7 +67,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                     if (anonimously) {
                       nameController.text = '';
                     } else {
-                      nameController.text = (userBloc.state as UserDataLoaded).userData.firstName;
+                      nameController.text = (userBloc.state as UserDataLoaded).userData.name;
                     }
                   });
                 },

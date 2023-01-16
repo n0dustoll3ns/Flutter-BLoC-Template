@@ -43,12 +43,11 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
     emit(RecieversLoading(items: state.items));
     var reciever = state.items.firstWhere((element) => element.id == event.item.id);
     try {
-      _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
+      // _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
       reciever.name = event.item.name;
       reciever.phoneNumber = event.item.phoneNumber;
       emit(RecieversUpdated(items: state.items));
-    } on Exception catch (_) {
-    }
+    } on Exception catch (_) {}
   }
 
   void onRecieverRemoved(
@@ -57,11 +56,10 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
   ) {
     emit(RecieversLoading(items: state.items));
     try {
-      _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
+      // _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
       state.items.removeWhere((element) => element.id == event.item.id);
       emit(RecieversUpdated(items: state.items));
-    } on Exception catch (_) {
-    }
+    } on Exception catch (_) {}
   }
 
   void onClearRecievers(

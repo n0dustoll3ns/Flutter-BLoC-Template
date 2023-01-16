@@ -1,12 +1,13 @@
 /* ---  States   --- */
 
-import 'package:pocketbase/pocketbase.dart';
+import 'package:flutter_bloc_template/features/user/states.dart';
 
 abstract class AuthenticationState {}
 
 class AuthenticationAuthenticated extends AuthenticationState {
-  AdminAuth authData;
-  AuthenticationAuthenticated({required this.authData});
+  UserData userData;
+  String token;
+  AuthenticationAuthenticated({required this.userData, required this.token});
 }
 
 class AuthenticationLoading extends AuthenticationState {}
@@ -35,17 +36,6 @@ class LoginButtonPressed extends AuthenticationEvent {
   LoginButtonPressed({required this.userName, required this.password});
 }
 
-class LoggedIn extends AuthenticationEvent {
-  final String token;
-  LoggedIn({
-    required this.token,
-  }) : super([token]);
-
-  @override
-  String toString() => 'LoggedIn { token: $token }';
-}
-
 class LoggedOut extends AuthenticationEvent {
-  @override
-  String toString() => 'LoggedOut';
+  LoggedOut();
 }

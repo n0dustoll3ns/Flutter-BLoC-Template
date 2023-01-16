@@ -16,7 +16,7 @@ class PersonalData extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            '${userData.firstName} ${userData.lastName}',
+            userData.name,
             style: Theme.of(context).textTheme.headline6,
           ),
           Text(

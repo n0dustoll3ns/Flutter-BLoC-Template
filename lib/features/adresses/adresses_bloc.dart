@@ -43,14 +43,13 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
     emit(AdressesLoading(items: state.items));
     var adress = state.items.firstWhere((element) => element.id == event.item.id);
     try {
-      _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
+      // _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
       adress.buildingNumber = event.item.buildingNumber;
       adress.streetName = event.item.streetName;
       adress.town = event.item.town;
       adress.zipCode = event.item.zipCode;
       emit(AdressesUpdated(items: state.items));
-    } on Exception catch (_) {
-    }
+    } on Exception catch (_) {}
   }
 
   void onAdresseRemoved(
@@ -59,11 +58,10 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
   ) {
     emit(AdressesLoading(items: state.items));
     try {
-      _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
+      // _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
       state.items.removeWhere((element) => element.id == event.item.id);
       emit(AdressesUpdated(items: state.items));
-    } on Exception catch (_) {
-    }
+    } on Exception catch (_) {}
   }
 
   void onClearAdresses(

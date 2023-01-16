@@ -13,7 +13,7 @@ class UserDataFields extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dateController = TextEditingController(text: userData.bDay.onlyDate);
+    var dateController = TextEditingController(text: userData.bDay != null ? userData.bDay!.onlyDate : '');
     Future<void> pickDate(BuildContext context) async {
       DateTime? pickedDate = await showDatePicker(
         context: context,
@@ -40,14 +40,8 @@ class UserDataFields extends StatelessWidget {
         SizedBox(height: MediaQuery.of(context).size.height / 32),
         TextField(
           decoration: const InputDecoration(label: Text('First Name')),
-          controller: TextEditingController(text: userData.firstName),
-          onChanged: (value) => userData.firstName = value,
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height / 32),
-        TextField(
-          decoration: const InputDecoration(label: Text('Last Name')),
-          controller: TextEditingController(text: userData.lastName),
-          onChanged: (value) => userData.lastName = value,
+          controller: TextEditingController(text: userData.name),
+          onChanged: (value) => userData.name = value,
         ),
         SizedBox(height: MediaQuery.of(context).size.height / 32),
         TextField(
@@ -59,8 +53,8 @@ class UserDataFields extends StatelessWidget {
         TextField(
             inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
             decoration: const InputDecoration(label: Text('Phone')),
-            controller: TextEditingController(text: userData.mobile.toString()),
-            onChanged: (value) => userData.mobile = int.parse(value),
+            controller: TextEditingController(text: userData.phone.toString()),
+            onChanged: (value) => userData.phone = value,
             keyboardType: TextInputType.number),
         SizedBox(height: MediaQuery.of(context).size.height / 32),
         TextField(
@@ -79,9 +73,7 @@ class UserDataFields extends StatelessWidget {
             onPressed: () {
               var authBlocState = context.read<AuthenticationBloc>().state;
               if (authBlocState is AuthenticationAuthenticated) {
-                context
-                    .read<UserBloc>()
-                    .add(EditUserDataButtonPressed(newUserData: userData, token: authBlocState.authData.token));
+                context.read<UserBloc>().add(EditUserDataButtonPressed(newUserData: userData));
               }
             },
             child: const Text('Save'))

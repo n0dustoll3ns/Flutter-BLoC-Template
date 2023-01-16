@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(
       builder: (context, state) {
         if (state is AuthenticationAuthenticated) {
-          initializeUserData(context, state.authData.token);
+          initializeUserData(context, state);
           return const MainScreen();
         }
         return Scaffold(
@@ -42,10 +42,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void initializeUserData(BuildContext context, String token) {
-    context.read<UserBloc>().add(Authorized(token: token));
-    context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: token));
-    context.read<AdressesBloc>().add(AuthComplete(token: token));
+  void initializeUserData(BuildContext context, AuthenticationAuthenticated authState) {
+    context.read<UserBloc>().add(Authorized(userData: authState.userData));
+    context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: authState.token));
+    context.read<AdressesBloc>().add(AuthComplete(token: authState.token));
     context.read<PaymentMethodsBloc>().add(AllowLoadPaymentMethods());
   }
 }

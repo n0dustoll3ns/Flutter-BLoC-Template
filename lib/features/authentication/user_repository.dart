@@ -1,59 +1,32 @@
 import 'package:pocketbase/pocketbase.dart';
 
-import 'package:flutter_bloc_template/features/user/states.dart';
+import '../../utils/urls.dart';
+import '../user/states.dart';
 
 class UserRepository {
-  String token = '';
-  final pb = PocketBase('https://pocketbase.dancheg97.ru/');
-
-  Future<AdminAuth?> authenticate({
+  Future<RecordAuth> authenticate({
     required String username,
     required String password,
   }) async {
-    AdminAuth authData = await pb.admins.authWithPassword(username, password);
+    final authData = await pb.collection('users').authWithPassword(username, password);
     return authData;
   }
 
-  Future<void> deleteToken() async {
-    /// delete from keystore/keychain
-    await Future.delayed(const Duration(seconds: 1));
-    return;
-  }
-
-  void persistToken(String token) async {
-    /// write to keystore/keychain
-    await Future.delayed(const Duration(seconds: 1));
-  }
-
-  Future<bool> hasToken() async {
-    /// read from keystore/keychain
-    await Future.delayed(const Duration(seconds: 1));
-    return false;
-  }
-
-  Future<UserData> personalDataRequest(String token) async {
-    /// read user data
-    await Future.delayed(const Duration(seconds: 3));
-    return UserData(
-        userLogin: 'Max12345',
-        firstName: 'Maxim',
-        lastName: 'Krivosheun',
-        email: 'Krivoshein_max12@gmail.com',
-        mobile: 89252554321,
-        bDay: DateTime(1987, 12, 1),
-        customerStatus: Status.silver);
+  Future<RecordAuth> authRefresh(String token) async {
+    final authData = await pb.collection('users').authRefresh(headers: {"Authorization": token});
+    return authData;
   }
 
   Future<UserData> personalDataEdit(String token, UserData newUserData) async {
-    var res = UserData(
-        userLogin: newUserData.userLogin,
-        firstName: newUserData.firstName,
-        lastName: newUserData.lastName,
-        email: newUserData.email,
-        mobile: newUserData.mobile,
-        bDay: newUserData.bDay,
-        customerStatus: newUserData.customerStatus);
-    await Future.delayed(const Duration(milliseconds: 1200));
+    final authData = await pb
+        .collection('users')
+        .update(newUserData.id, body: newUserData.toJson, headers: {"Authorization": token});
+
+    var res = UserData.fromJson(authData.id, authData.data);
     return res;
+  }
+
+  void logOut() async {
+    pb.authStore.clear();
   }
 }

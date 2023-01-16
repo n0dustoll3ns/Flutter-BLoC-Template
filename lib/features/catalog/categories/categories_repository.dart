@@ -5,7 +5,7 @@ import '../products/model/product.dart';
 import 'model/model.dart';
 
 class CategoriesRepository {
-  Future<List<Category>?> getInheritedCategories({required String token, String? parentCategoryId}) async {
+  Future<List<Category>?> getInheritedCategories({String? parentCategoryId}) async {
     List<Category>? res;
 
     try {

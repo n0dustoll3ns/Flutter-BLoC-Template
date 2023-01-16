@@ -1,57 +1,74 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/user/states.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:pocketbase/pocketbase.dart';
 
+import '../../app/routes/constants.dart';
 import 'states.dart';
 import 'user_repository.dart';
 
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
-  final UserRepository userRepository = UserRepository();
+  final UserRepository repository = UserRepository();
+
+  // AndroidOptions _getAndroidOptions() => const AndroidOptions(
+  //       encryptedSharedPreferences: true,
+  //     );
 
   AuthenticationBloc() : super(AuthenticationUnauthenticated()) {
     on<AppStarted>(_startApp);
     on<LoginButtonPressed>(_tryAuthorize);
-    on<LoggedIn>(_login);
     on<LoggedOut>(_logOut);
   }
 
   Future<void> _startApp(
     AppStarted event,
-    Emitter<AuthenticationState> emitter,
+    Emitter<AuthenticationState> emit,
   ) async {
-    final bool hasToken = await userRepository.hasToken();
-    if (hasToken) {
-      emitter(AuthenticationAuthenticated(authData: AdminAuth()));
-    } else {
-      emitter(AuthenticationUnauthenticated());
+    try {
+      final flutterSecureStorage = const FlutterSecureStorage();
+      var mayBeToken = await flutterSecureStorage.read(
+        key: secureStorageTokenKey,
+        // aOptions: _getAndroidOptions(),
+      );
+      RecordAuth authData;
+      if (mayBeToken != null) {
+        authData = await repository.authRefresh(mayBeToken);
+      } else {
+        emit(AuthenticationUnauthenticated());
+        return;
+      }
+      emit(AuthenticationAuthenticated(
+          token: authData.token, userData: UserData.fromJson(authData.record!.id, authData.record!.data)));
+    } on Exception catch (_) {
+      emit(AuthenticationUnauthenticated());
     }
   }
 
   Future<void> _tryAuthorize(LoginButtonPressed event, Emitter<AuthenticationState> emitter) async {
     emitter(AuthenticationLoading());
     try {
-      var adminAuth = await userRepository.authenticate(username: event.userName, password: event.password);
-      if (adminAuth != null) {
-        emitter(AuthenticationAuthenticated(authData: adminAuth));
+      var authData = await repository.authenticate(username: event.userName, password: event.password);
+      if (authData != null) {
+        emitter(AuthenticationAuthenticated(
+            token: authData.token, userData: UserData.fromJson(authData.record!.id, authData.record!.data)));
+        const FlutterSecureStorage().write(key: secureStorageTokenKey, value: authData.token);
       } else {
-        emitter(AuthenticationFailed(message: 'failed'));
+        emitter(AuthenticationFailed(message: 'Authorization failed'));
       }
     } on Exception catch (e) {
       emitter(AuthenticationFailed(message: e.toString()));
     }
   }
 
-  void _login(LoggedIn event, Emitter<AuthenticationState> emitter) {
-    emitter(AuthenticationLoading());
-    userRepository.persistToken(event.token);
-    emitter(AuthenticationAuthenticated(authData: AdminAuth()));
-  }
-
-  void _logOut(
+  Future<void> _logOut(
     LoggedOut event,
     Emitter<AuthenticationState> emitter,
   ) async {
-    emitter(AuthenticationLoading());
-    await userRepository.deleteToken();
-    emitter(AuthenticationUnauthenticated());
+    try {
+      repository.logOut();
+      emitter(AuthenticationUnauthenticated());
+    } on Exception catch (_) {
+      // TODO
+    }
   }
 }

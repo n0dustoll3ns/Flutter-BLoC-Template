@@ -5,3 +5,5 @@ const List<String> mainPageSections = [
   'Favourite',
   'Profile',
 ];
+
+const secureStorageTokenKey = 'flutter_eshop_template_auth';
