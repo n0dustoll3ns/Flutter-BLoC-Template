@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/states.dart';
-import 'package:flutter_bloc_template/features/user/states.dart';
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
+import 'package:flutter_bloc_template/features/user/model.dart';
 import 'package:flutter_bloc_template/utils/date_without_time.dart';
 
 class UserDataFields extends StatelessWidget {
@@ -14,6 +13,7 @@ class UserDataFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dateController = TextEditingController(text: userData.bDay != null ? userData.bDay!.onlyDate : '');
+    
     Future<void> pickDate(BuildContext context) async {
       DateTime? pickedDate = await showDatePicker(
         context: context,
@@ -73,7 +73,7 @@ class UserDataFields extends StatelessWidget {
             onPressed: () {
               var authBlocState = context.read<AuthenticationBloc>().state;
               if (authBlocState is AuthenticationAuthenticated) {
-                context.read<UserBloc>().add(EditUserDataButtonPressed(newUserData: userData));
+                context.read<AuthenticationBloc>().add(EditUserDataButtonPressed(newUserData: userData));
               }
             },
             child: const Text('Save'))

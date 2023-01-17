@@ -3,11 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart' as recievers;
 
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 import '../../../features/adresses/adresses_bloc.dart';
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';
-import '../../../features/user/states.dart';
 import '../main_screen.dart';
 import 'components/login_form.dart';
 
@@ -43,7 +41,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void initializeUserData(BuildContext context, AuthenticationAuthenticated authState) {
-    context.read<UserBloc>().add(Authorized(userData: authState.userData));
     context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: authState.token));
     context.read<AdressesBloc>().add(AuthComplete(token: authState.token));
     context.read<PaymentMethodsBloc>().add(AllowLoadPaymentMethods());

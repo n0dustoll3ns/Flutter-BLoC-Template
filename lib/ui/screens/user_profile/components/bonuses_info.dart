@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../features/user/states.dart';
+import '../../../../features/user/model.dart';
 
 class BonusesInfo extends StatelessWidget {
   final UserData userData;

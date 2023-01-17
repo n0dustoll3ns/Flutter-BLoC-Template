@@ -13,7 +13,6 @@ import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as 
 import 'package:flutter_bloc_template/features/promo/main_page_promos_bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
 import '../features/authentication/states.dart';
@@ -39,13 +38,11 @@ class App extends StatelessWidget {
         userRepository: authenticationBloc.repository,
         categoriesRepository: CategoriesRepository(),
         productsRepository: ProductsRepository());
-    var userBloc = UserBloc(authenticationBloc: authenticationBloc);
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthenticationBloc>(create: (context) => authenticationBloc),
         BlocProvider<CatalogPageProductsBloc>(create: (_) => CatalogPageProductsBloc()),
         BlocProvider(create: ((context) => categoriesBloc)),
-        BlocProvider(create: (_) => userBloc),
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => tizers.TizersBloc()..add(tizers.AppStarted())),
         BlocProvider(

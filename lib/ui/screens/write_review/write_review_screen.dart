@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/features/reviews/model.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
-import 'package:flutter_bloc_template/features/user/states.dart';
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../features/catalog/products/model/product.dart';
@@ -26,13 +26,13 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
   bool anonimously = false;
   TextEditingController nameController = TextEditingController();
   TextEditingController commentController = TextEditingController();
-  late UserBloc userBloc = context.read<UserBloc>();
+  late AuthenticationBloc userBloc = context.read<AuthenticationBloc>();
   double orderRating = 4;
   double qualityRating = 4;
   double deliveryRating = 4;
   @override
   void initState() {
-    nameController.text = (userBloc.state as UserDataLoaded).userData.name;
+    nameController.text = (userBloc.state as AuthenticationAuthenticated).userData.name;
     super.initState();
   }
 
@@ -67,7 +67,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                     if (anonimously) {
                       nameController.text = '';
                     } else {
-                      nameController.text = (userBloc.state as UserDataLoaded).userData.name;
+                      nameController.text = (userBloc.state as AuthenticationAuthenticated).userData.name;
                     }
                   });
                 },

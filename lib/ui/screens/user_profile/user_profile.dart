@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/routes/routes.dart';
-import 'package:flutter_bloc_template/features/user/states.dart';
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
+import 'package:flutter_bloc_template/features/user/model.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
 import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/recievers.dart';
@@ -19,7 +20,7 @@ class UserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserBloc, UserState>(builder: (context, state) {
+    return BlocBuilder<AuthenticationBloc, AuthenticationState>(builder: (context, state) {
       // if (state is UserInitial) {
       //   return ErrorWidget.builder(FlutterErrorDetails(exception: Exception('Authorization not complete')));
       // } else if (state is UserFailure) {
@@ -30,14 +31,14 @@ class UserProfile extends StatelessWidget {
       // state as UserDataLoaded;
       return Scaffold(
         appBar: AppBar(
-          title: Text(state is! UserDataLoaded ? mainPageSections[4] : "Login"),
+          title: Text(state is! AuthenticationAuthenticated ? mainPageSections[4] : "Login"),
           centerTitle: true,
           actions: const [MenuButton()],
         ),
         body: ListView(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height / 32),
-            state is! UserDataLoaded ? const AuthorizationForm() : const Avatar(),
+            state is! AuthenticationAuthenticated ? const AuthorizationForm() : const Avatar(),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             // PersonalData(userData: state.userData),
             SizedBox(height: MediaQuery.of(context).size.height / 32),

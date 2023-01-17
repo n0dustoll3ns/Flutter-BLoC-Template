@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/user/states.dart';
+import 'package:flutter_bloc_template/features/user/model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:pocketbase/pocketbase.dart';
 
@@ -18,6 +18,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     on<AppStarted>(_startApp);
     on<LoginButtonPressed>(_tryAuthorize);
     on<LoggedOut>(_logOut);
+    on<EditUserDataButtonPressed>(_editUserData);
   }
 
   Future<void> _startApp(
@@ -70,5 +71,17 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     } on Exception catch (_) {
       // TODO
     }
+  }
+
+  Future<void> _editUserData(
+    EditUserDataButtonPressed event,
+    Emitter<AuthenticationState> emitter,
+  ) async {
+    // try {
+    //   repository.logOut();
+    //   emitter(AuthenticationUnauthenticated());
+    // } on Exception catch (_) {
+    //   // TODO
+    // }
   }
 }

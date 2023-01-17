@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/user/states.dart';
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
 
 import '../../../../features/authentication/auth_bloc.dart';
 import '../../../../features/authentication/states.dart';
@@ -22,9 +20,6 @@ class _AuthorizationFormState extends State<AuthorizationForm> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(listener: (context, state) {
       if (state is AuthenticationFailed) _showMessageInSnackBar(state.message);
-      if (state is AuthenticationAuthenticated) {
-        context.read<UserBloc>().add(Authorized(userData: state.userData));
-      }
     }, builder: (context, state) {
       return Form(
         child: Column(

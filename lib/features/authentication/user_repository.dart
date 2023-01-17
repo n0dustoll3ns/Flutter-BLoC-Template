@@ -1,7 +1,7 @@
 import 'package:pocketbase/pocketbase.dart';
 
 import '../../utils/urls.dart';
-import '../user/states.dart';
+import '../user/model.dart';
 
 class UserRepository {
   Future<RecordAuth> authenticate({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/utils/string_capitalize.dart';
 
-import '../../../../features/user/states.dart';
+import '../../../../features/user/model.dart';
 
 class PersonalData extends StatelessWidget {
   final UserData userData;

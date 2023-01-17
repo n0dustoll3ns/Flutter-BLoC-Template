@@ -1,6 +1,6 @@
 /* ---  States   --- */
 
-import 'package:flutter_bloc_template/features/user/states.dart';
+import 'package:flutter_bloc_template/features/user/model.dart';
 
 abstract class AuthenticationState {}
 
@@ -39,3 +39,9 @@ class LoginButtonPressed extends AuthenticationEvent {
 class LoggedOut extends AuthenticationEvent {
   LoggedOut();
 }
+
+class EditUserDataButtonPressed extends AuthenticationEvent {
+  final UserData newUserData;
+  EditUserDataButtonPressed({required this.newUserData});
+}
+

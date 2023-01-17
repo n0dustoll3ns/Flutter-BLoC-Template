@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/user/states.dart';
-import 'package:flutter_bloc_template/features/user/user_bloc.dart';
+import 'package:flutter_bloc_template/features/user/model.dart';
 
+import '../../../../features/authentication/auth_bloc.dart';
+import '../../../../features/authentication/states.dart';
 import '../../../components/error_container.dart';
 import '../../../components/loading_indicator.dart';
 import '../components/avatar.dart';
@@ -16,15 +17,15 @@ class PersonalDataPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserBloc, UserState>(builder: (context, state) {
-      if (state is UserInitial) {
-        return const ErrorBox(message: 'Somethig went wrong');
-      } else if (state is UserFailure) {
-        return ErrorBox(message: state.error);
-      } else if (state is UserLoading) {
+    return BlocBuilder<AuthenticationBloc, AuthenticationState>(builder: (context, state) {
+      if (state is AuthenticationUnauthenticated) {
+        return const ErrorBox(message: 'You are ');
+      } else if (state is AuthenticationFailed) {
+        return ErrorBox(message: state.message);
+      } else if (state is AuthenticationLoading) {
         return const LoadingIndicator();
       }
-      state as UserDataLoaded;
+      state as AuthenticationAuthenticated;
       return Scaffold(
         appBar: AppBar(title: const Text('Personal Data')),
         body: ListView(
