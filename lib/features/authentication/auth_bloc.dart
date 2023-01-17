@@ -20,13 +20,13 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     on<LoggedOut>(_logOut);
     on<EditUserDataButtonPressed>(_editUserData);
   }
+  final flutterSecureStorage = const FlutterSecureStorage();
 
   Future<void> _startApp(
     AppStarted event,
     Emitter<AuthenticationState> emit,
   ) async {
     try {
-      final flutterSecureStorage = const FlutterSecureStorage();
       var mayBeToken = await flutterSecureStorage.read(
         key: secureStorageTokenKey,
         // aOptions: _getAndroidOptions(),
@@ -67,6 +67,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   ) async {
     try {
       repository.logOut();
+      flutterSecureStorage.delete(key: secureStorageTokenKey);
       emitter(AuthenticationUnauthenticated());
     } on Exception catch (_) {
       // TODO
