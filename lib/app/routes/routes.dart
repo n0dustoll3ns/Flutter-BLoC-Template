@@ -15,7 +15,6 @@ import '../../ui/screens/checkout/checkout_screen.dart';
 import '../../ui/screens/checkout/payment_redirect_page/payment_redirect_page.dart';
 import '../../ui/screens/loyalty_program/loyalty_program_screen.dart';
 import '../../ui/screens/main_screen.dart';
-import '../../ui/screens/login_screen/login_screen.dart';
 import '../../ui/screens/promotion/promotion_screen.dart';
 import '../../ui/screens/splash_screen.dart';
 import '../../ui/screens/user_profile/adresses_list/adresses.dart';
@@ -30,7 +29,6 @@ import '../../ui/screens/write_review/write_review_screen.dart';
 class Routes {
   static const splash = 'splash';
   static const home = '/';
-  static const login = '/login';
   static const signUp = '/signUp';
   static const catalog = '/catalog';
   static const loyaltyProgramScreen = '/loyaltyProgramScreen';
@@ -61,8 +59,6 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const SplashScreen());
       case home:
         return CupertinoPageRoute(builder: (context) => const MainScreen());
-      case login:
-        return CupertinoPageRoute(builder: (context) => const LoginPage());
       case signUp:
         return CupertinoPageRoute(builder: (context) => const SignUpScreen());
       case catalog:

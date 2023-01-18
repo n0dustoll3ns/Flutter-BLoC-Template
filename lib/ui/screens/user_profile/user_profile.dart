@@ -11,13 +11,20 @@ import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/rec
 import 'package:flutter_bloc_template/ui/screens/user_profile/reviews/reviews_list.dart';
 
 import '../../../app/routes/constants.dart';
+import '../../styles/constants.dart';
 import 'components/authorization_form.dart';
 import 'components/avatar.dart';
 import 'components/learn_more_button.dart';
 
-class UserProfile extends StatelessWidget {
+class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
 
+  @override
+  State<UserProfile> createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
+  bool accentAuthorize = false;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(builder: (context, state) {
@@ -38,7 +45,9 @@ class UserProfile extends StatelessWidget {
         body: ListView(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height / 32),
-            state is! AuthenticationAuthenticated ? const AuthorizationForm() : const Avatar(),
+            state is! AuthenticationAuthenticated
+                ? AuthorizationForm(accentAuthorize: accentAuthorize)
+                : const Avatar(),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             // PersonalData(userData: state.userData),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
@@ -49,7 +58,9 @@ class UserProfile extends StatelessWidget {
               title: const Text('Personal data'),
               onTap: () {
                 if (state is! AuthenticationAuthenticated) {
-                  Navigator.of(context).pushNamed(Routes.login);
+                  setState(() => accentAuthorize = true);
+                  Future.delayed(
+                      shakeDuration*2, () => setState(() => accentAuthorize = false));
                 } else {
                   Navigator.of(context).pushNamed(Routes.personalData);
                 }
