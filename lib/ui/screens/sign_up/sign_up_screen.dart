@@ -12,7 +12,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _repeatController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   decoration: const InputDecoration(
                     label: Text('Email'),
                   ),
-                  controller: _usernameController,
+                  controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   validator: (input) => input != null && input.isValidEmail() ? null : "Check your email",
                 ),
@@ -106,8 +106,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   Future<void> _onSignupButtonPressed() async {
     final body = <String, dynamic>{
-      "username": _usernameController.text.replaceAll('@', "_"),
-      "email": _usernameController.text,
+      "username": _emailController.text.replaceAll('@', "_"),
+      "email": _emailController.text,
       "emailVisibility": true,
       "password": _passwordController.text,
       "passwordConfirm": _repeatController.text,
@@ -119,7 +119,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     final record = await pb.collection('users').create(body: body);
 
-    await pb.collection('users').requestVerification('test@example.com');
+    await pb.collection('users').requestVerification(_emailController.text);
   }
 
   Future<void> _pickDate(BuildContext context) async {
