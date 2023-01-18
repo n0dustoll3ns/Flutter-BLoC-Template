@@ -47,7 +47,13 @@ class UserProfile extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Personal data'),
-              onTap: () => Navigator.of(context).pushNamed(Routes.personalData),
+              onTap: () {
+                if (state is! AuthenticationAuthenticated) {
+                  Navigator.of(context).pushNamed(Routes.login);
+                } else {
+                  Navigator.of(context).pushNamed(Routes.personalData);
+                }
+              },
             ),
             const Divider(),
             ListTile(

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../features/authentication/auth_bloc.dart';
 import '../../../../features/authentication/states.dart';
 import '../../../components/loading_indicator.dart';
+import '../../login_screen/components/sign_up_offer.dart';
 
 class AuthorizationForm extends StatefulWidget {
   const AuthorizationForm({super.key});
@@ -51,6 +52,7 @@ class _AuthorizationFormState extends State<AuthorizationForm> {
                     onPressed: _onLoginButtonPressed,
                     child: const Text('Login'),
                   ),
+            const SignUpOfferSection()
           ],
         ),
       );

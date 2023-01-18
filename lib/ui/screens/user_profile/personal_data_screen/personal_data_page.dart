@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_template/features/user/model.dart';
 
 import '../../../../features/authentication/auth_bloc.dart';
 import '../../../../features/authentication/states.dart';

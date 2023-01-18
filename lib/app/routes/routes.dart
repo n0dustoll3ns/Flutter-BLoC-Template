@@ -1,35 +1,37 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
-import 'package:flutter_bloc_template/ui/screens/about_shop/about_shop.dart';
-import 'package:flutter_bloc_template/ui/screens/brand/brand_page.dart';
-import 'package:flutter_bloc_template/ui/screens/catalog/catalog_page.dart';
-import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dart';
-import 'package:flutter_bloc_template/ui/screens/checkout/checkout_complete_page/checkout_complete_page.dart';
-import 'package:flutter_bloc_template/ui/screens/loyalty_program/loyalty_program_screen.dart';
-import 'package:flutter_bloc_template/ui/screens/checkout/payment_redirect_page/payment_redirect_page.dart';
-import 'package:flutter_bloc_template/ui/screens/promotion/promotion_screen.dart';
-import 'package:flutter_bloc_template/ui/screens/splash_screen.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/my_orders/order_details_page.dart';
-import 'package:flutter_bloc_template/ui/screens/write_review/write_review_screen.dart';
+import 'package:flutter_bloc_template/ui/screens/sign_up/sign_up_screen.dart';
 
 import '../../features/brands/model.dart';
+import '../../features/catalog/categories/model/model.dart';
 import '../../features/catalog/products/model/product.dart';
+import '../../ui/screens/about_shop/about_shop.dart';
+import '../../ui/screens/brand/brand_page.dart';
+import '../../ui/screens/catalog/catalog_page.dart';
+import '../../ui/screens/catalog/item_page/item_page.dart';
+import '../../ui/screens/checkout/checkout_complete_page/checkout_complete_page.dart';
 import '../../ui/screens/checkout/checkout_screen.dart';
+import '../../ui/screens/checkout/payment_redirect_page/payment_redirect_page.dart';
+import '../../ui/screens/loyalty_program/loyalty_program_screen.dart';
 import '../../ui/screens/main_screen.dart';
 import '../../ui/screens/login_screen/login_screen.dart';
+import '../../ui/screens/promotion/promotion_screen.dart';
+import '../../ui/screens/splash_screen.dart';
+import '../../ui/screens/user_profile/adresses_list/adresses.dart';
 import '../../ui/screens/user_profile/certificates/certificates_screen.dart';
+import '../../ui/screens/user_profile/my_orders/order_details_page.dart';
 import '../../ui/screens/user_profile/my_orders/orders_list.dart';
 import '../../ui/screens/user_profile/personal_data_screen/personal_data_page.dart';
 import '../../ui/screens/user_profile/promo_actions/promo_actions_screen.dart';
 import '../../ui/screens/user_profile/recievers_list/recievers.dart';
+import '../../ui/screens/write_review/write_review_screen.dart';
 
 class Routes {
   static const splash = 'splash';
   static const home = '/';
-  static const login = 'login';
+  static const login = '/login';
+  static const signUp = '/signUp';
   static const catalog = '/catalog';
   static const loyaltyProgramScreen = '/loyaltyProgramScreen';
   static const aboutShopScreen = '/aboutShopScreen';
@@ -61,6 +63,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const MainScreen());
       case login:
         return CupertinoPageRoute(builder: (context) => const LoginPage());
+      case signUp:
+        return CupertinoPageRoute(builder: (context) => const SignUpScreen());
       case catalog:
         Category? category;
         if (routeSettings.name != null && routeSettings.arguments != null) {
