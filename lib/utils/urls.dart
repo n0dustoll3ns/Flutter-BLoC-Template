@@ -11,3 +11,4 @@ const secondaryBannerFilesUrl = "$baseUrl$filesUrl/secondary_banners";
 const tizersIconsUrl = "$baseUrl$filesUrl/tizers";
 const brandsImagesUrl = "$baseUrl$filesUrl/brands";
 const promoImagesUrl = "$baseUrl$filesUrl/promo";
+const aboutShopImagesUrl = "$baseUrl$filesUrl/about_shop";

@@ -7,6 +7,8 @@ class TizersBloc extends Bloc<TizerEvent, TizersState> {
   TizerRepository repository = TizerRepository();
   TizersBloc() : super(TizersInitial()) {
     on<AppStarted>(onAppStarted);
+    
+    add(AppStarted());
   }
 
   Future<void> onAppStarted(

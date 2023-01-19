@@ -7,6 +7,7 @@ import 'package:flutter_bloc_template/features/catalog/products/products_reposit
 import 'package:flutter_bloc_template/features/checkout/checkout_bloc.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_categories.dart';
 import 'package:flutter_bloc_template/features/favourite/favourite_products_bloc.dart';
+import 'package:flutter_bloc_template/features/home_page_data/about_shop/bloc.dart' as about_shop;
 import 'package:flutter_bloc_template/features/order/orders_bloc.dart';
 import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as popular_categories;
@@ -44,7 +45,7 @@ class App extends StatelessWidget {
         BlocProvider<CatalogPageProductsBloc>(create: (_) => CatalogPageProductsBloc()),
         BlocProvider(create: ((context) => categoriesBloc)),
         BlocProvider(create: (_) => CartBloc()),
-        BlocProvider(create: (_) => tizers.TizersBloc()..add(tizers.AppStarted())),
+        BlocProvider(create: (_) => tizers.TizersBloc()),
         BlocProvider(
             create: (_) =>
                 popular_categories.PopularCategoriesBloc()..add(const popular_categories.AppStarted())),
@@ -54,6 +55,7 @@ class App extends StatelessWidget {
         BlocProvider(
             create: (_) => secondary_banners.SecondaryBannersBloc()..add(secondary_banners.AppStarted())),
         BlocProvider(create: (_) => FavouriteBloc()),
+        BlocProvider(create: (_) => about_shop.AboutShopBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
         BlocProvider(create: (_) => PromosBloc()),
         BlocProvider(

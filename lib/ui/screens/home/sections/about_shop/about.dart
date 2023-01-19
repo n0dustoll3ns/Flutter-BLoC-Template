@@ -1,66 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/ui/components/error_container.dart';
 
 import '../../../../../app/routes/routes.dart';
+import '../../../../../features/home_page_data/about_shop/bloc.dart';
+import '../../../../components/loading_indicator.dart';
 
 class SectionAbout extends StatelessWidget {
   const SectionAbout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.75,
-      child: Column(
-        children: [
-          InkWell(
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 4,
-              child: Stack(
-                fit: StackFit.expand,
+    return BlocBuilder<AboutShopBloc, AboutShopState>(builder: (context, state) {
+      if (state is AboutShopLoading) return const LoadingIndicator();
+      if (state is AboutShopUpdated) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            InkWell(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 4,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Image.network(
+                      state.details.imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                    Icon(
+                      Icons.play_circle_filled_rounded,
+                      size: MediaQuery.of(context).size.width / 8,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.asset(
-                    'assets/images/bg.jpg',
-                    fit: BoxFit.cover,
+                  Text(
+                    'About Company',
+                    style: Theme.of(context).textTheme.labelMedium,
                   ),
-                  Icon(
-                    Icons.play_circle_filled_rounded,
-                    size: MediaQuery.of(context).size.width / 8,
-                    color: Theme.of(context).primaryColor,
+                  Text(
+                    state.details.title,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  Text(
+                    state.details.description,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    overflow: TextOverflow.fade,
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                        onPressed: () => Navigator.of(context).pushNamed(Routes.aboutShopScreen),
+                        child: const Text('Learn more')),
                   ),
                 ],
               ),
             ),
-          ),
-          Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'About Company',
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
-                Text(
-                  'E-Shop in N-City',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                Expanded(
-                  child: Text(
-                    lorem(paragraphs: 3, words: 115),
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    overflow: TextOverflow.fade,
-                  ),
-                ),
-                ElevatedButton(
-                    onPressed: () => Navigator.of(context).pushNamed(Routes.aboutShopScreen),
-                    child: const Text('Learn more')),
-              ],
-            ),
-          ))
-        ],
-      ),
-    );
+          ],
+        );
+      }
+      return const ErrorBox();
+    });
   }
 }
