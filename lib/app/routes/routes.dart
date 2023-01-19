@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/ui/screens/sign_up/sign_up_screen.dart';
+import 'package:flutter_bloc_template/ui/screens/user_profile/reviews/reviews_list.dart';
 
 import '../../features/brands/model.dart';
 import '../../features/catalog/categories/model/model.dart';
@@ -40,6 +41,7 @@ class Routes {
   static const paymentRedirect = '/paymentRedirect';
   static const checkoutCompletePage = '/checkoutCompletePage';
   static const ordersList = '/ordersList';
+  static const reviewList = '/reviewList';
   static const writeReview = '/writeReview';
   static const certificatesScreen = '/certificatesScreen';
   static const productScreen = '/productScreen';
@@ -88,6 +90,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const OrdersListPage());
       case certificatesScreen:
         return CupertinoPageRoute(builder: (context) => const CertificatesScreen());
+      case reviewList:
+        return CupertinoPageRoute(builder: (context) => const ReviewsList());
       case writeReview:
         return WriteReviewScreen.route(routeSettings);
       case promotionScreen:

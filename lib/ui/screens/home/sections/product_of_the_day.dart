@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/products_repository.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
@@ -8,6 +9,8 @@ import 'package:flutter_bloc_template/ui/screens/catalog/item_page/item_page.dar
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../app/routes/routes.dart';
+import '../../../../features/authentication/auth_bloc.dart';
+import '../../../../features/authentication/states.dart';
 
 class ProductOfTheDay extends StatefulWidget {
   const ProductOfTheDay({super.key});
@@ -77,8 +80,10 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
                               Icons.star,
                               color: Colors.amber,
                             ),
-                            onRatingUpdate: (rating) => Navigator.pushNamed(context, Routes.writeReview,
-                                arguments: asyncSnapshot.data!),
+                            onRatingUpdate: (rating) => actionIfauthorized(
+                              () => Navigator.pushNamed(context, Routes.writeReview,
+                                  arguments: asyncSnapshot.data!),
+                            ),
                           ),
                           Text(
                             asyncSnapshot.data!.name,
@@ -117,6 +122,14 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
               );
       },
     );
+  }
+
+  void actionIfauthorized(Function func) {
+    if (context.read<AuthenticationBloc>().state is! AuthenticationAuthenticated) {
+      context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 4));
+    } else {
+      func();
+    }
   }
 
   @override

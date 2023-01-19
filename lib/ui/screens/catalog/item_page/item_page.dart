@@ -11,6 +11,9 @@ import 'package:flutter_bloc_template/ui/screens/home/sections/brands/brand_tile
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../app/routes/routes.dart';
+import '../../../../features/authentication/auth_bloc.dart';
+import '../../../../features/authentication/states.dart';
+import '../../../../features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import '../../../../features/brands/model.dart';
 import '../../../../features/brands/repository.dart';
 import '../../../../features/catalog/products/model/product.dart';
@@ -98,21 +101,20 @@ class _ProductScreenState extends State<ProductScreen> {
             children: [
               Expanded(
                 child: RatingBar.builder(
-                  initialRating: widget.product.rating,
-                  itemSize: MediaQuery.of(context).size.width / 15,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
-                  itemBuilder: (context, _) => const Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                  ),
-                  onRatingUpdate: (rating) {
-                    // print(rating);
-                  },
-                ),
+                    initialRating: widget.product.rating,
+                    itemSize: MediaQuery.of(context).size.width / 15,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
+                    itemBuilder: (context, _) => const Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                        ),
+                    onRatingUpdate: (rating) => actionIfauthorized(
+                          () => Navigator.pushNamed(context, Routes.writeReview, arguments: widget.product),
+                        )),
               ),
               if (widget.product.brandId != null && widget.product.brandId != '')
                 FutureBuilder<Brand>(
@@ -250,5 +252,13 @@ class _ProductScreenState extends State<ProductScreen> {
         ],
       ),
     );
+  }
+
+  void actionIfauthorized(Function func) {
+    if (context.read<AuthenticationBloc>().state is! AuthenticationAuthenticated) {
+      context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 4));
+    } else {
+      func();
+    }
   }
 }
