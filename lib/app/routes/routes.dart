@@ -25,6 +25,7 @@ import '../../ui/screens/user_profile/my_orders/orders_list.dart';
 import '../../ui/screens/user_profile/personal_data_screen/personal_data_page.dart';
 import '../../ui/screens/user_profile/promo_actions/promo_actions_screen.dart';
 import '../../ui/screens/user_profile/recievers_list/recievers.dart';
+import '../../ui/screens/write_review/write_review_complete.dart';
 import '../../ui/screens/write_review/write_review_screen.dart';
 
 class Routes {
@@ -43,6 +44,7 @@ class Routes {
   static const ordersList = '/ordersList';
   static const reviewList = '/reviewList';
   static const writeReview = '/writeReview';
+  static const writeReviewCompleteScreen = '/writeReviewCompleteScreen';
   static const certificatesScreen = '/certificatesScreen';
   static const productScreen = '/productScreen';
   static const orderDetailsScreen = '/orderDetailsScreen';
@@ -92,6 +94,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => const CertificatesScreen());
       case reviewList:
         return CupertinoPageRoute(builder: (context) => const ReviewsList());
+      case writeReviewCompleteScreen:
+        return CupertinoPageRoute(builder: (context) => const WriteReviewCompleteScreen());
       case writeReview:
         return WriteReviewScreen.route(routeSettings);
       case promotionScreen:

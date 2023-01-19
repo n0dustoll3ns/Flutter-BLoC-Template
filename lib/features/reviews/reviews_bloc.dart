@@ -1,7 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/model.dart';
 
+import 'repository.dart';
+
 class ReviewsBloc extends Bloc<ReviewEvent, ReviewsState> {
+  ReviewsRepository repository = ReviewsRepository();
   ReviewsBloc() : super(ReviewsInitial()) {
     on<AddReview>(onReviewAdded);
     on<Authorized>(loadUserReviews);

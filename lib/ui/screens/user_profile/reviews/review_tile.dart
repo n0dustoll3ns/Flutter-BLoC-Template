@@ -43,7 +43,7 @@ class ReviewTile extends StatelessWidget {
                           ),
                           RatingBar.builder(
                             ignoreGestures: true,
-                            initialRating: review.orderRating,
+                            initialRating: review.productRating,
                             itemSize: MediaQuery.of(context).size.width / 17,
                             minRating: 1,
                             direction: Axis.horizontal,
