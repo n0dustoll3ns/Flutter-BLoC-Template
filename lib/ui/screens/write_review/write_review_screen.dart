@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/states.dart';
+import 'package:flutter_bloc_template/features/reviews/model.dart';
 import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -22,7 +23,6 @@ class WriteReviewScreen extends StatefulWidget {
 }
 
 class _WriteReviewScreenState extends State<WriteReviewScreen> {
-  
   bool anonimously = false;
   TextEditingController nameController = TextEditingController();
   TextEditingController commentController = TextEditingController();
@@ -191,11 +191,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
           Padding(
             padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.width / 44),
             child: ElevatedButton(
-              onPressed: () {
-                context.read<ReviewsBloc>().add(AddReview(
-                    item: ));
-                Navigator.of(context).pop();
-              },
+              onPressed: sendReview,
               child: const Text(
                 'Send review',
               ),
@@ -204,5 +200,19 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
         ],
       ),
     );
+  }
+
+  sendReview() {
+    context.read<ReviewsBloc>().add(AddReview(
+        item: Review(
+            id: '',
+            authorId: context.read<AuthenticationAuthenticated>().userData.id,
+            productId: widget.product.id,
+            anonimously: anonimously,
+            comment: commentController.text,
+            images: [],
+            productRating: qualityRating,
+            deliveryRating: deliveryRating)));
+    Navigator.of(context).pop();
   }
 }

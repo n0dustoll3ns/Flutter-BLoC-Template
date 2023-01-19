@@ -1,29 +1,33 @@
+import 'dart:math';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/model.dart';
+import 'package:flutter_bloc_template/features/user/model.dart';
 
 import 'repository.dart';
 
 class ReviewsBloc extends Bloc<ReviewEvent, ReviewsState> {
   ReviewsRepository repository = ReviewsRepository();
   ReviewsBloc() : super(ReviewsInitial()) {
-    on<AddReview>(onReviewAdded);
     on<Authorized>(loadUserReviews);
+    on<AddReview>(onSendReview);
   }
 
-  void onReviewAdded(
+  Future<void> loadUserReviews(
+    Authorized event,
+    Emitter<ReviewsState> emit,
+  ) async {
+    emit(ReviewsLoading(items: state.items));
+    var reviews = await repository.getMyReviews(token: event.token, myUserId: event.userData.id);
+    emit(ReviewsUpdated(items: reviews));
+  }
+
+  void onSendReview(
     AddReview event,
     Emitter<ReviewsState> emit,
   ) {
     state.items.add(event.item);
     emit(ReviewsUpdated(items: state.items));
-  }
-
-  void loadUserReviews(
-    Authorized event,
-    Emitter<ReviewsState> emit,
-  ) {
-    List<Review> reviews = [];
-    emit(ReviewsUpdated(items: reviews));
   }
 }
 
@@ -36,6 +40,10 @@ abstract class ReviewsState {
 
 class ReviewsInitial extends ReviewsState {
   ReviewsInitial() : super(items: []);
+}
+
+class ReviewsLoading extends ReviewsState {
+  ReviewsLoading({required super.items});
 }
 
 class ReviewsUpdated extends ReviewsState {
@@ -54,5 +62,10 @@ class AddReview extends ReviewEvent {
 }
 
 class Authorized extends ReviewEvent {
-  Authorized();
+  final UserData userData;
+  final String token;
+  Authorized({
+    required this.userData,
+    required this.token,
+  });
 }
