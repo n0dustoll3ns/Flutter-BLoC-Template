@@ -6,10 +6,10 @@ import 'repository.dart';
 class PromosBloc extends Bloc<PromosEvent, PromosState> {
   PromoRepository repository = PromoRepository();
   PromosBloc() : super(PromosInitial()) {
-    on<InitializePromos>(onInitPromosData);
+    on<InitializePromos>(loadPromosData);
   }
 
-  Future<void> onInitPromosData(
+  Future<void> loadPromosData(
     InitializePromos event,
     Emitter<PromosState> emit,
   ) async {
