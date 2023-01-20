@@ -46,13 +46,13 @@ class _UserProfileState extends State<UserProfile> {
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Personal data'),
-              onTap: () => actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.personalData)),
+              onTap: () => _actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.personalData)),
             ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.shopping_bag_outlined),
               title: const Text('Orders'),
-              onTap: () => actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.ordersList)),
+              onTap: () => _actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.ordersList)),
             ),
             const Divider(),
             ListTile(
@@ -64,26 +64,26 @@ class _UserProfileState extends State<UserProfile> {
             ListTile(
               leading: const Icon(Icons.comment_rounded),
               title: const Text('Reviews'),
-              onTap: () => actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.reviewList)),
+              onTap: () => _actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.reviewList)),
             ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.people_rounded),
               title: const Text('My receivers'),
-              onTap: () => actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.recieversList)),
+              onTap: () => _actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.recieversList)),
             ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.gite_outlined),
               title: const Text('My adresses'),
-              onTap: () => actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.adressesList)),
+              onTap: () => _actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.adressesList)),
             ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.card_giftcard_rounded),
               title: const Text('My certificates'),
               onTap: () =>
-                  actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.certificatesScreen)),
+                  _actionIfauthorized(() => Navigator.of(context).pushNamed(Routes.certificatesScreen)),
             ),
             const Divider(),
           ],
@@ -92,14 +92,17 @@ class _UserProfileState extends State<UserProfile> {
     });
   }
 
-  void actionIfauthorized(Function func) {
+  void _actionIfauthorized(Function func) {
     if (context.read<AuthenticationBloc>().state is! AuthenticationAuthenticated) {
-      setState(() => accentAuthorize = true);
-      Future.delayed(shakeDuration * 2, () => setState(() => accentAuthorize = false));
-      controller.animateTo(controller.initialScrollOffset,
-          duration: shakeDuration, curve: Curves.bounceInOut);
+      _focusOnAuthFrom();
     } else {
       func();
     }
+  }
+
+  void _focusOnAuthFrom() {
+    setState(() => accentAuthorize = true);
+    Future.delayed(shakeDuration * 2, () => setState(() => accentAuthorize = false));
+    controller.animateTo(controller.initialScrollOffset, duration: shakeDuration, curve: Curves.bounceInOut);
   }
 }

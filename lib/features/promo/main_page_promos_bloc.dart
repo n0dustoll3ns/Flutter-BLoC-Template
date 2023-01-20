@@ -13,7 +13,7 @@ class PromosBloc extends Bloc<PromosEvent, PromosState> {
     InitializePromos event,
     Emitter<PromosState> emit,
   ) async {
-    emit(PromosLoading());
+    emit(PromosLoading(promotions: state.promotions));
     var promotions = await repository.loadAllPromos();
     emit(PromosUpdated(promotions: promotions));
   }
@@ -21,23 +21,20 @@ class PromosBloc extends Bloc<PromosEvent, PromosState> {
 
 /* ---  States   --- */
 abstract class PromosState {
-  final List<Promo> promotions = [];
-
-  PromosState();
+  final List<Promo> promotions;
+  PromosState({required this.promotions});
 }
 
 class PromosInitial extends PromosState {
-  PromosInitial();
+  PromosInitial() : super(promotions: []);
 }
 
 class PromosLoading extends PromosState {
-  PromosLoading();
+  PromosLoading({required super.promotions});
 }
 
 class PromosUpdated extends PromosState {
-  PromosUpdated({required List<Promo> promotions}) {
-    promotions.addAll(promotions);
-  }
+  PromosUpdated({required super.promotions});
 }
 
 /* ---  Events   --- */

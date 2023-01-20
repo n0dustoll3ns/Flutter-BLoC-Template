@@ -13,7 +13,6 @@ import 'package:flutter_bloc_template/features/payment/methods/payment_methods.d
 import 'package:flutter_bloc_template/features/popular_categories/bloc.dart' as popular_categories;
 import 'package:flutter_bloc_template/features/promo/main_page_promos_bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
-import 'package:flutter_bloc_template/features/reviews/reviews_bloc.dart';
 
 import '../features/authentication/auth_bloc.dart';
 import '../features/authentication/states.dart';
@@ -57,7 +56,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => FavouriteBloc()),
         BlocProvider(create: (_) => about_shop.AboutShopBloc()),
         BlocProvider(create: (_) => FavouriteCategoriesBloc()),
-        BlocProvider(create: (_) => PromosBloc()),
+        BlocProvider(create: (_) => PromosBloc()..add(InitializePromos())),
         BlocProvider(
             create: (_) => main_page_promotions_bloc.MainPagePromotionsBloc()
               ..add(main_page_promotions_bloc.AppStarted())),

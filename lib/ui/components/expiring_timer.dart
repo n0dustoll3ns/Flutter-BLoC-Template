@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ExpiringTimer extends StatelessWidget {
   final DateTime expiringTimer;
-  const ExpiringTimer({super.key, required this.expiringTimer});
+  final Color? backgroungColor;
+  const ExpiringTimer({super.key, required this.expiringTimer, this.backgroungColor});
 
   @override
   Widget build(BuildContext context) {
@@ -10,6 +11,7 @@ class ExpiringTimer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
+          color: backgroungColor,
           borderRadius: BorderRadius.circular(5),
           border: Border.all(width: 0.8, color: Colors.grey.withOpacity(0.6))),
       // height: 35,
