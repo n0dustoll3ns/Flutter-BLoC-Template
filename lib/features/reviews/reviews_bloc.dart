@@ -1,16 +1,18 @@
-import 'dart:math';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reviews/model.dart';
 import 'package:flutter_bloc_template/features/user/model.dart';
 
 import 'repository.dart';
 
-class ReviewsBloc extends Bloc<ReviewEvent, ReviewsState> {
+class MyReviewsBloc extends Bloc<ReviewEvent, ReviewsState> {
   ReviewsRepository repository = ReviewsRepository();
-  ReviewsBloc() : super(ReviewsInitial()) {
+  MyReviewsBloc({
+    required UserData userData,
+    required String token,
+  }) : super(ReviewsInitial()) {
     on<Authorized>(loadUserReviews);
     on<AddReview>(onSendReview);
+    add(Authorized(userData: userData, token: token));
   }
 
   Future<void> loadUserReviews(

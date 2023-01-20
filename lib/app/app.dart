@@ -41,9 +41,9 @@ class App extends StatelessWidget {
         productsRepository: ProductsRepository());
     return MultiBlocProvider(
       providers: [
-        BlocProvider<AuthenticationBloc>(create: (context) => authenticationBloc),
-        BlocProvider<CatalogPageProductsBloc>(create: (_) => CatalogPageProductsBloc()),
-        BlocProvider(create: ((context) => categoriesBloc)),
+        BlocProvider(create: (_) => authenticationBloc),
+        BlocProvider(create: (_) => CatalogPageProductsBloc()),
+        BlocProvider(create: ((_) => categoriesBloc)),
         BlocProvider(create: (_) => CartBloc()),
         BlocProvider(create: (_) => tizers.TizersBloc()),
         BlocProvider(
@@ -65,12 +65,11 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => AdressesBloc(userRepository: authenticationBloc.repository)),
         BlocProvider(create: (_) => OrdersBloc()),
         BlocProvider(create: (_) => PaymentMethodsBloc()),
-        BlocProvider(create: (_) => ReviewsBloc()),
         BlocProvider(create: (_) => BottomNavBarBloc()),
         BlocProvider(create: (context) => CheckoutBloc(ordersBloc: context.read<OrdersBloc>())),
       ],
       child: MaterialApp(
-        builder: (BuildContext context, Widget? widget) {
+        builder: (BuildContext _, Widget? widget) {
           ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
             return CustomError(errorDetails: errorDetails);
           };

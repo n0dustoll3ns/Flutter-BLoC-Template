@@ -38,9 +38,7 @@ class RecieverEditPage extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-              onPressed: () {
-                completeEditing(context, nameController, phoneController);
-              },
+              onPressed: () => completeEditing(context, nameController, phoneController),
               child: const Text('Save'))
         ],
       ),

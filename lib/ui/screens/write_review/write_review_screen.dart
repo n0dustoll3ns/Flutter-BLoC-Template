@@ -203,7 +203,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
   }
 
   sendReview() {
-    context.read<ReviewsBloc>().add(AddReview(
+    context.read<MyReviewsBloc>().add(AddReview(
         item: Review(
             id: '',
             authorId: context.read<AuthenticationAuthenticated>().userData.id,
