@@ -175,30 +175,33 @@ class _ProductScreenState extends State<ProductScreen> {
                           color: Theme.of(context).primaryColor,
                           size: MediaQuery.of(context).size.height / 12,
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'The product is included to promotions',
-                              style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
-                            ),
-                            ...snapshot.data!.map(
-                              (promo) => InkWell(
-                                onTap: () =>
-                                    Navigator.pushNamed(context, Routes.promotionScreen, arguments: promo),
-                                child: Text(
-                                  promo.title,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                                      decoration: TextDecoration.underline,
-                                      height: 1.2,
-                                      fontWeight: FontWeight.w400),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                'The product is included to promotions',
+                                style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              ...snapshot.data!.map(
+                                (promo) => InkWell(
+                                  onTap: () =>
+                                      Navigator.pushNamed(context, Routes.promotionScreen, arguments: promo),
+                                  child: Text(
+                                    promo.title,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                        decoration: TextDecoration.underline,
+                                        height: 1.2,
+                                        fontWeight: FontWeight.w400),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         )
                       ],
                     )
