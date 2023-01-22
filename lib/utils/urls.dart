@@ -1,8 +1,9 @@
 import 'package:pocketbase/pocketbase.dart';
 
-PocketBase pb = PocketBase('https://pocketbase.dancheg97.ru');
+PocketBase pb = PocketBase(localUrl);
 
 const baseUrl = "https://pocketbase.dancheg97.ru";
+const localUrl = "http://127.0.0.1:8090";
 const filesUrl = "/api/files";
 const categoriesFilesUrl = "$baseUrl$filesUrl/categories";
 const productsFilesUrl = "$baseUrl$filesUrl/products";
