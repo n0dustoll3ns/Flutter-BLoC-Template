@@ -117,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       "status": "standart"
     };
 
-    final record = await pb.collection('users').create(body: body);
+    await pb.collection('users').create(body: body);
 
     await pb.collection('users').requestVerification(_emailController.text);
   }

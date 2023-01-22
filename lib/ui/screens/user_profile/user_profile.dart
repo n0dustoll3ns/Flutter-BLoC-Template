@@ -5,9 +5,6 @@ import 'package:flutter_bloc_template/app/routes/routes.dart';
 import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/adresses_list/adresses.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/recievers_list/recievers.dart';
-import 'package:flutter_bloc_template/ui/screens/user_profile/reviews/reviews_list.dart';
 
 import '../../../app/routes/constants.dart';
 import '../../styles/constants.dart';

@@ -1,5 +1,5 @@
 class Reciever {
-  final int id;
+  final String id;
   String name;
   int phoneNumber;
   Reciever({
@@ -7,4 +7,7 @@ class Reciever {
     required this.name,
     required this.phoneNumber,
   });
+  Reciever.fromJson({required this.id, required Map json})
+      : name = json['name'],
+        phoneNumber = int.parse(json['phone_number']);
 }

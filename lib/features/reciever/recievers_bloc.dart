@@ -2,13 +2,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/model.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_repository.dart';
 
-import '../authentication/user_repository.dart';
+import '../user/model.dart';
 
 class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
-  final UserRepository userRepository;
   final RecieversRepository _recieversRepository = RecieversRepository();
 
-  RecieversBloc({required this.userRepository}) : super(RecieversInitial()) {
+  RecieversBloc() : super(RecieversInitial()) {
     on<Authorized>(onAuthorizationComplete);
     on<AddReciever>(onRecieverAdded);
     on<UpdateReciever>(onRecieverUpdated);
@@ -20,44 +19,51 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
     Authorized event,
     Emitter<RecieversState> emit,
   ) async {
+    emit(RecieversInitial());
     emit(RecieversLoading(items: state.items));
-    var res = await _recieversRepository.loadRecievers(
-      token: event.token,
-    );
+    var res = await _recieversRepository.loadRecievers(token: event.token,);
     state.items.addAll(res);
     emit(RecieversUpdated(items: state.items));
   }
 
-  void onRecieverAdded(
+  Future<void> onRecieverAdded(
     AddReciever event,
     Emitter<RecieversState> emit,
-  ) {
-    state.items.add(event.item);
+  ) async {
+    emit(RecieversLoading(items: state.items));
+    var res = await _recieversRepository.createReciever(
+        token: event.token, userId: event.userData.id, reciever: event.item);
+    state.items.add(res);
     emit(RecieversUpdated(items: state.items));
   }
 
-  void onRecieverUpdated(
+  Future<void> onRecieverUpdated(
     UpdateReciever event,
     Emitter<RecieversState> emit,
-  ) {
+  ) async {
     emit(RecieversLoading(items: state.items));
-    var reciever = state.items.firstWhere((element) => element.id == event.item.id);
     try {
-      // _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
-      reciever.name = event.item.name;
-      reciever.phoneNumber = event.item.phoneNumber;
+      emit(RecieversLoading(items: state.items));
+      var res = await _recieversRepository.updateReciever(
+          token: event.token, userId: event.userData.id, reciever: event.item);
+      var index = state.items.indexWhere((element) => element.id == res.id);
+      state.items.replaceRange(index, index + 1, [res]);
       emit(RecieversUpdated(items: state.items));
-    } on Exception catch (_) {}
+    } on Exception catch (_) {
+    }
   }
 
-  void onRecieverRemoved(
+  Future<void> onRecieverRemoved(
     RemoveReciever event,
     Emitter<RecieversState> emit,
-  ) {
+  ) async{
     emit(RecieversLoading(items: state.items));
     try {
-      // _recieversRepository.updateReciever(token: userRepository.token, reciever: event.item);
-      state.items.removeWhere((element) => element.id == event.item.id);
+      emit(RecieversLoading(items: state.items));
+      var recieverId = event.item.id;
+      await _recieversRepository.removeReciever(
+          token: event.token, userId: event.userData.id, recieverId: recieverId);
+      state.items.removeWhere((element) => element.id == recieverId);
       emit(RecieversUpdated(items: state.items));
     } on Exception catch (_) {}
   }
@@ -97,22 +103,29 @@ abstract class RecieverEvent {
 
 class AddReciever extends RecieverEvent {
   Reciever item;
-  AddReciever({required this.item});
+  UserData userData;
+  String token;
+  AddReciever({required this.item, required this.userData, required this.token});
 }
 
 class UpdateReciever extends RecieverEvent {
   Reciever item;
-  UpdateReciever({required this.item});
+  UserData userData;
+  String token;
+  UpdateReciever({required this.item, required this.userData, required this.token});
 }
 
 class Authorized extends RecieverEvent {
-  final String token;
-  Authorized({required this.token});
+  UserData userData;
+  String token;
+  Authorized({required this.userData, required this.token});
 }
 
 class RemoveReciever extends RecieverEvent {
   Reciever item;
-  RemoveReciever({required this.item});
+  UserData userData;
+  String token;
+  RemoveReciever({required this.item, required this.userData, required this.token});
 }
 
 class ClearRecievers extends RecieverEvent {

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
@@ -17,6 +19,9 @@ class RecieversListScreen extends StatelessWidget {
         actions: const [MenuButton()],
       ),
       body: BlocBuilder<RecieversBloc, RecieversState>(builder: (context, state) {
+        var userData = (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).userData;
+        var token = (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).token;
+
         return ListView(
           padding: EdgeInsets.all(MediaQuery.of(context).size.width / 22),
           children: [
@@ -27,7 +32,11 @@ class RecieversListScreen extends StatelessWidget {
                 leading: const Icon(CupertinoIcons.person_alt),
                 trailing: IconButton(
                     onPressed: () {
-                      context.read<RecieversBloc>().add(RemoveReciever(item: state.items[index]));
+                      context.read<RecieversBloc>().add(RemoveReciever(
+                            item: state.items[index],
+                            token: token,
+                            userData: userData,
+                          ));
                     },
                     icon: const Icon(CupertinoIcons.trash)),
                 title: Text(state.items[index].name),

@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart';
 
+import '../../../../features/authentication/auth_bloc.dart';
+import '../../../../features/authentication/states.dart';
 import '../../../../features/reciever/model.dart';
 
 class RecieverEditPage extends StatelessWidget {
@@ -47,16 +49,31 @@ class RecieverEditPage extends StatelessWidget {
 
   void completeEditing(
       BuildContext context, TextEditingController nameController, TextEditingController phoneController) {
+    var userData = (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).userData;
+    var token = (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).token;
+
     if (reciever != null) {
-      context.read<RecieversBloc>().add(UpdateReciever(
-          item: Reciever(
-              name: nameController.text, phoneNumber: int.parse(phoneController.text), id: reciever!.id)));
+      context.read<RecieversBloc>().add(
+            UpdateReciever(
+              item: Reciever(
+                name: nameController.text,
+                phoneNumber: int.parse(phoneController.text),
+                id: reciever!.id,
+              ),
+              token: token,
+              userData: userData,
+            ),
+          );
     } else {
       context.read<RecieversBloc>().add(AddReciever(
-          item: Reciever(
-              name: nameController.text,
-              phoneNumber: int.parse(phoneController.text),
-              id: context.read<RecieversBloc>().state.items.map((e) => e.id).toList().reduce(max) + 1)));
+            item: Reciever(
+                name: nameController.text,
+                phoneNumber: int.parse(phoneController.text),
+                id: '',
+                ),
+            token: token,
+            userData: userData,
+          ));
     }
     Navigator.of(context).pop();
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart' as recievers;
+import 'package:flutter_bloc_template/features/user/model.dart';
 import 'package:flutter_bloc_template/ui/styles/constants.dart';
 import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 
@@ -20,10 +22,15 @@ class _AuthorizationFormState extends State<AuthorizationForm> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  void _authorized(BuildContext context, UserData userData, String token) {
+    context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: token, userData: userData));
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthenticationBloc, AuthenticationState>(listener: (context, state) {
       if (state is AuthenticationFailed) _showMessageInSnackBar(state.message);
+      if (state is AuthenticationAuthenticated) _authorized(context, state.userData, state.token);
     }, builder: (context, state) {
       return AnimatedContainer(
         margin: EdgeInsets.all(MediaQuery.of(context).size.height / 55),

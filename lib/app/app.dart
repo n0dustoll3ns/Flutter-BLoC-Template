@@ -60,7 +60,7 @@ class App extends StatelessWidget {
         BlocProvider(
             create: (_) => main_page_promotions_bloc.MainPagePromotionsBloc()
               ..add(main_page_promotions_bloc.AppStarted())),
-        BlocProvider(create: (_) => RecieversBloc(userRepository: authenticationBloc.repository)),
+        BlocProvider(create: (_) => RecieversBloc()),
         BlocProvider(create: (_) => AdressesBloc(userRepository: authenticationBloc.repository)),
         BlocProvider(create: (_) => OrdersBloc()),
         BlocProvider(create: (_) => PaymentMethodsBloc()),
