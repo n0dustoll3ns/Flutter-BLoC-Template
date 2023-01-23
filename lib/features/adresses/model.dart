@@ -2,13 +2,19 @@ class Adress {
   String buildingNumber;
   String streetName;
   String town;
-  int zipCode;
-  final int id;
+  String zipCode;
+  final String id;
   Adress({
+    required this.id,
     required this.buildingNumber,
     required this.streetName,
     required this.town,
     required this.zipCode,
-    required this.id,
   });
+
+  Adress.fromJson({required this.id, required Map json})
+      : buildingNumber = json['building_number'],
+        streetName = json['street_name'],
+        town = json['town'],
+        zipCode = json['zipcode'];
 }

@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../authentication/user_repository.dart';
+import '../user/model.dart';
 import 'adresses_repository.dart';
 import 'model.dart';
 
@@ -10,7 +11,7 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
 
   AdressesBloc({required this.userRepository}) : super(AdressesInitial()) {
     on<AuthComplete>(onAuthorizationComplete);
-    on<AddAdress>(onAdresseAdded);
+    on<CreateAdress>(onAdresseAdded);
     on<UpdateAdress>(onAdresseUpdated);
     on<RemoveAdress>(onAdresseRemoved);
     on<ClearAdresses>(onClearAdresses);
@@ -20,34 +21,35 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
     AuthComplete event,
     Emitter<AdressesState> emit,
   ) async {
+    emit(AdressesInitial());
     emit(AdressesLoading(items: state.items));
-    var res = await _adressesRepository.loadAdresses(
-      token: event.token,
-    );
+    var res = await _adressesRepository.loadAdresses(token: event.token);
     state.items.addAll(res);
     emit(AdressesUpdated(items: state.items));
   }
 
-  void onAdresseAdded(
-    AddAdress event,
+  Future<void> onAdresseAdded(
+    CreateAdress event,
     Emitter<AdressesState> emit,
-  ) {
-    state.items.add(event.item);
+  ) async {
+    emit(AdressesLoading(items: state.items));
+    var res = await _adressesRepository.createAdress(
+        token: event.token, userId: event.userData.id, adress: event.item);
+    state.items.add(res);
     emit(AdressesUpdated(items: state.items));
   }
 
-  void onAdresseUpdated(
+  Future<void> onAdresseUpdated(
     UpdateAdress event,
     Emitter<AdressesState> emit,
-  ) {
+  ) async {
     emit(AdressesLoading(items: state.items));
-    var adress = state.items.firstWhere((element) => element.id == event.item.id);
     try {
-      // _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
-      adress.buildingNumber = event.item.buildingNumber;
-      adress.streetName = event.item.streetName;
-      adress.town = event.item.town;
-      adress.zipCode = event.item.zipCode;
+      emit(AdressesLoading(items: state.items));
+      var res = await _adressesRepository.updateAdress(
+          token: event.token, userId: event.userData.id, adress: event.item);
+      var index = state.items.indexWhere((element) => element.id == res.id);
+      state.items.replaceRange(index, index + 1, [res]);
       emit(AdressesUpdated(items: state.items));
     } on Exception catch (_) {}
   }
@@ -97,14 +99,18 @@ abstract class AdressEvent {
   const AdressEvent();
 }
 
-class AddAdress extends AdressEvent {
-  Adress item;
-  AddAdress({required this.item});
+class CreateAdress extends AdressEvent {
+  final Adress item;
+  final UserData userData;
+  final String token;
+  const CreateAdress({required this.item, required this.token, required this.userData});
 }
 
 class UpdateAdress extends AdressEvent {
   Adress item;
-  UpdateAdress({required this.item});
+  UserData userData;
+  String token;
+  UpdateAdress({required this.item, required this.token, required this.userData});
 }
 
 class AuthComplete extends AdressEvent {

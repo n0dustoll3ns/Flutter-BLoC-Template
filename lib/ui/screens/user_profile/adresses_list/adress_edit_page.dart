@@ -1,11 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../features/adresses/model.dart';
 import '../../../../features/adresses/adresses_bloc.dart';
+import '../../../../features/authentication/auth_bloc.dart';
+import '../../../../features/authentication/states.dart';
 
 class AdressEditPage extends StatelessWidget {
   final Adress? adress;
@@ -73,30 +73,37 @@ class AdressEditPage extends StatelessWidget {
     );
   }
 
-  void completeEditing(
+  Future<void> completeEditing(
     BuildContext context,
     TextEditingController buildingNumberController,
     TextEditingController streetNameController,
     TextEditingController townController,
     TextEditingController zipCodeController,
-  ) {
+  ) async {
+    var userData = (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).userData;
+    var token = (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).token;
+
     if (adress != null) {
       context.read<AdressesBloc>().add(UpdateAdress(
-              item: Adress(
+          userData: userData,
+          token: token,
+          item: Adress(
             buildingNumber: buildingNumberController.text,
             streetName: streetNameController.text,
             town: townController.text,
-            zipCode: int.parse(zipCodeController.text),
+            zipCode: zipCodeController.text,
             id: adress!.id,
           )));
     } else {
-      context.read<AdressesBloc>().add(AddAdress(
-              item: Adress(
+      context.read<AdressesBloc>().add(CreateAdress(
+          userData: userData,
+          token: token,
+          item: Adress(
             buildingNumber: buildingNumberController.text,
             streetName: streetNameController.text,
             town: townController.text,
-            zipCode: int.parse(zipCodeController.text),
-            id: context.read<AdressesBloc>().state.items.map((e) => e.id).toList().reduce(max) + 1,
+            zipCode: zipCodeController.text,
+            id: '',
           )));
     }
     Navigator.of(context).pop();

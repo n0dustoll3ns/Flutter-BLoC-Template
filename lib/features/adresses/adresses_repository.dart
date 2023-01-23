@@ -1,29 +1,45 @@
+import '../../utils/urls.dart';
 import 'model.dart';
 
 class AdressesRepository {
   Future<List<Adress>> loadAdresses({required String token}) async {
-    await Future.delayed(const Duration(milliseconds: 600));
-    List<Adress> adresses = [
-      Adress(
-        id: 0,
-        buildingNumber: '45A',
-        streetName: 'HW White',
-        town: 'Lauterbrunnen',
-        zipCode: 12345,
-      ),
-      Adress(
-        id: 1,
-        buildingNumber: '413A',
-        streetName: 'Street White',
-        town: 'Grindelwald',
-        zipCode: 345678,
-      ),
-    ];
-    return adresses;
+    var records = await pb.collection('adresses').getFullList(
+      headers: {"Authorization": token},
+    );
+
+    List<Adress> adresss = records.map((e) => Adress.fromJson(id: e.id, json: e.data)).toList();
+    return adresss;
   }
 
-  Future<void> updateAdress({required String token, required Adress adress}) async {
-    await Future.delayed(const Duration(milliseconds: 700));
+  Future<Adress> createAdress({required String token, required String userId, required Adress adress}) async {
+    var data = {
+      "zipcode": adress.zipCode,
+      "town": adress.town,
+      "street_name": adress.streetName,
+      "building_number": adress.buildingNumber,
+      "owner": userId
+    };
+
+    var record = await pb.collection('adresses').create(body: data, headers: {"Authorization": token});
+    return Adress.fromJson(id: record.id, json: record.data);
+  }
+
+  Future<void> removeAdress({required String token, required String userId, required String adressId}) async {
+    await pb.collection('adresses').delete(adressId, headers: {"Authorization": token});
     return;
+  }
+
+  Future<Adress> updateAdress({required String token, required String userId, required Adress adress}) async {
+    var data = {
+      "zipcode": adress.zipCode,
+      "town": adress.town,
+      "street_name": adress.streetName,
+      "building_number": adress.buildingNumber,
+      "owner": userId
+    };
+
+    var record =
+        await pb.collection('adresss').update(adress.id, body: data, headers: {"Authorization": token});
+    return Adress.fromJson(id: record.id, json: record.data);
   }
 }
