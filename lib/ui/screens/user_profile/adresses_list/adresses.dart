@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/ui/components/loading_indicator.dart';
 import 'package:flutter_bloc_template/ui/components/menu_button.dart';
 
@@ -28,7 +30,13 @@ class AdressesListScreen extends StatelessWidget {
                 leading: const Icon(CupertinoIcons.person_alt),
                 trailing: IconButton(
                     onPressed: () {
-                      context.read<AdressesBloc>().add(RemoveAdress(item: state.items[index]));
+                      var token =
+                          (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).token;
+                      var userData =
+                          (context.read<AuthenticationBloc>().state as AuthenticationAuthenticated).userData;
+                      context
+                          .read<AdressesBloc>()
+                          .add(RemoveAdress(item: state.items[index], token: token, userData: userData));
                     },
                     icon: const Icon(CupertinoIcons.trash)),
                 title: Text('${state.items[index].town}, ${state.items[index].zipCode}'),

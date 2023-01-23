@@ -54,13 +54,15 @@ class AdressesBloc extends Bloc<AdressEvent, AdressesState> {
     } on Exception catch (_) {}
   }
 
-  void onAdresseRemoved(
+  Future<void> onAdresseRemoved(
     RemoveAdress event,
     Emitter<AdressesState> emit,
-  ) {
+  ) async {
     emit(AdressesLoading(items: state.items));
     try {
-      // _adressesRepository.updateAdress(token: userRepository.token, adress: event.item);
+      emit(AdressesLoading(items: state.items));
+      await _adressesRepository.removeAdress(
+          token: event.token, userId: event.userData.id, adressId: event.item.id);
       state.items.removeWhere((element) => element.id == event.item.id);
       emit(AdressesUpdated(items: state.items));
     } on Exception catch (_) {}
@@ -115,12 +117,15 @@ class UpdateAdress extends AdressEvent {
 
 class AuthComplete extends AdressEvent {
   final String token;
-  AuthComplete({required this.token});
+  final UserData userData;
+  const AuthComplete({required this.token, required this.userData});
 }
 
 class RemoveAdress extends AdressEvent {
-  Adress item;
-  RemoveAdress({required this.item});
+  final Adress item;
+  final UserData userData;
+  final String token;
+  const RemoveAdress({required this.item, required this.token, required this.userData});
 }
 
 class ClearAdresses extends AdressEvent {

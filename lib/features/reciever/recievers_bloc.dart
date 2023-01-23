@@ -21,7 +21,9 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
   ) async {
     emit(RecieversInitial());
     emit(RecieversLoading(items: state.items));
-    var res = await _recieversRepository.loadRecievers(token: event.token,);
+    var res = await _recieversRepository.loadRecievers(
+      token: event.token,
+    );
     state.items.addAll(res);
     emit(RecieversUpdated(items: state.items));
   }
@@ -49,14 +51,13 @@ class RecieversBloc extends Bloc<RecieverEvent, RecieversState> {
       var index = state.items.indexWhere((element) => element.id == res.id);
       state.items.replaceRange(index, index + 1, [res]);
       emit(RecieversUpdated(items: state.items));
-    } on Exception catch (_) {
-    }
+    } on Exception catch (_) {}
   }
 
   Future<void> onRecieverRemoved(
     RemoveReciever event,
     Emitter<RecieversState> emit,
-  ) async{
+  ) async {
     emit(RecieversLoading(items: state.items));
     try {
       emit(RecieversLoading(items: state.items));
