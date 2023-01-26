@@ -1,3 +1,5 @@
+import '../../utils/urls.dart';
+
 class UserData {
   final String id;
   final String userLogin;
@@ -22,7 +24,7 @@ class UserData {
       : userLogin = json["username"],
         name = json["name"],
         email = json["email"],
-        avatarUrl = json["avatar"],
+        avatarUrl = json["avatar"].isNotEmpty ? '$userDataFilesUrl/$id/${json["avatar"]}': null,
         phone = json["phone"],
         bDay = DateTime.tryParse(json['bDay']),
         customerStatus = Status.values.singleWhere((element) => element.toString() == json['status']);

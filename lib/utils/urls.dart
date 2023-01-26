@@ -12,5 +12,6 @@ const tizersIconsUrl = "$currentUrl$filesUrl/tizers";
 const brandsImagesUrl = "$currentUrl$filesUrl/brands";
 const promoImagesUrl = "$currentUrl$filesUrl/promo";
 const aboutShopImagesUrl = "$currentUrl$filesUrl/about_shop";
+const userDataFilesUrl = "$currentUrl$filesUrl/users";
 
 PocketBase pb = PocketBase(currentUrl);

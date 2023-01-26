@@ -37,7 +37,7 @@ class _UserProfileState extends State<UserProfile> {
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             state is! AuthenticationAuthenticated
                 ? AuthorizationForm(accentAuthorize: accentAuthorize)
-                : const Avatar(),
+                : Avatar(avatarUrl: state.userData.avatarUrl),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             const LearnMore(),
             ListTile(
