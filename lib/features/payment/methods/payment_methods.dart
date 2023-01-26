@@ -6,11 +6,11 @@ import 'model.dart';
 
 class PaymentMethodsBloc extends Bloc<PaymentMethodEvent, PaymentMethodsState> {
   PaymentMethodsBloc() : super(PaymentMethodsInitial()) {
-    on<AllowLoadPaymentMethods>(onPaymentMethodLoad);
+    on<LoadPaymentMethods>(onPaymentMethodLoad);
   }
 
   void onPaymentMethodLoad(
-    AllowLoadPaymentMethods event,
+    LoadPaymentMethods event,
     Emitter<PaymentMethodsState> emit,
   ) async {
     emit(PaymentMethodsLoading());
@@ -53,6 +53,6 @@ abstract class PaymentMethodEvent {
   const PaymentMethodEvent();
 }
 
-class AllowLoadPaymentMethods extends PaymentMethodEvent {
-  AllowLoadPaymentMethods();
+class LoadPaymentMethods extends PaymentMethodEvent {
+  LoadPaymentMethods();
 }

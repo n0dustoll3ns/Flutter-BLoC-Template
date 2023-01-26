@@ -12,9 +12,12 @@ class ItemLine extends StatelessWidget {
       children: [
         SizedBox(
           height: MediaQuery.of(context).size.width / 3,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: item.imageWidget,
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: item.imageWidget,
+            ),
           ),
         ),
         SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart' as recievers;
 import 'package:flutter_bloc_template/features/adresses/adresses_bloc.dart' as adresses;
 import 'package:flutter_bloc_template/features/user/model.dart';
@@ -26,6 +27,7 @@ class _AuthorizationFormState extends State<AuthorizationForm> {
   void _authorized(BuildContext context, UserData userData, String token) {
     context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: token, userData: userData));
     context.read<adresses.AdressesBloc>().add(adresses.AuthComplete(token: token, userData: userData));
+    context.read<PaymentMethodsBloc>().add(LoadPaymentMethods());
   }
 
   @override
