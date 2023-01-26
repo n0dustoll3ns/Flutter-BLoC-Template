@@ -64,7 +64,7 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
                               SizedBox(width: MediaQuery.of(context).size.width / 44),
                               ElevatedButton(
                                   onPressed: () {
-                                    context.read<CartBloc>().add(AddItem(item: asyncSnapshot.data!));
+                                    context.read<CartBloc>().add(AddItem(item: asyncSnapshot.data!, ));
                                   },
                                   child: const Icon(Icons.shopping_bag_rounded)),
                             ],

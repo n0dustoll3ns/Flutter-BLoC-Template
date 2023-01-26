@@ -9,6 +9,7 @@ class UserData {
   String? phone;
   DateTime? bDay;
   Status customerStatus;
+  List<String> cartItemIds;
   UserData({
     required this.id,
     required this.userLogin,
@@ -18,16 +19,18 @@ class UserData {
     this.avatarUrl,
     this.bDay,
     required this.customerStatus,
+    required this.cartItemIds,
   });
 
   UserData.fromJson(this.id, Map json)
       : userLogin = json["username"],
         name = json["name"],
         email = json["email"],
-        avatarUrl = json["avatar"].isNotEmpty ? '$userDataFilesUrl/$id/${json["avatar"]}': null,
+        avatarUrl = json["avatar"].isNotEmpty ? '$userDataFilesUrl/$id/${json["avatar"]}' : null,
         phone = json["phone"],
         bDay = DateTime.tryParse(json['bDay']),
-        customerStatus = Status.values.singleWhere((element) => element.toString() == json['status']);
+        customerStatus = Status.values.singleWhere((element) => element.toString() == json['status']),
+        cartItemIds = List.from(json['cart_items']);
 
   Map<String, dynamic> get toJson => {
         "username": userLogin,
@@ -36,6 +39,7 @@ class UserData {
         "phone": phone,
         'bDay': bDay.toString(),
         'status': customerStatus.toString(),
+        'cart_items': cartItemIds,
       };
 }
 

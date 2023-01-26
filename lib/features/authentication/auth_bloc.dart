@@ -29,7 +29,6 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     try {
       var mayBeToken = await flutterSecureStorage.read(
         key: secureStorageTokenKey,
-        // aOptions: _getAndroidOptions(),
       );
       RecordAuth authData;
       if (mayBeToken != null) {

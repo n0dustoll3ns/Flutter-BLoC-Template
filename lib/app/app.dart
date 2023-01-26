@@ -43,7 +43,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => authenticationBloc),
         BlocProvider(create: (_) => CatalogPageProductsBloc()),
         BlocProvider(create: ((_) => categoriesBloc)),
-        BlocProvider(create: (_) => CartBloc()),
+        BlocProvider(create: (_) => CartBloc(authBloc: authenticationBloc)),
         BlocProvider(create: (_) => tizers.TizersBloc()),
         BlocProvider(
             create: (_) =>

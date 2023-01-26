@@ -114,7 +114,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       "name": _nameController.text,
       "phone": int.tryParse(_phoneController.text),
       "bDay": _bDay.toString(),
-      "status": "standart"
+      "status": "standart",
+      "cart_items": []
     };
 
     await pb.collection('users').create(body: body);

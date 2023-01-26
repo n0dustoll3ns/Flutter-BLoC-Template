@@ -1,12 +1,31 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
+import 'package:flutter_bloc_template/features/cart/cart_repository.dart';
 
 import '../catalog/products/model/product.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
-  CartBloc() : super(CartInitial()) {
+  CartRepository repository = CartRepository();
+  AuthenticationBloc authBloc;
+  CartBloc({required this.authBloc}) : super(CartInitial()) {
+    on<Authorized>(loadSavedCart);
     on<AddItem>(onItemAdded);
     on<RemoveItem>(onItemRemoved);
     on<ClearCart>(onClearCart);
+  }
+
+  Future<void> loadSavedCart(
+    Authorized event,
+    Emitter<CartState> emit,
+  ) async {
+    emit(CartInitial());
+    var productList =
+        await repository.getCartItemsInfo(productIds: event.itemIdList.toSet().toList(), token: event.token);
+    for (var itemId in event.itemIdList) {
+      state.items.add(productList.singleWhere((element) => element.id == itemId));
+    }
+    emit(CartUpdated(items: state.items));
   }
 
   void onItemAdded(
@@ -15,6 +34,14 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) {
     state.items.add(event.item);
     emit(CartUpdated(items: state.items));
+    var authState = authBloc.state;
+    if (authState is AuthenticationAuthenticated) {
+      repository.updateCart(
+        productIds: state.items.map((e) => e.id).toList(),
+        token: authState.token,
+        userId: authState.userData.id,
+      );
+    }
   }
 
   void onItemRemoved(
@@ -23,6 +50,14 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) {
     state.items.removeWhere(((element) => element == event.item));
     emit(CartUpdated(items: state.items));
+    var authState = authBloc.state;
+    if (authState is AuthenticationAuthenticated) {
+      repository.updateCart(
+        productIds: state.items.map((e) => e.id).toList(),
+        token: authState.token,
+        userId: authState.userData.id,
+      );
+    }
   }
 
   void onClearCart(
@@ -30,6 +65,14 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     Emitter<CartState> emit,
   ) {
     emit(CartInitial());
+    var authState = authBloc.state;
+    if (authState is AuthenticationAuthenticated) {
+      repository.updateCart(
+        productIds: [],
+        token: authState.token,
+        userId: authState.userData.id,
+      );
+    }
   }
 }
 
@@ -60,6 +103,12 @@ class CartUpdated extends CartState {
 
 abstract class CartEvent {
   const CartEvent();
+}
+
+class Authorized extends CartEvent {
+  final String token;
+  List<String> itemIdList;
+  Authorized({required this.itemIdList, required this.token});
 }
 
 class AddItem extends CartEvent {
