@@ -16,41 +16,47 @@ class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(mainPageSections[2]),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  context.read<CartBloc>().add(ClearCart());
-                },
-                icon: const Icon(Icons.cleaning_services_rounded)),
-            const MenuButton(),
-          ],
-        ),
-        body: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
-          return ListView(children: [
-            ...List.generate(state.itemsCounted.length, (index) {
-              var item = state.itemsCounted.keys.toList()[index];
-              return Dismissible(
-                background: Container(color: Colors.redAccent),
-                onDismissed: (DismissDirection direction) =>
-                    context.read<CartBloc>().add(RemoveItem(item: item)),
-                key: ValueKey(index),
-                child: ItemCard(
-                  item: item,
-                  count: state.itemsCounted[item]!,
-                ),
-              );
-            }),
-            Padding(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 8),
-              child: Container(
-                padding: EdgeInsets.all(MediaQuery.of(context).size.width / 12),
-                height: MediaQuery.of(context).size.height / 4,
-                decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width / 8)),
-                child: Column(
+      appBar: AppBar(
+        title: Text(mainPageSections[2]),
+        actions: [
+          IconButton(
+              onPressed: () {
+                context.read<CartBloc>().add(ClearCart());
+              },
+              icon: const Icon(Icons.cleaning_services_rounded)),
+          const MenuButton(),
+        ],
+      ),
+      body: ListView(
+        children: [
+          BlocBuilder<CartBloc, CartState>(builder: (context, state) {
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: List.generate(state.itemsCounted.length, (index) {
+                var item = state.itemsCounted.keys.toList()[index];
+                return Dismissible(
+                  background: Container(color: Colors.redAccent),
+                  onDismissed: (DismissDirection direction) =>
+                      context.read<CartBloc>().add(RemoveItem(item: item)),
+                  key: ValueKey(index),
+                  child: ItemCard(
+                    item: item,
+                    count: state.itemsCounted[item]!,
+                  ),
+                );
+              }),
+            );
+          }),
+          Padding(
+            padding: EdgeInsets.all(MediaQuery.of(context).size.width / 8),
+            child: Container(
+              padding: EdgeInsets.all(MediaQuery.of(context).size.width / 12),
+              height: MediaQuery.of(context).size.height / 4,
+              decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width / 8)),
+              child: BlocBuilder<CartBloc, CartState>(builder: (context, state) {
+                return Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
@@ -111,23 +117,25 @@ class Cart extends StatelessWidget {
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.grey),
                     ),
                   ],
-                ),
-              ),
+                );
+              }),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(
-                  child: const Text('Checkout'),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(Routes.checkOut);
-                  }),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: RecomendedItems(
-                  product: Product(description: '', name: '', price: 1, id: '123456', images: [], rating: 1.0)),
-            ),
-          ]);
-        }));
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+                child: const Text('Checkout'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.checkOut);
+                }),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: RecomendedItems(
+                product: Product(description: '', name: '', price: 1, id: '123456', images: [], rating: 1.0)),
+          ),
+        ],
+      ),
+    );
   }
 }
