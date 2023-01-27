@@ -48,6 +48,10 @@ class Product {
           json['properties'].length, (index) => Property.fromJson(json['characteristics'][index])));
     }
   }
+  @override
+  bool operator ==(Object other) {
+    return other is Product && (id == other.id);
+  }
 }
 
 class ProductWithOffers {}
