@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/routes/routes.dart';
+import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
+import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
-import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/ui/screens/cart/components/item_card.dart';
 
 import '../../../app/routes/constants.dart';
@@ -145,7 +146,15 @@ class Cart extends StatelessWidget {
                     );
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   } else {
-                    Navigator.of(context).pushNamed(Routes.checkOut);
+                    if (context.read<AuthenticationBloc>().state is AuthenticationAuthenticated) {
+                      Navigator.of(context).pushNamed(Routes.checkOut);
+                    } else {
+                      context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 4));
+                      var snackBar = const SnackBar(
+                        content: Text('You must have been authenticated'),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
                   }
                 }),
           ),
