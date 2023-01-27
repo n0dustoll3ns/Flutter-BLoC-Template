@@ -23,7 +23,7 @@ class ProductsRepository {
     return products;
   }
 
-  Future<List<Product>> getRecommendedItems({required String token, required Product product}) async {
+  Future<List<Product>> getRecommendedItems({required String token, required Product? product}) async {
     final response = await pb.collection('products').getList(
           page: Random().nextInt(43) + 1,
           perPage: 6,

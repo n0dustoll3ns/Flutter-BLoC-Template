@@ -10,7 +10,7 @@ import '../../../../../features/catalog/products/model/product.dart';
 import '../../../../components/carousel_dots.dart';
 
 class RecomendedItems extends StatefulWidget {
-  final Product product;
+  final Product? product;
   const RecomendedItems({super.key, required this.product});
 
   @override

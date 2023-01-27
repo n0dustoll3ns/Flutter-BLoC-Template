@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/app/routes/routes.dart';
+import 'package:flutter_bloc_template/features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart';
 import 'package:flutter_bloc_template/features/catalog/products/model/product.dart';
 import 'package:flutter_bloc_template/ui/screens/cart/components/item_card.dart';
@@ -126,13 +127,31 @@ class Cart extends StatelessWidget {
             child: ElevatedButton(
                 child: const Text('Checkout'),
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.checkOut);
+                  if (context.read<CartBloc>().state.items.isEmpty) {
+                    final snackBar = SnackBar(
+                      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.height / 44),
+                      content: Row(
+                        children: [
+                          const Expanded(child: Text('Your cart is empty!')),
+                          TextButton(
+                              style: TextButton.styleFrom(foregroundColor: Theme.of(context).primaryColor),
+                              onPressed: () {
+                                context.read<BottomNavBarBloc>().add(SetBottomNavBarIndex(index: 1));
+                                ScaffoldMessenger.of(context).clearSnackBars();
+                              },
+                              child: const Text('Let\'s shopping'))
+                        ],
+                      ),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  } else {
+                    Navigator.of(context).pushNamed(Routes.checkOut);
+                  }
                 }),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: RecomendedItems(
-                product: Product(description: '', name: '', price: 1, id: '123456', images: [], rating: 1.0)),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: RecomendedItems(product: null),
           ),
         ],
       ),
