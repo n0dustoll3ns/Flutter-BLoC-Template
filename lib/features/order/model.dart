@@ -6,7 +6,7 @@ import '../reciever/model.dart';
 
 class Order {
   final Reciever reciever;
-  final int id;
+  String id;
   final Adress adress;
   final PaymentMethod paymentMethod;
   final List<Product> items;
@@ -35,15 +35,14 @@ class Order {
   }
 
   Order({
+    this.id = '',
     required this.reciever,
     required this.adress,
     required this.paymentMethod,
     required this.items,
     double paid = 0,
-    int? id,
     DateTime? date,
   })  : _paid = paid,
-        id = id ?? 0,
         date = date ?? DateTime.now();
 }
 

@@ -14,7 +14,7 @@ class OrderRepository {
         "user": userId,
         "reciever": order.reciever.id,
         "adress": order.adress.id,
-        "payment_method": order.paymentMethod.name,
+        "payment_method": order.paymentMethod.id,
         "items": order.items.map((e) => e.id).toList(),
         "paid": null
       };
@@ -38,7 +38,13 @@ class OrderRepository {
         PaymentMethod paymentMethod = PaymentMethod.fromJson(
             id: model.expand['payment_method']![0].id, json: model.expand['payment_method']![0].data);
         var items = await _getItemsByIds(productIds: List.from(model.data['items']));
-        orders.add(Order(reciever: reciever, adress: adress, paymentMethod: paymentMethod, items: items));
+        orders.add(Order(
+            id: model.id,
+            reciever: reciever,
+            adress: adress,
+            paymentMethod: paymentMethod,
+            items: items,
+            date: DateTime.tryParse(model.created)));
       }
       return orders;
     } on Exception catch (_) {
