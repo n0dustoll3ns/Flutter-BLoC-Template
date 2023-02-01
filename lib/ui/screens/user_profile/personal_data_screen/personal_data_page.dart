@@ -10,9 +10,7 @@ import '../components/personal_data.dart';
 import 'components/fields.dart';
 
 class PersonalDataPage extends StatelessWidget {
-  const PersonalDataPage({
-    super.key,
-  });
+  const PersonalDataPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class PersonalDataPage extends StatelessWidget {
         body: ListView(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height / 32),
-            const Avatar(),
+            Avatar(avatarUrl: state.userData.avatarUrl),
             SizedBox(height: MediaQuery.of(context).size.height / 32),
             PersonalData(userData: state.userData),
             SizedBox(height: MediaQuery.of(context).size.height / 32),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_template/features/cart/cart_bloc.dart' as cart;
 import 'package:flutter_bloc_template/features/order/orders_bloc.dart' as orders;
-import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 import 'package:flutter_bloc_template/features/reciever/recievers_bloc.dart' as recievers;
 import 'package:flutter_bloc_template/features/adresses/adresses_bloc.dart' as adresses;
 import 'package:flutter_bloc_template/features/user/model.dart';

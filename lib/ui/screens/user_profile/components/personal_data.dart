@@ -17,11 +17,11 @@ class PersonalData extends StatelessWidget {
         children: [
           Text(
             userData.name,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           Text(
             userData.customerStatus.toString().toCapitalized(),
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.displaySmall,
           ),
           Text(
             'Status ${userData.customerStatus.toString().toCapitalized()} allows you to accumulate 10% from every purchase as bonuses',
