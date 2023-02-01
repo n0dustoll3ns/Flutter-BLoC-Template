@@ -26,14 +26,17 @@ class OrderRepository {
     }
   }
 
-  Future<List<Order>?> loadUserOrderList({required String token, required List<PaymentMethod>paymentMethods}) async {
+  Future<List<Order>?> loadUserOrderList({required String token}) async {
     try {
-      var response = await pb.collection('orders').getFullList(expand: 'reciever, adress');
-      List<Order> orders =[];
+      var response = await pb.collection('orders').getFullList(expand: 'reciever, adress, payment_method');
+      List<Order> orders = [];
       for (var model in response) {
-        var reciever = Reciever.fromJson(id: model.expand['reciever']![0].id, json: model.expand['reciever']![0].data);
-        var adress = Adress.fromJson(id: model.expand['adress']![0].id, json: model.expand['adress']![0].data);
-        PaymentMethod paymentMethod = paymentMethods.singleWhere((element) => element.name==model.data['payment_method']);
+        var reciever =
+            Reciever.fromJson(id: model.expand['reciever']![0].id, json: model.expand['reciever']![0].data);
+        var adress =
+            Adress.fromJson(id: model.expand['adress']![0].id, json: model.expand['adress']![0].data);
+        PaymentMethod paymentMethod = PaymentMethod.fromJson(
+            id: model.expand['payment_method']![0].id, json: model.expand['payment_method']![0].data);
         var items = await _getItemsByIds(productIds: List.from(model.data['items']));
         orders.add(Order(reciever: reciever, adress: adress, paymentMethod: paymentMethod, items: items));
       }
@@ -47,8 +50,8 @@ class OrderRepository {
     List<Future<RecordModel>> listLoader = [];
     for (var id in productIds) {
       listLoader.add(pb.collection('products').getOne(
-        id,
-      ));
+            id,
+          ));
     }
     List<RecordModel> list = [];
     for (var modelLoader in listLoader) {
@@ -57,5 +60,4 @@ class OrderRepository {
 
     return list.map((e) => Product.fromJson(e.id, e.data)).toList();
   }
-
 }

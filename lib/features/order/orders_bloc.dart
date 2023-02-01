@@ -4,7 +4,6 @@ import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/features/order/model.dart';
 import 'package:flutter_bloc_template/features/order/order_repository.dart';
-import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 
 import '../catalog/products/model/product.dart';
 import '../reciever/model.dart';
@@ -12,8 +11,7 @@ import '../reciever/model.dart';
 class OrdersBloc extends Bloc<OrderEvent, OrdersState> {
   OrderRepository repository = OrderRepository();
   AuthenticationBloc authenticationBloc;
-  PaymentMethodsBloc paymentMethodsBloc;
-  OrdersBloc({required this.authenticationBloc, required this.paymentMethodsBloc})
+  OrdersBloc({required this.authenticationBloc})
       : super(const OrdersInitial()) {
     on<AddOrder>(onOrderAdded);
     on<Authorized>(onAuthorized);
@@ -52,7 +50,7 @@ class OrdersBloc extends Bloc<OrderEvent, OrdersState> {
   ) async {
     emit(OrderLoading(items: state.items));
     var res = await repository.loadUserOrderList(
-        token: event.token, paymentMethods: paymentMethodsBloc.state.items);
+        token: event.token);
     if (res != null) {
       emit(OrdersUpdated(items: res));
     } else {

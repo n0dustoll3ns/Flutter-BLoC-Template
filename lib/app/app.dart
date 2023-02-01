@@ -38,8 +38,7 @@ class App extends StatelessWidget {
         userRepository: authenticationBloc.repository,
         categoriesRepository: CategoriesRepository(),
         productsRepository: ProductsRepository());
-    var paymentMethodsBloc = PaymentMethodsBloc();
-    paymentMethodsBloc.add(LoadPaymentMethods());
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => authenticationBloc),
@@ -64,10 +63,10 @@ class App extends StatelessWidget {
               ..add(main_page_promotions_bloc.AppStarted())),
         BlocProvider(create: (_) => RecieversBloc()),
         BlocProvider(create: (_) => AdressesBloc(userRepository: authenticationBloc.repository)),
-        BlocProvider(create: (_) => paymentMethodsBloc),
+        BlocProvider(create: (_) => PaymentMethodsBloc()..add(LoadPaymentMethods())),
         BlocProvider(
             create: (_) =>
-                OrdersBloc(authenticationBloc: authenticationBloc, paymentMethodsBloc: paymentMethodsBloc)),
+                OrdersBloc(authenticationBloc: authenticationBloc)),
         BlocProvider(create: (_) => BottomNavBarBloc()),
         BlocProvider(create: (context) => CheckoutBloc(ordersBloc: context.read<OrdersBloc>())),
       ],

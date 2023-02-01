@@ -29,7 +29,6 @@ class _AuthorizationFormState extends State<AuthorizationForm> {
   void _authorized(BuildContext context, UserData userData, String token) {
     context.read<recievers.RecieversBloc>().add(recievers.Authorized(token: token, userData: userData));
     context.read<adresses.AdressesBloc>().add(adresses.AuthComplete(token: token, userData: userData));
-
     context.read<cart.CartBloc>().add(cart.Authorized(token: token, itemIdList: userData.cartItemIds));
     context.read<orders.OrdersBloc>().add(orders.Authorized(token: token));
   }
