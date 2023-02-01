@@ -4,6 +4,7 @@ import 'package:flutter_bloc_template/features/authentication/auth_bloc.dart';
 import 'package:flutter_bloc_template/features/authentication/states.dart';
 import 'package:flutter_bloc_template/features/order/model.dart';
 import 'package:flutter_bloc_template/features/order/order_repository.dart';
+import 'package:flutter_bloc_template/features/payment/methods/payment_methods.dart';
 
 import '../catalog/products/model/product.dart';
 import '../reciever/model.dart';
@@ -11,10 +12,11 @@ import '../reciever/model.dart';
 class OrdersBloc extends Bloc<OrderEvent, OrdersState> {
   OrderRepository repository = OrderRepository();
   AuthenticationBloc authenticationBloc;
-  OrdersBloc({required this.authenticationBloc}) : super(const OrdersInitial()) {
+  PaymentMethodsBloc paymentMethodsBloc;
+  OrdersBloc({required this.authenticationBloc, required this.paymentMethodsBloc})
+      : super(const OrdersInitial()) {
     on<AddOrder>(onOrderAdded);
-    on<RemoveOrder>(onOrderRemoved);
-    on<ClearOrders>(onClearOrders);
+    on<Authorized>(onAuthorized);
   }
 
   List<Product> get orderedItems {
@@ -39,24 +41,23 @@ class OrdersBloc extends Bloc<OrderEvent, OrdersState> {
         list.add(event.item);
         emit(OrdersUpdated(items: list));
       } else {
-        emit(const OrderCreationFailed(items: [], message: 'Order creating has failed.'));
+        emit(const OrderRequestFailed(items: [], message: 'Order creating has failed.'));
       }
     }
   }
 
-  void onOrderRemoved(
-    RemoveOrder event,
+  Future<void> onAuthorized(
+    Authorized event,
     Emitter<OrdersState> emit,
-  ) {
-    state.items.removeWhere(((element) => element == event.item));
-    emit(OrdersUpdated(items: state.items));
-  }
-
-  void onClearOrders(
-    ClearOrders event,
-    Emitter<OrdersState> emit,
-  ) {
-    emit(const OrdersInitial());
+  ) async {
+    emit(OrderLoading(items: state.items));
+    var res = await repository.loadUserOrderList(
+        token: event.token, paymentMethods: paymentMethodsBloc.state.items);
+    if (res != null) {
+      emit(OrdersUpdated(items: res));
+    } else {
+      emit(const OrderRequestFailed(items: [], message: 'Order loading has failed.'));
+    }
   }
 }
 
@@ -80,9 +81,9 @@ class OrderLoading extends OrdersState {
   const OrderLoading({required super.items});
 }
 
-class OrderCreationFailed extends OrdersState {
+class OrderRequestFailed extends OrdersState {
   final String message;
-  const OrderCreationFailed({required super.items, required this.message});
+  const OrderRequestFailed({required super.items, required this.message});
 }
 
 class OrdersUpdated extends OrdersState {
@@ -100,11 +101,7 @@ class AddOrder extends OrderEvent {
   const AddOrder({required this.item});
 }
 
-class RemoveOrder extends OrderEvent {
-  final Order item;
-  const RemoveOrder({required this.item});
-}
-
-class ClearOrders extends OrderEvent {
-  const ClearOrders();
+class Authorized extends OrderEvent {
+  final String token;
+  const Authorized({required this.token});
 }

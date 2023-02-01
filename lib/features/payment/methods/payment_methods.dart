@@ -1,30 +1,21 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:flutter_bloc_template/features/payment/methods/repository.dart';
 
 import 'model.dart';
 
 class PaymentMethodsBloc extends Bloc<PaymentMethodEvent, PaymentMethodsState> {
+  PaymentMethodsRepository repository = PaymentMethodsRepository();
   PaymentMethodsBloc() : super(PaymentMethodsInitial()) {
     on<LoadPaymentMethods>(onPaymentMethodLoad);
   }
 
-  void onPaymentMethodLoad(
+  Future<void> onPaymentMethodLoad(
     LoadPaymentMethods event,
     Emitter<PaymentMethodsState> emit,
   ) async {
     emit(PaymentMethodsLoading());
-    await Future.delayed(const Duration(milliseconds: 1599));
-    emit(PaymentMethodsUpdated(items: [
-      PaymentMethod(
-          id: 1, icon: Icons.credit_card, name: 'Credit card', description: lorem(paragraphs: 2, words: 75)),
-      PaymentMethod(id: 2, icon: Icons.money, name: 'Cash', description: lorem(paragraphs: 2, words: 75)),
-      PaymentMethod(
-          id: 3,
-          icon: Icons.book_online_rounded,
-          name: 'Online',
-          description: lorem(paragraphs: 2, words: 75)),
-    ]));
+    var methods = await repository.loadPaymentMethods();
+    emit(PaymentMethodsUpdated(items: methods));
   }
 }
 
