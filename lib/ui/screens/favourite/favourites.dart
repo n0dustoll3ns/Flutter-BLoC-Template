@@ -15,7 +15,7 @@ class Favourites extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(mainPageSections[2]),
+          title: Text(mainPageSections[3]),
           actions: [
             IconButton(
                 onPressed: () => context.read<FavouriteBloc>().add(DislikeAll()),
