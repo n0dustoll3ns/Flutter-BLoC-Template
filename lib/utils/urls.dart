@@ -2,7 +2,8 @@ import 'package:pocketbase/pocketbase.dart';
 
 const baseUrl = "https://pocketbase.dancheg97.ru";
 const localUrl = "http://127.0.0.1:8090";
-const currentUrl = localUrl;
+const currentUrl = baseUrl;
+
 const filesUrl = "/api/files";
 const categoriesFilesUrl = "$currentUrl$filesUrl/categories";
 const productsFilesUrl = "$currentUrl$filesUrl/products";

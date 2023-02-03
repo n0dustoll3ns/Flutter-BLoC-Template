@@ -19,7 +19,10 @@ class OrderRepository {
         "paid": null
       };
 
-      await pb.collection('orders').create(body: body);
+      await pb.collection('orders').create(
+        headers: {"Authorization": token},
+        body: body,
+      );
       return order;
     } on Exception catch (_) {
       return null;

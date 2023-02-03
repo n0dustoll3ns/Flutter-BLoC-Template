@@ -48,13 +48,9 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     emitter(AuthenticationLoading());
     try {
       var authData = await repository.authenticate(username: event.userName, password: event.password);
-      if (authData != null) {
-        emitter(AuthenticationAuthenticated(
-            token: authData.token, userData: UserData.fromJson(authData.record!.id, authData.record!.data)));
-        const FlutterSecureStorage().write(key: secureStorageTokenKey, value: authData.token);
-      } else {
-        emitter(AuthenticationFailed(message: 'Authorization failed'));
-      }
+      emitter(AuthenticationAuthenticated(
+          token: authData.token, userData: UserData.fromJson(authData.record!.id, authData.record!.data)));
+      const FlutterSecureStorage().write(key: secureStorageTokenKey, value: authData.token);
     } on Exception catch (e) {
       emitter(AuthenticationFailed(message: e.toString()));
     }
