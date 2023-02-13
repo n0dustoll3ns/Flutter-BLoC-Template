@@ -1,25 +1,14 @@
-# flutter_bloc_template
+# flutter_eshop_template
 
-A new Flutter project.
+Simple flutter e-commerce application template which could be reused with different styles and API many times.
 
 ## Getting Started
 
-- Quick filter tabs are intended for most demanding filter to make it faster navigation for the most of your target audience
-- Main page
-  - Header
-  - Slider with buttons
-  - Secondary Buttons
-  - Tizers
-  - Popular Categories
-  - Best offers
-  - Product of the day
-  - Promo
-  - Thin vertical banner ?
-  - collections ? 
-  - Blog
-  - Reviews
-  - Adresses
-  - About Shop
-  - Social
-  - Brands
-  - 
+This is kind of simple teplate where you can execute basic actions. Some of them:
+
+ - Registration
+ - Editing your profile data, like email, name etc.
+ - Authorization via email and password
+ - Navigating between bottom, menu items, where each has its own page and independent state
+ - Main page content view loaded from backend
+ - Catalog surfing through different product categories, which are also hosted on the server and loading 
