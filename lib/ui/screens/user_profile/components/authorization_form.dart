@@ -51,6 +51,7 @@ class _AuthorizationFormState extends State<AuthorizationForm> {
         child: ShakeWidget(
           duration: shakeDuration,
           autoPlay: widget.accentAuthorize,
+          enableWebMouseHover: false,
           shakeConstant: ShakeLittleConstant1(),
           child: Form(
             child: Column(
