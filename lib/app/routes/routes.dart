@@ -75,7 +75,7 @@ class Routes {
       case loyaltyProgramScreen:
         return CupertinoPageRoute(builder: (context) => const LoyaltyProgramScreen());
       case aboutShopScreen:
-        return CupertinoPageRoute(builder: (context) => const AboutShopScreen());
+        return CupertinoPageRoute(builder: (context) => AboutShopScreen());
       case promotionsListPage:
         return CupertinoPageRoute(builder: (context) => const PromotionsListPage());
       case recieversList:
