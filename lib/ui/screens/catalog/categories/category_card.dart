@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/features/catalog/categories/model/model.dart';
 
-import '../catalog_page.dart';
+import '../../../../app/routes/routes.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;
@@ -11,9 +10,7 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: () {
-        Navigator.of(context).push(CupertinoPageRoute(builder: (context) => CatalogPage(category: category)));
-      },
+      onTap: () => Navigator.pushNamed(context, Routes.catalog, arguments: category),
       leading: category.imageWidget,
       title: Text(
         category.name,

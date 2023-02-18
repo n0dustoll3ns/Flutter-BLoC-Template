@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_template/ui/screens/sign_up/sign_up_screen.dart';
@@ -68,8 +67,13 @@ class Routes {
       case catalog:
         Category? category;
         if (routeSettings.name != null && routeSettings.arguments != null) {
-          category =
-              Category.fromJson((routeSettings.arguments! as Map)["id"], (routeSettings.arguments! as Map));
+          var args = routeSettings.arguments;
+          if (args is Map) {
+            category = Category.fromJson(args["id"], (routeSettings.arguments! as Map));
+          }
+          if (args is Category) {
+            category = args;
+          }
         }
         return CatalogPage.route(category);
       case loyaltyProgramScreen:
