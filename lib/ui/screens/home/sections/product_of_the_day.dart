@@ -11,6 +11,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../../../app/routes/routes.dart';
 import '../../../../features/authentication/auth_bloc.dart';
 import '../../../../features/authentication/states.dart';
+import '../../../components/undone_feature_snackbar.dart';
 
 class ProductOfTheDay extends StatefulWidget {
   const ProductOfTheDay({super.key});
@@ -60,12 +61,13 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
                           ),
                           Row(
                             children: [
-                              ElevatedButton(onPressed: () {}, child: const Icon(Icons.bar_chart_rounded)),
+                              ElevatedButton(
+                                  onPressed: () => showBeingDevelopedSnackber(context),
+                                  child: const Icon(Icons.bar_chart_rounded)),
                               SizedBox(width: MediaQuery.of(context).size.width / 44),
                               ElevatedButton(
-                                  onPressed: () {
-                                    context.read<CartBloc>().add(AddItem(item: asyncSnapshot.data!, ));
-                                  },
+                                  onPressed: () =>
+                                      context.read<CartBloc>().add(AddItem(item: asyncSnapshot.data!)),
                                   child: const Icon(Icons.shopping_bag_rounded)),
                             ],
                           ),
