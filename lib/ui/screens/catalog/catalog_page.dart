@@ -13,6 +13,7 @@ import '../../../features/catalog/products/model/product.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import '../../../features/catalog/products/products_repository.dart';
 import '../../../features/favourite/favourite_categories.dart';
+import '../../components/undone_feature_snackbar.dart';
 import 'categories/catagories.dart';
 import '../../components/product_list/product_list.dart';
 
@@ -51,16 +52,18 @@ class _CatalogPageState extends State<CatalogPage> {
         create: (_) => catalogPageProductsBloc..add(RequestMoreProducts(category: widget.category)),
         child: Scaffold(
             appBar: AppBar(
-              title: const CupertinoTextField(
-                prefix: Padding(
+              title: CupertinoTextField(
+                readOnly: true,
+                onTap: () => showBeingDevelopedSnackber(context),
+                prefix: const Padding(
                   padding: EdgeInsets.all(6.0),
                   child: Icon(
                     CupertinoIcons.search,
                     color: Colors.black45,
                   ),
                 ),
-                decoration:
-                    BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
+                decoration: const BoxDecoration(
+                    color: Colors.black26, borderRadius: BorderRadius.all(Radius.circular(5))),
               ),
               actions: [
                 if (widget.category != null)
