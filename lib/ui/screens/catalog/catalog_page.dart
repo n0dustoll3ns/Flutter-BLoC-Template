@@ -84,9 +84,9 @@ class _CatalogPageState extends State<CatalogPage> {
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               controller: _scrollController,
-              children: const [
-                Categories(),
-                ProductList(),
+              children: [
+                const Categories(),
+                if (widget.category != null) const ProductList(),
               ],
             )),
       ),

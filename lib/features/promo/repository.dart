@@ -3,7 +3,7 @@ import '../catalog/products/model/product.dart';
 import 'model.dart';
 
 class PromoRepository {
-  Future<List<Promo>> loadAllPromos() async {
+  Future<List<Promo>> loadMorePromos() async {
     final response = await pb.collection('promo').getFullList();
     var promotionModels =
         response.map((recordModel) => Promo.fromJson(recordModel.id, recordModel.data)).toList();

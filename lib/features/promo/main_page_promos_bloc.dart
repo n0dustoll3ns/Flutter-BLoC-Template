@@ -14,7 +14,7 @@ class PromosBloc extends Bloc<PromosEvent, PromosState> {
     Emitter<PromosState> emit,
   ) async {
     emit(PromosLoading(promotions: state.promotions));
-    var promotions = await repository.loadAllPromos();
+    var promotions = await repository.loadMorePromos();
     emit(PromosUpdated(promotions: promotions));
   }
 }

@@ -6,6 +6,7 @@ import '../../../../features/catalog/products/model/product.dart';
 import '../../../../features/catalog/products/products_repository.dart';
 import '../../../components/loading_indicator.dart';
 import '../../../components/product_list/components/product_card.dart';
+import '../../../components/undone_feature_snackbar.dart';
 import '../../../styles/constants.dart';
 
 class BestOffers extends StatefulWidget {
@@ -52,7 +53,7 @@ class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMi
               },
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => showBeingDevelopedSnackber(context),
               child: const Text("Load more"),
             ),
           ],

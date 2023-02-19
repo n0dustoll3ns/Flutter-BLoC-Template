@@ -24,7 +24,10 @@ class MainPagePromotionsBloc extends Bloc<MainPagePromotionEvent, MainPagePromot
   ) async {
     emit(MainPagePromotionsLoading(items: state.items));
     var items = await repository.loadMainPagePromos(state.items.length ~/ 2 + 1);
-    emit(MainPagePromotionsUpdated(items: state.items + items));
+    for (var element in items) {
+      if (!state.items.map((e) => e.id).contains(element.id)) state.items.add(element);
+    }
+    emit(MainPagePromotionsUpdated(items: state.items));
   }
 }
 

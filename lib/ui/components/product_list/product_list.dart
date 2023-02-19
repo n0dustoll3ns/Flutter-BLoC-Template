@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../features/catalog/products/products_bloc.dart';
 import 'components/product_card.dart';
 import '../../styles/constants.dart';
-import '../loading_indicator.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({super.key});
@@ -15,20 +14,15 @@ class ProductList extends StatelessWidget {
         if (state is ProductsFailure) {
           return ErrorWidget.builder(FlutterErrorDetails(exception: Exception(state.errorMessage)));
         }
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            GridView.count(
-                padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                childAspectRatio: 0.5,
-                children: List<Widget>.generate(
-                    state.items.length, (index) => ProductCard(product: state.items[index]))),
-            if (state is ProductsLoading) const LoadingIndicator(),
-          ],
-        );
+        return GridView.count(
+            clipBehavior: Clip.antiAlias,
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisCount: 2,
+            childAspectRatio: 0.5,
+            children: List<Widget>.generate(
+                state.items.length, (index) => ProductCard(product: state.items[index])));
       },
     );
   }
