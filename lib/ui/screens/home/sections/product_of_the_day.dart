@@ -62,7 +62,7 @@ class _ProductOfTheDayState extends State<ProductOfTheDay> with AutomaticKeepAli
                           Row(
                             children: [
                               ElevatedButton(
-                                  onPressed: () => showBeingDevelopedSnackber(context),
+                                  onPressed: () => showBeingDevelopedSnackbar(context),
                                   child: const Icon(Icons.bar_chart_rounded)),
                               SizedBox(width: MediaQuery.of(context).size.width / 44),
                               ElevatedButton(

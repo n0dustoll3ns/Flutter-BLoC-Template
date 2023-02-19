@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_template/ui/components/menu_button.dart';
 
 import '../../../features/authentication/auth_bloc.dart';
 import '../../../features/authentication/states.dart';
@@ -35,12 +36,6 @@ class _CatalogPageState extends State<CatalogPage> {
   final List<Product> items = [];
 
   @override
-  void initState() {
-    _scrollController.addListener(_scrollListener);
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CatalogPageBloc(
@@ -54,7 +49,7 @@ class _CatalogPageState extends State<CatalogPage> {
             appBar: AppBar(
               title: CupertinoTextField(
                 readOnly: true,
-                onTap: () => showBeingDevelopedSnackber(context),
+                onTap: () => showBeingDevelopedSnackbar(context),
                 prefix: const Padding(
                   padding: EdgeInsets.all(6.0),
                   child: Icon(
@@ -77,7 +72,7 @@ class _CatalogPageState extends State<CatalogPage> {
                           : CupertinoIcons.heart),
                     );
                   }),
-                ..._actions,
+                const MenuButton(),
               ],
             ),
             body: ListView(
@@ -91,36 +86,6 @@ class _CatalogPageState extends State<CatalogPage> {
             )),
       ),
     );
-  }
-
-  List<Widget> get _actions {
-    return [
-      PopupMenuButton<Function>(
-          itemBuilder: (context) {
-            return [
-              PopupMenuItem<Function>(
-                value: () {},
-                child: const Text("My Account"),
-              ),
-              PopupMenuItem<Function>(
-                value: () {},
-                child: const Text("Settings"),
-              ),
-              PopupMenuItem<Function>(
-                value: () => context.read<AuthenticationBloc>().add(LoggedOut()),
-                child: const Text("Logout"),
-              ),
-            ];
-          },
-          onSelected: (value) => value()),
-    ];
-  }
-
-  void _scrollListener() {
-    // if (_scrollController.offset >= _scrollController.position.maxScrollExtent &&
-    //     !_scrollController.position.outOfRange) {
-    //   catalogPageProductsBloc.add(RequestMoreProducts(category: widget.category));
-    // }
   }
 
   @override

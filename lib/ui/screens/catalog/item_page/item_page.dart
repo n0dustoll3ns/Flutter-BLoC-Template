@@ -17,6 +17,7 @@ import '../../../../features/bottom_nav_bar_bloc/bottom_nav_bar_bloc.dart';
 import '../../../../features/brands/model.dart';
 import '../../../../features/brands/repository.dart';
 import '../../../../features/catalog/products/model/product.dart';
+import '../../../components/undone_feature_snackbar.dart';
 import '../../../styles/constants.dart';
 import 'components/characteristics_lines.dart';
 import 'components/reviews.dart';
@@ -47,7 +48,9 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.product.name),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.share))],
+        actions: [
+          IconButton(onPressed: () => showBeingDevelopedSnackbar(context), icon: const Icon(Icons.share))
+        ],
       ),
       body: ListView(
         padding: EdgeInsets.all(MediaQuery.of(context).size.width / 22),

@@ -53,7 +53,7 @@ class _BestOffersState extends State<BestOffers> with AutomaticKeepAliveClientMi
               },
             ),
             ElevatedButton(
-              onPressed: () => showBeingDevelopedSnackber(context),
+              onPressed: () => showBeingDevelopedSnackbar(context),
               child: const Text("Load more"),
             ),
           ],
