@@ -27,6 +27,7 @@ doc/api/
 .pub/
 build/
 lib/generated_plugin_registrant.dart
+pubspec.lock
 
 # Android related
 android//gradle-wrapper.jar
